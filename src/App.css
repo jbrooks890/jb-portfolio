@@ -1,15 +1,134 @@
+@font-face {
+  font-family: 'Rajdhani', 'Calibri', sans-serif;
+  src: url(./assets/fonts/Rajdhani-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'social-gothic-rough', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  src: url(./assets/fonts/Social-Gothic-Rough.otf) format(opentype);
+}
+
 :root {
-  /* --------- COLORS --------- */
+  /* ========== COLORS ========== */
   --red: #d10000;
-  --pop: var(var(--red));
+  /* --midnite: hsl(258, 15%, 15%); */
+  --midnite: hsl(258, 15%, 13%);
+  --nite: hsl(257, 35%, 20%);
+  --evening: hsl(245, 30%, 25%);
+  /* --------- X COLORS --------- */
+  --lite: hsl(245, 100%, 95%);
+  --dark: var(--nite);
+  --darker: var(--midnite);
+  --pop: (var(--red));
+  --faint: hsla(0, 0%, 0%, 0.1);
+  --phantom: hsla(0,0%,0%,0.05);
+  /* ========== FONTS ========== */
+  --keyFont: 'social-gothic-rough', sans-serif;
+  --bodyFont: 'Rajdhani';
+}
+
+html {
+  height: 100vh;
+  font-size: 18px;
+}
+
+body, #root, .App {height: 100%;}
+
+body {
+  background-color: var(--dark);
+  /* color: var(--pop); */
+  color: var(--lite);
+  font-family: var(--bodyFont);
+}
+
+*::selection {
+  background-color: var(--faint);
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover, a:focus {
+  color: inherit;
+  outline: none;
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  outline: none;
+  background-color: transparent;
+}
+
+h1, h2, h3{
+  font-family: var(--keyFont);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+input {
+  appearance: none;
+  border: 2px solid hsla(0, 0%, 0%, 0.1);
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex.col {
+  flex-direction: column;
+}
+
+/* SECTIONS */
+
+.site-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  background-color: var(--lite);
+  color: var(--dark);
+  box-sizing: border-box;
+}
+
+.site-section:not(:first-of-type){
+  box-shadow: 0 5px 5px var(--phantom) inset;
+}
+
+/* .site-section:nth-of-type(odd){
+  clip-path: polygon(0 0, 0 100%, 100% 95%, 100% 0);
+}
+
+.site-section:nth-of-type(even) {
+  clip-path: polygon(0 0, 0 95%, 100% 100%, 100% 0);
+} */
+
+
+/* HEADER */
+
 header, footer {
     padding: 1rem 2rem;
+    box-sizing: border-box;
   } 
 
 header {

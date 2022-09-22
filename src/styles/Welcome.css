@@ -1,0 +1,37 @@
+#welcome {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--darker);
+  color: var(--lite);
+}
+
+#radial-controller {
+  --size: 75vmin;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border: 1px solid cyan;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+h2#welcome-logo {
+  width: 480px;
+  margin: 0;
+}
+
+h2#welcome-logo svg {
+  fill: var(--red);
+  height: 100%;
+  /* border: 1px solid cyan; */
+  filter: drop-shadow(3px 3px 0 var(--faint));
+}
+
+.rad-btn {
+  position: absolute;
+  border: 1px solid coral;
+  box-sizing: border-box;
+}
