@@ -12,7 +12,7 @@ export default function Welcome({ pages }) {
   const ang = (2 * Math.PI) / $pages.length;
   const style = { width: size, height: size };
 
-  console.log({ rad, ang });
+  // console.log({ rad, ang });
 
   return (
     <section id="welcome" className="site-section flex col">
@@ -24,7 +24,7 @@ export default function Welcome({ pages }) {
         {$pages.map((page, i) => {
           const x = center + rad * Math.cos(ang * i);
           const y = center + rad * Math.sin(ang * i);
-          console.log(`${page}:`, { x, y });
+          // console.log(`${page}:`, { x, y });
 
           return (
             <RadButton key={i} x={x} y={y}>

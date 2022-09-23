@@ -1,0 +1,99 @@
+.project-snap {
+  position: relative;
+  display: flex;
+  width: 75vw;
+  margin-bottom: 3rem;
+  /* border: 1px solid red; */
+}
+
+.project-snap::before {
+  --offset: 1em;
+  content: '';
+  position: absolute;
+  display: block;
+  top: var(--offset);
+  left: var(--offset);
+  right: var(--offset);
+  bottom: 0;
+  background-color: var(--dark);
+  /* background-image: linear-gradient(175deg, var(--dark),var(--darker)); */
+  border-radius: 20px;
+}
+
+.project-snap > * {
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.project-gallery {
+  width: 80%;
+  /* border: 1px solid lime; */
+}
+
+.project-caption {
+  position: relative;
+  padding: 2rem;
+  text-align: left;
+  /* border: 1px solid orange; */
+}
+
+.project-icon {
+  --size: 5rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--lavender);
+  border-radius: 20px;
+  box-sizing: border-box;
+  /* box-shadow: 1px 2.5px 2.5px hsla(258, 15%, 13%,0.25); */
+  box-shadow: 3px 3px 3px hsla(258, 15%, 13%, 0.25);
+}
+
+.project-icon svg {
+  width: 60%;
+  filter: drop-shadow(2px 2px 2px var(--faint))
+}
+
+.project-caption h3 {
+  display: inline-block;
+  margin: 0;
+  color: var(--lite);
+  /* color: transparent;
+  background-image: linear-gradient(to bottom, red, red, var(--red));
+  background-clip: text; */
+  font-size: 2rem;
+  text-align: left;
+  /* filter: drop-shadow(3px 3px 0 var(--darker)) */
+  /* text-shadow: 2px 2px 0 var(--nite); */
+  /* transform: rotate(-5deg); */
+}
+
+.project-caption p {
+  margin: 0.5em 0 1em;
+  color: var(--day);
+}
+
+a.project-visit-link {
+  padding: 0.5em 1.5em;
+  color: var(--lite);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1em;
+  text-transform: uppercase;
+  border: 2px solid var(--lite);
+  border-radius: 10px;
+  transition: 0.1s ease-in-out;
+  box-sizing: border-box;
+}
+
+a.project-visit-link:hover,
+a.project-visit-link:focus {
+  background-color: var(--lite);
+  /* border-width: 0; */
+  color: var(--darker);
+}

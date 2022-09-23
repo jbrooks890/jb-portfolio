@@ -7,6 +7,9 @@ import { ReactComponent as RESTART_ICON } from "../../assets/icons/clear-restart
 import { ReactComponent as LIKE_ICON } from "../../assets/icons/heart-icon.svg";
 import { ReactComponent as DIALOG_ICON } from "../../assets/icons/dialog-icon.svg";
 import { ReactComponent as EDIT_ICON } from "../../assets/icons/edit-icon.svg";
+import { ReactComponent as ARCAN_LOGO } from "../../assets/icons/arcan-logo.svg";
+import { ReactComponent as EPOCH_LOGO } from "../../assets/icons/epoch-logo.svg";
+import { ReactComponent as POKESQUAD_LOGO } from "../../assets/icons/pokesquad.svg";
 
 export default function Icons() {
   return (
@@ -20,6 +23,9 @@ export default function Icons() {
       <LIKE_ICON />
       <DIALOG_ICON />
       <EDIT_ICON />
+      <ARCAN_LOGO />
+      <EPOCH_LOGO />
+      <POKESQUAD_LOGO />
     </svg>
   );
 }

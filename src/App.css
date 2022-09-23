@@ -20,6 +20,7 @@
   --shade: hsl(247, 31%, 38%);
   --sundown: hsl(245, 30%, 60%);;
   --lavender: hsl(246, 57%, 63%);
+  --day: hsl(246, 60%, 80%);
   /* --------- X COLORS --------- */
   --lite: hsl(245, 100%, 95%);
   --mid: var(--shade);

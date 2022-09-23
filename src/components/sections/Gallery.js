@@ -1,5 +1,6 @@
 import { projects } from "../../utility/sources";
 import "../../styles/Gallery.css";
+import ProjectSnapshot from "../frags/ProjectSnapshot";
 
 export default function Gallery() {
   const $projects = projects.filter(project =>
@@ -9,21 +10,11 @@ export default function Gallery() {
   return (
     <section id="gallery" className="site-section">
       <h2>Featured Projects</h2>
-      <ul className="project-list">
-        {$projects.map((project, i) => {
-          const { name, type, description, tech } = project;
-          return (
-            <li key={i}>
-              {
-                <>
-                  <h3>{name}</h3>
-                  <p>{description}</p>
-                </>
-              }
-            </li>
-          );
-        })}
-      </ul>
+      <div className="project-list">
+        {$projects.map((project, i) => (
+          <ProjectSnapshot key={i} entry={project} />
+        ))}
+      </div>
     </section>
   );
 }
