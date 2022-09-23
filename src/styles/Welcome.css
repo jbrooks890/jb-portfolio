@@ -9,11 +9,8 @@
 }
 
 #radial-controller {
-  --size: 75vmin;
   position: relative;
-  width: var(--size);
-  height: var(--size);
-  border: 1px solid cyan;
+  border: 2px solid var(--evening);
   border-radius: 50%;
   box-sizing: border-box;
 }
@@ -32,6 +29,8 @@ h2#welcome-logo svg {
 
 .rad-btn {
   position: absolute;
-  border: 1px solid coral;
+  border: none;
+  border: 2px solid var(--mid);
   box-sizing: border-box;
+  border-radius: 50%;
 }

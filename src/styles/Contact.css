@@ -1,0 +1,41 @@
+#contact {
+  position: relative;
+  height: 75vh;
+  
+}
+
+#contact::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../assets/images/Collaborate-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+#contact h2 {
+  /* color: var(--lite) */
+  z-index: 1;
+}
+
+#contact button {
+  color: var(--sundown);
+  font-weight: 500;
+  border: 2.5px solid var(--sundown);
+  transform: translateY(-2px);
+  transition: 0.1s ease-in-out;
+}
+
+#contact button:hover {
+  color: var(--lite);
+  transform: translateY(0);
+  background-color: var(--sundown);
+  box-shadow: 0 2px 2px var(--faint);
+}

@@ -1,3 +1,5 @@
 footer {
   background-color: var(--darker);
+  font-size: smaller;
+  font-weight: normal;
 }

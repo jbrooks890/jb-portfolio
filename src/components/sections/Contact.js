@@ -1,7 +1,10 @@
+import "../../styles/Contact.css";
+
 export default function Contact() {
   return (
-    <section id="contact" class="site-section">
-      <h2>Contact</h2>
+    <section id="contact" className="site-section">
+      <h2>Let's Connect</h2>
+      <button className="pill">Email me!</button>
     </section>
   );
 }

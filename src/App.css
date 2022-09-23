@@ -12,26 +12,31 @@
 
 :root {
   /* ========== COLORS ========== */
-  --red: #d10000;
+  --red: hsl(0, 100%, 41%);
   /* --midnite: hsl(258, 15%, 15%); */
   --midnite: hsl(258, 15%, 13%);
   --nite: hsl(257, 35%, 20%);
   --evening: hsl(245, 30%, 25%);
+  --shade: hsl(247, 31%, 38%);
+  --sundown: hsl(245, 30%, 60%);;
+  --lavender: hsl(246, 57%, 63%);
   /* --------- X COLORS --------- */
   --lite: hsl(245, 100%, 95%);
+  --mid: var(--shade);
   --dark: var(--nite);
   --darker: var(--midnite);
-  --pop: (var(--red));
+  --pop: var(--red);
   --faint: hsla(0, 0%, 0%, 0.1);
   --phantom: hsla(0,0%,0%,0.05);
   /* ========== FONTS ========== */
   --keyFont: 'social-gothic-rough', sans-serif;
   --bodyFont: 'Rajdhani';
+  /* ========== PADDING ========== */
 }
 
 html {
   height: 100vh;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 body, #root, .App {height: 100%;}
@@ -41,10 +46,11 @@ body {
   /* color: var(--pop); */
   color: var(--lite);
   font-family: var(--bodyFont);
+  font-weight: 500;
 }
 
 *::selection {
-  background-color: var(--faint);
+  background-color: var(--phantom);
 }
 
 .App {
@@ -79,8 +85,19 @@ button {
 
 h1, h2, h3{
   font-family: var(--keyFont);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+}
+
+h2 {
+  color: var(--lavender);
+  font-size: 3rem;
+  /* background-color: var(--lavender); */
+  /* background-image: linear-gradient(175deg, var(--lavender), var(--evening)); */
+  /* background-position: 100% 100%; */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
+  /* color: transparent; */
+  /* filter: drop-shadow(3px 3px 2px var(--faint)); */
 }
 
 input {
@@ -106,6 +123,7 @@ input {
   justify-content: center;
   align-items: center;
   /* height: 100vh; */
+  padding: 3rem 1rem;
   background-color: var(--lite);
   color: var(--dark);
   box-sizing: border-box;
@@ -113,6 +131,25 @@ input {
 
 .site-section:not(:first-of-type){
   box-shadow: 0 5px 5px var(--phantom) inset;
+}
+
+.site-section h2 {
+  color: var(--mid);
+}
+
+.site-section p {
+  color: var(--sundown);
+  font-weight: 500;
+}
+
+.site-section p em {
+  font-style: normal;
+  color: var(--pop);
+}
+
+button.pill {
+  padding: 0.5em 1.5em;
+  border-radius: 100px;
 }
 
 /* .site-section:nth-of-type(odd){
@@ -127,7 +164,7 @@ input {
 /* HEADER */
 
 header, footer {
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.5rem;
     box-sizing: border-box;
   } 
 
@@ -135,7 +172,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+
+header h1 {
+  margin: 0;
 }
 
 header nav ul {
@@ -144,6 +185,12 @@ header nav ul {
   padding-left: 0;
 }
 
+header nav ul li {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 header nav ul li:not(:last-of-type) {
-  margin-right: 1em;
+  margin-right: 1.25em;
 }

@@ -4,22 +4,26 @@ import RadButton from "../frags/RadButton";
 
 export default function Welcome({ pages }) {
   const $pages = [...pages, "Resume", "Connect"];
-  const rad = document.querySelector("#radial-controller").offsetHeight / 2;
-  const ang = 360 / $pages.length;
-  // const test = document.querySelector("#radial-controller");
+  const { innerHeight: vh, innerWidth: vw } = window;
+  const vmin = vh < vw ? vh : vw;
+  const size = vmin * 0.75;
+  const center = size / 2;
+  const rad = size / 2;
+  const ang = (2 * Math.PI) / $pages.length;
+  const style = { width: size, height: size };
 
   console.log({ rad, ang });
 
   return (
     <section id="welcome" className="site-section flex col">
-      <div id="radial-controller" className="flex col">
+      <div id="radial-controller" className="flex col" style={style}>
         <h2 id="welcome-logo">
           <JB_LOGO />
         </h2>
 
         {$pages.map((page, i) => {
-          const x = rad * Math.cos(ang * i);
-          const y = rad * Math.sin(ang * i);
+          const x = center + rad * Math.cos(ang * i);
+          const y = center + rad * Math.sin(ang * i);
           console.log(`${page}:`, { x, y });
 
           return (

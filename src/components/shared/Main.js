@@ -13,7 +13,7 @@ export default function Main() {
     <main>
       <Welcome pages={pages} />
       <Gallery />
-      <About />
+      <About pages={pages} />
       <Contact />
     </main>
   );
