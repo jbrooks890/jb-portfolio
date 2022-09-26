@@ -23,10 +23,6 @@
   transition: 0.2s ease-in-out;
 }
 
-#radial-controller.activated {
-  transform: scale(1);
-}
-
 h2#welcome-logo {
   cursor: pointer;
   width: 50vmin;
@@ -51,14 +47,14 @@ h2#welcome-logo svg {
   right: 0;
   bottom: 0;
   opacity: 0;
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(10deg);
   transition:0.2s ease-in-out;
   z-index: 0;
 }
 
 #radial-controller.activated #controller-ring {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) rotate(0);
 }
 
 .rad-btn {
@@ -70,8 +66,13 @@ h2#welcome-logo svg {
   /* border: 2px solid var(--mid); */
   box-sizing: border-box;
   border-radius: 50%;
-  transition: 0.1s ease-in-out;
+  transform: rotate(-10deg);
+  transition: .2s ease-in-out;
   /* opacity: 0; */
+}
+
+#radial-controller.activated .rad-btn {
+  transform: rotate(0);
 }
 
 .rad-btn svg {
