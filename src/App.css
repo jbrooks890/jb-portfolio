@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Rajdhani', 'Calibri', sans-serif;
+  font-family: 'Rajdhani', Calibri, sans-serif;
   src: url(./assets/fonts/Rajdhani-Regular.ttf);
 }
 
@@ -116,13 +116,17 @@ input {
   flex-direction: column;
 }
 
+.grid {
+  display: grid;
+}
+
 /* SECTIONS */
 
 .site-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
   /* height: 100vh; */
   padding: 3rem 1rem;
   background-color: var(--lite);

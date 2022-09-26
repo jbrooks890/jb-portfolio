@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-export default function RadButton({ children, x, y }) {
+export default function RadButton({ children, x, y, size }) {
   // console.log({ x, y });
-  const size = 120;
+  // const size = 120;
   const center = size / 2;
   const style = {
     top: x - center + "px",

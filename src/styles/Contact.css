@@ -26,16 +26,17 @@
 }
 
 #contact button {
-  color: var(--sundown);
+  color: var(--mid);
   font-weight: 500;
-  border: 2.5px solid var(--sundown);
+  border: 2.5px solid var(--mid);
   transform: translateY(-2px);
   transition: 0.1s ease-in-out;
+  /* box-shadow: 0 2px 2px var(--faint); */
 }
 
 #contact button:hover {
   color: var(--lite);
-  transform: translateY(0);
-  background-color: var(--sundown);
-  box-shadow: 0 2px 2px var(--faint);
+  /* transform: translateY(0); */
+  background-color: var(--mid);
+  /* box-shadow: none; */
 }

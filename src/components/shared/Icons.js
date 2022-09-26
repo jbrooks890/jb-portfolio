@@ -10,6 +10,12 @@ import { ReactComponent as EDIT_ICON } from "../../assets/icons/edit-icon.svg";
 import { ReactComponent as ARCAN_LOGO } from "../../assets/icons/arcan-logo.svg";
 import { ReactComponent as EPOCH_LOGO } from "../../assets/icons/epoch-logo.svg";
 import { ReactComponent as POKESQUAD_LOGO } from "../../assets/icons/pokesquad.svg";
+import { ReactComponent as BOOK_ICON } from "../../assets/icons/book-icon.svg";
+import { ReactComponent as FILM_ICON } from "../../assets/icons/film-icon.svg";
+import { ReactComponent as GAME_ICON } from "../../assets/icons/game-icon.svg";
+import { ReactComponent as MUSIC_ICON } from "../../assets/icons/music-icon.svg";
+import { ReactComponent as PROFILE_ICON } from "../../assets/icons/profile-icon.svg";
+import { ReactComponent as DEVELOPER_ICON } from "../../assets/icons/developer-icon.svg";
 
 export default function Icons() {
   return (
@@ -26,6 +32,12 @@ export default function Icons() {
       <ARCAN_LOGO />
       <EPOCH_LOGO />
       <POKESQUAD_LOGO />
+      <BOOK_ICON />
+      <FILM_ICON />
+      <GAME_ICON />
+      <MUSIC_ICON />
+      <PROFILE_ICON />
+      <DEVELOPER_ICON />
     </svg>
   );
 }

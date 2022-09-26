@@ -1,3 +1,16 @@
+function debounce(fn, ms) {
+  console.log("Running debounce");
+  let timer;
+
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
 const states = new Map([
   ["Alabama", "AL"],
   ["Alaska", "AK"],
@@ -114,4 +127,4 @@ const skills = [
   },
 ];
 
-export { states, skills };
+export { states, skills, debounce };
