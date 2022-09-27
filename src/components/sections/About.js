@@ -8,7 +8,7 @@ export default function About({ pages }) {
         <div className="description flex col">
           <h2>A Developer</h2>
           <p>
-            I'm Julian! I am a <em>developer</em> based out of{" "}
+            I'm Julian! I am a <em>software developer</em> based out of{" "}
             <i>Atlanta, GA</i>. I enjoy the duality of technical and artistic
             design and how they can be used together to solve problems.
           </p>

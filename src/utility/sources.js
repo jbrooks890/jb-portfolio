@@ -15,6 +15,7 @@ const projects = [
       dark: "#black",
       reverse: false,
     },
+    images: ["xword-1.png", "xword-2.png", "xword-3.png"],
   },
   {
     name: "PokéSquad",
@@ -31,6 +32,7 @@ const projects = [
       dark: "",
       reverse: true,
     },
+    images: [],
   },
   {
     name: "Worlds of EPOCH",
@@ -48,6 +50,7 @@ const projects = [
       dark: "#161d1d",
       reverse: false,
     },
+    images: ["epoch-site-1.png", "epoch-site-2.png"],
   },
   {
     name: "Arcan",

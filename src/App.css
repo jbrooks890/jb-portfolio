@@ -35,6 +35,12 @@
   /* ========== PADDING ========== */
 }
 
+/* ========== ANIMATIONS ========== */
+@keyframes slide-over {
+  from {}
+  to {}
+}
+
 html {
   height: 100vh;
   font-size: 24px;

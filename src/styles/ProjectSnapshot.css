@@ -30,10 +30,99 @@
   /* border: 1px solid lime; */
 }
 
+.project-gallery .image-wrapper {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+
+.image-wrapper .scroller{
+  position: absolute;
+  cursor: pointer;
+  padding: 0.75rem;
+  opacity: 0;
+  transition: 0.1s ease-out;
+  /* border: 1px solid red; */
+}
+
+.image-wrapper:hover .scroller{
+  opacity: .5;
+}
+
+.image-wrapper:hover .scroller:hover{
+  opacity: 1;
+}
+
+.image-wrapper .scroller.prev{
+  transform: rotate(180deg);
+  justify-self: flex-start;
+  left: 0;
+}
+
+.image-wrapper .scroller.next {
+  justify-self: flex-end;
+  right: 0;
+}
+
+.image-wrapper .scroller::before{
+  content: '';
+  display: block;
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+  background-color: var(--lavender);
+  width: 0.5rem;
+  height: 1rem;
+}
+
+.image-wrapper .scroller:hover::before{
+  /* background-color: var(--lite); */
+  filter: brightness(125%) saturate(200%);
+}
+
+
+.project-img {
+  display: none;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px var(--faint);
+  transition: 0.2s;
+}
+
+.project-img.active {
+  display: block;
+}
+
+.project-images-pager {
+  margin-block: 1rem;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.project-images-pager li {
+  --size: .5rem;
+  cursor: pointer;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--mid);
+  border-radius: 10%;
+  transition: 0.1s ease-in-out;
+}
+
+.project-images-pager li:hover,
+.project-images-pager li:focus,
+.project-images-pager li.active{
+  background-color: var(--lavender);
+  transform: scale(1.1);
+}
+
+.project-images-pager li:not(:last-of-type){
+  margin-right: .5rem;
+}
+
 .project-caption {
   position: relative;
-  padding: 2rem;
+  padding: 4rem;
   text-align: left;
+  box-sizing: border-box;
   /* border: 1px solid orange; */
 }
 

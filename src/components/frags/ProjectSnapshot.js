@@ -1,12 +1,15 @@
 import "../../styles/ProjectSnapshot.css";
 import ProjectIcon from "./ProjectIcon";
+import ProjectImageCar from "./ProjectImageCar";
 
 export default function ProjectSnapshot({ entry }) {
-  const { name, type, description, tech, link } = entry;
+  const { name, type, description, tech, link, images } = entry;
 
   return (
     <div className="project-snap">
-      <div className="project-gallery"></div>
+      <div className="project-gallery flex col">
+        <ProjectImageCar images={images} />
+      </div>
       <div className="project-caption">
         <ProjectIcon entry={entry} />
         <h3>{name}</h3>

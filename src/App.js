@@ -6,7 +6,7 @@ import Main from "./components/shared/Main";
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <Main />
       <Footer />
     </div>

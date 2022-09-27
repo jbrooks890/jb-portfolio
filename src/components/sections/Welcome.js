@@ -65,7 +65,7 @@ export default function Welcome({ pages }) {
             // console.log(`${page}:`, { x, y });
 
             return (
-              <RadButton key={i} x={x} y={y} size={vmin / 12.5}>
+              <RadButton key={i} x={x} y={y} size={vmin * 0.09}>
                 {icons.get(page) ? (
                   <svg>
                     <use href={`#${icons.get(page)}`} />
