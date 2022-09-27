@@ -3,6 +3,9 @@ import { ReactComponent as JB_LOGO } from "../../assets/icons/jb-logo.svg";
 import "../../styles/Welcome.css";
 import RadButton from "../frags/RadButton";
 import { debounce } from "../../utility/utility";
+import useModal from "../hooks/useModal";
+import Modal from "../shared/Modal";
+import ConnectForm from "../frags/ConnectForm";
 
 export default function Welcome({ pages }) {
   const $pages = [...pages, "Resume", "Connect"];
@@ -18,6 +21,7 @@ export default function Welcome({ pages }) {
   const rad = size / 2;
   const ang = (2 * Math.PI) / $pages.length;
   const style = { width: size, height: size };
+  const { isShowing, toggle } = useModal();
 
   useEffect(() => {
     function handleResize() {
@@ -65,7 +69,13 @@ export default function Welcome({ pages }) {
             // console.log(`${page}:`, { x, y });
 
             return (
-              <RadButton key={i} x={x} y={y} size={vmin * 0.09}>
+              <RadButton
+                key={i}
+                x={x}
+                y={y}
+                size={vmin * 0.09}
+                onClick={page === "Connect" ? toggle : null}
+              >
                 {icons.get(page) ? (
                   <svg>
                     <use href={`#${icons.get(page)}`} />
@@ -78,6 +88,9 @@ export default function Welcome({ pages }) {
           })}
         </div>
       </div>
+      <Modal isShowing={isShowing} hide={toggle}>
+        <ConnectForm />
+      </Modal>
     </section>
   );
 }

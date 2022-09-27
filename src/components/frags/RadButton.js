@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function RadButton({ children, x, y, size }) {
+export default function RadButton({ children, x, y, size, onClick }) {
   // console.log({ x, y });
   // const size = 120;
   const center = size / 2;
@@ -11,7 +11,7 @@ export default function RadButton({ children, x, y, size }) {
     height: size + "px",
   };
   return (
-    <button className="rad-btn" style={style}>
+    <button className="rad-btn" style={style} onClick={onClick}>
       {children}
     </button>
   );

@@ -1,0 +1,55 @@
+body.modal-lock {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: .5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  z-index: 1050;
+}
+
+.modal {
+  position: relative;
+  z-index: 100;
+}
+
+.modal-close {
+  --size: 3rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--size);
+  height: var(--size);
+  /* padding: 1em; */
+  color: var(--lavender);
+  font-size: 2rem;
+  /* font-weight: 700; */
+  line-height: 1em;
+  opacity: .25;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  transition: 0.1s ease-in-out;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
