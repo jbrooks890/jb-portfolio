@@ -32,7 +32,7 @@ const projects = [
       dark: "",
       reverse: true,
     },
-    images: [],
+    images: ["pokesquad-1.png", "pokesquad-2.png"],
   },
   {
     name: "Worlds of EPOCH",

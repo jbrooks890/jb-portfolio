@@ -34,7 +34,7 @@
   color: var(--day);
   caret-color: var(--mid);
   font-family: inherit;
-  font-size: .9rem;
+  font-size: .8rem;
   outline: none;
   border: 2px solid var(--lavender);
   border-radius: 5px;

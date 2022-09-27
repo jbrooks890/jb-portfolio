@@ -25,11 +25,13 @@ body.modal-lock {
   overflow-y: auto;
   outline: 0;
   z-index: 1050;
+  /* border: 1px solid red; */
 }
 
 .modal {
   position: relative;
-  z-index: 100;
+  max-height: 90vh;
+  z-index: 1060;
 }
 
 .modal-close {

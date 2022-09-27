@@ -14,6 +14,7 @@ export default function Modal({ isShowing, hide, children }) {
             aria-hidden
             tabIndex={-1}
             role="dialog"
+            // onClick={hide}
           >
             <div className="modal">
               <div

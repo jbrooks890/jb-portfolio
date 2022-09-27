@@ -16,7 +16,7 @@ export default function Welcome({ pages }) {
   });
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
-  const size = vmin * 0.75;
+  const size = vmin * 0.8;
   const center = size / 2;
   const rad = size / 2;
   const ang = (2 * Math.PI) / $pages.length;
