@@ -1,0 +1,46 @@
+.icon-cache a {
+  --size: 1.25rem;
+  cursor: pointer;
+  width: var(--size);
+  height: var(--size);
+  box-sizing: border-box;
+  /* border: 2px solid white; */
+}
+
+.icon-cache a:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+svg.social-media-icon {
+  width: 100%;
+  height: 100%;
+  transition: 0.1s ease-out;
+}
+
+svg.social-media-icon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 0 var(--faint))
+}
+
+.social-media-handle {
+  cursor: pointer;
+  margin-block: 0.5em;
+  font-family: var(--bodyFont);
+  letter-spacing: 0.1em;
+  transform: translateY(0.25em);
+  transition: 0.1s ease-out;
+  opacity: 0;
+}
+
+.social-media-handle::before {
+  content: '@';
+  display: inline-block;
+  margin-right: 2px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.icon-cache:hover+.social-media-handle {
+  opacity: 1;
+  transform: translateY(0);
+}

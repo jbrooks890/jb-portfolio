@@ -71,4 +71,15 @@ const projects = [
   },
 ];
 
-export { projects };
+const quotes = [
+  {
+    entry: "Art is never finished, only abandoned.",
+    author: "Leonardo da Vinci",
+  },
+  {
+    entry: "Be the change you wish to see in the world.",
+    author: "Mahatma Gandhi",
+  },
+];
+
+export { projects, quotes };

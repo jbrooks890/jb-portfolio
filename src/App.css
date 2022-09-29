@@ -10,6 +10,13 @@
   src: url(./assets/fonts/Social-Gothic-Rough.otf) format(opentype);
 }
 
+@font-face {
+  font-family: 'tech-brand-icons';
+  font-weight: normal;
+  font-style: normal;
+  src: url(./assets/fonts/Tech-Brands-1.otf);
+}
+
 :root {
   /* ========== COLORS ========== */
   --red: hsl(0, 100%, 41%);

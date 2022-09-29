@@ -16,15 +16,22 @@ import { ReactComponent as GAME_ICON } from "../../assets/icons/game-icon.svg";
 import { ReactComponent as MUSIC_ICON } from "../../assets/icons/music-icon.svg";
 import { ReactComponent as PROFILE_ICON } from "../../assets/icons/profile-icon.svg";
 import { ReactComponent as DEVELOPER_ICON } from "../../assets/icons/developer-icon.svg";
+import { ReactComponent as FB_LOGO } from "../../assets/icons/fb-logo.svg";
+import { ReactComponent as TWITTER_LOGO } from "../../assets/icons/twitter-logo.svg";
+import { ReactComponent as CONNECT_ICON } from "../../assets/icons/connect-icon.svg";
+import { ReactComponent as LOCATION_ICON } from "../../assets/icons/location-icon.svg";
+import { ReactComponent as SEND_ICON } from "../../assets/icons/send-icon.svg";
 
 export default function Icons() {
   return (
     <svg id="icon-cache" style={{ display: "none" }}>
       <JB_LOGO_SYM />
+      <XWORD_LOGO />
       <IG_LOGO />
       <LINKEDIN_LOGO />
-      <XWORD_LOGO />
       <GITHUB_LOGO />
+      <FB_LOGO />
+      <TWITTER_LOGO />
       <RESTART_ICON />
       <LIKE_ICON />
       <DIALOG_ICON />
@@ -38,6 +45,9 @@ export default function Icons() {
       <MUSIC_ICON />
       <PROFILE_ICON />
       <DEVELOPER_ICON />
+      <CONNECT_ICON />
+      <LOCATION_ICON />
+      <SEND_ICON />
     </svg>
   );
 }

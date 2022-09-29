@@ -1,0 +1,181 @@
+#resume {
+  padding: 3rem;
+  background-color: var(--mid);
+}
+
+#resume-caption, #resume-body {
+  padding: 2rem;
+}
+
+/* -------- CAPTION -------- */
+
+#resume-caption {
+  width: 45%;
+  background-color: var(--dark);
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px var(--phantom);
+}
+
+#resume-caption > *:not(:first-child):not(:last-child:first-child){
+  margin-bottom: 0.75rem;
+}
+
+#resume-caption .name {
+  /* border: 1px solid red; */
+  margin-bottom: 1rem;
+}
+
+#resume-caption .name > * {
+  margin: 0;
+  color: var(--lite);
+  line-height: 1em;
+  /* border: 1px solid cyan; */
+}
+
+#resume-caption .name h3{
+  justify-content: space-between;
+  padding-inline: 0.1em;
+  text-transform: uppercase;
+}
+
+.caption-summary {
+  width: 90%;
+  border: 1.5px solid var(--lavender);
+  border-radius: 10px;
+}
+
+.caption-summary legend {
+  position: relative;
+  padding-inline: 0.5em;
+  color: var(--lavender);
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.caption-summary legend::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 25%;
+  transform: translateY(-50%);
+  border-inline: 1.5px solid var(--lavender);
+}
+
+#resume .skill-cache h3 {
+  color: var(--day);
+}
+
+.resume-connect {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.resume-connect .icon {
+  --size: 0.9em;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: 0.25em;
+  /* border: 1px solid coral; */
+}
+
+.resume-connect .icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--lavender);
+}
+
+
+#resume-caption .social-media-cache {
+  margin-top: 1rem;
+}
+
+#resume-caption .social-media-cache .icon-cache a {
+  --size: 1rem;
+  width: var(--size);
+  height: var(--size);
+}
+
+#resume-caption .icon-cache svg { 
+  fill: var(--lavender);
+}
+
+#resume-caption .icon-cache svg:hover {
+  fill: var(--day);
+}
+
+/* -------- BODY -------- */
+
+#resume-body h2, 
+#resume-body h3, 
+#resume-body h4 {
+  font-family: var(--bodyFont);
+  margin: 0;
+}
+
+#resume-body h2 {
+  font-size: 1.25rem;
+}
+
+#resume-body h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.experience-entry .entry-header {
+  justify-self: stretch;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--dark);
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px var(--phantom);
+}
+
+.experience-entry .entry-header.flex {
+  justify-content: space-between;
+}
+
+.experience-entry .entry-header > * {
+  line-height: 1em;
+}
+
+.experience-entry .entry-roles {
+  padding: 0 1rem 1rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.role-header p {
+  margin: 0;
+}
+
+.role-task-list {
+  --border: 1.5px solid var(--lavender);
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  list-style-type: none;
+  list-style-position: inside;
+  border-left: var(--border);
+  border-bottom: var(--border);
+  border-bottom-left-radius: 10px;
+}
+
+.role-task-list li {
+  font-size: 0.9rem;
+}
+
+.role-task-list li:not(:last-of-type){
+  margin-bottom: .5em;
+}
+
+span.brand-icons {
+  font-family: 'tech-brand-icons';
+  color: var(--lavender)
+}

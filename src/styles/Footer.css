@@ -1,5 +1,19 @@
 footer {
+  padding: 3rem 3rem 1rem;
   background-color: var(--darker);
   font-size: smaller;
   font-weight: normal;
+  box-sizing: border-box;
+}
+
+footer .icon-cache svg {
+  fill: var(--lavender);
+}
+
+footer .icon-cache svg:hover {
+  fill: var(--day);
+}
+
+footer .social-media-handle {
+  color: var(--day);
 }

@@ -1,5 +1,6 @@
 import "../../assets/images/julian_profile_pic.jpg";
 import "../../styles/About.css";
+import Quote from "../frags/Quote";
 
 export default function About({ pages }) {
   return (
@@ -25,11 +26,12 @@ export default function About({ pages }) {
             className="headshot"
           />
         </div>
-        <div className="quote-wrap flex col">
+        {/* <div className="quote-wrap flex col">
           <q data-author="Leonardo da Vinci">
             Art is never finished, only abandoned
           </q>
-        </div>
+        </div> */}
+        <Quote />
       </div>
     </section>
   );

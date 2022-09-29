@@ -4,6 +4,7 @@ import Welcome from "../sections/Welcome";
 import About from "../sections/About";
 import Gallery from "../sections/Gallery";
 import Contact from "../sections/Contact";
+import Resume from "../frags/Resume";
 
 export default function Main() {
   const pages = ["Developer", "Artist", "Writer", "Game"];
@@ -12,6 +13,7 @@ export default function Main() {
   return (
     <main>
       <Welcome pages={pages} />
+      <Resume />
       <Gallery />
       <About pages={pages} />
       <Contact />

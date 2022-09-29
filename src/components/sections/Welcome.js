@@ -47,7 +47,7 @@ export default function Welcome({ pages }) {
     ["Game", "game-icon"],
     ["Writer", "book-icon"],
     ["Artist", ""],
-    ["Connect", ""],
+    ["Connect", "connect-icon"],
     ["Resume", "profile-icon"],
   ]);
 

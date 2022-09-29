@@ -76,9 +76,8 @@ h2#welcome-logo svg {
 }
 
 .rad-btn svg {
-  --size: 100%;
-  width: var(--size);
-  height: var(--size);
+  width: 100%;
+  height: 75%;
   fill: var(--mid);
   /* border: 1px solid red; */
   transition: 0.2s ease-in-out;
