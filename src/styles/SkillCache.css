@@ -3,10 +3,10 @@
   padding-left: 0;
 }
 
-.skill-cache h3 {
-  color: var(--lavender);
+.skill-cache h4 {
   margin: 0;
   margin-bottom: 0.5em;
+  font-family: var(--keyFont);
 }
 
 .skill-cache li {

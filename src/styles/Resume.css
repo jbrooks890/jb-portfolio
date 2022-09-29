@@ -91,6 +91,10 @@
   fill: var(--lavender);
 }
 
+#resume-caption .skill-cache h4 {
+  color: var(--lavender);
+}
+
 
 #resume-caption .social-media-cache {
   margin-top: 1rem;

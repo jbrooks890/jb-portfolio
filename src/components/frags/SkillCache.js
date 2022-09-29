@@ -13,7 +13,7 @@ export default function SkillCache({ concise, showIcons, featured }) {
 
   return (
     <ul className="skill-cache">
-      <h3>Skills</h3>
+      <h4>Skills</h4>
       {$skills.map((skill, i) => (
         <li
           key={i}
