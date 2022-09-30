@@ -64,30 +64,99 @@ export const resumeData = {
   ],
   projects: [
     {
-      name: "Pokésquad App",
+      name: "XWord",
+      type: "Game",
+      section: ["Developer", "Game"],
+      featured: true,
       description:
-        "A React application that allows the user to build, customize and save his team of Pokémon.",
+        "A crossword puzzle application built on an original grid-based architecture for creating and playing trivia-based puzzle games.",
+      tech: ["React", "Javascript", "HTML", "CSS"],
+      link: "https://xword-app-beta.netlify.app/",
+      icon: "xword-logo",
+      colors: {
+        key: "#fff",
+        alt: "silver",
+        dark: "#black",
+        reverse: false,
+      },
+      images: ["xword-1.png", "xword-2.png", "xword-3.png"],
+    },
+    {
+      name: "PokéSquad",
+      type: "App",
+      section: ["Developer"],
+      featured: true,
+      description:
+        "A companion app that queries the RESTful PokéAPI, enabling users to build their custom Pokémon teams for use with popular Pokémon games by Nintendo.",
+      tech: ["React", "Javascript", "HTML", "CSS", "Postman"],
       link: "https://pokesquad.netlify.app/",
-      technologies: ["React", "Javascript", "HTML", "CSS"],
+      icon: "pokesquad-logo",
+      colors: {
+        key: "#ff0000",
+        alt: "#fff",
+        dark: "",
+        reverse: true,
+      },
+      images: ["pokesquad-1.png", "pokesquad-2.png"],
     },
     {
-      name: "XWord App",
+      name: "Worlds of EPOCH",
+      type: "Website",
+      section: ["Developer"],
+      featured: true,
       description:
-        "An application for creating and playing trivia-based crossword puzzle games.",
-      link: "https://www.worldsofepoch.com/puzzle-demo/space",
-      technologies: ["React", "Javascript", "HTML", "CSS"],
+        "The official website of my independent publishing company EPOCH Studios.",
+      tech: ["Squarespace", "Javascript", "HTML", "CSS"],
+      link: "https://www.worldsofepoch.com/",
+      icon: "epoch-logo",
+      colors: {
+        key: "#feee36",
+        alt: "#6c9393",
+        dark: "#161d1d",
+        reverse: false,
+      },
+      images: ["epoch-site-1.png", "epoch-site-2.png"],
     },
     {
-      name: "Web Reader App",
-      description: "An application for reading text and markdown files.",
+      name: "Web Reader",
+      type: "App",
+      section: ["Developer"],
+      featured: false,
+      description:
+        "An original reading application developed for viewing dynamic story content and metadata on independent publishing websites.",
+      tech: ["Squarespace", "Javascript", "HTML", "CSS"],
       link: "https://www.worldsofepoch.com/anthology/the-boy-who-dreamed",
-      technologies: ["Javascript", "HTML", "CSS"],
+      icon: "epoch-logo",
+      colors: {
+        key: "",
+        alt: "",
+        dark: "",
+        reverse: false,
+      },
+      images: [],
+    },
+    {
+      name: "Arcan",
+      type: "Story",
+      section: ["Writer", "WIP"],
+      featured: true,
+      description:
+        "A Fantasy/Sci-Fi series by yours truly, following Kyran on his journey to stop the Exxarians from undoing all Created.",
+      tech: [],
+      link: "https://www.worldsofepoch.com/arcan",
+      icon: "arcan-logo",
+      colors: {
+        key: "#00bfa7",
+        alt: "",
+        dark: "#000",
+        reverse: false,
+      },
     },
   ],
   experience: [
     {
       type: "personal",
-      company: {
+      org: {
         name: "EPOCH Studios",
         address: {
           streetNumber: 2645,
@@ -130,7 +199,7 @@ export const resumeData = {
     },
     {
       type: "professional",
-      company: {
+      org: {
         name: "Epiq",
         address: {
           streetNumber: 2,
@@ -179,11 +248,131 @@ export const resumeData = {
         },
       ],
     },
+    {
+      type: "professional",
+      org: {
+        name: "Lockheed Martin",
+        address: {
+          streetNumber: 0,
+          streetName: "",
+          streetOther: "",
+          streetOtherType: "",
+          city: "Hurlburt Field",
+          state: "Florida",
+          stateInitials: "GA",
+          zipCode: "",
+        },
+      },
+      current: false,
+      startDate: {
+        month: "October",
+        day: 1,
+        year: 2016,
+      },
+      endDate: {
+        month: "March",
+        day: 1,
+        year: 2018,
+      },
+      roles: [
+        {
+          name: "Word Processor III",
+          description:
+            "Performed all tasks pertaining to maintenance computing and documentation in support of Air Force Isochronal inspections.",
+          tasks: [
+            "Computed all aircraft discrepancy documentation for Air Force transient aircraft",
+            "Created and scheduled tasks for aircraft maintenance and inspections",
+            "Prepared 600 - page transcripts of Isochronal inspection for Air Force transient aircraft",
+          ],
+          skills: ["time management"],
+        },
+      ],
+    },
+    {
+      type: "professional",
+      org: {
+        name: "U.S. Air Force Reserve",
+        address: {
+          streetNumber: 0,
+          streetName: "",
+          streetOther: "",
+          streetOtherType: "",
+          city: "Marietta",
+          state: "Georgia",
+          stateInitials: "GA",
+          zipCode: "",
+        },
+      },
+      current: false,
+      startDate: {
+        month: "August",
+        day: 29,
+        year: 2016,
+      },
+      endDate: {
+        month: "September",
+        day: 1,
+        year: 2020,
+      },
+      roles: [
+        {
+          name: "Aerospace Maintenance Journeyman (Crew Chief)",
+          description:
+            "Performed the duties of Crew Chief in support of the C-130 cargo aircraft.",
+          tasks: [
+            "Ensured aircraft fleet was fully mission capable (FMC) for real world and training missions",
+            "Responsible for maintaining documentation of aircraft discrepancies",
+            "Managed specialist personnel and ensured their participation in restoring aircraft to FMC status",
+          ],
+          skills: ["time management"],
+        },
+      ],
+    },
+    {
+      type: "professional",
+      org: {
+        name: "U.S. Air Force",
+        address: {
+          streetNumber: 0,
+          streetName: "",
+          streetOther: "",
+          streetOtherType: "",
+          city: "Hurlburt Field",
+          state: "Florida",
+          stateInitials: "FL",
+          zipCode: "",
+        },
+      },
+      current: false,
+      startDate: {
+        month: "August",
+        day: 29,
+        year: 2010,
+      },
+      endDate: {
+        month: "August",
+        day: 29,
+        year: 2016,
+      },
+      roles: [
+        {
+          name: "Aerospace Maintenance Journeyman (Crew Chief)",
+          description:
+            "Performed the duties of Crew Chief in support of the MC-130H Special Operations cargo aircraft.",
+          tasks: [
+            "Ensured aircraft fleet was fully mission capable (FMC) for real world and training missions",
+            "Responsible for maintaining documentation of aircraft discrepancies",
+            "Managed specialist personnel and ensured their participation in restoring aircraft to FMC status",
+          ],
+          skills: ["time management"],
+        },
+      ],
+    },
   ],
   education: [
     {
       type: "degree",
-      institution: {
+      org: {
         name: "Kennesaw State University",
         address: {
           streetNumber: 1000,
@@ -228,7 +417,7 @@ export const resumeData = {
     },
     {
       type: "bootcamp",
-      institution: {
+      org: {
         name: "Per Scholas",
         address: {
           streetNumber: 0,
@@ -267,7 +456,7 @@ export const resumeData = {
         },
       ],
       notes: [
-        "Acquired hand-on experience with MERN full stack development, demonstrating high proficiencies in JavaScript, React, Node.js, and practical experience in database technologies including MongoDB and MySQL",
+        "Acquired hands-on experience with MERN full stack development, demonstrating high proficiencies in JavaScript, React, Node.js, and practical experience in database technologies including MongoDB and MySQL",
         "Bridged the gap in understanding of end-to-end development process and solidified abilities to deploy full stack applications in an agile team environment",
       ],
     },
@@ -281,6 +470,7 @@ export const resumeData = {
       type: "language",
       primary: true,
     },
+    { name: "React", category: ["developer"], type: "language", primary: true },
     {
       name: "Node.js",
       category: ["developer"],
@@ -291,9 +481,8 @@ export const resumeData = {
       name: "Express.js",
       category: ["developer"],
       type: "language",
-      primary: true,
+      primary: false,
     },
-    { name: "React", category: ["developer"], type: "language", primary: true },
     { name: "C#", category: ["developer"], type: "language", primary: false },
     {
       name: "MongoDB",
@@ -496,25 +685,13 @@ export const resumeData = {
       primary: false,
     },
     {
-      name: "PC",
+      name: "Windows",
       category: ["developer"],
       type: "operating system",
       primary: false,
     },
     {
-      name: "Windows 10",
-      category: ["developer"],
-      type: "operating system",
-      primary: false,
-    },
-    {
-      name: "Windows 11",
-      category: ["developer"],
-      type: "operating system",
-      primary: false,
-    },
-    {
-      name: "MacOS X+",
+      name: "Mac",
       category: ["developer"],
       type: "operating system",
       primary: false,
@@ -525,15 +702,13 @@ export const resumeData = {
       type: "operating system",
       primary: false,
     },
-    { name: "CSS3", category: ["developer"], type: "language", primary: false },
     {
-      name: "LESS CSS",
+      name: "LESS",
       category: ["developer"],
       type: "language",
-      primary: false,
+      primary: true,
     },
     { name: "SASS", category: ["developer"], type: "language", primary: true },
-    { name: "ES6", category: ["developer"], type: "language", primary: false },
     {
       name: "jQuery",
       category: ["developer"],

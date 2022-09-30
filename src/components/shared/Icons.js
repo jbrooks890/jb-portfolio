@@ -21,6 +21,7 @@ import { ReactComponent as TWITTER_LOGO } from "../../assets/icons/twitter-logo.
 import { ReactComponent as CONNECT_ICON } from "../../assets/icons/connect-icon.svg";
 import { ReactComponent as LOCATION_ICON } from "../../assets/icons/location-icon.svg";
 import { ReactComponent as SEND_ICON } from "../../assets/icons/send-icon.svg";
+import { ReactComponent as ARROW_ICON } from "../../assets/icons/arrow-stroke-icon.svg";
 
 export default function Icons() {
   return (
@@ -48,6 +49,7 @@ export default function Icons() {
       <CONNECT_ICON />
       <LOCATION_ICON />
       <SEND_ICON />
+      <ARROW_ICON />
     </svg>
   );
 }

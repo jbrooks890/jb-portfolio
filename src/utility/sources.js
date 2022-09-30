@@ -23,7 +23,7 @@ const projects = [
     section: ["Developer"],
     featured: true,
     description: "A companion app to plan and build your Pokémon team.",
-    tech: ["React", "Javascript", "HTML", "CSS"],
+    tech: ["React", "Javascript", "HTML", "CSS", "Postman"],
     link: "https://pokesquad.netlify.app/",
     icon: "pokesquad-logo",
     colors: {
@@ -51,6 +51,24 @@ const projects = [
       reverse: false,
     },
     images: ["epoch-site-1.png", "epoch-site-2.png"],
+  },
+  {
+    name: "Web Reader App",
+    type: "App",
+    section: ["Developer"],
+    featured: false,
+    description:
+      "An original reading application developed for viewing dynamic story content and metadata on independent publishing websites.",
+    tech: ["Squarespace", "Javascript", "HTML", "CSS"],
+    link: "https://www.worldsofepoch.com/anthology/the-boy-who-dreamed",
+    icon: "epoch-logo",
+    colors: {
+      key: "",
+      alt: "",
+      dark: "",
+      reverse: false,
+    },
+    images: [],
   },
   {
     name: "Arcan",

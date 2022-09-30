@@ -4,6 +4,8 @@ import SocialMediaCache from "./SocialMediaCache";
 import "../../styles/Resume.css";
 import Experience from "../Resume/Experience";
 import SkillCache from "./SkillCache";
+import Skills from "../Resume/Skills";
+import Entry from "../Resume/Entry";
 
 export default function Resume() {
   const {
@@ -12,14 +14,16 @@ export default function Resume() {
     address,
     email,
     summary,
+    projects,
     experience,
     education,
+    skills,
   } = resumeData;
   const { city, state } = address;
 
   return (
     <div id="resume" className="flex">
-      {/* --------- CAPTION --------- */}
+      {/* <><><><><><><>\ CAPTION /<><><><><><><> */}
       <div id="resume-caption" className="flex col">
         <div className="name">
           <h2>{firstName}</h2>
@@ -49,16 +53,90 @@ export default function Resume() {
           </div>
           {`${city}, ${states.get(state)}`}
         </div>
-        <SkillCache concise={false} showIcons={true} featured={true} />
+        {/* <SkillCache concise={true} showIcons={true} featured={true} /> */}
         <SocialMediaCache concise={true} darkMode={false} />
       </div>
-      {/* --------- BODY --------- */}
-      <div id="resume-body">
-        <div id="resume-projects"></div>
-        <div id="resume-experience">
+
+      {/* ==================================== //
+      ||- <><><><><><><>\ BODY /<><><><><><><> 
+      //- ==================================== */}
+
+      <div id="resume-body" className="flex col">
+        {/* ========= NAV ========= */}
+        <nav id="resume-top" className="resume-nav">
+          <fieldset className="flex">
+            <legend>Sections</legend>
+
+            <a href="#resume-skills">Skills</a>
+            <a href="#resume-projects">Projects</a>
+            <a href="#resume-education">Education</a>
+            <a href="#resume-experience">Experience</a>
+          </fieldset>
+        </nav>
+        {/* ========= SKILLS ========= */}
+        <section
+          id="resume-skills"
+          className="resume-section"
+          data-resume-section="Skills"
+        >
+          <SkillCache
+            entries={skills}
+            concise={true}
+            showIcons={true}
+            featured={true}
+          />
+          <Skills
+            skills={skills.filter(skill =>
+              skill.category.includes("developer")
+            )}
+          />
+        </section>
+        {/* ========= PROJECTS ========= */}
+        <section
+          id="resume-projects"
+          className="resume-section"
+          data-resume-section="Projects"
+        >
+          <div className="project-wrapper">
+            {projects.map((project, i) => {
+              const { name, description, link, technologies } = project;
+              return (
+                <>
+                  <a href={link} target="_blank">
+                    <h3>{name}</h3>
+                  </a>
+                  <p>{description}</p>
+                </>
+              );
+            })}
+          </div>
+        </section>
+        {/* ========= EDUCATION ========= */}
+        <section
+          id="resume-education"
+          className="resume-section"
+          data-resume-section="Education"
+        >
+          {education.map((entry, i) => (
+            <Entry key={i} entry={entry} active={true} />
+          ))}
+        </section>
+        {/* ========= EXPERIENCE ========= */}
+        <section
+          id="resume-experience"
+          className="resume-section"
+          data-resume-section="Experience"
+        >
           <Experience entries={experience} />
+        </section>
+        <div className="nav-to-top flex col">
+          <a href="#resume-top" className="arrow-wrapper">
+            <svg>
+              <use href="#arrow-icon" />
+            </svg>
+          </a>
+          <span>Top</span>
         </div>
-        <div id="resume-education"></div>
       </div>
     </div>
   );

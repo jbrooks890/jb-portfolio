@@ -2,8 +2,9 @@ import { resumeData } from "../../utility/resume";
 import { iconMap } from "../../utility/utility";
 import "../../styles/SkillCache.css";
 
-export default function SkillCache({ concise, showIcons, featured }) {
-  const { skills } = resumeData;
+export default function SkillCache({ entries, concise, showIcons, featured }) {
+  const { skills: $default } = resumeData;
+  const skills = !entries || entries.length === 0 ? $default : entries;
   const filtered = skills.filter(skill => skill.category.includes("developer"));
   const primaries = filtered.filter(skill => skill.primary === true);
   const $skills = featured ? primaries : filtered;
@@ -13,7 +14,7 @@ export default function SkillCache({ concise, showIcons, featured }) {
 
   return (
     <ul className="skill-cache">
-      <h4>Skills</h4>
+      {!concise && <h4>Skills</h4>}
       {$skills.map((skill, i) => (
         <li
           key={i}
