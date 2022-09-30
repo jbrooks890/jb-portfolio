@@ -87,3 +87,14 @@ h2#welcome-logo svg {
   transform: scale(1.1);
   fill: var(--lavender);
 }
+
+.rad-btn svg use[href='#profile-icon']{
+  fill: none;
+  stroke: var(--mid);
+  stroke-width: 1;
+}
+
+.rad-btn:hover svg use[href='#profile-icon'] {
+  fill: none;
+  stroke: var(--lavender);
+}

@@ -1,5 +1,5 @@
 #resume {
-  padding: 3rem;
+  padding-inline: 3rem;
   font-size: smaller;
   background-color: var(--mid);
   height: 100vh;
@@ -208,12 +208,12 @@
   position: relative;
   align-self: center;
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   /* width: 75%; */
   padding: 1rem;
-  line-height: 1em;
+  /* line-height: 1em; */
   text-align: center;
   /* border: 1px solid red; */
   /* overflow-x: scroll; */
@@ -299,6 +299,7 @@
 }
 
 .experience-entry .entry-header {
+  cursor: pointer;
   justify-self: stretch;
   /* margin-bottom: 1rem; */
   padding: 0.5rem 1rem;
@@ -323,6 +324,8 @@
 }
 
 .experience-entry .entry-active-dates {
+  color: var(--day);
+  font-family: var(--keyFont);
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -331,7 +334,7 @@
   --size: 0.75rem;
   width: var(--size);
   height: var(--size);
-  margin-inline: 0.5em;
+  margin-inline: 0.25em;
   /* border: 1px solid red; */
   box-sizing: border-box;
 }
@@ -340,7 +343,7 @@
   width: 100%;
   height: 100%;
   stroke: var(--lavender);
-  stroke-width: 7.5;
+  stroke-width: 9;
   /* border: 1px solid orange; */
   box-sizing: border-box;
 }

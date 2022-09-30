@@ -490,6 +490,7 @@ export const resumeData = {
       type: "language",
       primary: true,
     },
+    { name: "SQL", category: ["developer"], type: "language", primary: false },
     {
       name: "NoSQL",
       category: ["developer"],
@@ -497,7 +498,6 @@ export const resumeData = {
       primary: false,
     },
     { name: "MySQL", category: ["developer"], type: "language", primary: true },
-    { name: "SQL", category: ["developer"], type: "language", primary: false },
     {
       name: "MongoDB Compass",
       category: ["developer"],

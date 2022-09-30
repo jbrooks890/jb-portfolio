@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol id="profile-icon" viewBox="0 0 24 32">
   <circle cx="12.348" cy="8.935" r="8.435" />
-  <path d="M24.197,32.5c0-6.544-5.305-11.848-11.848-11.848S.5,25.956,.5,32.5" />
+  <path d="M24.197,32.5c0-6.544-5.305-11.848-11.848-11.848S.5,25.956,.5,32.5" stroke-linecap="round" stroke-miterlimit="10" />
 </symbol> <!-- <symbol id="profile-icon" viewBox="0 0 24 32">
   <circle cx="12.348" cy="8.935" r="8.435" fill="none" stroke="#0000007" stroke-linecap="round" stroke-miterlimit="10" />
   <path d="M24.197,32.5c0-6.544-5.305-11.848-11.848-11.848S.5,25.956,.5,32.5" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" />
