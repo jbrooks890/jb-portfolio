@@ -152,7 +152,7 @@ const abbr = month => {
 const iconMap = new Map([
   ["HTML", "H"],
   ["CSS", "C"],
-  ["Javascript", "j"],
+  ["Javascript", "J"],
   ["Node.js", "D"],
   ["Express.js", ""],
   ["React", "R"],

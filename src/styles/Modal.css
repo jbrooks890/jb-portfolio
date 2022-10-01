@@ -20,7 +20,7 @@ body.modal-lock {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 2rem;
+  /* padding: 2rem; */
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
@@ -30,7 +30,6 @@ body.modal-lock {
 
 .modal {
   position: relative;
-  max-height: 90vh;
   z-index: 1060;
 }
 

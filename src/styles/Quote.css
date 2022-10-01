@@ -1,0 +1,40 @@
+.quote-wrap {
+  margin-top: 2rem;
+}
+
+q {
+  position: relative;
+  margin-block: 3rem;
+  color: var(--mid);
+  font-family: var(--keyFont);
+  z-index: 1;
+}
+
+q::before {
+  --offset: -18px;
+  content: open-quote close-quote;
+  position: absolute;
+  /* display: block; */
+  top: var(--offset);
+  left: calc(var(--offset) * 2);
+  /* height: 10%; */
+  margin: 0;
+  color: var(--mid);
+  line-height: 1em;
+  vertical-align: bottom;
+  font-size: 4em;
+  /* border: 1px solid red; */
+  transform: rotate(-7.5deg);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+q::after {
+  content: '\2014' attr(data-author);
+  position: relative;
+  right: -2em;
+  display: block;
+  color: var(--sundown);
+  font-size: 0.6em;
+  text-align: right;
+}

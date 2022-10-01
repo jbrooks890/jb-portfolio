@@ -22,6 +22,10 @@ import { ReactComponent as CONNECT_ICON } from "../../assets/icons/connect-icon.
 import { ReactComponent as LOCATION_ICON } from "../../assets/icons/location-icon.svg";
 import { ReactComponent as SEND_ICON } from "../../assets/icons/send-icon.svg";
 import { ReactComponent as ARROW_ICON } from "../../assets/icons/arrow-stroke-icon.svg";
+import { ReactComponent as CLOCK_ICON } from "../../assets/icons/clock-icon.svg";
+import { ReactComponent as EDUCATION_ICON } from "../../assets/icons/education-icon.svg";
+import { ReactComponent as TOOLS_ICON } from "../../assets/icons/tools-icon.svg";
+import { ReactComponent as PUZZLE_ICON } from "../../assets/icons/puzzle-icon.svg";
 
 export default function Icons() {
   return (
@@ -50,6 +54,10 @@ export default function Icons() {
       <LOCATION_ICON />
       <SEND_ICON />
       <ARROW_ICON />
+      <CLOCK_ICON />
+      <EDUCATION_ICON />
+      <TOOLS_ICON />
+      <PUZZLE_ICON />
     </svg>
   );
 }

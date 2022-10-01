@@ -6,6 +6,7 @@ import Experience from "../Resume/Experience";
 import SkillCache from "./SkillCache";
 import Skills from "../Resume/Skills";
 import Entry from "../Resume/Entry";
+import ResumeNav from "../Resume/ResumeNav";
 
 export default function Resume() {
   const {
@@ -63,7 +64,10 @@ export default function Resume() {
 
       <div id="resume-body" className="flex col">
         {/* ========= NAV ========= */}
-        <nav id="resume-top" className="resume-nav">
+        <ResumeNav
+          sections={["Skills", "Projects", "Education", "Experience"]}
+        />
+        {/* <nav id="resume-top" className="resume-nav">
           <fieldset className="flex">
             <legend>Sections</legend>
 
@@ -72,7 +76,7 @@ export default function Resume() {
             <a href="#resume-education">Education</a>
             <a href="#resume-experience">Experience</a>
           </fieldset>
-        </nav>
+        </nav> */}
         {/* ========= SKILLS ========= */}
         <section
           id="resume-skills"
@@ -118,7 +122,7 @@ export default function Resume() {
           data-resume-section="Education"
         >
           {education.map((entry, i) => (
-            <Entry key={i} entry={entry} active={true} />
+            <Entry key={i} type={"education"} entry={entry} active={true} />
           ))}
         </section>
         {/* ========= EXPERIENCE ========= */}

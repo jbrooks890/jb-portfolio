@@ -15,6 +15,7 @@ export default function Modal({ isShowing, hide, children }) {
             tabIndex={-1}
             role="dialog"
             // onClick={hide}
+            onKeyDown={e => (e.key === "Escape" ? hide() : null)}
           >
             <div className="modal">
               <div

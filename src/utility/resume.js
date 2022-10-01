@@ -29,7 +29,7 @@ export const resumeData = {
     work: 0,
   },
   summary:
-    "A creative problem solver with an entrepreneurial drive to deliver effective solutions and learn leading-edge technologies.",
+    "A creative front-end developer with an entrepreneurial drive to deliver effective solutions and learn leading-edge technologies.",
   socialMedia: [
     {
       name: "GitHub",
@@ -460,15 +460,58 @@ export const resumeData = {
         "Bridged the gap in understanding of end-to-end development process and solidified abilities to deploy full stack applications in an agile team environment",
       ],
     },
+    {
+      type: "degree",
+      org: {
+        name: "The Art Institute of Atlanta",
+        address: {
+          streetNumber: 1,
+          streetName: "",
+          streetOther: "",
+          streetOtherType: "",
+          city: "Atlanta",
+          state: "Georgia",
+          stateInitials: "GA",
+          zipCode: "",
+        },
+        contact: {
+          phone: 0,
+          email: "",
+        },
+      },
+      current: false,
+      startDate: {
+        month: "March",
+        day: 1,
+        year: 2018,
+      },
+      endDate: {
+        month: "June",
+        day: 1,
+        year: 2021,
+      },
+      majors: [
+        {
+          name: "Media Art & Animation",
+          degreeLevel: "undergraduate",
+          degreeType: "Bachelor of Fine Arts",
+          field: "Computer Animation",
+          tags: [],
+        },
+      ],
+      minors: [],
+      other: [],
+      notes: [],
+    },
   ],
   skills: [
-    { name: "HTML", category: ["developer"], type: "language", primary: true },
-    { name: "CSS", category: ["developer"], type: "language", primary: true },
+    { name: "HTML", category: ["developer"], type: "language", primary: false },
+    { name: "CSS", category: ["developer"], type: "language", primary: false },
     {
       name: "Javascript",
       category: ["developer"],
       type: "language",
-      primary: true,
+      primary: false,
     },
     { name: "React", category: ["developer"], type: "language", primary: true },
     {
@@ -721,5 +764,15 @@ export const resumeData = {
       type: "proficiency",
       primary: true,
     },
+    {
+      name: "FontMaker",
+      category: ["developer", "artist"],
+      type: "tool",
+      primary: false,
+    },
   ],
+  associations: [],
 };
+
+export const wrapSkills = skills =>
+  skills.map(skill => resumeData.skills.find(entry => entry.name === skill));

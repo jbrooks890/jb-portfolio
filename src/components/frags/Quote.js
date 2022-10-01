@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { quotes } from "../../utility/sources";
+import "../../styles/Quote.css";
 
 export default function Quote() {
   const [quote, setQuote] = useState(

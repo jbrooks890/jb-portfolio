@@ -1,16 +1,29 @@
 import { useState } from "react";
 import Roles from "./Roles";
 import { abbr } from "../../utility/utility";
+import StudyField from "./StudyField";
 
-export default function Entry({ entry, active }) {
+export default function Entry({ type, entry, active }) {
   const [open, toggleOpen] = useState(active);
-  const { org, current, roles, startDate, endDate } = entry;
+  const {
+    // EXPERIENCE
+    org,
+    current,
+    roles,
+    startDate,
+    endDate,
+    // EDUCATION
+    majors,
+    minors,
+    other,
+    notes,
+  } = entry;
 
   return (
     <div
-      className={`experience-entry
-        ${open ? "open" : ""} 
-        ${current ? "current" : ""}`}
+      className={`${type}-entry dropdown-entry ${open ? "open" : ""} ${
+        current ? "current" : ""
+      }`}
     >
       <div
         className="entry-header flex"
@@ -34,6 +47,26 @@ export default function Entry({ entry, active }) {
         </h4>
       </div>
       {roles && <Roles entries={roles} active={open} />}
+      {type === "education" && (
+        <div className={`education-data ${open ? "open" : ""}`}>
+          {majors && majors.length > 0 && (
+            <StudyField entries={majors} active={open} />
+          )}
+          {minors && minors.length > 0 && (
+            <StudyField entries={minors} active={false} />
+          )}
+          {other && other.length > 0 && (
+            <StudyField entries={other} active={false} />
+          )}
+          {notes && notes.length > 0 && (
+            <ul className="education-note-list">
+              {notes.map((note, i) => (
+                <li key={i}>{note}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
     </div>
   );
 }

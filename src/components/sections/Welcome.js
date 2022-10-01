@@ -6,6 +6,7 @@ import { debounce } from "../../utility/utility";
 import useModal from "../hooks/useModal";
 import Modal from "../shared/Modal";
 import ConnectForm from "../frags/ConnectForm";
+import Resume from "../frags/Resume";
 
 export default function Welcome({ pages }) {
   const $pages = [...pages, "Resume", "Connect"];
@@ -14,6 +15,7 @@ export default function Welcome({ pages }) {
     vw: window.innerWidth,
     vh: window.innerHeight,
   });
+  const [modalContent, setModalContent] = useState();
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
   const size = vmin * 0.8;
@@ -37,9 +39,10 @@ export default function Welcome({ pages }) {
     return () => window.removeEventListener("resize", handleResize);
   });
 
-  function getViewportSize() {
-    console.log("TEST");
-  }
+  const triggerModal = component => {
+    setModalContent(component);
+    toggle();
+  };
 
   // console.log({ rad, ang });
   const icons = new Map([
@@ -74,7 +77,13 @@ export default function Welcome({ pages }) {
                 x={x}
                 y={y}
                 size={vmin * 0.09}
-                onClick={page === "Connect" ? toggle : null}
+                onClick={
+                  page === "Connect"
+                    ? () => triggerModal(<ConnectForm />)
+                    : page === "Resume"
+                    ? () => triggerModal(<Resume />)
+                    : null
+                }
               >
                 {icons.get(page) ? (
                   <svg>
@@ -88,9 +97,11 @@ export default function Welcome({ pages }) {
           })}
         </div>
       </div>
-      <Modal isShowing={isShowing} hide={toggle}>
-        <ConnectForm />
-      </Modal>
+      {modalContent && (
+        <Modal isShowing={isShowing} hide={toggle}>
+          {modalContent}
+        </Modal>
+      )}
     </section>
   );
 }
