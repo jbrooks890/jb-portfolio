@@ -13,7 +13,6 @@ export default function Main() {
   return (
     <main>
       <Welcome pages={pages} />
-      {/* <Resume /> */}
       <Gallery />
       <About pages={pages} />
       <Contact />
