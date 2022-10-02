@@ -14,6 +14,7 @@ export default function About({ pages }) {
             design and how they can be used together to solve problems.
           </p>
           <ul className="about-shift">
+            <h3>I'm also</h3>
             {pages.map((page, i) => (
               <li key={i}></li>
             ))}

@@ -37,8 +37,17 @@ img.headshot {
 
 ul.about-shift {
   display: flex;
+  align-items: baseline;
   list-style-type: none;
   padding-left: 0;
+  /* border: 1px solid red; */
+}
+
+ul.about-shift h3 {
+  margin: 0;
+  margin-right: 0.25em;
+  color: var(--day);
+  line-height: 1em;
 }
 
 ul.about-shift li {
@@ -49,7 +58,7 @@ ul.about-shift li {
   height: var(--size);
   background-color: var(--sundown);
   border-radius: 1px;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 ul.about-shift li:not(:last-of-type){

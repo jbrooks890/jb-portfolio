@@ -20,21 +20,22 @@
   /* border: 2px solid var(--evening); */
   border-radius: 50%;
   box-sizing: border-box;
-  transition: 0.2s ease-in-out;
+  /* transition: 0.2s ease-in-out; */
 }
 
 h2#welcome-logo {
   cursor: pointer;
-  width: 75vmin;
+  width: 50vmin;
   min-width: 120px;
   max-width: 600px;
   margin: 0;
-  transition: 0.2s ease-out;
+  transform: scale(1.25);
+  transition: 0.2s ease-in-out;
   z-index: 1;
 }
 
 #radial-controller.activated h2#welcome-logo {
-  width: 50vmin;
+  transform: scale(1);
 }
 
 h2#welcome-logo svg {

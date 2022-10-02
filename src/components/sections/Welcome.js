@@ -45,13 +45,25 @@ export default function Welcome({ pages }) {
   };
 
   // console.log({ rad, ang });
-  const icons = new Map([
-    ["Developer", "developer-icon"],
-    ["Game", "game-icon"],
-    ["Writer", "book-icon"],
-    ["Artist", ""],
-    ["Connect", "connect-icon"],
-    ["Resume", "profile-icon"],
+  const ringProps = new Map([
+    [
+      "Developer",
+      {
+        icon: "developer-icon",
+        click: () => triggerModal(<ConnectForm />),
+      },
+    ],
+    ["Game", { icon: "game-icon", click: () => {} }],
+    ["Writer", { icon: "book-icon", click: () => {} }],
+    ["Artist", { icon: "", click: () => {} }],
+    [
+      "Connect",
+      {
+        icon: "connect-icon",
+        click: () => triggerModal(<ConnectForm />),
+      },
+    ],
+    ["Resume", { icon: "profile-icon", click: () => triggerModal(<Resume />) }],
   ]);
 
   return (
@@ -77,17 +89,11 @@ export default function Welcome({ pages }) {
                 x={x}
                 y={y}
                 size={vmin * 0.09}
-                onClick={
-                  page === "Connect"
-                    ? () => triggerModal(<ConnectForm />)
-                    : page === "Resume"
-                    ? () => triggerModal(<Resume />)
-                    : null
-                }
+                onClick={ringProps.get(page).click}
               >
-                {icons.get(page) ? (
+                {ringProps.get(page).icon ? (
                   <svg>
-                    <use href={`#${icons.get(page)}`} />
+                    <use href={`#${ringProps.get(page).icon}`} />
                   </svg>
                 ) : (
                   page
