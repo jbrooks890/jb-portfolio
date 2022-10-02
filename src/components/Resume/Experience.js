@@ -7,7 +7,7 @@ export default function Experience({ entries }) {
   return (
     <div className="resume-experience">
       {entries.map((entry, i) => (
-        <Entry key={i} type="experience" entry={entry} active={true} />
+        <Entry key={i} type="experience" entry={entry} active={false} />
       ))}
     </div>
   );

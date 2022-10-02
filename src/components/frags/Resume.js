@@ -122,7 +122,7 @@ export default function Resume() {
           data-resume-section="Education"
         >
           {education.map((entry, i) => (
-            <Entry key={i} type={"education"} entry={entry} active={true} />
+            <Entry key={i} type={"education"} entry={entry} active={false} />
           ))}
         </section>
         {/* ========= EXPERIENCE ========= */}

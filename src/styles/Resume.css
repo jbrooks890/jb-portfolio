@@ -230,7 +230,7 @@
 }
 
 .resume-nav a:hover {
-  /* background-color: var(--dark); */
+  /* background-color: var(--faint); */
   border-color: var(--lavender);
 }
 
@@ -390,26 +390,28 @@
   width: 100%;
   height: 100%;
   stroke: var(--lavender);
-  stroke-width: 9;
+  stroke-width: 10;
   /* border: 1px solid orange; */
   box-sizing: border-box;
 }
 
 .dropdown-entry .education-data,
 .dropdown-entry .entry-roles {
+  --transition: max-height 0.5s ease-out;
   display: none;
   max-height: 0;
   text-align: left;
   overflow: hidden;
   box-sizing: border-box;
-  transition: max-height 0.2s ease-out;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
   /* border: 1px solid red; */
 }
 
 .dropdown-entry .education-data.open,
 .dropdown-entry .entry-roles.open{
   display: block;
-  max-height: none;
+  max-height: 100px;
   padding: 1rem;
 }
 

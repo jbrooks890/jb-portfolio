@@ -25,11 +25,16 @@
 
 h2#welcome-logo {
   cursor: pointer;
-  width: 50vmin;
+  width: 75vmin;
   min-width: 120px;
   max-width: 600px;
   margin: 0;
+  transition: 0.2s ease-out;
   z-index: 1;
+}
+
+#radial-controller.activated h2#welcome-logo {
+  width: 50vmin;
 }
 
 h2#welcome-logo svg {
@@ -48,7 +53,7 @@ h2#welcome-logo svg {
   bottom: 0;
   opacity: 0;
   transform: scale(1.1) rotate(5deg);
-  transition:0.2s ease-in-out;
+  transition:0.2s ease-out;
   z-index: 0;
 }
 
