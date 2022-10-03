@@ -7,8 +7,8 @@
 # /src/utility/resume.js
 
 #SANDBOX
-/src/components/sections/Sandbox.js
-/src/styles/Sandbox.css
+# /src/components/sections/Sandbox.js
+# /src/styles/Sandbox.css
 
 # dependencies
 /node_modules

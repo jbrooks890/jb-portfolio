@@ -28,7 +28,12 @@ export const resumeData = {
     home: 0,
     work: 0,
   },
-  summary: <>A creative <i>front-end developer</i> with an entrepreneurial drive to deliver effective solutions and learn leading-edge technologies.</>,
+  summary: (
+    <>
+      A creative <i>front-end developer</i> with an entrepreneurial drive to
+      deliver effective solutions and learn leading-edge technologies.
+    </>
+  ),
   socialMedia: [
     {
       name: "GitHub",
@@ -67,6 +72,10 @@ export const resumeData = {
       type: "Game",
       section: ["Developer", "Game"],
       featured: true,
+      repo: {
+        platform: "Github",
+        link: "https://github.com/jbrooks890/crossword",
+      },
       description:
         "A crossword puzzle application built on an original grid-based architecture for creating and playing trivia-based puzzle games.",
       tech: ["React", "Javascript", "HTML", "CSS"],
@@ -85,6 +94,10 @@ export const resumeData = {
       type: "App",
       section: ["Developer"],
       featured: true,
+      repo: {
+        platform: "Github",
+        link: "https://github.com/jbrooks890/Poke-Squad",
+      },
       description:
         "A companion app that queries the RESTful PokéAPI, enabling users to build their custom Pokémon teams for use with popular Pokémon games by Nintendo.",
       tech: ["React", "Javascript", "HTML", "CSS", "Postman"],
@@ -103,6 +116,10 @@ export const resumeData = {
       type: "Website",
       section: ["Developer"],
       featured: true,
+      repo: {
+        platform: "",
+        link: "",
+      },
       description:
         "The official website of my independent publishing company EPOCH Studios.",
       tech: ["Squarespace", "Javascript", "HTML", "CSS"],
@@ -121,6 +138,10 @@ export const resumeData = {
       type: "App",
       section: ["Developer"],
       featured: false,
+      repo: {
+        platform: "",
+        link: "",
+      },
       description:
         "An original reading application developed for viewing dynamic story content and metadata on independent publishing websites.",
       tech: ["Squarespace", "Javascript", "HTML", "CSS"],
@@ -139,6 +160,10 @@ export const resumeData = {
       type: "Story",
       section: ["Writer", "WIP"],
       featured: true,
+      repo: {
+        platform: "",
+        link: "",
+      },
       description:
         "A Fantasy/Sci-Fi series by yours truly, following Kyran on his journey to stop the Exxarians from undoing all Created.",
       tech: [],

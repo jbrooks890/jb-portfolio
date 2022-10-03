@@ -154,6 +154,7 @@
 }
 
 .project-caption h3 {
+  position: relative;
   display: inline-block;
   margin: 0;
   color: var(--lite);

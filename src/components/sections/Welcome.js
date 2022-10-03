@@ -49,13 +49,13 @@ export default function Welcome({ pages }) {
     [
       "Developer",
       {
-        icon: "developer-icon",
-        click: () => triggerModal(<ConnectForm />),
+        icon: "code-icon",
+        click: () => {},
       },
     ],
     ["Game", { icon: "game-icon", click: () => {} }],
     ["Writer", { icon: "book-icon", click: () => {} }],
-    ["Artist", { icon: "", click: () => {} }],
+    ["Artist", { icon: "legacy-icon", click: () => {} }],
     [
       "Connect",
       {

@@ -27,11 +27,6 @@ export default function About({ pages }) {
             className="headshot"
           />
         </div>
-        {/* <div className="quote-wrap flex col">
-          <q data-author="Leonardo da Vinci">
-            Art is never finished, only abandoned
-          </q>
-        </div> */}
         <Quote />
       </div>
     </section>

@@ -30,7 +30,7 @@ h2#welcome-logo {
   max-width: 600px;
   margin: 0;
   transform: scale(1.25);
-  transition: 0.2s ease-in-out;
+  transition: 0.2s linear;
   z-index: 1;
 }
 
@@ -53,6 +53,9 @@ h2#welcome-logo svg {
   right: 0;
   bottom: 0;
   opacity: 0;
+  /* border: 3px solid var(--mid); */
+  border-radius: 50%;
+  box-sizing: border-box;
   transform: scale(1.1) rotate(5deg);
   transition:0.2s ease-out;
   z-index: 0;
@@ -73,7 +76,7 @@ h2#welcome-logo svg {
   box-sizing: border-box;
   border-radius: 50%;
   transform: rotate(-5deg);
-  transition: .2s ease-in-out;
+  transition: .2s linear;
   /* opacity: 0; */
 }
 
@@ -92,15 +95,4 @@ h2#welcome-logo svg {
 .rad-btn:hover svg {
   transform: scale(1.1);
   fill: var(--lavender);
-}
-
-.rad-btn svg use[href='#profile-icon']{
-  fill: none;
-  stroke: var(--mid);
-  stroke-width: 1;
-}
-
-.rad-btn:hover svg use[href='#profile-icon'] {
-  fill: none;
-  stroke: var(--lavender);
 }

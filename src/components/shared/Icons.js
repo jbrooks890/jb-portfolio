@@ -26,6 +26,9 @@ import { ReactComponent as CLOCK_ICON } from "../../assets/icons/clock-icon.svg"
 import { ReactComponent as EDUCATION_ICON } from "../../assets/icons/education-icon.svg";
 import { ReactComponent as TOOLS_ICON } from "../../assets/icons/tools-icon.svg";
 import { ReactComponent as PUZZLE_ICON } from "../../assets/icons/puzzle-icon.svg";
+import { ReactComponent as CODE_ICON } from "../../assets/icons/code-icon.svg";
+import { ReactComponent as CODE_ICON_B } from "../../assets/icons/code-icon-alt.svg";
+import { ReactComponent as LEGACY_LOGO } from "../../assets/icons/legacy-logo.svg";
 
 export default function Icons() {
   return (
@@ -58,6 +61,9 @@ export default function Icons() {
       <EDUCATION_ICON />
       <TOOLS_ICON />
       <PUZZLE_ICON />
+      <CODE_ICON />
+      <CODE_ICON_B />
+      <LEGACY_LOGO />
     </svg>
   );
 }
