@@ -1,12 +1,12 @@
 export default function Roles({ entries, active }) {
   return (
-    <div className={`entry-roles ${active ? "open" : ""}`}>
+    <div className={`entry-roles-list ${active ? "open" : ""}`}>
       {entries.map((entry, i) => {
         const { name: title, description, tasks, skills } = entry;
 
         return (
-          <div key={i}>
-            <div className="role-header">
+          <div className='entry-role' key={i}>
+            <div className="role-header list-entry-header">
               <h4>{title}</h4>
               <p>{description}</p>
             </div>

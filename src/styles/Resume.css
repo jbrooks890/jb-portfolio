@@ -396,7 +396,7 @@
 }
 
 .dropdown-entry .education-data,
-.dropdown-entry .entry-roles {
+.dropdown-entry .entry-roles-list {
   --transition: max-height 0.5s ease-out;
   display: none;
   max-height: 0;
@@ -409,13 +409,17 @@
 }
 
 .dropdown-entry .education-data.open,
-.dropdown-entry .entry-roles.open{
+.dropdown-entry .entry-roles-list.open{
   display: block;
-  max-height: 100px;
+  max-height: 9999px;
+  /* padding: 1rem; */
+}
+
+.dropdown-entry .list-entry-header {
   padding: 1rem;
 }
 
-.dropdown-entry .entry-roles .role-header h4 {
+.dropdown-entry .entry-roles-list .role-header h4 {
   margin-bottom: 0.25em !important;
   letter-spacing: 0.05em;
 }
@@ -429,6 +433,7 @@
 .education-note-list,
 .role-task-list {
   --border: 1.5px solid var(--lavender);
+  margin-block: 0 1em;
   padding: 0 1rem 1rem;
   list-style-type: none;
   list-style-position: inside;
@@ -459,7 +464,7 @@
 
 span.brand-icons {
   font-family: 'tech-brand-icons';
-  color: var(--lavender)
+  color: var(--lavender);
 }
 
 #svg-text-test {

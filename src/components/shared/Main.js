@@ -5,6 +5,7 @@ import About from "../sections/About";
 import Gallery from "../sections/Gallery";
 import Contact from "../sections/Contact";
 import Resume from "../frags/Resume";
+import Sandbox from "../sections/Sandbox";
 
 export default function Main() {
   const pages = ["Developer", "Artist", "Writer", "Game"];
@@ -13,6 +14,7 @@ export default function Main() {
   return (
     <main>
       <Welcome pages={pages} />
+      {/* <Sandbox /> */}
       <Gallery />
       <About pages={pages} />
       <Contact />

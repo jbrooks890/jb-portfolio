@@ -4,7 +4,11 @@
 .env
 
 # RESUME
-/src/resume.js
+# /src/utility/resume.js
+
+#SANDBOX
+/src/components/sections/Sandbox.js
+/src/styles/Sandbox.css
 
 # dependencies
 /node_modules

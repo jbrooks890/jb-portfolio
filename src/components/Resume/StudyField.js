@@ -19,7 +19,7 @@ export default function StudyField({ entries, active }) {
 
         return (
           <div key={i}>
-            <div className="field-header">
+            <div className="field-header list-entry-header">
               <h4>{title}</h4>
               <i>{degreeType}</i>
             </div>

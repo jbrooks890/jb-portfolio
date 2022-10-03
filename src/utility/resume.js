@@ -28,8 +28,7 @@ export const resumeData = {
     home: 0,
     work: 0,
   },
-  summary:
-    "A creative front-end developer with an entrepreneurial drive to deliver effective solutions and learn leading-edge technologies.",
+  summary: <>A creative <i>front-end developer</i> with an entrepreneurial drive to deliver effective solutions and learn leading-edge technologies.</>,
   socialMedia: [
     {
       name: "GitHub",
