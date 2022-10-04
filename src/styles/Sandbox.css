@@ -1,0 +1,31 @@
+#sandbox{
+    height: 50vh;
+    padding: 3rem;
+    justify-content: flex-start;
+}
+
+#sandbox .dropdown-test {
+    width: 300px;
+    text-align: left;
+    border: 1px solid black;
+}
+#sandbox .dropdown-test .dropdown-header{}
+
+#sandbox .dropdown-test .dropdown-header,
+#sandbox .dropdown-test ul li{
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+
+#sandbox .dropdown-test ul{
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s linear;
+}
+
+#sandbox .dropdown-test ul.open {
+    max-height: 999px;
+}

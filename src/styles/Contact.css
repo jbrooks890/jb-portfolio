@@ -29,25 +29,28 @@
 
 #contact h2 {
   margin: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.25em;
   color: var(--lite);
   line-height: 1em;
   text-shadow: 2px 2px 2px var(--faint);
   z-index: 1;
 }
 
+#contact p {margin: 0}
+
 #contact button {
   color: var(--lite);
   font-weight: 700;
   border: 2.5px solid var(--lite);
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   transition: 0.1s ease-in-out;
   /* box-shadow: 0 2px 2px var(--faint); */
 }
 
 #contact button:hover {
-  color: var(--dark);
+  color: black;
   /* transform: translateY(0); */
   background-color: var(--lite);
+  mix-blend-mode: lighten;
   /* box-shadow: none; */
 }
