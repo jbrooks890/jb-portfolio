@@ -26,11 +26,6 @@
   z-index: 1;
 }
 
-.project-gallery {
-  /* width: 80%; */
-  /* border: 1px solid lime; */
-}
-
 .project-gallery .image-wrapper {
   flex-grow: 1;
   cursor: pointer;
