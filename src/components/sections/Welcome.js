@@ -7,6 +7,7 @@ import useModal from "../hooks/useModal";
 import Modal from "../shared/Modal";
 import ConnectForm from "../frags/ConnectForm";
 import Resume from "../frags/Resume";
+import { useSiteMode } from "../shared/ModeProvider";
 
 export default function Welcome({ pages }) {
   const $pages = [...pages, "Resume", "Connect"];
@@ -16,6 +17,9 @@ export default function Welcome({ pages }) {
     vh: window.innerHeight,
   });
   const [modalContent, setModalContent] = useState();
+  const [siteMode, setSiteMode] = useSiteMode();
+  const [modePreview, setModePreview] = useState(siteMode);
+
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
   const size = vmin * 0.8;
@@ -50,12 +54,12 @@ export default function Welcome({ pages }) {
       "Developer",
       {
         icon: "code-icon",
-        click: () => {},
+        click: () => setSiteMode("Developer"),
       },
     ],
-    ["Game", { icon: "game-icon", click: () => {} }],
-    ["Writer", { icon: "book-icon", click: () => {} }],
-    ["Artist", { icon: "legacy-icon", click: () => {} }],
+    ["Game", { icon: "game-icon", click: () => setSiteMode("Game") }],
+    ["Writer", { icon: "book-icon", click: () => setSiteMode("Writer") }],
+    ["Artist", { icon: "legacy-icon", click: () => setSiteMode("Artist") }],
     [
       "Connect",
       {
@@ -75,6 +79,13 @@ export default function Welcome({ pages }) {
       >
         <h2 id="welcome-logo" onClick={() => setActivated(prev => !prev)}>
           <JB_LOGO />
+          <div className="mode-title">
+            {modePreview.split("").map((letter, i) => (
+              <span key={i} style={{ ["--i"]: i }}>
+                {letter}
+              </span>
+            ))}
+          </div>
         </h2>
 
         <div id="controller-ring">
@@ -88,8 +99,11 @@ export default function Welcome({ pages }) {
                 key={i}
                 x={x}
                 y={y}
+                index={i}
                 size={vmin * 0.09}
                 onClick={ringProps.get(page).click}
+                onMouseEnter={() => setModePreview(page)}
+                onMouseLeave={() => setModePreview(siteMode)}
               >
                 {ringProps.get(page).icon ? (
                   <svg>

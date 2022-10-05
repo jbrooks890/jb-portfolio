@@ -397,21 +397,23 @@
 
 .dropdown-entry .education-data,
 .dropdown-entry .entry-roles-list {
-  --transition: max-height 0.5s ease-out;
-  display: none;
+  --transition: max-height 0.2s ease-out;
+  /* display: none; */
   max-height: 0;
   text-align: left;
   overflow: hidden;
   box-sizing: border-box;
   -webkit-transition: var(--transition);
   transition: var(--transition);
+  opacity: 0;
   /* border: 1px solid red; */
 }
 
 .dropdown-entry .education-data.open,
 .dropdown-entry .entry-roles-list.open{
   display: block;
-  max-height: 9999px;
+  /* max-height: 500px; */
+  opacity: 1;
   /* padding: 1rem; */
 }
 

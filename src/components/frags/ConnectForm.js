@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../../styles/ConnectForm.css";
+import SelectBox from "./SelectBox";
 
 export default function ConnectForm() {
   const [formContent, updateFormContent] = useState({
@@ -61,13 +62,11 @@ export default function ConnectForm() {
           </label>
           {/* ---- OCCUPATION ---- */}
           <label htmlFor="occupation" className="section" data-label="I am...">
-            <select name="occupation">
-              {occupations.map((entry, i) => (
-                <option key={i} value={entry}>
-                  {entry}
-                </option>
-              ))}
-            </select>
+            <SelectBox
+              options={occupations}
+              field="occupation"
+              classList={[]}
+            />
           </label>
           {/* ---- MESSAGE ---- */}
           <label

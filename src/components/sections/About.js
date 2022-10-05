@@ -1,6 +1,7 @@
 import "../../assets/images/julian_profile_pic.jpg";
 import "../../styles/About.css";
 import Quote from "../frags/Quote";
+import SkillCache from "../frags/SkillCache";
 
 export default function About({ pages }) {
   return (
@@ -26,6 +27,9 @@ export default function About({ pages }) {
             alt="Headshot of Julian"
             className="headshot"
           />
+        </div>
+        <div className="about-body flex col">
+          <SkillCache concise={false} showIcons={true} featured={true} />
         </div>
         <Quote />
       </div>

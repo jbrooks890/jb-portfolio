@@ -13,17 +13,20 @@ export default function SkillCache({ entries, concise, showIcons, featured }) {
     .filter(skill => skill);
 
   return (
-    <ul className="skill-cache">
-      {!concise && <h4>Skills</h4>}
-      {$skills.map((skill, i) => (
-        <li
-          key={i}
-          className={showIcons ? "skill-icon" : ""}
-          data-skill={skill.name}
-        >
-          {showIcons ? iconMap.get(skill.name) : skill.name}
-        </li>
-      ))}
-    </ul>
+    <div className="skill-cache-wrapper">
+      {!concise && <h3 className="skill-cache-header">Skills</h3>}
+      <ul className={`skill-cache ${concise ? "concise" : ""}`}>
+        {$skills.map((skill, i) => (
+          <li
+            key={i}
+            className={showIcons ? "skill-icon" : ""}
+            data-skill={skill.name}
+          >
+            {showIcons ? iconMap.get(skill.name) : skill.name}
+            {!concise && <h4 className="skill-name">{skill.name}</h4>}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

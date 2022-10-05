@@ -1,11 +1,14 @@
 
-
 .content-wrap {
   column-gap: 5vw;
   grid-template-areas:
-    'description headshot'
-    'quote quote';
+  'description headshot'
+  'body body'
+  'quote quote';
   place-items: center;
+}
+#about h2 {
+  margin-block: 0 0.5em;
 }
 
 .headshot-wrap {
@@ -68,6 +71,37 @@ ul.about-shift li:not(:last-of-type){
 ul.about-shift li:hover {
   background-color: red;
   transform: scale(1.25);
+}
+
+/* ---------- BODY ---------- */
+.about-body {
+  grid-area: body;
+  margin-block: 1rem;
+}
+
+.about-body .skill-cache-wrapper {
+  margin-block: 2rem;
+}
+
+.about-body .skill-cache {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.about-body .skill-cache-header {
+  color: var(--mid);
+}
+
+.about-body .skill-cache .skill-icon {
+  color: var(--sundown);
+  font-size: 3rem;
+}
+
+.about-body .skill-cache .skill-name {
+  color: var(--sundown);
+  font-weight: 500;
+  margin-block: 0.5em;
 }
 
 /* ---------- QUOTE ---------- */

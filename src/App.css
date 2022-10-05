@@ -114,6 +114,10 @@ input {
   border: 2px solid hsla(0, 0%, 0%, 0.1);
 }
 
+main {
+  scroll-snap-type: y mandatory;
+}
+
 .flex {
   display: flex;
   justify-content: center;

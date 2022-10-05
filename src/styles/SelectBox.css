@@ -1,0 +1,76 @@
+.select-box {
+  position: relative;
+}
+
+.option-display {
+  cursor: pointer;
+  position: relative;
+  line-height: 1em;
+}
+
+.option-display::after {
+  content: '\00D7';
+  display: block;
+  color: var(--lavender);
+  font-size: 1.5rem;
+  transform: rotate(45deg);
+  /* border: 1px solid red; */
+  opacity: 0.25;
+  transition: 0.1s ease-out;
+}
+
+.option-display.open::after{
+  transform: rotate(0);
+  opacity: 1;
+}
+
+.option-display:hover::after{
+  opacity: 1;
+}
+
+.option-display.flex {
+  justify-content: space-between;
+}
+
+.option-display svg {
+  --size: 0.75rem;
+  width: var(--size);
+  height: var(--size);
+  stroke: var(--lavender);
+  stroke-width: 8;
+  transform: rotate(90deg);
+}
+
+.option-list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  background-color: var(--darker);
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.1s ease-out;
+  overflow: hidden;
+}
+
+.option-list.open {
+  opacity: 1;
+  z-index: 1000;
+}
+
+.option-list li {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  font-size: 0.8rem;
+  line-height: 1em;
+  /* border: 1px solid cyan; */
+}
+
+.option-list li:hover,
+.option-list li:focus{
+  background-color: var(--lavender);
+}

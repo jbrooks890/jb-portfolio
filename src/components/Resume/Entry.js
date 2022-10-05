@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Roles from "./Roles";
 import { abbr } from "../../utility/utility";
 import StudyField from "./StudyField";
@@ -18,6 +18,7 @@ export default function Entry({ type, entry, active }) {
     other,
     notes,
   } = entry;
+  const drawer = useRef();
 
   return (
     <div
@@ -48,7 +49,13 @@ export default function Entry({ type, entry, active }) {
       </div>
       {roles && <Roles entries={roles} active={open} />}
       {type === "education" && (
-        <div className={`education-data ${open ? "open" : ""}`}>
+        <div
+          ref={drawer}
+          className={`education-data ${open ? "open" : ""}`}
+          style={
+            open ? { maxHeight: drawer.current.scrollHeight + "px" } : null
+          }
+        >
           {majors && majors.length > 0 && (
             <StudyField entries={majors} active={open} />
           )}

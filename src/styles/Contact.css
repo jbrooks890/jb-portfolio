@@ -29,7 +29,7 @@
 
 #contact h2 {
   margin: 0;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
   color: var(--lite);
   line-height: 1em;
   text-shadow: 2px 2px 2px var(--faint);
