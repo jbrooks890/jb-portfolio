@@ -9,8 +9,10 @@ body.modal-lock {
   z-index: 1040;
   width: 100vw;
   height: 100vh;
-  background-color: hsla(0,0%,0%,0.5);
   backdrop-filter: blur(10px);
+  /* background-color: hsla(0,0%,0%,0.5); */
+  background-color: var(--shaded);
+  mix-blend-mode: multiply;
   /* opacity: .5; */
 }
 
