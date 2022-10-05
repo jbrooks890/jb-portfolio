@@ -54,6 +54,7 @@
   max-height: 0;
   opacity: 0;
   transition: max-height 0.1s ease-out;
+  box-sizing: border-box;
   overflow: hidden;
 }
 
@@ -72,5 +73,5 @@
 
 .option-list li:hover,
 .option-list li:focus{
-  background-color: var(--lavender);
+  background-color: var(--mid);
 }

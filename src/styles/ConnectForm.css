@@ -8,9 +8,9 @@
   box-sizing: border-box;
 }
 
-#connect-form-content {
+/* #connect-form-content {
   overflow-y: scroll;
-}
+} */
 
 #connect-form-content>*>*{
   margin-bottom: 1rem;

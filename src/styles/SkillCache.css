@@ -28,7 +28,7 @@
 .skill-cache li.skill-icon {
   position: relative;
   /* margin: 0 0.25em 0.25em 0; */
-  margin: 0.05em;
+  margin: 0.05em 0.1em;
   color: var(--day);
   font-family: 'tech-brand-icons';
   font-size: 2rem;

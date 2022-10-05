@@ -72,13 +72,13 @@ h2#welcome-logo .mode-title {
     opacity: 0;
   }
   25% {
-    opacity: 75%;
-  }
-  50% {
     opacity: 50%;
   }
-  75% {
+  50% {
     opacity: 25%;
+  }
+  75% {
+    opacity: 50%;
   }
   100% {
     opacity: 1;
@@ -99,7 +99,7 @@ h2#welcome-logo .mode-title span{
   opacity: 1;
   opacity: 1;
   transform: scale(1) translateY(0);
-  transition-delay: calc(0.1s * var(--i));
+  transition-delay: calc(.75s + 0.1s * var(--i));
 }
 
 .activated h2#welcome-logo .mode-title span:hover {
@@ -141,10 +141,14 @@ h2#welcome-logo .mode-title span{
   transition: 0.2s linear;
 }
 
+.rad-btn.active {
+  animation: flicker 0.3s ease;
+}
+
 #radial-controller.activated .rad-btn {
   opacity: 1;
   transform: scale(1);
-  transition: .2s linear calc(.75s + 0.2s * var(--i));
+  transition: .2s linear calc(0.2s * var(--i));
 }
 
 .rad-btn svg {
@@ -155,7 +159,8 @@ h2#welcome-logo .mode-title span{
   transition: 0.2s ease-in-out;
 }
 
-.rad-btn:hover svg {
+.rad-btn:hover svg,
+.rad-btn.active svg {
   transform: scale(1.1);
   fill: var(--lavender);
 }

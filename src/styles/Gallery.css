@@ -15,7 +15,7 @@
   /* background-color: var(--lavender); */
   background-attachment: fixed;
   filter: saturate(50%);
-  background-blend-mode: soft-light;
+  /* background-blend-mode: soft-light; */
   opacity: 0.25;
   z-index: 0;
 }

@@ -14,7 +14,7 @@
   font-family: 'tech-brand-icons';
   font-weight: normal;
   font-style: normal;
-  src: url(./assets/fonts/Tech-Brands-1.otf);
+  src: url(./assets/fonts/TechBrands-v1.otf);
 }
 
 :root {
@@ -117,6 +117,11 @@ input {
 
 main {
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+main > section {
+  scroll-snap-align: top;
 }
 
 .flex {

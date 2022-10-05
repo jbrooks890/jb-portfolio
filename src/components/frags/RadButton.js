@@ -6,6 +6,7 @@ export default function RadButton({
   y,
   index,
   size,
+  active,
   onClick,
   onMouseEnter,
   onMouseLeave,
@@ -22,7 +23,7 @@ export default function RadButton({
   };
   return (
     <button
-      className="rad-btn"
+      className={`rad-btn ${active ? "active" : ""}`}
       style={style}
       onClick={onClick}
       onMouseEnter={onMouseEnter}

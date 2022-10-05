@@ -19,6 +19,7 @@ export default function Welcome({ pages }) {
   const [modalContent, setModalContent] = useState();
   const [siteMode, setSiteMode] = useSiteMode();
   const [modePreview, setModePreview] = useState(siteMode);
+  const [rotation, setRotation] = useState(0); // DEGREES
 
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
@@ -101,6 +102,7 @@ export default function Welcome({ pages }) {
                 y={y}
                 index={i}
                 size={vmin * 0.09}
+                active={siteMode === page}
                 onClick={ringProps.get(page).click}
                 onMouseEnter={() => setModePreview(page)}
                 onMouseLeave={() => setModePreview(siteMode)}
