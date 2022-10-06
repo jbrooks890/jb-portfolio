@@ -8,7 +8,7 @@
 }
 
 .modal #resume {
-  /* width: 75vw; */
+  width: 100%;
   /* max-width: 1280px; */
   background-color: hsla(247, 31%, 38%, 0.75);
 }
@@ -139,6 +139,7 @@
   justify-content: flex-start;
   align-items: stretch;
   width: 55%;
+  max-width: 40vw;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }

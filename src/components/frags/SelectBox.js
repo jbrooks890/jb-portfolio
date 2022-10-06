@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "../../styles/SelectBox.css";
 
-export default function SelectBox({ options, field, classList }) {
+export default function SelectBox({ options, field, classList, onChange }) {
   const [selected, setSelected] = useState(options[0]);
   const [open, toggleOpen] = useState(false);
   const list = useRef();
@@ -15,12 +15,12 @@ export default function SelectBox({ options, field, classList }) {
     <div
       className={`select-box ${classList.length ? classList.join(" ") : ""}`}
     >
-      <select name={field} style={{ display: "none" }}>
+      <select name={field} style={{ display: "none" }} defaultValue={selected}>
         {options.map((option, i) => (
           <option
             key={i}
             value={option}
-            selected={selected === option ? "selected" : null}
+            // selected={selected === option ? "selected" : null}
           >
             {option}
           </option>

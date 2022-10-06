@@ -7,6 +7,7 @@ import SkillCache from "./SkillCache";
 import Skills from "../Resume/Skills";
 import Entry from "../Resume/Entry";
 import ResumeNav from "../Resume/ResumeNav";
+import { Fragment } from "react";
 
 export default function Resume() {
   const {
@@ -67,16 +68,6 @@ export default function Resume() {
         <ResumeNav
           sections={["Skills", "Projects", "Education", "Experience"]}
         />
-        {/* <nav id="resume-top" className="resume-nav">
-          <fieldset className="flex">
-            <legend>Sections</legend>
-
-            <a href="#resume-skills">Skills</a>
-            <a href="#resume-projects">Projects</a>
-            <a href="#resume-education">Education</a>
-            <a href="#resume-experience">Experience</a>
-          </fieldset>
-        </nav> */}
         {/* ========= SKILLS ========= */}
         <section
           id="resume-skills"
@@ -105,12 +96,12 @@ export default function Resume() {
             {projects.map((project, i) => {
               const { name, description, link, technologies } = project;
               return (
-                <>
+                <Fragment key={i}>
                   <a href={link} target="_blank">
                     <h3>{name}</h3>
                   </a>
                   <p>{description}</p>
-                </>
+                </Fragment>
               );
             })}
           </div>
@@ -133,6 +124,7 @@ export default function Resume() {
         >
           <Experience entries={experience} />
         </section>
+        {/* ========= TO TOP ========= */}
         <div className="nav-to-top flex col">
           <a href="#resume-top" className="arrow-wrapper">
             <svg>

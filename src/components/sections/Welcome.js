@@ -27,6 +27,7 @@ export default function Welcome({ pages }) {
   const center = size / 2;
   const rad = size / 2;
   const ang = (2 * Math.PI) / $pages.length;
+  const offset = ang;
   const style = { width: size, height: size };
   const { isShowing, toggle } = useModal();
 
@@ -58,9 +59,9 @@ export default function Welcome({ pages }) {
         click: () => setSiteMode("Developer"),
       },
     ],
-    ["Game", { icon: "game-icon", click: () => setSiteMode("Game") }],
-    ["Writer", { icon: "book-icon", click: () => setSiteMode("Writer") }],
     ["Artist", { icon: "legacy-icon", click: () => setSiteMode("Artist") }],
+    ["Writer", { icon: "book-icon", click: () => setSiteMode("Writer") }],
+    ["Game", { icon: "game-icon", click: () => setSiteMode("Game") }],
     [
       "Connect",
       {
@@ -91,8 +92,9 @@ export default function Welcome({ pages }) {
 
         <div id="controller-ring">
           {$pages.map((page, i) => {
-            const x = center + rad * Math.cos(ang * i);
-            const y = center + rad * Math.sin(ang * i);
+            const offset = ang * i;
+            const x = center + rad * Math.cos(offset);
+            const y = center + rad * Math.sin(offset);
             // console.log(`${page}:`, { x, y });
 
             return (
@@ -102,6 +104,8 @@ export default function Welcome({ pages }) {
                 y={y}
                 index={i}
                 size={vmin * 0.09}
+                angle={ang}
+                offset={offset}
                 active={siteMode === page}
                 onClick={ringProps.get(page).click}
                 onMouseEnter={() => setModePreview(page)}

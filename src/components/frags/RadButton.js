@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 export default function RadButton({
   children,
@@ -6,23 +6,25 @@ export default function RadButton({
   y,
   index,
   size,
+  offset,
   active,
   onClick,
   onMouseEnter,
   onMouseLeave,
 }) {
-  // console.log({ x, y });
-  // const size = 120;
+  const button = useRef();
   const center = size / 2;
   const style = {
-    top: x - center + "px",
-    left: y - center + "px",
+    left: x - center + "px",
+    top: y - center + "px",
     width: size + "px",
     height: size + "px",
     ["--i"]: index,
   };
+
   return (
     <button
+      ref={button}
       className={`rad-btn ${active ? "active" : ""}`}
       style={style}
       onClick={onClick}

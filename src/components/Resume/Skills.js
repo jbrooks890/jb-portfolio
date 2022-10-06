@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { resumeData } from "../../utility/resume";
 
 export default function Skills({ skills }) {
@@ -16,7 +17,7 @@ export default function Skills({ skills }) {
   const createLists = () => {
     return [...skillGroups.keys()].map((name, i) => {
       return (
-        <>
+        <Fragment key={i}>
           <h3>{name}</h3>
           <p>
             {skillGroups
@@ -24,7 +25,7 @@ export default function Skills({ skills }) {
               .map(skill => skill.name)
               .join(", ")}
           </p>
-        </>
+        </Fragment>
       );
     });
   };

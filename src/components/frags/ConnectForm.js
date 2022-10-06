@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "../../styles/ConnectForm.css";
 import SelectBox from "./SelectBox";
+import emailjs from "emailjs-com";
+
+const { REACT_APP_EMAILJS_PUBLIC_KEY } = process.env;
 
 export default function ConnectForm() {
   const [formContent, updateFormContent] = useState({
@@ -21,17 +24,34 @@ export default function ConnectForm() {
   const interests = ["Projects", "Artwork", "Book(s)", "Other"];
   const msgMax = 300;
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log(formContent);
-  };
-
   const handleInput = e => {
     const { name, value } = e.target;
     updateFormContent(prev => ({
       ...prev,
       [name]: value,
     }));
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    // sendEmail(e);
+  };
+
+  const sendEmail = e => {
+    emailjs
+      .sendForm(
+        "service_paliycp",
+        "connect_form",
+        e.target,
+        REACT_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        res => {
+          console.log(res.text);
+          e.target.reset();
+        },
+        err => console.log(err.text)
+      );
   };
 
   return (
@@ -66,6 +86,7 @@ export default function ConnectForm() {
               options={occupations}
               field="occupation"
               classList={[]}
+              onChange={e => handleInput(e)}
             />
           </label>
           {/* ---- MESSAGE ---- */}

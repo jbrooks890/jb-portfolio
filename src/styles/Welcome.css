@@ -128,10 +128,15 @@ h2#welcome-logo .mode-title span{
 }
 
 .rad-btn {
+  --size: 2rem;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* width: var(--size);
+  height: var(--size); */
+  min-width: var(--size);
+  min-height: var(--size);
   border: none;
   /* border: 2px solid var(--mid); */
   box-sizing: border-box;
