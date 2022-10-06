@@ -54,3 +54,20 @@
   mix-blend-mode: lighten;
   /* box-shadow: none; */
 }
+
+/* ========================================= *\
+|| >> MOBILE <<
+\* ========================================= */
+
+@media only screen and (max-width: 480px) {
+  #contact::before {
+    background-attachment: scroll;
+    background-position: center;
+  }
+
+  #contact-content-wrapper {
+    width: 90vw;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+  }
+}

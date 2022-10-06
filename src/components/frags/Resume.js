@@ -8,8 +8,10 @@ import Skills from "../Resume/Skills";
 import Entry from "../Resume/Entry";
 import ResumeNav from "../Resume/ResumeNav";
 import { Fragment } from "react";
+import { useSiteMode } from "../shared/ModeProvider";
 
 export default function Resume() {
+  const [siteMode] = useSiteMode();
   const {
     firstName,
     lastName,
@@ -22,6 +24,9 @@ export default function Resume() {
     skills,
   } = resumeData;
   const { city, state } = address;
+  const $projects = projects.filter(project =>
+    project.section.includes(siteMode)
+  );
 
   return (
     <div id="resume" className="flex">
@@ -82,7 +87,7 @@ export default function Resume() {
           />
           <Skills
             skills={skills.filter(skill =>
-              skill.category.includes("developer")
+              skill.category.includes(siteMode.toLowerCase())
             )}
           />
         </section>
@@ -93,7 +98,7 @@ export default function Resume() {
           data-resume-section="Projects"
         >
           <div className="project-wrapper">
-            {projects.map((project, i) => {
+            {$projects.map((project, i) => {
               const { name, description, link, technologies } = project;
               return (
                 <Fragment key={i}>

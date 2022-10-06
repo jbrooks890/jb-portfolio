@@ -18,11 +18,16 @@
 }
 
 :root {
+  /* ========== BREAKPOINTs ========== */
+  --desktop: 0;
+  --mobile: 480px;
+  --tablet: 0;
+
   /* ========== COLORS ========== */
   --red: hsl(0, 100%, 41%);
   /* --midnite: hsl(258, 15%, 15%); */
-  --midnite: hsl(258, 15%, 13%);
-  --nite: hsl(257, 35%, 20%);
+  --midnite: hsl(258, 15%, 10%);
+  --nite: hsl(257, 35%, 15%);
   --evening: hsl(245, 30%, 25%);
   --shade: hsl(247, 31%, 38%);
   --sundown: hsl(245, 30%, 60%);;
@@ -216,4 +221,24 @@ header nav ul li {
 
 header nav ul li:not(:last-of-type) {
   margin-right: 1.25em;
+}
+
+/* ========================================= *\
+|| >> MOBILE <<
+\* ========================================= */
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 21px;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+  .site-section {
+    padding-inline: 0;
+  }
 }

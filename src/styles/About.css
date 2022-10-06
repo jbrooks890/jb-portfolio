@@ -109,3 +109,47 @@ ul.about-shift li:hover {
 #about .quote-wrap {
   grid-area: quote;
 }
+
+/* ========================================= *\
+|| >> MOBILE <<
+\* ========================================= */
+
+@media only screen and (max-width: 480px) {
+  #about .content-wrap.grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #about > div {
+    width: 100%;
+  }
+
+  #about .content-wrap .description {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #about .content-wrap .headshot-wrap {
+    --size: 90vmin;
+    order: -1;
+    width: var(--size);
+    height: var(--size);
+  }
+
+  #about .about-body {
+    width: 100%;
+  }
+
+  #about .about-body .skill-cache-wrapper {
+    width: 100%;
+  }
+
+    #about .about-body .skill-cache-wrapper .skill-cache {
+      display: block;
+      /* grid-template-columns: repeat(auto-fit, minmax(1fr, 1rem)); */
+      width: 100%;
+      padding-inline: 1rem;
+      box-sizing: border-box;
+    }
+}

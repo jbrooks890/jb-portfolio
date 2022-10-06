@@ -169,3 +169,18 @@ h2#welcome-logo .mode-title span{
   transform: scale(1.1);
   fill: var(--lavender);
 }
+
+/* ========================================= *\
+|| >> MOBILE <<
+\* ========================================= */
+
+@media only screen and (max-width: 480px){
+  #welcome #controller-ring{
+    display: none;
+  }
+
+  #welcome h2#welcome-logo {
+    transform: none;
+    width: 75vw;
+  }
+}

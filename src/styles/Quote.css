@@ -38,3 +38,23 @@ q::after {
   font-size: 0.6em;
   text-align: right;
 }
+
+/* ========================================= *\
+|| >> MOBILE <<
+\* ========================================= */
+
+@media only screen and (max-width: 480px) {
+  q {
+    margin: 1rem;
+    padding: 0 1rem;
+  }
+
+  q::before {
+    left: 0;
+  }
+
+  q::after {
+    right: 0;
+    font-size: 0.9rem;
+  }
+}
