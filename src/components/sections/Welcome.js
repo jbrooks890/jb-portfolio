@@ -8,6 +8,8 @@ import Modal from "../shared/Modal";
 import ConnectForm from "../frags/ConnectForm";
 import Resume from "../frags/Resume";
 import { useSiteMode } from "../shared/ModeProvider";
+import SelectBox from "../frags/SelectBox";
+import ModeSelector from "../frags/ModeSelector";
 
 export default function Welcome({ pages }) {
   const $pages = [...pages, "Resume", "Connect"];
@@ -51,7 +53,7 @@ export default function Welcome({ pages }) {
   };
 
   // console.log({ rad, ang });
-  const ringProps = new Map([
+  const modeProps = new Map([
     [
       "Developer",
       {
@@ -107,13 +109,13 @@ export default function Welcome({ pages }) {
                 angle={ang}
                 offset={offset}
                 active={siteMode === page}
-                onClick={ringProps.get(page).click}
+                onClick={modeProps.get(page).click}
                 onMouseEnter={() => setModePreview(page)}
                 onMouseLeave={() => setModePreview(siteMode)}
               >
-                {ringProps.get(page).icon ? (
+                {modeProps.get(page).icon ? (
                   <svg>
-                    <use href={`#${ringProps.get(page).icon}`} />
+                    <use href={`#${modeProps.get(page).icon}`} />
                   </svg>
                 ) : (
                   page
@@ -123,6 +125,23 @@ export default function Welcome({ pages }) {
           })}
         </div>
       </div>
+      {/* <SelectBox options={pages} classList={["mode-select", "mobile"]} /> */}
+      {/* <fieldset className={`mode-selector button-cache flex mobile`}>
+        <legend>{siteMode}</legend>
+        {pages.map((page, i) => (
+          <button
+            key={i}
+            className={`${page === siteMode ? "active" : ""}`}
+            onClick={modeProps.get(page).click}
+          >
+            <svg>
+              <use href={`#${modeProps.get(page).icon}`} />
+            </svg>
+          </button>
+        ))}
+      </fieldset> */}
+      <ModeSelector pages={pages} modeProps={modeProps} mode={siteMode} />
+
       {modalContent && (
         <Modal isShowing={isShowing} hide={toggle}>
           {modalContent}

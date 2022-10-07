@@ -125,3 +125,17 @@
 #connect-form-extra.active {
   max-height: none;
 }
+
+/* ========================================= *\
+|| >> MOBILE <<
+\* ========================================= */
+
+@media only screen and (max-width: 480px) {
+  
+  #connect-form {
+    width: 100vw;
+    max-width: none;
+    padding: 2rem;
+  }
+
+}

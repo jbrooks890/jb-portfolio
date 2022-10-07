@@ -27,9 +27,9 @@
   --red: hsl(0, 100%, 41%);
   /* --midnite: hsl(258, 15%, 15%); */
   --midnite: hsl(258, 15%, 10%);
-  --nite: hsl(257, 35%, 15%);
+  --nite: hsl(257, 35%, 20%);
   --evening: hsl(245, 30%, 25%);
-  --shade: hsl(247, 31%, 38%);
+  --shade: hsl(247, 35%, 40%);
   --sundown: hsl(245, 30%, 60%);;
   --lavender: hsl(246, 57%, 63%);
   --day: hsl(246, 60%, 80%);
@@ -223,6 +223,10 @@ header nav ul li:not(:last-of-type) {
   margin-right: 1.25em;
 }
 
+/* .mobile {
+  display: none;
+} */
+
 /* ========================================= *\
 || >> MOBILE <<
 \* ========================================= */
@@ -241,4 +245,5 @@ header nav ul li:not(:last-of-type) {
   .site-section {
     padding-inline: 0;
   }
+
 }
