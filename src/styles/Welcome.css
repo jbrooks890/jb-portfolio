@@ -193,8 +193,8 @@ h2#welcome-logo .mode-title span{
   /* ---------- MODE SELECTOR ---------- */
 
   #welcome .mode-selector {
-    position: absolute;
-    bottom: 1rem;
+    position: relative;
+    /* bottom: 1rem; */
     padding: 0.75rem;
     border: 2px solid var(--evening);
     border-radius: 100px;
@@ -253,7 +253,8 @@ h2#welcome-logo .mode-title span{
   }
 
   #welcome .mode-selector button {
-    --size: 15vmin;
+    --size: 20vw;
+    --max: 20vmin;
     width: var(--size);
     height: var(--size);
     border: none;
