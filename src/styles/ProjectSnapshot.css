@@ -203,7 +203,8 @@ a.project-visit-link:focus {
     width: auto;
     padding-bottom: 2rem;
     background-color: var(--dark);
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px var(--faint);
   }
 
   .project-snap::before {

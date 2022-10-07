@@ -34,5 +34,7 @@
 \* ========================================= */
 
 @media only screen and (max-width: 480px) {
-  
+  #gallery {
+    padding-inline: 1rem;
+  }
 }

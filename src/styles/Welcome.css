@@ -243,22 +243,24 @@ h2#welcome-logo .mode-title span{
     padding-inline: 0.5em;
   }
 
-  #welcome .mode-selector button:not(.active) {
-    display: none;
-    /* max-width: 0; */
-  }
-
-  #welcome .mode-selector.activated button:not(.active) {
-    display: block;
-  }
-
   #welcome .mode-selector button {
     --size: 20vw;
     --max: 20vmin;
     width: var(--size);
     height: var(--size);
     border: none;
+    /* border: 2px solid cyan; */
+    border-radius: 50%;
     box-sizing: border-box;
+  }
+
+  #welcome .mode-selector button:not(.active) {
+    display: none;
+    /* max-width: 0; */
+  }
+
+  #welcome .mode-selector.activated button:not(.active) {
+    display: flex;
   }
 
   #welcome .mode-selector.activated button:not(:last-of-type) {
