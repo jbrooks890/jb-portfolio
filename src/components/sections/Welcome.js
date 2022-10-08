@@ -125,25 +125,7 @@ export default function Welcome({ pages }) {
           })}
         </div>
       </div>
-      <div className="control-cache mobile flex">
-        <button
-          className="non-mode flex"
-          onClick={modeProps.get("Resume").click}
-        >
-          <svg>
-            <use href={`#${modeProps.get("Resume").icon}`} />
-          </svg>
-        </button>
-        <ModeSelector pages={pages} modeProps={modeProps} mode={siteMode} />
-        <button
-          className="non-mode flex"
-          onClick={modeProps.get("Connect").click}
-        >
-          <svg>
-            <use href={`#${modeProps.get("Connect").icon}`} />
-          </svg>
-        </button>
-      </div>
+      <ModeSelector pages={pages} modeProps={modeProps} mode={siteMode} />
 
       {modalContent && (
         <Modal isShowing={isShowing} hide={toggle}>

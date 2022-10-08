@@ -115,6 +115,51 @@
   fill: var(--day);
 }
 
+.resume-download {
+  cursor: pointer;
+  padding: .5em 1.25em;
+  color: var(--lavender);
+  border: 1.5px solid var(--lavender);
+  border-radius: 100px;
+  font-weight: 600;
+  transition: 0.1s ease-out;
+}
+
+.resume-download:hover,
+.resume-download:focus {
+  background-color: var(--lavender);
+  color: var(--dark);
+}
+
+.resume-download svg {
+  --size: 1em;
+  width: var(--size);
+  height: var(--size);
+  margin-right: 0.5em;
+  stroke: var(--lavender);
+  stroke-width: 8;
+  transform: rotate(90deg);
+  /* border-right: 2.5px solid var(--lavender);
+  border-left: 2.5px solid transparent; */
+}
+
+.resume-download:hover svg,
+.resume-download:focus svg {
+  stroke: var(--dark);
+  /* margin: 0; */
+}
+
+/* .resume-download span {
+  display: inline-block;
+  overflow: hidden;
+  transition: 0.1s ease-out;
+}
+
+.resume-download:hover span,
+.resume-download:focus span{
+  max-width: 0;
+} */
+
 /* ------------------------------------------ */
 /* <><><><><><><><><> BODY <><><><><><><><><> */
 /* ------------------------------------------ */

@@ -31,7 +31,9 @@ export default function Resume() {
 
   return (
     <div id="resume" className="flex">
-      {/* <><><><><><><>\ CAPTION /<><><><><><><> */}
+      {/* =================================== *\
+      ||  <><><><><><>\ CAPTION /<><><><><><> 
+       \* =================================== */}
       <div id="resume-caption" className="flex col">
         <Logotype />
         <fieldset className="caption-summary">
@@ -54,13 +56,18 @@ export default function Resume() {
           </div>
           {`${city}, ${states.get(state)}`}
         </div>
-        {/* <SkillCache concise={true} showIcons={true} featured={true} /> */}
+        <a className="resume-download flex">
+          <svg>
+            <use href="#arrow-icon" />
+          </svg>
+          <span>PDF</span>
+        </a>
         <SocialMediaCache concise={true} darkMode={false} />
       </div>
 
-      {/* ==================================== //
-      ||- <><><><><><><>\ BODY /<><><><><><><> 
-      //- ==================================== */}
+      {/* ==================================== *\
+      ||  <><><><><><><>\ BODY /<><><><><><><> 
+       \* ==================================== */}
 
       <div id="resume-body" className="flex col">
         {/* ========= NAV ========= */}

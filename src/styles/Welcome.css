@@ -198,14 +198,25 @@ h2#welcome-logo .mode-title span{
     height: var(--size);
     box-sizing: border-box;
     border-radius: 50%;
-    border: 2px solid var(--evening)
+    /* background-color: var(--evening); */
+    border: 2px solid var(--evening);
+    /* mix-blend-mode: lighten; */
+    /* border: none; */
+    transition: 
+      transform 0.1s ease-out,
+      opacity 0.1s ease-out;
+  }
+
+  #welcome .control-cache.activated .non-mode {
+    display: none;
+    transform: scale(0.1);
   }
 
   .control-cache .non-mode svg {
     --size: 75%;
     width: var(--size);
     height: var(--size);
-    fill: var(--red);
+    fill: var(--mid);
   }
 
   #welcome .mode-selector {
@@ -215,8 +226,13 @@ h2#welcome-logo .mode-title span{
     padding: 0.75rem;
     border: 2px solid var(--evening);
     border-radius: 100px;
-    transition: 0.1s ease-out;
+    transition: transform 0.5s ease-out;
     mix-blend-mode: lighten;
+  }
+
+  #welcome .mode-selector.activated {
+    margin-inline: 0;
+    /* max-width: 100vw; */
   }
 
   #welcome .mode-selector.flex {
@@ -266,18 +282,26 @@ h2#welcome-logo .mode-title span{
     width: var(--size);
     height: var(--size);
     border: none;
+    padding: 0;
     /* border: 2px solid cyan; */
     border-radius: 50%;
+    /* border: 1px solid var(--mid); */
     box-sizing: border-box;
-  }
-
-  #welcome .mode-selector button:not(.active) {
-    display: none;
-    /* max-width: 0; */
+    transition: 
+      /* opacity 0.1s ease-out, */
+      max-width 0.1s linear,
+      transform 0.1s ease-out calc(0.2s + 0.2s * var(--i)), 
   }
 
   #welcome .mode-selector.activated button:not(.active) {
     display: flex;
+    max-width: 20vw;
+    opacity: 1;
+  }
+
+  #welcome .mode-selector:not(.activated) button:not(.active) {
+    max-width: 0;
+    opacity: 0;
   }
 
   #welcome .mode-selector.activated button:not(:last-of-type) {
@@ -285,13 +309,20 @@ h2#welcome-logo .mode-title span{
   }
 
   #welcome .mode-selector button svg {
-    --size: 90%;
+    --size: 75%;
     width: var(--size);
     height: var(--size);
     fill: var(--mid);
+    transition: 0.2s ease-out;
+    transition-delay: calc(0.15s * var(--i));
   }
 
   #welcome .mode-selector button.active svg {
     fill: var(--red);
+  }
+
+  #welcome .mode-selector:not(.activated) button:not(.active) svg{
+    transform: scale(0.25);
+    opacity: 0;
   }
 }
