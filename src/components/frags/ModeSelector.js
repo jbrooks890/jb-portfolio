@@ -5,6 +5,9 @@ export default function ModeSelector({ pages, modeProps, mode }) {
   const legend = useRef();
   const cache = useRef();
 
+  // console.log({ mode });
+  // console.log(modeProps);
+
   return (
     <div
       className={`mode-selector button-cache flex mobile ${

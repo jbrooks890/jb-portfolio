@@ -125,22 +125,25 @@ export default function Welcome({ pages }) {
           })}
         </div>
       </div>
-      {/* <SelectBox options={pages} classList={["mode-select", "mobile"]} /> */}
-      {/* <fieldset className={`mode-selector button-cache flex mobile`}>
-        <legend>{siteMode}</legend>
-        {pages.map((page, i) => (
-          <button
-            key={i}
-            className={`${page === siteMode ? "active" : ""}`}
-            onClick={modeProps.get(page).click}
-          >
-            <svg>
-              <use href={`#${modeProps.get(page).icon}`} />
-            </svg>
-          </button>
-        ))}
-      </fieldset> */}
-      <ModeSelector pages={pages} modeProps={modeProps} mode={siteMode} />
+      <div className="control-cache mobile flex">
+        <button
+          className="non-mode flex"
+          onClick={modeProps.get("Resume").click}
+        >
+          <svg>
+            <use href={`#${modeProps.get("Resume").icon}`} />
+          </svg>
+        </button>
+        <ModeSelector pages={pages} modeProps={modeProps} mode={siteMode} />
+        <button
+          className="non-mode flex"
+          onClick={modeProps.get("Connect").click}
+        >
+          <svg>
+            <use href={`#${modeProps.get("Connect").icon}`} />
+          </svg>
+        </button>
+      </div>
 
       {modalContent && (
         <Modal isShowing={isShowing} hide={toggle}>

@@ -9,6 +9,7 @@ import Entry from "../Resume/Entry";
 import ResumeNav from "../Resume/ResumeNav";
 import { Fragment } from "react";
 import { useSiteMode } from "../shared/ModeProvider";
+import Logotype from "./Logotype";
 
 export default function Resume() {
   const [siteMode] = useSiteMode();
@@ -32,14 +33,7 @@ export default function Resume() {
     <div id="resume" className="flex">
       {/* <><><><><><><>\ CAPTION /<><><><><><><> */}
       <div id="resume-caption" className="flex col">
-        <div className="name">
-          <h2>{firstName}</h2>
-          <h3 className="flex">
-            {lastName.split("").map((letter, i) => (
-              <span key={i}>{letter}</span>
-            ))}
-          </h3>
-        </div>
+        <Logotype />
         <fieldset className="caption-summary">
           <legend>Front-end Developer</legend>
           {summary}
@@ -80,7 +74,9 @@ export default function Resume() {
           data-resume-section="Skills"
         >
           <SkillCache
-            entries={skills}
+            entries={skills.filter(skill =>
+              skill.category.includes(siteMode.toLowerCase())
+            )}
             concise={true}
             showIcons={true}
             featured={true}

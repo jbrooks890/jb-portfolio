@@ -192,9 +192,26 @@ h2#welcome-logo .mode-title span{
 
   /* ---------- MODE SELECTOR ---------- */
 
+  #welcome .control-cache .non-mode {
+    --size: 3rem;
+    width: var(--size);
+    height: var(--size);
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid var(--evening)
+  }
+
+  .control-cache .non-mode svg {
+    --size: 75%;
+    width: var(--size);
+    height: var(--size);
+    fill: var(--red);
+  }
+
   #welcome .mode-selector {
     position: relative;
     /* bottom: 1rem; */
+    margin-inline: 0.5rem;
     padding: 0.75rem;
     border: 2px solid var(--evening);
     border-radius: 100px;

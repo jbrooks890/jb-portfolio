@@ -1,4 +1,4 @@
-function debounce(fn, ms) {
+function debounce(fn, ms = 1000) {
   console.log("Running debounce");
   let timer;
 
@@ -171,19 +171,25 @@ const iconMap = new Map([
   ["GitHub", "K"],
   ["Squarespace", "s"],
   ["Adobe Creative Cloud", "u"],
+  ["Creative Cloud", "u"],
   ["Adobe Photoshop", "-"],
+  ["Photoshop", "-"],
   ["Adobe Illustrator", "="],
+  ["Illustrator", "="],
   ["Adobe InDesign", "_"],
+  ["InDesign", "_"],
   ["Adobe Acrobat", ""],
-  ["Adobe Bridge", ""],
+  ["Bridge", ""],
   ["Adobe XD", "+"],
+  ["XD", "+"],
   ["Figma", "e"],
   ["Microsoft Word", ""],
   ["Microsoft Excel", ""],
   ["PowerPoint", ""],
   ["Microsoft Outlook", ""],
   ["Microsoft Teams", ""],
-  ["Visual Studio Code", ""],
+  ["Visual Studio", "["],
+  ["Visual Studio Code", "]"],
   ["Autodesk Maya", ""],
   ["ZBrush", "Z"],
   ["Adobe Substance Painter", ""],

@@ -162,7 +162,7 @@ export const resumeData = {
     {
       name: "Arcan",
       type: "Story",
-      section: ["Writer", "WIP"],
+      section: ["Writer", "Artist", "WIP"],
       featured: true,
       repo: {
         platform: "",
@@ -333,6 +333,31 @@ export const resumeData = {
         "Crymsica Games is the division of EPOCH Studios dedicated to the development of video games and other visual media.",
       meta: {},
       tech: [],
+      link: "",
+      icon: "",
+      colors: {
+        key: "#d10000",
+        alt: "",
+        dark: "#00000",
+        reverse: false,
+      },
+      images: [],
+    },
+    {
+      name: "T2 Com-bat",
+      type: "Brand",
+      section: ["Artist"],
+      featured: true,
+      repo: {
+        platform: "",
+        link: "",
+      },
+      description:
+        "Crymsica Games is the division of EPOCH Studios dedicated to the development of video games and other visual media.",
+      meta: {
+        client: "15th AMU, U.S. Air Force",
+      },
+      tech: ["Adobe Illustrator", "Adobe Photoshop"],
       link: "",
       icon: "",
       colors: {
@@ -698,19 +723,19 @@ export const resumeData = {
   skills: [
     {
       name: "HTML",
-      category: ["developer", "game"],
+      category: ["developer", "game", "artist"],
       type: "language",
       primary: false,
     },
     {
       name: "CSS",
-      category: ["developer", "game"],
+      category: ["developer", "game", "artist"],
       type: "language",
       primary: false,
     },
     {
       name: "Javascript",
-      category: ["developer", "game"],
+      category: ["developer", "game", "artist"],
       type: "language",
       primary: false,
     },
@@ -812,22 +837,28 @@ export const resumeData = {
       primary: true,
     },
     {
+      name: "Adobe Creative Cloud",
+      category: ["artist"],
+      type: "platform",
+      primary: true,
+    },
+    {
       name: "Adobe Photoshop",
       category: ["artist"],
       type: "tool",
-      primary: false,
+      primary: true,
     },
     {
       name: "Adobe Illustrator",
       category: ["artist"],
       type: "tool",
-      primary: false,
+      primary: true,
     },
     {
       name: "Adobe InDesign",
       category: ["artist", "writer"],
       type: "tool",
-      primary: false,
+      primary: true,
     },
     {
       name: "Adobe Acrobat",
@@ -837,7 +868,7 @@ export const resumeData = {
     },
     {
       name: "Adobe Bridge",
-      category: ["artist"],
+      category: ["artist", "general"],
       type: "tool",
       primary: false,
     },
@@ -894,7 +925,7 @@ export const resumeData = {
       name: "ZBrush",
       category: ["artist", "game"],
       type: "tool",
-      primary: false,
+      primary: true,
     },
     {
       name: "Adobe Substance Painter",

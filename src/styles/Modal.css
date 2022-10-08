@@ -57,3 +57,14 @@ body.modal-lock {
 .modal-close:hover {
   opacity: 1;
 }
+
+/* ========================================= *\
+|| >> MOBILE <<
+\* ========================================= */
+
+@media only screen and (max-width: 480px) {
+  .modal-wrapper {
+    justify-content: flex-start;
+    min-height: 100vh;
+  }
+}
