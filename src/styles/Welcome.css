@@ -181,6 +181,10 @@ h2#welcome-logo .mode-title span{
 \* ========================================= */
 
 @media only screen and (max-width: 480px){
+  #welcome {
+    overflow: hidden;
+  }
+
   #welcome #controller-ring{
     display: none;
   }
@@ -206,14 +210,15 @@ h2#welcome-logo .mode-title span{
     --size: 15vw;
     width: var(--size);
     height: var(--size);
-    box-sizing: border-box;
+    padding: 0;
+    /* box-sizing: border-box; */
     border-radius: 50%;
     /* background-color: var(--evening); */
     border: 2px solid var(--evening);
     /* mix-blend-mode: lighten; */
     /* border: none; */
     transition: 
-      transform 0.1s ease-out
+      transform 0.1s ease-out,
       opacity 0.1s ease-out;
   }
 

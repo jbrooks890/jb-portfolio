@@ -88,7 +88,7 @@ export const resumeData = {
         dark: "#black",
         reverse: false,
       },
-      images: ["xword-1.png", "xword-2.png", "xword-3.png"],
+      images: ["xword-1.png", "xword-3.png"],
     },
     {
       name: "PokéSquad",
