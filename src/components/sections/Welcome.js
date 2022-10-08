@@ -18,10 +18,10 @@ export default function Welcome({ pages }) {
     vw: window.innerWidth,
     vh: window.innerHeight,
   });
-  const [modalContent, setModalContent] = useState();
   const [siteMode, setSiteMode] = useSiteMode();
   const [modePreview, setModePreview] = useState(siteMode);
   const [rotation, setRotation] = useState(0); // DEGREES
+  const [modalContent, setModalContent] = useState();
 
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
@@ -125,7 +125,12 @@ export default function Welcome({ pages }) {
           })}
         </div>
       </div>
-      <ModeSelector pages={pages} modeProps={modeProps} mode={siteMode} />
+      <ModeSelector
+        pages={pages}
+        modeProps={modeProps}
+        mode={siteMode}
+        ready={activated}
+      />
 
       {modalContent && (
         <Modal isShowing={isShowing} hide={toggle}>

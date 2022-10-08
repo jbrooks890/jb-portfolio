@@ -191,9 +191,19 @@ h2#welcome-logo .mode-title span{
   }
 
   /* ---------- MODE SELECTOR ---------- */
+  
+  #welcome .control-cache {
+    transition: 0.3s ease-out;
+    opacity: 1;
+  }
+
+  #welcome #radial-controller:not(.activated)+.control-cache {
+    max-height: 0;
+    opacity: 0;
+  }
 
   #welcome .control-cache .non-mode {
-    --size: 3rem;
+    --size: 15vw;
     width: var(--size);
     height: var(--size);
     box-sizing: border-box;
@@ -203,12 +213,12 @@ h2#welcome-logo .mode-title span{
     /* mix-blend-mode: lighten; */
     /* border: none; */
     transition: 
-      transform 0.1s ease-out,
+      transform 0.1s ease-out
       opacity 0.1s ease-out;
   }
 
   #welcome .control-cache.activated .non-mode {
-    display: none;
+    /* display: none; */
     transform: scale(0.1);
   }
 

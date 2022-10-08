@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function ModeSelector({ pages, modeProps, mode }) {
+export default function ModeSelector({ pages, modeProps, mode, ready }) {
   const [activated, toggleActivated] = useState(false);
   const legend = useRef();
   const cache = useRef();
   const button = useRef();
+  const wrapper = useRef();
 
   // console.log({ mode });
   // console.log(modeProps);
@@ -13,7 +14,13 @@ export default function ModeSelector({ pages, modeProps, mode }) {
 
   return (
     <div
+      ref={wrapper}
       className={`control-cache mobile flex ${activated ? "activated" : ""}`}
+      style={
+        ready
+          ? { maxHeight: wrapper.current.getBoundingClientRect().width + "px" }
+          : null
+      }
     >
       <button className="non-mode flex" onClick={modeProps.get("Resume").click}>
         <svg>
