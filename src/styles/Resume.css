@@ -10,7 +10,7 @@
 .modal #resume {
   width: 100%;
   /* max-width: 1280px; */
-  background-color: hsla(247, 31%, 38%, 0.75);
+  background-color: hsla(247, 31%, 38%, 0.9);
 }
 
 #resume-caption, #resume-body {
@@ -132,20 +132,21 @@
 }
 
 .resume-download svg {
-  --size: 1em;
+  --size: 0.75em;
   width: var(--size);
   height: var(--size);
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
   stroke: var(--lavender);
   stroke-width: 8;
   transform: rotate(90deg);
-  /* border-right: 2.5px solid var(--lavender);
-  border-left: 2.5px solid transparent; */
+  border-right: 2px solid var(--lavender);
+  /* border-left: 2px solid transparent; */
 }
 
 .resume-download:hover svg,
 .resume-download:focus svg {
   stroke: var(--dark);
+  border-right-color: var(--dark);
   /* margin: 0; */
 }
 
@@ -520,7 +521,7 @@ span.brand-icons {
   height: 100%;
 }
 
-@keyframes bob {
+/* @keyframes bob {
   from {
     transform: translateY(0);
   }
@@ -531,7 +532,6 @@ span.brand-icons {
 
 .nav-to-top {
   align-self: center;
-  /* border: 1px solid red; */
 }
 
 .nav-to-top .arrow-wrapper {
@@ -565,7 +565,7 @@ span.brand-icons {
 
 .nav-to-top .arrow-wrapper:hover+span{
   opacity: 1;
-}
+} */
 
 /* ========================================= *\
 || >> MOBILE <<

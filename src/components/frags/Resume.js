@@ -10,6 +10,8 @@ import ResumeNav from "../Resume/ResumeNav";
 import { Fragment } from "react";
 import { useSiteMode } from "../shared/ModeProvider";
 import Logotype from "./Logotype";
+import pdf from "../../assets/files/Resume - juliancbrooks-com.pdf";
+import TopBtn from "./TopBtn";
 
 export default function Resume() {
   const [siteMode] = useSiteMode();
@@ -56,7 +58,11 @@ export default function Resume() {
           </div>
           {`${city}, ${states.get(state)}`}
         </div>
-        <a className="resume-download flex">
+        <a
+          className="resume-download flex"
+          href={pdf}
+          download="Resume - juliancbrooks-com.pdf"
+        >
           <svg>
             <use href="#arrow-icon" />
           </svg>
@@ -81,9 +87,7 @@ export default function Resume() {
           data-resume-section="Skills"
         >
           <SkillCache
-            entries={skills.filter(skill =>
-              skill.category.includes(siteMode.toLowerCase())
-            )}
+            entries={skills.filter(skill => skill.category.includes(siteMode))}
             concise={true}
             showIcons={true}
             featured={true}
@@ -133,14 +137,15 @@ export default function Resume() {
           <Experience entries={experience} />
         </section>
         {/* ========= TO TOP ========= */}
-        <div className="nav-to-top flex col">
+        <TopBtn destination={"#resume-top"} />
+        {/* <div className="nav-to-top flex col">
           <a href="#resume-top" className="arrow-wrapper">
             <svg>
               <use href="#arrow-icon" />
             </svg>
           </a>
           <span>Top</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );

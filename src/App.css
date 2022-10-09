@@ -41,7 +41,7 @@
   --pop: var(--red);
   --faint: hsla(0, 0%, 0%, 0.1);
   --phantom: hsla(0,0%,0%,0.05);
-  --shaded: hsla(247, 31%, 38%, 00.25em);
+  --shaded: hsla(247, 31%, 38%, .75);
   /* ========== FONTS ========== */
   --keyFont: 'social-gothic-rough', sans-serif;
   --bodyFont: 'Rajdhani';
@@ -126,7 +126,7 @@ main {
 }
 
 main > section {
-  scroll-snap-align: top;
+  scroll-snap-align: start;
 }
 
 .flex {

@@ -34,7 +34,7 @@ export default function ConnectForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // sendEmail(e);
+    sendEmail(e);
   };
 
   const sendEmail = e => {
@@ -69,6 +69,7 @@ export default function ConnectForm() {
               name="name"
               placeholder="Jane Doe"
               onInput={e => handleInput(e)}
+              required
             />
           </label>
           {/* ---- EMAIL ---- */}
@@ -78,6 +79,7 @@ export default function ConnectForm() {
               name="email"
               placeholder="janedoe@domain.com"
               onInput={e => handleInput(e)}
+              required
             />
           </label>
           {/* ---- OCCUPATION ---- */}
@@ -100,6 +102,7 @@ export default function ConnectForm() {
               placeholder="Hey Julian! Are you available for hire?"
               maxLength={msgMax}
               onInput={e => handleInput(e)}
+              required
             />
           </label>
         </div>

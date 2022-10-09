@@ -312,6 +312,7 @@ h2#welcome-logo .mode-title span{
     display: flex;
     max-width: 20vw;
     opacity: 1;
+    border: 3px solid var(--evening);
   }
 
   #welcome .mode-selector:not(.activated) button:not(.active) {
@@ -339,5 +340,11 @@ h2#welcome-logo .mode-title span{
   #welcome .mode-selector:not(.activated) button:not(.active) svg{
     transform: scale(0.25);
     opacity: 0;
+  }
+
+  #welcome .mode-selector button:not(.active) svg {
+    --size: 60%;
+    width: var(--size);
+    height: calc(var(--size) * .75);
   }
 }

@@ -1,9 +1,13 @@
 footer {
-  padding: 3rem 3rem 1rem;
+  padding: 1rem 3rem;
   background-color: var(--darker);
   font-size: smaller;
   font-weight: normal;
   box-sizing: border-box;
+}
+
+footer .nav-to-top {
+  margin-bottom: 1.5rem;
 }
 
 footer .icon-cache svg {

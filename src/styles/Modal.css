@@ -10,10 +10,8 @@ body.modal-lock {
   width: 100vw;
   height: 100vh;
   backdrop-filter: blur(10px);
-  /* background-color: hsla(0,0%,0%,0.5); */
   background-color: var(--shaded);
   mix-blend-mode: multiply;
-  /* opacity: .5; */
 }
 
 .modal-wrapper {
@@ -22,12 +20,10 @@ body.modal-lock {
   left: 0;
   right: 0;
   bottom: 0;
-  /* padding: 2rem; */
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
   z-index: 1050;
-  /* border: 1px solid red; */
 }
 
 .modal {

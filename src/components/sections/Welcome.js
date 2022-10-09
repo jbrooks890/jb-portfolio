@@ -8,7 +8,6 @@ import Modal from "../shared/Modal";
 import ConnectForm from "../frags/ConnectForm";
 import Resume from "../frags/Resume";
 import { useSiteMode } from "../shared/ModeProvider";
-import SelectBox from "../frags/SelectBox";
 import ModeSelector from "../frags/ModeSelector";
 
 export default function Welcome({ pages }) {

@@ -29,6 +29,8 @@ import { ReactComponent as PUZZLE_ICON } from "../../assets/icons/puzzle-icon.sv
 import { ReactComponent as CODE_ICON } from "../../assets/icons/code-icon.svg";
 import { ReactComponent as CODE_ICON_B } from "../../assets/icons/code-icon-alt.svg";
 import { ReactComponent as LEGACY_LOGO } from "../../assets/icons/legacy-logo.svg";
+import { ReactComponent as VIE_LOGO } from "../../assets/icons/vie-crown.svg";
+import { ReactComponent as CRYMSICA_LOGO } from "../../assets/icons/crymsica-lion.svg";
 
 export default function Icons() {
   return (
@@ -64,6 +66,8 @@ export default function Icons() {
       <CODE_ICON />
       <CODE_ICON_B />
       <LEGACY_LOGO />
+      <VIE_LOGO />
+      <CRYMSICA_LOGO />
     </svg>
   );
 }

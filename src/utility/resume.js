@@ -256,7 +256,7 @@ export const resumeData = {
       },
       tech: ["Photoshop", "Illustrator", "Javascript"],
       link: "https://www.worldsofepoch.com/vie",
-      icon: "",
+      icon: "vie-crown",
       colors: {
         key: "#ff9f7d",
         alt: "#896883",
@@ -334,7 +334,7 @@ export const resumeData = {
       meta: {},
       tech: [],
       link: "",
-      icon: "",
+      icon: "crymsica-lion",
       colors: {
         key: "#d10000",
         alt: "",
@@ -352,8 +352,7 @@ export const resumeData = {
         platform: "",
         link: "",
       },
-      description:
-        "Crymsica Games is the division of EPOCH Studios dedicated to the development of video games and other visual media.",
+      description: "",
       meta: {
         client: "15th AMU, U.S. Air Force",
       },
@@ -361,9 +360,9 @@ export const resumeData = {
       link: "",
       icon: "",
       colors: {
-        key: "#d10000",
+        key: "",
         alt: "",
-        dark: "#00000",
+        dark: "",
         reverse: false,
       },
       images: [],
@@ -839,29 +838,29 @@ export const resumeData = {
     {
       name: "Adobe Creative Cloud",
       category: ["artist"],
-      type: "platform",
+      type: "tool",
       primary: true,
     },
     {
-      name: "Adobe Photoshop",
+      name: "Photoshop",
       category: ["artist"],
       type: "tool",
       primary: true,
     },
     {
-      name: "Adobe Illustrator",
+      name: "Illustrator",
       category: ["artist"],
       type: "tool",
       primary: true,
     },
     {
-      name: "Adobe InDesign",
+      name: "InDesign",
       category: ["artist", "writer"],
       type: "tool",
       primary: true,
     },
     {
-      name: "Adobe Acrobat",
+      name: "Acrobat",
       category: ["general"],
       type: "tool",
       primary: false,

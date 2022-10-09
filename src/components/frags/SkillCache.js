@@ -1,11 +1,15 @@
 import { resumeData } from "../../utility/resume";
 import { iconMap } from "../../utility/utility";
 import "../../styles/SkillCache.css";
+import { useSiteMode } from "../shared/ModeProvider";
 
 export default function SkillCache({ entries, concise, showIcons, featured }) {
+  const [siteMode] = useSiteMode();
   const { skills: $default } = resumeData;
   const skills = !entries || entries.length === 0 ? $default : entries;
-  const filtered = skills.filter(skill => skill.category.includes("developer"));
+  const filtered = skills.filter(skill =>
+    skill.category.includes(siteMode.toLowerCase())
+  );
   const primaries = filtered.filter(skill => skill.primary === true);
   const $skills = featured ? primaries : filtered;
   const icons = $skills

@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <div id="top" className="App">
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/:mode" element={<Main />} />

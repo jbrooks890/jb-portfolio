@@ -2,8 +2,13 @@ import "../../assets/images/julian_profile_pic.jpg";
 import "../../styles/About.css";
 import Quote from "../frags/Quote";
 import SkillCache from "../frags/SkillCache";
+import Modal from "../shared/Modal";
+import useModal from "../hooks/useModal";
+import Resume from "../frags/Resume";
 
 export default function About({ pages }) {
+  const { isShowing, toggle } = useModal();
+
   return (
     <section id="about" className="site-section flex col">
       <div className="content-wrap grid">
@@ -30,9 +35,13 @@ export default function About({ pages }) {
         </div>
         <div className="about-body flex col">
           <SkillCache concise={false} showIcons={true} featured={true} />
+          <button onClick={toggle}>Resume</button>
         </div>
         <Quote />
       </div>
+      <Modal isShowing={isShowing} hide={toggle}>
+        <Resume />
+      </Modal>
     </section>
   );
 }
