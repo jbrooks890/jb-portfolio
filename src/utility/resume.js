@@ -869,7 +869,7 @@ export const resumeData = {
     },
     {
       name: "Acrobat",
-      category: ["general"],
+      category: ["writer", "general"],
       type: "tool",
       primary: false,
     },
