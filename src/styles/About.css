@@ -104,6 +104,22 @@ ul.about-shift li:hover {
   margin-block: 0.5em;
 }
 
+.about-body .resume-button {
+  padding-inline: 0;
+  color: var(--sundown);
+  font-size: larger;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: none;
+  border-bottom: 3px solid var(--day)
+}
+
+.about-body .resume-button:hover {
+  --color: var(--mid);
+  color: var(--color);
+  border-bottom-color: var(--color);
+}
+
 /* ---------- QUOTE ---------- */
 
 #about .quote-wrap {

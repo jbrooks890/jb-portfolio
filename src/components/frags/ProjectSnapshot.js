@@ -5,7 +5,7 @@ import SkillCache from "./SkillCache";
 import { wrapSkills } from "../../utility/resume";
 
 export default function ProjectSnapshot({ entry }) {
-  const { name, type, description, tech, link, images } = entry;
+  const { name, type, description, tech, link, icon, images } = entry;
   const $tech = wrapSkills(tech);
 
   return (
@@ -14,7 +14,7 @@ export default function ProjectSnapshot({ entry }) {
         <ProjectImageCar images={images} />
       </div>
       <div className="project-caption">
-        <ProjectIcon entry={entry} />
+        {icon && <ProjectIcon entry={entry} />}
         <h3>{name}</h3>
         <SkillCache
           entries={$tech}

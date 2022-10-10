@@ -35,7 +35,9 @@ export default function About({ pages }) {
         </div>
         <div className="about-body flex col">
           <SkillCache concise={false} showIcons={true} featured={true} />
-          <button onClick={toggle}>Resume</button>
+          <button className="resume-button" onClick={toggle}>
+            Résumé
+          </button>
         </div>
         <Quote />
       </div>

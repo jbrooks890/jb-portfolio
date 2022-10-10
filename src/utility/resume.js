@@ -174,7 +174,14 @@ export const resumeData = {
         genre: ["Fantasy", "Sci-Fi"],
         imprint: "EXP",
       },
-      tech: [],
+      tech: [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Photoshop",
+        "Illustrator",
+        "InDesign",
+      ],
       link: "https://www.worldsofepoch.com/arcan",
       icon: "arcan-logo",
       colors: {
@@ -183,6 +190,7 @@ export const resumeData = {
         dark: "#000",
         reverse: false,
       },
+      images: [],
     },
     {
       name: "Gigaslayer",
@@ -190,7 +198,7 @@ export const resumeData = {
       section: ["Game", "WIP"],
       featured: false,
       repo: {
-        platform: "",
+        platform: "PC",
         link: "",
       },
       description:
@@ -242,7 +250,7 @@ export const resumeData = {
       name: "Vie",
       type: "Board Game",
       section: ["Game", "WIP"],
-      featured: false,
+      featured: true,
       repo: {
         platform: "",
         link: "",
@@ -299,7 +307,7 @@ export const resumeData = {
       section: ["Game", "WIP"],
       featured: false,
       repo: {
-        platform: "",
+        platform: "PC",
         link: "",
       },
       description:
@@ -356,7 +364,7 @@ export const resumeData = {
       meta: {
         client: "15th AMU, U.S. Air Force",
       },
-      tech: ["Adobe Illustrator", "Adobe Photoshop"],
+      tech: ["Illustrator", "Photoshop"],
       link: "",
       icon: "",
       colors: {

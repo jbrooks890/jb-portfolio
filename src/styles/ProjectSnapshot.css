@@ -144,7 +144,9 @@
 }
 
 .project-icon svg {
-  width: 60%;
+  --size: 60%;
+  width: var(--size);
+  height: var(--size);
   filter: drop-shadow(2px 2px 2px var(--faint))
 }
 
@@ -178,6 +180,7 @@ a.project-visit-link {
   color: var(--lite);
   font-size: 0.75rem;
   font-weight: 600;
+  letter-spacing: 0.05em;
   line-height: 1em;
   text-transform: uppercase;
   border: 2px solid var(--lite);

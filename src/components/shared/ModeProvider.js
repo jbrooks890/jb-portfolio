@@ -7,7 +7,9 @@ export const useSiteMode = () => useContext(SiteMode);
 
 export function ModeProvider({ children }) {
   const { mode } = useParams();
-  const [siteMode, setSiteMode] = useState(mode ? mode : "Developer");
+  const [siteMode, setSiteMode] = useState(
+    mode ? mode[0].toUpperCase(1) + mode.slice(1) : "Developer"
+  );
   const pages = ["Developer", "Artist", "Writer", "Game"];
 
   return (

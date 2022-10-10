@@ -330,7 +330,7 @@ h2#welcome-logo .mode-title span{
     height: var(--size);
     fill: var(--mid);
     transition: 0.2s ease-out;
-    transition-delay: calc(0.15s * var(--i));
+    transition-delay: calc(0.15s + 0.15s * var(--i));
   }
 
   #welcome .mode-selector button.active svg {

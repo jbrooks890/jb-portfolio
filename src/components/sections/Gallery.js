@@ -2,12 +2,15 @@
 import { resumeData } from "../../utility/resume";
 import "../../styles/Gallery.css";
 import ProjectSnapshot from "../frags/ProjectSnapshot";
+import { useSiteMode } from "../shared/ModeProvider";
 
 export default function Gallery() {
   const { projects } = resumeData;
+  const [siteMode] = useSiteMode();
+
   const $projects = projects.filter(project => {
     const { section, featured } = project;
-    return section.includes("Developer") && featured;
+    return section.includes(siteMode) && featured;
   });
 
   return (
