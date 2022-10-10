@@ -79,7 +79,7 @@ export const resumeData = {
       description:
         "A crossword puzzle application built on an original grid-based architecture for creating and playing trivia-based puzzle games.",
       meta: {},
-      tech: ["React", "Javascript", "HTML", "CSS"],
+      tech: ["React", "Javascript", "HTML", "CSS", "MongoDB"],
       link: "https://xword-app-beta.netlify.app/",
       icon: "xword-logo",
       colors: {
