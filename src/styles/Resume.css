@@ -595,6 +595,7 @@ span.brand-icons {
 
   #resume-body {
     padding: 0;
+    overflow: visible;
   }
 
   #resume-projects .project-wrapper, 

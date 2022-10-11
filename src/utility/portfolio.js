@@ -35,9 +35,10 @@ export const portfolioData = {
       sections: ["Projects", "About", "Connect"],
     },
   ],
-  about: [
+  blurbs: [
     {
       title: "General",
+      section: [],
       blurb: (
         <>
           Hi, I’m Julian! I’m a [occupation] based out of Smyrna, GA. I’m
@@ -52,6 +53,7 @@ export const portfolioData = {
     },
     {
       title: "A Developer",
+      section: ["Developer"],
       blurb: (
         <>
           I began my web development journey in 2016 when I built the website
@@ -66,6 +68,7 @@ export const portfolioData = {
     },
     {
       title: "An Artist",
+      section: ["Artist"],
       blurb: (
         <>
           Art has been a passion of mine since childhood. My inspiration came
@@ -77,6 +80,7 @@ export const portfolioData = {
     },
     {
       title: "A Writer",
+      section: ["Writer"],
       blurb: (
         <>
           My visual and verbal artistry go hand-in-hand. I have always written
@@ -91,6 +95,7 @@ export const portfolioData = {
     },
     {
       title: "A Game Developer",
+      section: ["Game"],
       blurb: (
         <>
           Video games just hit differently in the 90’s, but a certain genre of
@@ -101,7 +106,7 @@ export const portfolioData = {
           the ultimate combination of visual, verbal and musical artistry—aside
           from film. Games engage the player more so. I have since began my own
           game development journey, aspiring to tell my own captivating stories
-          and pay homage to the games that inspired me.{" "}
+          and pay homage to the games that inspired me.
         </>
       ),
     },

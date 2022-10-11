@@ -16,8 +16,6 @@ import TopBtn from "./TopBtn";
 export default function Resume() {
   const [siteMode] = useSiteMode();
   const {
-    firstName,
-    lastName,
     address,
     email,
     summary,

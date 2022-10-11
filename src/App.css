@@ -57,7 +57,7 @@ html {
 body, #root, .App {height: 100%;}
 
 body {
-  background-color: var(--dark);
+  background-color: var(--darker);
   /* color: var(--pop); */
   color: var(--lite);
   font-family: var(--bodyFont);
