@@ -68,34 +68,39 @@ body.modal-lock {
   }
 
   #root {
+    --transition: margin-right 0.5s;
     width: 100vw;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
   }
 
   body.side-menu #root {
-    /* width: 100vw; */
-    /* overflow: hidden auto; */
     margin-right: var(--side-menu-w);
-    transition: margin-right 0.5s;
-  }
-  body:not(.side-menu) #root{
-    margin-right: 0;
-    transition: margin-right 0.5s;
+    /* transition: margin-right 0.5s; */
   }
 
+  body:not(.side-menu) #root{
+    margin-right: 0;
+    /* transition: margin-right 0.5s; */
+  }
+
+
+
   .modal-overlay {
-    /* display: none; */
     backdrop-filter: none;
     background-color: transparent;
   }
 
   .modal-wrapper {
+    --transition: 0.5s;
     left: auto;
     justify-content: flex-start;
     width: var(--side-menu-w);
     max-width: 0;
     min-height: 100vh;
     mix-blend-mode: normal;
-    transition: max-width 0.5s;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
     overflow-x: hidden;
     box-sizing: border-box;
     /* border: 1px solid cyan; */
@@ -103,13 +108,13 @@ body.modal-lock {
 
   .modal-wrapper:not(.active) {
     max-width: 0;
-    transition: 0.5s;
+    /* transition: 0.5s; */
   }
 
   .modal-wrapper.active{
     width: var(--side-menu-w);
     max-width: var(--side-menu-w);
-    transition: 0.5s;
+    /* transition: 0.5s; */
   }
 
   .modal {

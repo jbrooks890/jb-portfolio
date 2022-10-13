@@ -9,7 +9,8 @@ export default function useModal() {
 
   const toggle = (closing = false) => {
     // console.log({ closing });
-    document.body.classList.toggle($MOBILE ? "side-menu" : "modal-lock");
+    document.body.classList.toggle("modal-lock");
+    $MOBILE && document.body.classList.toggle("side-menu");
     if ($MOBILE) {
       closing
         ? document.body.addEventListener(
