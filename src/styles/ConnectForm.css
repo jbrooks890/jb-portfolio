@@ -133,9 +133,13 @@
 @media only screen and (max-width: 480px) {
   
   #connect-form {
-    width: 100vw;
+    width: auto;
     max-width: none;
-    padding: 2rem;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background-color: var(--evening);
+    padding: 1rem;
+    border-radius: 0;
   }
 
 }

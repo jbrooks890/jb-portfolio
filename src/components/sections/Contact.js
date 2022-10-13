@@ -11,14 +11,16 @@ export default function Contact() {
       <section id="contact" className="site-section flex col">
         <div id="contact-content-wrapper" className="flex col">
           <h2>Let's Connect</h2>
-          <button className="pill" onClick={toggle}>
+          <button className="pill" onClick={() => toggle()}>
             Email me!
           </button>
         </div>
       </section>
-      <Modal isShowing={isShowing} hide={toggle}>
-        <ConnectForm />
-      </Modal>
+      {isShowing && (
+        <Modal isShowing={isShowing} hide={toggle}>
+          <ConnectForm />
+        </Modal>
+      )}
     </>
   );
 }

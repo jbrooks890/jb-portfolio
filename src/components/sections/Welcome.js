@@ -9,6 +9,7 @@ import ConnectForm from "../frags/ConnectForm";
 import Resume from "../frags/Resume";
 import { useSiteMode } from "../shared/ModeProvider";
 import ModeSelector from "../frags/ModeSelector";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function Welcome({ pages }) {
   const $pages = [...pages, "Resume", "Connect"];
@@ -31,6 +32,7 @@ export default function Welcome({ pages }) {
   const offset = ang;
   const style = { width: size, height: size };
   const { isShowing, toggle } = useModal();
+  const $MOBILE = useMediaQuery();
 
   useEffect(() => {
     function handleResize() {
@@ -82,56 +84,62 @@ export default function Welcome({ pages }) {
       >
         <h2 id="welcome-logo" onClick={() => setActivated(prev => !prev)}>
           <JB_LOGO />
-          <div className="mode-title">
-            {modePreview.split("").map((letter, i) => (
-              <span key={i} style={{ ["--i"]: i }}>
-                {letter}
-              </span>
-            ))}
-          </div>
+          {!$MOBILE && (
+            <div className="mode-title">
+              {modePreview.split("").map((letter, i) => (
+                <span key={i} style={{ ["--i"]: i }}>
+                  {letter}
+                </span>
+              ))}
+            </div>
+          )}
         </h2>
 
-        <div id="controller-ring">
-          {$pages.map((page, i) => {
-            const offset = ang * i;
-            const x = center + rad * Math.cos(offset);
-            const y = center + rad * Math.sin(offset);
-            // console.log(`${page}:`, { x, y });
+        {!$MOBILE && (
+          <div id="controller-ring">
+            {$pages.map((page, i) => {
+              const offset = ang * i;
+              const x = center + rad * Math.cos(offset);
+              const y = center + rad * Math.sin(offset);
+              // console.log(`${page}:`, { x, y });
 
-            return (
-              <RadButton
-                key={i}
-                x={x}
-                y={y}
-                index={i}
-                size={vmin * 0.09}
-                angle={ang}
-                offset={offset}
-                active={siteMode === page}
-                onClick={modeProps.get(page).click}
-                onMouseEnter={() => setModePreview(page)}
-                onMouseLeave={() => setModePreview(siteMode)}
-              >
-                {modeProps.get(page).icon ? (
-                  <svg>
-                    <use href={`#${modeProps.get(page).icon}`} />
-                  </svg>
-                ) : (
-                  page
-                )}
-              </RadButton>
-            );
-          })}
-        </div>
+              return (
+                <RadButton
+                  key={i}
+                  x={x}
+                  y={y}
+                  index={i}
+                  size={vmin * 0.09}
+                  angle={ang}
+                  offset={offset}
+                  active={siteMode === page}
+                  onClick={modeProps.get(page).click}
+                  onMouseEnter={() => setModePreview(page)}
+                  onMouseLeave={() => setModePreview(siteMode)}
+                >
+                  {modeProps.get(page).icon ? (
+                    <svg>
+                      <use href={`#${modeProps.get(page).icon}`} />
+                    </svg>
+                  ) : (
+                    page
+                  )}
+                </RadButton>
+              );
+            })}
+          </div>
+        )}
       </div>
-      <ModeSelector
-        pages={pages}
-        modeProps={modeProps}
-        mode={siteMode}
-        ready={activated}
-      />
+      {$MOBILE && (
+        <ModeSelector
+          pages={pages}
+          modeProps={modeProps}
+          mode={siteMode}
+          ready={activated}
+        />
+      )}
 
-      {modalContent && (
+      {isShowing && (
         <Modal isShowing={isShowing} hide={toggle}>
           {modalContent}
         </Modal>

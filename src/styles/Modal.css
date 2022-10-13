@@ -1,3 +1,7 @@
+:root {
+  --side-menu-w: 95vw;
+}
+
 body.modal-lock {
   overflow: hidden;
 }
@@ -6,12 +10,12 @@ body.modal-lock {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1040;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
   backdrop-filter: blur(10px);
   background-color: var(--shaded);
   mix-blend-mode: multiply;
+  z-index: 1040;
 }
 
 .modal-wrapper {
@@ -55,12 +59,78 @@ body.modal-lock {
 }
 
 /* ========================================= *\
-|| >> MOBILE <<
+|| >> MOBILE: OFF-CANVAS <<
 \* ========================================= */
 
 @media only screen and (max-width: 480px) {
+  body.side-menu {
+    overflow-x: scroll;
+  }
+
+  #root {
+    width: 100vw;
+  }
+
+  body.side-menu #root {
+    /* width: 100vw; */
+    /* overflow: hidden auto; */
+    margin-right: var(--side-menu-w);
+    transition: margin-right 0.5s;
+  }
+  body:not(.side-menu) #root{
+    margin-right: 0;
+    transition: margin-right 0.5s;
+  }
+
+  .modal-overlay {
+    /* display: none; */
+    backdrop-filter: none;
+    background-color: transparent;
+  }
+
   .modal-wrapper {
+    left: auto;
     justify-content: flex-start;
+    width: var(--side-menu-w);
+    max-width: 0;
     min-height: 100vh;
+    mix-blend-mode: normal;
+    transition: max-width 0.5s;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    /* border: 1px solid cyan; */
+  }
+
+  .modal-wrapper:not(.active) {
+    max-width: 0;
+    transition: 0.5s;
+  }
+
+  .modal-wrapper.active{
+    width: var(--side-menu-w);
+    max-width: var(--side-menu-w);
+    transition: 0.5s;
+  }
+
+  .modal {
+    width: 100%;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    /* border: 1px solid coral; */
+  }
+
+  .modal-close {
+    position: fixed;
+    z-index: 2000;
+    opacity: 1;
+  }
+
+  .modal > *:not(.modal-close) {
+    /* overflow-y: scroll; */
+    /* padding-top: 3rem; */
+    width: var(--side-menu-w) !important;
+    padding-bottom: 3rem;
+    background-color: transparent;
+    box-shadow: inset 2px 2px 3px var(--faint);
   }
 }

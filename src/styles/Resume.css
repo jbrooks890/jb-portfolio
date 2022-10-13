@@ -5,6 +5,7 @@
   height: 100vh;
   max-height: 100vh;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .modal #resume {
@@ -578,6 +579,10 @@ span.brand-icons {
     height: auto;
     max-height: none;
     font-size: 1rem;
+  }
+
+  .modal #resume {
+    background-color: var(--mid);
   }
 
   #resume.flex {
