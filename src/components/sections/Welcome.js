@@ -130,14 +130,12 @@ export default function Welcome({ pages }) {
           </div>
         )}
       </div>
-      {$MOBILE && (
-        <ModeSelector
-          pages={pages}
-          modeProps={modeProps}
-          mode={siteMode}
-          ready={activated}
-        />
-      )}
+      <ModeSelector
+        pages={pages}
+        modeProps={modeProps}
+        mode={siteMode}
+        ready={activated}
+      />
 
       {isShowing && (
         <Modal isShowing={isShowing} hide={toggle}>
