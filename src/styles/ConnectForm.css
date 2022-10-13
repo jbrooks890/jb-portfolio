@@ -81,7 +81,8 @@
 #connect-form textarea{
   position: relative;
   resize: vertical;
-  max-height: 4em;
+  height: 4em;
+  max-height: 6em;
 }
 
 #connect-form label[for='message']{
@@ -95,7 +96,7 @@
   position: absolute;
   bottom: var(--offset);
   right: var(--offset);
-  color: var(--mid);
+  color: var(--lavender);
   font-family: var(--keyFont);
   font-size: 0.6rem;
   font-weight: 700;

@@ -24,6 +24,8 @@ export default function ConnectForm() {
   const interests = ["Projects", "Artwork", "Book(s)", "Other"];
   const msgMax = 300;
 
+  console.log(REACT_APP_EMAILJS_PUBLIC_KEY);
+
   const handleInput = e => {
     const { name, value } = e.target;
     updateFormContent(prev => ({
