@@ -101,7 +101,6 @@ body.modal-lock {
     mix-blend-mode: normal;
     -webkit-transition: var(--transition);
     transition: var(--transition);
-    overflow-x: hidden;
     box-sizing: border-box;
     /* border: 1px solid cyan; */
   }
