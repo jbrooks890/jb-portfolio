@@ -52,22 +52,21 @@ export const portfolioData = {
       ),
     },
     {
-      title: "A Developer",
+      title: "a Developer",
       section: ["Developer"],
       blurb: (
         <>
-          I began my web development journey in 2016 when I built the website
-          for EPOCH Studios with the Squarespace website builder. My skill grew
-          the more I exploited the platform’s Custom CSS and other coding outlet
-          features until I eventually felt I had outgrown its limited
-          functionality. In May of 2022 I enrolled in a Software Engineering
-          bootcamp where I learned React and MongoDB among other languages and
-          tools.
+          In 2016 I built the website for EPOCH&nbsp;Studios with Squarespace,
+          marking the start of my web development journey. My skill grew the
+          more I exploited the platform’s Custom CSS and other coding outlet
+          features until I felt I had exhausted its limited functionality. In
+          May of 2022 I enrolled in a Software Engineering bootcamp where I
+          learned React and MongoDB among other languages and tools.
         </>
       ),
     },
     {
-      title: "An Artist",
+      title: "an Artist",
       section: ["Artist"],
       blurb: (
         <>
@@ -79,34 +78,29 @@ export const portfolioData = {
       ),
     },
     {
-      title: "A Writer",
+      title: "a Writer",
       section: ["Writer"],
       blurb: (
         <>
-          My visual and verbal artistry go hand-in-hand. I have always written
-          as much as I drew, words being another deeply-rooted form of
-          expression for me. I enjoy the “what-ifs” of life and explore those
-          notions in my writing. In 2016, I self-published my Fantasy/Sci-Fi
-          novel, Arcan: The Missing Nexusunder my own imprint EPOCH Studios.
-          Arcan remains my greatest project and is going, but I have since began
-          lesser projects that allow me to explore my other ideas.
+          I have always written as much as I've drawn, words being another
+          deeply-rooted form of expression for me. I enjoy the “what-ifs” of
+          life and explore those notions in my writing. In 2016, I
+          self-published my Fantasy/Sci-Fi novel,{" "}
+          <i>Arcan: The Missing Nexus</i> under my own imprint EPOCH Studios. I
+          have since penned smaller projects that allow me to explore my other
+          ideas.
         </>
       ),
     },
     {
-      title: "A Game Developer",
+      title: "a Game Developer",
       section: ["Game"],
       blurb: (
         <>
-          Video games just hit differently in the 90’s, but a certain genre of
-          game strummed a more insidious chord than the others: role-playing
-          games. Story mode had greater priority in games then than they do now,
-          but RPG’s made it the forefront and the storytelling is what inspired
-          me most about anything, any form of media. Games were (and still are)
-          the ultimate combination of visual, verbal and musical artistry—aside
-          from film. Games engage the player more so. I have since began my own
-          game development journey, aspiring to tell my own captivating stories
-          and pay homage to the games that inspired me.
+          I began developing my first video game in high school using RPG Maker.
+          I have since began my own game development journey, aspiring to tell
+          my own captivating stories and pay homage to the games that inspired
+          me.
         </>
       ),
     },

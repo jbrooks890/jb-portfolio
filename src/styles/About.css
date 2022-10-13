@@ -33,9 +33,37 @@ img.headshot {
 
 .description {
   grid-area: description;
-  padding: 1rem;
+  padding: 2rem;
   width: 30vw;
+  background-color: var(--dark);
   /* border: 1px solid red; */
+  transition: height 0.1s ease-out;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.description h2 {
+  color: var(--lite);
+}
+
+.description h4 {
+  align-self: flex-start;
+  color: var(--day);
+  font-family: var(--keyFont);
+  text-align: left;
+  margin-bottom: 0.5em;
+}
+
+.description p {
+  transition: height 0.1s ease-out;
+  color: var(--lite);
+  text-align: left;
+}
+
+.description p em {
+  color: red;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px var(--evening);
 }
 
 ul.about-shift {
@@ -68,7 +96,8 @@ ul.about-shift li:not(:last-of-type){
   margin-right: 0.25em;
 }
 
-ul.about-shift li:hover {
+ul.about-shift li:hover,
+ ul.about-shift li.active{
   background-color: red;
   transform: scale(1.25);
 }
@@ -144,6 +173,7 @@ ul.about-shift li:hover {
   #about .content-wrap .description {
     width: 100%;
     box-sizing: border-box;
+    border-radius: 0;
   }
 
   #about .content-wrap .headshot-wrap {
@@ -151,6 +181,7 @@ ul.about-shift li:hover {
     order: -1;
     width: var(--size);
     height: var(--size);
+    margin-bottom: 2rem;
   }
 
   #about .about-body {
