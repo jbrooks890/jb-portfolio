@@ -153,14 +153,8 @@
   display: inline-block;
   margin: 0;
   color: var(--lite);
-  /* color: transparent;
-  background-image: linear-gradient(to bottom, red, red, var(--red));
-  background-clip: text; */
   font-size: 2rem;
-  text-align: left;
-  /* filter: drop-shadow(3px 3px 0 var(--darker)) */
-  /* text-shadow: 2px 2px 0 var(--nite); */
-  /* transform: rotate(-5deg); */
+  text-align: center;
 }
 
 .project-caption .project-type {
@@ -171,6 +165,7 @@
 .project-caption .project-type::before,
 .project-caption .project-type::after {
   color: var(--lavender);
+  font-weight: bold;
 }
 
 .project-caption .project-type::before {
