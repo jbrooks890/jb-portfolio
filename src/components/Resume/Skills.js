@@ -15,19 +15,21 @@ export default function Skills({ skills }) {
   ]);
 
   const createLists = () => {
-    return [...skillGroups.keys()].map((name, i) => {
-      return (
-        <Fragment key={i}>
-          <h3>{name}</h3>
-          <p>
-            {skillGroups
-              .get(name)
-              .map(skill => skill.name)
-              .join(", ")}
-          </p>
-        </Fragment>
-      );
-    });
+    return [...skillGroups.keys()]
+      .filter(name => skillGroups.get(name).length > 0)
+      .map((name, i) => {
+        return (
+          <Fragment key={i}>
+            <h3>{name}</h3>
+            <p>
+              {skillGroups
+                .get(name)
+                .map(skill => skill.name)
+                .join(", ")}
+            </p>
+          </Fragment>
+        );
+      });
   };
 
   return <div className="skills-body grid">{createLists()}</div>;

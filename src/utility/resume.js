@@ -68,6 +68,32 @@ export const resumeData = {
   ],
   projects: [
     {
+      name: "Worlds of EPOCH",
+      type: "Website",
+      section: ["Developer"],
+      featured: true,
+      repo: {
+        platform: "",
+        link: "",
+      },
+      description:
+        "The official website of my independent publishing company EPOCH Studios.",
+      meta: {},
+      tech: ["Squarespace", "Javascript", "HTML", "CSS"],
+      link: "https://www.worldsofepoch.com/",
+      icon: "epoch-logo",
+      colors: {
+        key: "#feee36",
+        alt: "#6c9393",
+        dark: "#161d1d",
+        reverse: false,
+      },
+      images: {
+        location: "projects",
+        entries: ["epoch-site-1.png", "epoch-site-2.png"],
+      },
+    },
+    {
       name: "XWord",
       type: "Game",
       section: ["Developer", "Game"],
@@ -88,7 +114,10 @@ export const resumeData = {
         dark: "#black",
         reverse: false,
       },
-      images: ["xword-1.png", "xword-3.png"],
+      images: {
+        location: "projects",
+        entries: ["xword-1.png", "xword-3.png"],
+      },
     },
     {
       name: "PokéSquad",
@@ -111,31 +140,12 @@ export const resumeData = {
         dark: "",
         reverse: true,
       },
-      images: ["pokesquad-1.png", "pokesquad-2.png"],
-    },
-    {
-      name: "Worlds of EPOCH",
-      type: "Website",
-      section: ["Developer"],
-      featured: true,
-      repo: {
-        platform: "",
-        link: "",
+      images: {
+        location: "projects",
+        entries: ["pokesquad-1.png", "pokesquad-2.png"],
       },
-      description:
-        "The official website of my independent publishing company EPOCH Studios.",
-      meta: {},
-      tech: ["Squarespace", "Javascript", "HTML", "CSS"],
-      link: "https://www.worldsofepoch.com/",
-      icon: "epoch-logo",
-      colors: {
-        key: "#feee36",
-        alt: "#6c9393",
-        dark: "#161d1d",
-        reverse: false,
-      },
-      images: ["epoch-site-1.png", "epoch-site-2.png"],
     },
+
     {
       name: "Web Reader",
       type: "App",
@@ -157,7 +167,10 @@ export const resumeData = {
         dark: "",
         reverse: false,
       },
-      images: [],
+      images: {
+        location: "",
+        entries: [],
+      },
     },
     {
       name: "Arcan",
@@ -169,7 +182,7 @@ export const resumeData = {
         link: "",
       },
       description:
-        "A Fantasy/Sci-Fi series by yours truly, following Kyran on his journey to stop the Exxarians from undoing all Created.",
+        "A Fantasy/Sci-Fi series following Kyran on his epic journey to stop the Exxarians from undoing all Created.",
       meta: {
         genre: ["Fantasy", "Sci-Fi"],
         imprint: "EXP",
@@ -190,34 +203,10 @@ export const resumeData = {
         dark: "#000",
         reverse: false,
       },
-      images: [],
-    },
-    {
-      name: "Gigaslayer",
-      type: "Game",
-      section: ["Game", "WIP"],
-      featured: false,
-      repo: {
-        platform: "PC",
-        link: "",
+      images: {
+        location: "gallery",
+        entries: ["arcan__web-Banner.jpg"],
       },
-      description:
-        "A classic JRPG-style video game about Adam, a young boy who ventures to hunt the Gigas and their spawn that have begun to run rampant since their recent reawakening.",
-      meta: {
-        developer: "Crymsica",
-        publisher: "EPOCH Studios",
-        genre: ["JRPG", "RPG", "Fantasy"],
-      },
-      tech: ["RPG Maker MZ", "Javascript"],
-      link: "",
-      icon: "",
-      colors: {
-        key: "",
-        alt: "",
-        dark: "",
-        reverse: false,
-      },
-      images: [],
     },
     {
       name: "The Dark Ones",
@@ -244,7 +233,10 @@ export const resumeData = {
         dark: "",
         reverse: false,
       },
-      images: [],
+      images: {
+        location: "gallery",
+        entries: [],
+      },
     },
     {
       name: "Vie",
@@ -271,7 +263,45 @@ export const resumeData = {
         dark: "#2e2e47",
         reverse: false,
       },
-      images: [],
+      images: {
+        location: "gallery",
+        entries: ["vie__web-Banner.jpg"],
+      },
+    },
+    {
+      name: "Gigaslayer",
+      type: "Game",
+      section: ["Game", "WIP"],
+      featured: false,
+      repo: {
+        platform: "PC",
+        link: "",
+      },
+      description: (
+        <>
+          A classic JRPG-style video game about a young boy named Adam who
+          ventures off to hunt down <i>Gigas</i> and their troublesome spawn
+          that have run rampant since their recent reawakening.
+        </>
+      ),
+      meta: {
+        developer: "Crymsica",
+        publisher: "EPOCH Studios",
+        genre: ["JRPG", "RPG", "Fantasy"],
+      },
+      tech: ["RPG Maker MZ", "Javascript"],
+      link: "",
+      icon: "",
+      colors: {
+        key: "",
+        alt: "",
+        dark: "",
+        reverse: false,
+      },
+      images: {
+        location: "gallery",
+        entries: [],
+      },
     },
     {
       name: "Andromata",
@@ -298,7 +328,10 @@ export const resumeData = {
         dark: "",
         reverse: false,
       },
-      images: [],
+      images: {
+        location: "gallery",
+        entries: [],
+      },
     },
 
     {
@@ -326,7 +359,10 @@ export const resumeData = {
         dark: "",
         reverse: false,
       },
-      images: [],
+      images: {
+        location: "gallery",
+        entries: [],
+      },
     },
     {
       name: "Crymsica",
@@ -349,7 +385,10 @@ export const resumeData = {
         dark: "#00000",
         reverse: false,
       },
-      images: [],
+      images: {
+        location: "projects",
+        entries: [],
+      },
     },
     {
       name: "T2 Com-bat",
@@ -360,7 +399,8 @@ export const resumeData = {
         platform: "",
         link: "",
       },
-      description: "",
+      description:
+        "The Com-bat mascot of the MC-130H Combat Talon II aircraft is a symbol of its decades-long legacy in the Air Force Special Operations Command. This redesign was an effort to modernize its aesthetic while still honoring its history.",
       meta: {
         client: "15th AMU, U.S. Air Force",
       },
@@ -373,7 +413,46 @@ export const resumeData = {
         dark: "",
         reverse: false,
       },
-      images: [],
+      images: {
+        location: "gallery",
+        entries: ["t2__web.jpg", "t2-patch__web.jpg"],
+      },
+    },
+    {
+      name: (
+        <>
+          War Love<span className="subtitle">by Jessica Lá Rel</span>
+        </>
+      ),
+      type: "Album Cover",
+      section: ["Artist"],
+      featured: true,
+      repo: {
+        platform: "",
+        link: "",
+      },
+      description: (
+        <>
+          The cover art for R&B/Soul artist Jessica Lá&nbsp;Rel's debut album,{" "}
+          <i>War&nbsp;Love </i>.
+        </>
+      ),
+      meta: {
+        client: "Jessica Anderson (aka Jessica Lá Rel)",
+      },
+      tech: ["Illustrator", "Photoshop"],
+      link: "https://jessicalarel.com/music/",
+      icon: "",
+      colors: {
+        key: "",
+        alt: "",
+        dark: "",
+        reverse: false,
+      },
+      images: {
+        location: "gallery",
+        entries: ["war-love__web.jpg"],
+      },
     },
   ],
   experience: [
@@ -838,8 +917,14 @@ export const resumeData = {
       primary: true,
     },
     {
+      name: "NPM",
+      category: ["developer", "game"],
+      type: "proficiency",
+      primary: true,
+    },
+    {
       name: "Squarespace",
-      category: ["developer"],
+      category: ["developer", "writer"],
       type: "tool",
       primary: true,
     },
@@ -888,6 +973,12 @@ export const resumeData = {
     {
       name: "Figma",
       category: ["developer", "artist"],
+      type: "tool",
+      primary: false,
+    },
+    {
+      name: "FontMaker",
+      category: ["developer", "artist", "general"],
       type: "tool",
       primary: false,
     },
@@ -971,7 +1062,7 @@ export const resumeData = {
       primary: false,
     },
     {
-      name: "Database Design/Development",
+      name: "Relational Database Design/Development",
       category: ["developer", "game"],
       type: "proficiency",
       primary: false,
@@ -1035,18 +1126,6 @@ export const resumeData = {
       name: "jQuery",
       category: ["developer"],
       type: "language",
-      primary: false,
-    },
-    {
-      name: "NPM",
-      category: ["developer", "game"],
-      type: "proficiency",
-      primary: true,
-    },
-    {
-      name: "FontMaker",
-      category: ["developer", "artist", "general"],
-      type: "tool",
       primary: false,
     },
   ],

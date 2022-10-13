@@ -2,13 +2,14 @@ import { useState } from "react";
 
 export default function ProjectImageCar({ images }) {
   const [active, setActive] = useState(0);
+  const { location, entries } = images;
 
   const scroll = dest => {
     const target =
-      active + dest >= images.length
+      active + dest >= entries.length
         ? 0
         : active + dest < 0
-        ? images.length - 1
+        ? entries.length - 1
         : active + dest;
     // console.log({ target });
     setActive(target);
@@ -17,21 +18,29 @@ export default function ProjectImageCar({ images }) {
   return (
     <>
       <div className="image-wrapper flex">
-        {images.map((image, i) => {
+        {entries.map((image, i) => {
           return (
             <img
               key={i}
               className={`project-img ${active === i ? "active" : ""}`}
-              src={require(`../../assets/images/projects/${image}`)}
+              src={require(`../../assets/images/${location}/${image}`)}
               onClick={() => scroll(1)}
             />
           );
         })}
-        <span className="scroller prev" onClick={() => scroll(-1)}></span>
-        <span className="scroller next" onClick={() => scroll(1)}></span>
+        {entries.length > 1 && (
+          <>
+            <span className="scroller prev" onClick={() => scroll(-1)}></span>
+            <span className="scroller next" onClick={() => scroll(1)}></span>
+          </>
+        )}
       </div>
-      <ul className="project-images-pager flex">
-        {images.map((_, i) => (
+      <ul
+        className={`project-images-pager flex ${
+          entries.length <= 1 ? "hide" : ""
+        }`}
+      >
+        {entries.map((_, i) => (
           <li
             key={i}
             className={active === i ? "active" : ""}

@@ -15,15 +15,8 @@ import TopBtn from "./TopBtn";
 
 export default function Resume() {
   const [siteMode] = useSiteMode();
-  const {
-    address,
-    email,
-    summary,
-    projects,
-    experience,
-    education,
-    skills,
-  } = resumeData;
+  const { address, email, summary, projects, experience, education, skills } =
+    resumeData;
   const { city, state } = address;
   const $projects = projects.filter(project =>
     project.section.includes(siteMode)

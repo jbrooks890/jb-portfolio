@@ -15,17 +15,21 @@ export default function ProjectSnapshot({ entry }) {
       </div>
       <div className="project-caption">
         {icon && <ProjectIcon entry={entry} />}
-        <h3>{name}</h3>
+        <h3 className="project-title">{name}</h3>
+        <h4 className="project-type">{type}</h4>
         <SkillCache
           entries={$tech}
           concise={true}
           showIcons={true}
           featured={false}
+          filter={false}
         />
         <p>{description}</p>
-        <a className="project-visit-link" href={link} target="_blank">
-          Visit
-        </a>
+        {link && (
+          <a className="project-visit-link" href={link} target="_blank">
+            Visit
+          </a>
+        )}
       </div>
     </div>
   );

@@ -27,9 +27,9 @@
 }
 
 .project-gallery .image-wrapper {
-  flex-grow: 1;
   cursor: pointer;
   position: relative;
+  flex-grow: 1;
   width: 100%;
 }
 
@@ -44,10 +44,6 @@
 
 .image-wrapper:hover .scroller{
   opacity: .5;
-}
-
-.image-wrapper:hover .scroller:hover{
-  opacity: 1;
 }
 
 .image-wrapper .scroller.prev{
@@ -70,10 +66,7 @@
   height: 1rem;
 }
 
-.image-wrapper .scroller:hover::before{
-  /* background-color: var(--lite); */
-  filter: brightness(125%) saturate(200%);
-}
+
 
 
 .project-img {
@@ -94,6 +87,11 @@
   margin-block: 1rem;
   padding-left: 0;
   list-style-type: none;
+}
+
+.project-images-pager.hide {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .project-images-pager li {
@@ -150,7 +148,7 @@
   filter: drop-shadow(2px 2px 2px var(--faint))
 }
 
-.project-caption h3 {
+.project-caption .project-title {
   position: relative;
   display: inline-block;
   margin: 0;
@@ -163,6 +161,24 @@
   /* filter: drop-shadow(3px 3px 0 var(--darker)) */
   /* text-shadow: 2px 2px 0 var(--nite); */
   /* transform: rotate(-5deg); */
+}
+
+.project-caption .project-type {
+  margin: 0;
+  color: red;
+}
+
+.project-caption .project-type::before,
+.project-caption .project-type::after {
+  color: var(--lavender);
+}
+
+.project-caption .project-type::before {
+  content: '{ ';
+}
+
+.project-caption .project-type::after {
+  content: ' }';
 }
 
 .project-caption .skill-cache li.skill-icon {
@@ -189,11 +205,29 @@ a.project-visit-link {
   box-sizing: border-box;
 }
 
-a.project-visit-link:hover,
-a.project-visit-link:focus {
-  background-color: var(--lite);
-  /* border-width: 0; */
-  color: var(--darker);
+
+
+/* ========================================= *\
+|| >> HOVER <<
+\* ========================================= */
+
+@media (hover:hover){
+
+  .image-wrapper:hover .scroller:hover {
+      opacity: 1;
+    }
+
+  .image-wrapper .scroller:hover::before {
+    /* background-color: var(--lite); */
+    filter: brightness(125%) saturate(200%);
+  }
+
+  a.project-visit-link:hover,
+  a.project-visit-link:focus {
+    background-color: var(--lite);
+    /* border-width: 0; */
+    color: var(--darker);
+  }
 }
 
 /* ========================================= *\
