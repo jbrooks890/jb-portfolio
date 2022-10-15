@@ -32,7 +32,7 @@ export default function Modal({ isShowing, hide, children }) {
             // style={active ? { maxWidth: window.innerWidth + "px" } : null}
             // onClick={closeModal}
           >
-            <div className="modal">
+            <div className="modal flex col">
               <div
                 className="modal-close flex"
                 data-dismiss="modal"

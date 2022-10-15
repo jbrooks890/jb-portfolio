@@ -24,7 +24,8 @@ body.modal-lock {
   left: 0;
   right: 0;
   bottom: 0;
-  /* justify-content: flex-start; */
+  justify-content: stretch;
+  margin-block: 2vh;
   overflow-x: hidden;
   overflow-y: auto;
   /* width: 25%; */
@@ -32,12 +33,20 @@ body.modal-lock {
   z-index: 1050;
   /* background-color: rgba(255,0,0,0.25); */
   box-sizing: border-box;
-  border: 1px solid cyan;
+  /* border: 1px solid cyan; */
 }
 
 .modal {
   position: relative;
+  flex-grow: 1;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  /* border: 3px solid lime; */
   z-index: 1060;
+}
+
+.modal.flex.col {
+  justify-content: stretch;
 }
 
 .modal-close {
@@ -64,9 +73,15 @@ body.modal-lock {
   opacity: 1;
 }
 
-.modal > div:not(.modal-close) {
+.modal > *:not(.modal-close) {
   position: relative;
+  height: 100%;
+  /* border: 3px solid coral; */
   z-index: 2000;
+}
+
+.modal.flex.col > *:not(.modal-close) {
+  flex-grow: 1;
 }
 
 /* ========================================= *\
@@ -130,7 +145,6 @@ body.modal-lock {
   .modal {
     width: 100%;
     overflow-y: scroll;
-    box-sizing: border-box;
     /* border: 1px solid coral; */
   }
 
