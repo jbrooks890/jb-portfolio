@@ -5,7 +5,7 @@
   max-width: 600px;
   padding:  3rem;
   background-color: var(--dark);
-  border-radius: 20px;
+  border-radius: var(--outside);
   box-sizing: border-box;
 }
 

@@ -2,8 +2,8 @@
   padding-inline: 3rem;
   font-size: smaller;
   background-color: var(--mid);
-  height: 100vh;
-  max-height: 100vh;
+  /* height: 100vh;
+  max-height: 100vh; */
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -12,6 +12,7 @@
   width: 100%;
   /* max-width: 1280px; */
   background-color: hsla(247, 31%, 38%, 0.9);
+  border-radius: var(--outside);
 }
 
 #resume-caption, #resume-body {

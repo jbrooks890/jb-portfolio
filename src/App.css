@@ -18,11 +18,6 @@
 }
 
 :root {
-  /* ========== BREAKPOINTs ========== */
-  --desktop: 0;
-  --mobile: 480px;
-  --tablet: 0;
-
   /* ========== COLORS ========== */
   --red: hsl(0, 100%, 41%);
   /* --midnite: hsl(258, 15%, 15%); */
@@ -46,6 +41,8 @@
   --keyFont: 'social-gothic-rough', sans-serif;
   --bodyFont: 'Rajdhani';
   /* ========== PADDING ========== */
+  /* ========== BORDER ========== */
+  --outside: 20px;
 }
 
 html {

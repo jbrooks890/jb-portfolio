@@ -25,7 +25,7 @@ body.modal-lock {
   right: 0;
   bottom: 0;
   justify-content: stretch;
-  margin-block: 2vh;
+  /* margin-block: 2vh; */
   overflow-x: hidden;
   overflow-y: auto;
   /* width: 25%; */
@@ -38,6 +38,7 @@ body.modal-lock {
 
 .modal {
   position: relative;
+  margin: 2vh;
   flex-grow: 1;
   box-sizing: border-box;
   overflow-y: hidden;
@@ -76,7 +77,7 @@ body.modal-lock {
 .modal > *:not(.modal-close) {
   position: relative;
   height: 100%;
-  /* border: 3px solid coral; */
+  border: 3px solid coral;
   z-index: 2000;
 }
 
