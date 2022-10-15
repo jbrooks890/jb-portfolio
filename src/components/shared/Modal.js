@@ -13,7 +13,7 @@ export default function Modal({ isShowing, hide, children }) {
   // console.log({ isShowing });
   useEffect(() => isShowing && setActive(true), []);
 
-  const closeModal = () => {
+  const closeModal = e => {
     setActive(false);
     hide(true);
   };
@@ -21,7 +21,7 @@ export default function Modal({ isShowing, hide, children }) {
   return isShowing
     ? createPortal(
         <>
-          <div className="modal-overlay" onClick={closeModal} />
+          <div className="modal-overlay" />
           <div
             className={`modal-wrapper flex col ${active ? "active" : ""}`}
             ref={wrapper}
@@ -29,7 +29,8 @@ export default function Modal({ isShowing, hide, children }) {
             aria-hidden
             tabIndex={-1}
             role="dialog"
-            style={active ? { maxWidth: window.innerWidth + "px" } : null}
+            // style={active ? { maxWidth: window.innerWidth + "px" } : null}
+            // onClick={closeModal}
           >
             <div className="modal">
               <div

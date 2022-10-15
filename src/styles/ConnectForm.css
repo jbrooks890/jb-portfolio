@@ -1,6 +1,7 @@
 #connect-form {
   align-items: stretch;
-  width: 35vw;
+  /* width: 35vw; */
+  width: 90vmin;
   max-width: 600px;
   padding:  3rem;
   background-color: var(--dark);

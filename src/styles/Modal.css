@@ -24,10 +24,15 @@ body.modal-lock {
   left: 0;
   right: 0;
   bottom: 0;
+  /* justify-content: flex-start; */
   overflow-x: hidden;
   overflow-y: auto;
+  /* width: 25%; */
   outline: 0;
   z-index: 1050;
+  /* background-color: rgba(255,0,0,0.25); */
+  box-sizing: border-box;
+  border: 1px solid cyan;
 }
 
 .modal {
@@ -52,10 +57,16 @@ body.modal-lock {
   /* border: 1px solid red; */
   box-sizing: border-box;
   transition: 0.1s ease-in-out;
+  z-index: 3000;
 }
 
 .modal-close:hover {
   opacity: 1;
+}
+
+.modal > div:not(.modal-close) {
+  position: relative;
+  z-index: 2000;
 }
 
 /* ========================================= *\
@@ -125,7 +136,6 @@ body.modal-lock {
 
   .modal-close {
     position: fixed;
-    z-index: 2000;
     opacity: 1;
   }
 

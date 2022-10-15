@@ -692,6 +692,7 @@ export const resumeData = {
         },
       },
       current: true,
+      conferral: false,
       startDate: {
         month: "June",
         day: 1,
@@ -737,6 +738,7 @@ export const resumeData = {
         },
       },
       current: false,
+      conferral: true,
       startDate: {
         month: "May",
         day: 23,
@@ -782,6 +784,7 @@ export const resumeData = {
         },
       },
       current: false,
+      conferral: false,
       startDate: {
         month: "March",
         day: 1,
@@ -847,7 +850,13 @@ export const resumeData = {
       name: "C#",
       category: ["developer", "game"],
       type: "language",
-      primary: false,
+      primary: true,
+    },
+    {
+      name: "Unity",
+      category: ["game"],
+      type: "tool",
+      primary: true,
     },
     {
       name: "MongoDB",

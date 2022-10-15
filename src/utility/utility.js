@@ -209,6 +209,8 @@ const iconMap = new Map([
   ["ES6", "J"],
   ["jQuery", "q"],
   ["NPM", "N"],
+  ["Unity", "U"],
+  ["Python", "|"],
 ]);
 
 export { states, skills, debounce, iconMap, abbr };
