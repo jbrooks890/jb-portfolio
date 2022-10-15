@@ -77,7 +77,7 @@ body.modal-lock {
 .modal > *:not(.modal-close) {
   position: relative;
   height: 100%;
-  border: 3px solid coral;
+  /* border: 3px solid coral; */
   z-index: 2000;
 }
 
