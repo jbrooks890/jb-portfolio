@@ -146,6 +146,7 @@ body.modal-lock {
   .modal {
     width: 100%;
     overflow-y: scroll;
+    margin: 0;
     /* border: 1px solid coral; */
   }
 
