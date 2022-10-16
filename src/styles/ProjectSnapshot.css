@@ -278,7 +278,7 @@ a.project-visit-link {
       border-radius: 15px;
     }
   
-    .project-caption h3 {
+    .project-caption .project-title {
       text-align: center;
       font-size: 1.7rem;
     }
