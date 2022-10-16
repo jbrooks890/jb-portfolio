@@ -124,7 +124,6 @@ ul.about-shift li:not(:last-of-type){
   margin-right: 0.25em;
 }
 
-ul.about-shift li:hover,
  ul.about-shift li.active{
   background-color: red;
   transform: scale(1.25);
@@ -171,16 +170,29 @@ ul.about-shift li:hover,
   border-bottom: 3px solid var(--day)
 }
 
-.about-body .resume-button:hover {
-  --color: var(--mid);
-  color: var(--color);
-  border-bottom-color: var(--color);
-}
+
 
 /* ---------- QUOTE ---------- */
 
 #about .quote-wrap {
   grid-area: quote;
+}
+
+/* ========================================= *\
+|| >> HOVER <<
+\* ========================================= */
+@media (hover:hover) {
+
+  ul.about-shift li:hover{
+    background-color: red;
+    transform: scale(1.25);
+  }
+
+  .about-body .resume-button:hover {
+    --color: var(--mid);
+    color: var(--color);
+    border-bottom-color: var(--color);
+  }
 }
 
 /* ========================================= *\
