@@ -37,26 +37,11 @@ export const portfolioData = {
   ],
   blurbs: [
     {
-      title: "General",
-      section: [],
-      blurb: (
-        <>
-          Hi, I’m Julian! I’m a [occupation] based out of Smyrna, GA. I’m
-          originally from Chicago, and I lived in Florida, near Destin while
-          served in the Air Force. Though I can’t confirm it, I may actually be
-          equal parts technical and creative with the tie-breaker being my mood.
-          I have a deep appreciation for creative expression, elegant design,
-          and intuitive and thoughtful execution. I consider myself a lifelong
-          student, always intrigued by the old, the new and the unknown.
-        </>
-      ),
-    },
-    {
       title: "a Developer",
       section: ["Developer"],
       blurb: (
         <>
-          In 2016 I built the website for EPOCH&nbsp;Studios with Squarespace,
+          In 2016 I built the website for EPOCH&nbsp;Studios using Squarespace,
           marking the start of my web development journey. My skill grew the
           more I exploited the platform’s Custom CSS and other coding outlet
           features until I felt I had exhausted its limited functionality. In

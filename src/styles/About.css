@@ -11,6 +11,33 @@
   margin-block: 0 0.5em;
 }
 
+.about-intro {
+  margin-bottom: 5rem;
+  max-width: 90vmin;
+  box-sizing: border-box;
+}
+
+.intro-blurb {
+  width: 50%;
+  padding: 2rem;
+  box-sizing: border-box;
+  align-self: stretch;
+  /* border: 2px solid red; */
+}
+
+.intro-blurb .title {
+  margin: 0;
+  margin-bottom: 1em;
+  line-height: 1em;
+}
+
+.intro-blurb p {
+  flex-shrink: 1;
+  margin: 0;
+  text-align: justify;
+  text-align-last: right;
+}
+
 .headshot-wrap {
   --size: 40vmin;
   grid-area: headshot;
@@ -21,7 +48,7 @@
   /* border: 5px solid var(--sundown); */
   border-radius: 20px;
   box-sizing: border-box;
-  /* box-shadow: 2px 2px 5px var(--faint); */
+  /* box-shadow: 2px 2px 2px var(--phantom); */
 }
 
 img.headshot {
@@ -34,7 +61,7 @@ img.headshot {
 .description {
   grid-area: description;
   padding: 2rem;
-  width: 30vw;
+  width: 90vmin;
   background-color: var(--dark);
   /* border: 1px solid red; */
   transition: height 0.1s ease-out;
@@ -44,6 +71,7 @@ img.headshot {
 
 .description h2 {
   color: var(--lite);
+  align-self: flex-start;
 }
 
 .description h4 {
@@ -54,7 +82,7 @@ img.headshot {
   margin-bottom: 0.5em;
 }
 
-.description p {
+.description div {
   transition: height 0.1s ease-out;
   color: var(--lite);
   text-align: left;
@@ -153,6 +181,31 @@ ul.about-shift li:hover,
 
 #about .quote-wrap {
   grid-area: quote;
+}
+
+/* ========================================= *\
+|| >> PORTRAIT MODE <<
+\* ========================================= */
+
+@media (orientation: portrait) {
+  .about-intro.flex {
+    flex-direction: column;
+  }
+
+  .about-intro.flex .headshot-wrap {
+    --size: 90vw;
+    flex-direction: column;
+    order: -1;
+  }
+
+  .about-intro.flex .intro-blurb {
+    width: auto;
+    text-align: center;
+  }
+
+  .about-intro.flex .intro-blurb p {
+    text-align-last: center;
+  }
 }
 
 /* ========================================= *\

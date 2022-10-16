@@ -16,7 +16,7 @@ export default function About({ pages }) {
 
   return (
     <section id="about" className="site-section flex col">
-      <div className="content-wrap grid">
+      <div className="content-wrap flex col">
         <Blurb mode={siteMode} pages={pages} content={blurbs} />
         <div className="about-body flex col">
           <SkillCache concise={false} showIcons={true} featured={true} />
