@@ -143,7 +143,7 @@ h2#welcome-logo .mode-title span{
   transform: scale(.5);
   opacity: 0;
   transition: 0.2s linear;
-  /* border: 2px solid var(--mid); */
+  border: 2px solid var(--mid);
 }
 
 .rad-btn.active {
