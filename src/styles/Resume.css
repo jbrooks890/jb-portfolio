@@ -15,7 +15,7 @@
   border-radius: var(--outside);
 }
 
-:not(.modal) #resume {
+#resume:not(.modal #resume) {
   height: 100vh;
 }
 
