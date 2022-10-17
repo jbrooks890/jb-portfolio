@@ -162,7 +162,7 @@ h2#welcome-logo .mode-title span{
   fill: var(--mid);
   transition: 0.2s ease-in-out;
   /* border: 1px solid red; */
-  /* background-color: black; */
+  background-color: black;
 }
 
 .rad-btn.active svg {

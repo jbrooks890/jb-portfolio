@@ -11,6 +11,7 @@ export function ModeProvider({ children }) {
     mode ? mode[0].toUpperCase(1) + mode.slice(1) : "Developer"
   );
   const pages = ["Developer", "Artist", "Writer", "Game"];
+  console.log({ mode });
 
   return (
     <SiteMode.Provider value={[siteMode, setSiteMode]}>
