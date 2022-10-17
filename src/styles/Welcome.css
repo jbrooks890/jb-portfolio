@@ -157,7 +157,7 @@ h2#welcome-logo .mode-title span{
 }
 
 .rad-btn svg {
-  width: 100%;
+  width: 100% !important;
   height: 75%;
   fill: var(--mid);
   transition: 0.2s ease-in-out;
