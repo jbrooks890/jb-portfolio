@@ -73,7 +73,16 @@
   /* border: 1px solid cyan; */
 }
 
-.option-list li:hover,
 .option-list li:focus{
   background-color: var(--mid);
+}
+
+/* ========================================= *\
+|| >> HOVER <<
+\* ========================================= */
+
+@media (hover:hover) {
+  .option-list li:hover {
+    background-color: var(--mid);
+  }
 }

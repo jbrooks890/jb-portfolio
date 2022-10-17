@@ -25,7 +25,7 @@ export default function Welcome({ pages, mode }) {
 
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
-  const vmax = vh > vw ? vh : vw;
+  // const vmax = vh > vw ? vh : vw;
   const vavg = (vh + vw) / 2;
   const size = vmin * 0.8;
   const center = size / 2;
@@ -35,6 +35,7 @@ export default function Welcome({ pages, mode }) {
   const style = { width: size, height: size };
   const { isShowing, toggle } = useModal();
   const $MOBILE = useMediaQuery();
+  const $CAN_HOVER = useMediaQuery("hover");
 
   const handleResize = debounce(() =>
     setDimensions({
@@ -114,8 +115,8 @@ export default function Welcome({ pages, mode }) {
                   offset={offset}
                   active={siteMode === page}
                   onClick={modeProps.get(page).click}
-                  onMouseEnter={() => setModePreview(page)}
-                  onMouseLeave={() => setModePreview(siteMode)}
+                  onMouseEnter={() => $CAN_HOVER && setModePreview(page)}
+                  onMouseLeave={() => $CAN_HOVER && setModePreview(siteMode)}
                 >
                   {modeProps.get(page).icon ? (
                     <svg style={{ width: "100%" }}>

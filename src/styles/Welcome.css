@@ -102,11 +102,6 @@ h2#welcome-logo .mode-title span{
   transition-delay: calc(.75s + 0.1s * var(--i));
 }
 
-.activated h2#welcome-logo .mode-title span:hover {
-  animation: flicker 0.2s ease-in-out;
-}
-
-
 #controller-ring {
   position: absolute;
   top: 0;
@@ -178,6 +173,11 @@ h2#welcome-logo .mode-title span{
 || >> HOVER <<
 \* ========================================= */
 @media (hover:hover){
+
+  .activated h2#welcome-logo .mode-title span:hover {
+    animation: flicker 0.2s ease-in-out;
+  }
+  
   .rad-btn:hover svg{
     transform: scale(1.1);
     fill: var(--lavender);

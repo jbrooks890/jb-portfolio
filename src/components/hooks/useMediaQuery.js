@@ -1,6 +1,6 @@
 export default function useMediaQuery(
-  requestList = false,
   str = "mobile",
+  requestList = false,
   isQuery = false
 ) {
   const mobile = 480; //px
@@ -14,8 +14,11 @@ export default function useMediaQuery(
       break;
     case "desktop":
       break;
+    case "hover":
+      query = "(hover:hover)";
+      break;
     default:
-      query = isQuery ? query : null;
+      query = isQuery ? str : null;
   }
 
   return requestList

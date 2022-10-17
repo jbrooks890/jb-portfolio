@@ -9,10 +9,6 @@
   box-sizing: border-box;
 }
 
-/* #connect-form-content {
-  overflow-y: scroll;
-} */
-
 #connect-form-content>*>*{
   margin-bottom: 1rem;
 }
@@ -74,7 +70,7 @@
   margin-top: 1rem;
 }
 
-#connect-form button:hover {
+#connect-form button:focus {
   background-color: var(--lavender);
   color: var(--dark);
 }
@@ -126,6 +122,17 @@
 
 #connect-form-extra.active {
   max-height: none;
+}
+
+/* ========================================= *\
+|| >> HOVER <<
+\* ========================================= */
+@media (hover:hover){
+  
+  #connect-form button:hover {
+    background-color: var(--lavender);
+    color: var(--dark);
+  }
 }
 
 /* ========================================= *\
