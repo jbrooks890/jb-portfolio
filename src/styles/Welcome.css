@@ -165,7 +165,6 @@ h2#welcome-logo .mode-title span{
   /* background-color: black; */
 }
 
-.rad-btn:hover svg,
 .rad-btn.active svg {
   transform: scale(1.1);
   fill: var(--lavender);
@@ -175,7 +174,15 @@ h2#welcome-logo .mode-title span{
   display: none;
 }
 
-
+/* ========================================= *\
+|| >> HOVER <<
+\* ========================================= */
+@media (hover:hover){
+  .rad-btn:hover svg{
+    transform: scale(1.1);
+    fill: var(--lavender);
+  }
+}
 
 /* ========================================= *\
 || >> MOBILE <<
