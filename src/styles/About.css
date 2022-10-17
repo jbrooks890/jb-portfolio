@@ -19,7 +19,8 @@
 
 .intro-blurb {
   width: 50%;
-  padding: 2rem;
+  /* padding: 2rem; */
+  margin-right: 2rem;
   box-sizing: border-box;
   align-self: stretch;
   /* border: 2px solid red; */
@@ -39,7 +40,7 @@
 }
 
 .headshot-wrap {
-  --size: 40vmin;
+  --size: 50%;
   grid-area: headshot;
   width: var(--size);
   height: var(--size);

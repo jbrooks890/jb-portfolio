@@ -9,7 +9,7 @@ export default function ProjectSnapshot({ entry }) {
   const $tech = wrapSkills(tech);
 
   return (
-    <div className="project-snap">
+    <div className="project-snap wide">
       <div className="project-gallery flex col">
         <ProjectImageCar images={images} />
       </div>

@@ -23,8 +23,8 @@ export default function Blurb({ mode, pages, content }) {
         <div className="intro-blurb flex col">
           <h2 className="title">I'm Julian, hi.</h2>
           <p>
-            I’m {modeTitle.toLowerCase()} based out of Smyrna, GA (20 minutes
-            outside of Atlanta). I’m originally from Chicago, but was stationed
+            I’m {modeTitle.toLowerCase()} based in Smyrna, GA just outside of
+            Atlanta. I’m originally from Chicago, and was previously stationed
             in Florida, near Destin while serving in the Air Force.
           </p>
         </div>
