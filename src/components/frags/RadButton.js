@@ -13,7 +13,6 @@ export default function RadButton({
   onMouseLeave,
 }) {
   const button = useRef();
-  // const { width: size } = button.current.getBoundingClientRect();
   const center = size / 2;
   const style = {
     left: x - center + "px",

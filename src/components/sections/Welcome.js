@@ -116,7 +116,7 @@ export default function Welcome({ pages }) {
                   x={x}
                   y={y}
                   index={i}
-                  size={Math.floor(vmax * 0.05)}
+                  size={Math.floor(vmax * 0.04)}
                   angle={ang}
                   offset={offset}
                   active={siteMode === page}
