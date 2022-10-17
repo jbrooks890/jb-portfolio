@@ -15,6 +15,10 @@
   border-radius: var(--outside);
 }
 
+:not(.modal) #resume {
+  height: 100vh;
+}
+
 #resume-caption, #resume-body {
   padding: 2rem;
 }
