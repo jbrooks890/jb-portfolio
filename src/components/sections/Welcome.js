@@ -116,7 +116,7 @@ export default function Welcome({ pages }) {
                   x={x}
                   y={y}
                   index={i}
-                  size={Math.floor(vmax * 0.04)}
+                  size={Math.floor(vmax * 0.05)}
                   angle={ang}
                   offset={offset}
                   active={siteMode === page}
@@ -125,7 +125,7 @@ export default function Welcome({ pages }) {
                   onMouseLeave={() => setModePreview(siteMode)}
                 >
                   {modeProps.get(page).icon ? (
-                    <svg>
+                    <svg style={{ width: "100%" }}>
                       <use href={`#${modeProps.get(page).icon}`} />
                     </svg>
                   ) : (
