@@ -128,22 +128,22 @@ h2#welcome-logo .mode-title span{
 }
 
 .rad-btn {
-  --size: 2rem;
+  --size: 6vmax;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: var(--size);
-  height: var(--size); */
-  min-width: var(--size);
-  min-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  /* min-width: var(--size);
+  min-height: var(--size); */
   border: none;
-  /* border: 2px solid var(--mid); */
   box-sizing: border-box;
   border-radius: 50%;
   transform: scale(.5);
   opacity: 0;
   transition: 0.2s linear;
+  /* border: 2px solid var(--mid); */
 }
 
 .rad-btn.active {

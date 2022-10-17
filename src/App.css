@@ -18,6 +18,9 @@
 }
 
 :root {
+  /* ========== SIZE ========== */
+  --maxWidth: 1012px;
+
   /* ========== COLORS ========== */
   --red: hsl(0, 100%, 41%);
   /* --midnite: hsl(258, 15%, 15%); */
@@ -116,6 +119,7 @@ main {
 
 main > section {
   scroll-snap-align: start;
+  overflow: hidden;
 }
 
 .flex {
@@ -221,6 +225,11 @@ span.subtitle {
   scroll-snap-align: start;
   box-sizing: border-box;
   padding: 5px;
+}
+
+.wide {
+  width: 90vw;
+  max-width: var(--maxWidth);
 }
 
 /* ========================================= *\

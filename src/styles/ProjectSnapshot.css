@@ -1,7 +1,8 @@
 .project-snap {
   position: relative;
   display: flex;
-  max-width: 90vw;
+  width: 90vw;
+  max-width: 1012px;
   margin-bottom: 3rem;
   /* border: 1px solid red; */
 }

@@ -19,7 +19,7 @@ export default function Blurb({ mode, pages, content }) {
 
   return (
     <>
-      <div className="about-intro flex">
+      <div className="about-intro flex wide">
         <div className="intro-blurb flex col">
           <h2 className="title">I'm Julian, hi.</h2>
           <p>
@@ -36,7 +36,7 @@ export default function Blurb({ mode, pages, content }) {
           />
         </div>
       </div>
-      <div className="description flex col">
+      <div className="description flex col wide">
         <h2>
           <span style={{ fontSize: ".75em", color: "var(--lavender)" }}>
             {pre}{" "}

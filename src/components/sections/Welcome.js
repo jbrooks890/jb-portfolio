@@ -25,6 +25,7 @@ export default function Welcome({ pages }) {
 
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
+  const vmax = vh > vw ? vh : vw;
   const size = vmin * 0.8;
   const center = size / 2;
   const rad = size / 2;
@@ -34,14 +35,20 @@ export default function Welcome({ pages }) {
   const { isShowing, toggle } = useModal();
   const $MOBILE = useMediaQuery();
 
+  const handleResize = debounce(() =>
+    setDimensions({
+      vw: window.innerWidth,
+      vh: window.innerHeight,
+    })
+  );
+
   useEffect(() => {
-    function handleResize() {
-      // console.log(`Resized to: ${window.innerWidth} x ${window.innerHeight}`);
-      setDimensions({
-        vw: window.innerWidth,
-        vh: window.innerHeight,
-      });
-    }
+    // function handleResize() {
+    //   setDimensions({
+    //     vw: window.innerWidth,
+    //     vh: window.innerHeight,
+    //   });
+    // }
     // const handleResize = () => debounce($handleResize, 1000);
 
     window.addEventListener("resize", handleResize);
@@ -109,7 +116,7 @@ export default function Welcome({ pages }) {
                   x={x}
                   y={y}
                   index={i}
-                  size={vmin * 0.09}
+                  size={Math.floor(vmax * 0.05)}
                   angle={ang}
                   offset={offset}
                   active={siteMode === page}

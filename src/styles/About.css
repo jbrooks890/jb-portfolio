@@ -13,7 +13,7 @@
 
 .about-intro {
   margin-bottom: 5rem;
-  max-width: 90vmin;
+  /* max-width: 90vmin; */
   box-sizing: border-box;
 }
 
@@ -61,7 +61,7 @@ img.headshot {
 .description {
   grid-area: description;
   padding: 2rem;
-  width: 90vmin;
+  /* width: 90vmin; */
   background-color: var(--dark);
   /* border: 1px solid red; */
   transition: height 0.1s ease-out;
