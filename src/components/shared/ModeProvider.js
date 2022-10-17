@@ -1,20 +1,17 @@
 import { useContext, createContext, useState } from "react";
-import { useParams } from "react-router-dom";
 
 const SiteMode = createContext();
-
 export const useSiteMode = () => useContext(SiteMode);
 
 export function ModeProvider({ children }) {
-  const { mode } = useParams();
-  const [siteMode, setSiteMode] = useState(
-    mode ? mode[0].toUpperCase(1) + mode.slice(1) : "Developer"
-  );
-  const pages = ["Developer", "Artist", "Writer", "Game"];
-  console.log({ mode });
+  const [siteMode, setSiteMode] = useState("Developer");
+
+  function updateMode(mode) {
+    setSiteMode(mode[0].toUpperCase(1) + mode.slice(1));
+  }
 
   return (
-    <SiteMode.Provider value={[siteMode, setSiteMode]}>
+    <SiteMode.Provider value={[siteMode, updateMode]}>
       {children}
     </SiteMode.Provider>
   );

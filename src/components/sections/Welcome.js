@@ -11,7 +11,7 @@ import { useSiteMode } from "../shared/ModeProvider";
 import ModeSelector from "../frags/ModeSelector";
 import useMediaQuery from "../hooks/useMediaQuery";
 
-export default function Welcome({ pages }) {
+export default function Welcome({ pages, mode }) {
   const $pages = [...pages, "Resume", "Connect"];
   const [activated, setActivated] = useState(false);
   const [dimensions, setDimensions] = useState({
@@ -19,7 +19,7 @@ export default function Welcome({ pages }) {
     vh: window.innerHeight,
   });
   const [siteMode, setSiteMode] = useSiteMode();
-  const [modePreview, setModePreview] = useState(siteMode);
+  const [modePreview, setModePreview] = useState(mode ? mode : siteMode);
   const [rotation, setRotation] = useState(0); // DEGREES
   const [modalContent, setModalContent] = useState();
 
@@ -44,14 +44,6 @@ export default function Welcome({ pages }) {
   );
 
   useEffect(() => {
-    // function handleResize() {
-    //   setDimensions({
-    //     vw: window.innerWidth,
-    //     vh: window.innerHeight,
-    //   });
-    // }
-    // const handleResize = () => debounce($handleResize, 1000);
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   });
