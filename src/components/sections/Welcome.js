@@ -26,6 +26,7 @@ export default function Welcome({ pages }) {
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
   const vmax = vh > vw ? vh : vw;
+  const vavg = (vh + vw) / 2;
   const size = vmin * 0.8;
   const center = size / 2;
   const rad = size / 2;
@@ -116,7 +117,7 @@ export default function Welcome({ pages }) {
                   x={x}
                   y={y}
                   index={i}
-                  size={Math.floor(vmax * 0.05)}
+                  size={Math.floor(vavg * 0.06)}
                   angle={ang}
                   offset={offset}
                   active={siteMode === page}

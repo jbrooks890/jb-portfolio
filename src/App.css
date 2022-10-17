@@ -92,6 +92,7 @@ a:hover, a:focus {
 button {
   appearance: none;
   cursor: pointer;
+  padding: 0;
   color: inherit;
   font: inherit;
   outline: none;
