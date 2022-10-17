@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "../../styles/ConnectForm.css";
 import SelectBox from "./SelectBox";
 import emailjs from "emailjs-com";
@@ -22,6 +22,7 @@ export default function ConnectForm() {
     "a hiring manager",
   ];
   const interests = ["Projects", "Artwork", "Book(s)", "Other"];
+  const msgInput = useRef();
   const msgMax = 300;
 
   // console.log(REACT_APP_EMAILJS_PUBLIC_KEY);
@@ -97,9 +98,13 @@ export default function ConnectForm() {
           <label
             htmlFor="message"
             data-label="Message"
-            data-remaining={msgMax - formContent.message.length}
+            // data-remaining={msgMax - formContent.message.length}
+            data-remaining={
+              msgInput.current && msgMax - msgInput.current.value.length
+            }
           >
             <textarea
+              ref={msgInput}
               name="message"
               placeholder="Hey Julian! Are you available for hire?"
               maxLength={msgMax}

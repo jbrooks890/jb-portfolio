@@ -588,6 +588,7 @@ span.brand-icons {
 
   .modal #resume {
     background-color: var(--mid);
+    border-radius: 0;
   }
 
   #resume.flex {
