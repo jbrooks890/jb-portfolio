@@ -1,7 +1,7 @@
 .project-snap {
   position: relative;
   display: flex;
-  max-width: 90vmin;
+  max-width: 90vw;
   margin-bottom: 3rem;
   /* border: 1px solid red; */
 }
@@ -40,10 +40,6 @@
   opacity: 0;
   transition: 0.1s ease-out;
   /* border: 1px solid red; */
-}
-
-.image-wrapper:hover .scroller{
-  opacity: .5;
 }
 
 .image-wrapper .scroller.prev{
@@ -182,6 +178,12 @@
   color: var(--day);
 }
 
+.project-images-pager li:focus,
+.project-images-pager li.active {
+  background-color: var(--lavender);
+  transform: scale(1.1);
+}
+
 a.project-visit-link {
   padding: 0.5em 1.5em;
   color: var(--lite);
@@ -196,6 +198,12 @@ a.project-visit-link {
   box-sizing: border-box;
 }
 
+a.project-visit-link:focus {
+  background-color: var(--lite);
+  /* border-width: 0; */
+  color: var(--darker);
+}
+
 
 
 /* ========================================= *\
@@ -203,6 +211,10 @@ a.project-visit-link {
 \* ========================================= */
 
 @media (hover:hover){
+
+  .image-wrapper:hover .scroller {
+    opacity: .5;
+  }
 
   .image-wrapper:hover .scroller:hover {
       opacity: 1;
@@ -213,16 +225,13 @@ a.project-visit-link {
     filter: brightness(125%) saturate(200%);
   }
 
-  a.project-visit-link:hover,
-  a.project-visit-link:focus {
+  a.project-visit-link:hover {
     background-color: var(--lite);
     /* border-width: 0; */
     color: var(--darker);
   }
 
-  .project-images-pager li:hover,
-  .project-images-pager li:focus,
-  .project-images-pager li.active {
+  .project-images-pager li:hover {
     background-color: var(--lavender);
     transform: scale(1.1);
   }

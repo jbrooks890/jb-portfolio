@@ -3,6 +3,9 @@ import Carousel from "./Carousel";
 
 export default function Blurb({ mode, pages, content }) {
   const [activeEntry, setActiveEntry] = useState(mode);
+  const { title: modeTitle } = content.find(entry =>
+    entry.section.includes(mode)
+  );
   const { title, blurb } = content.find(entry =>
     entry.section.includes(activeEntry)
   );
@@ -20,7 +23,7 @@ export default function Blurb({ mode, pages, content }) {
         <div className="intro-blurb flex col">
           <h2 className="title">I'm Julian, hi.</h2>
           <p>
-            I’m {title.toLowerCase()} based out of Smyrna, GA (20 minutes
+            I’m {modeTitle.toLowerCase()} based out of Smyrna, GA (20 minutes
             outside of Atlanta). I’m originally from Chicago, but was stationed
             in Florida, near Destin while serving in the Air Force.
           </p>

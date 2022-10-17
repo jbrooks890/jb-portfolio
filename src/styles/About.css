@@ -213,6 +213,7 @@ ul.about-shift li:not(:last-of-type){
 
   .about-intro.flex .intro-blurb {
     width: auto;
+    padding: 1rem;
     text-align: center;
   }
 
