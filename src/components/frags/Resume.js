@@ -49,11 +49,7 @@ export default function Resume() {
           </div>
           {`${city}, ${states.get(state)}`}
         </div>
-        <a
-          className="resume-download flex"
-          href={pdf}
-          download="Resume - juliancbrooks-com.pdf"
-        >
+        <a className="resume-download flex" href={pdf} target="_blank">
           <svg>
             <use href="#arrow-icon" />
           </svg>

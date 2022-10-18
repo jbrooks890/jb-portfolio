@@ -12,7 +12,8 @@ import ModeSelector from "../frags/ModeSelector";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function Welcome({ pages, mode }) {
-  const $pages = [...pages, "Resume", "Connect"];
+  const titles = pages.map(page => page.title);
+  const $pages = [...titles, "Resume", "Connect"];
   const [activated, setActivated] = useState(false);
   const [dimensions, setDimensions] = useState({
     vw: window.innerWidth,
@@ -132,7 +133,7 @@ export default function Welcome({ pages, mode }) {
         )}
       </div>
       <ModeSelector
-        pages={pages}
+        pages={titles}
         modeProps={modeProps}
         mode={siteMode}
         ready={activated}

@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 
-export default function Blurb({ mode, pages, content }) {
+export default function Blurb({ mode, content }) {
   const [activeEntry, setActiveEntry] = useState(mode);
-  const { title: modeTitle } = content.find(entry =>
-    entry.section.includes(mode)
+  const { flavorTitle: modeTitle } = content.find(
+    entry => entry.title === mode
   );
-  const { title, blurb } = content.find(entry =>
-    entry.section.includes(activeEntry)
+  const { flavorTitle: title } = content.find(
+    entry => entry.title === activeEntry
   );
   const [pre, ...$title] = title.split(/\s/);
+  const titles = content.map(entry => entry.title);
   const blurbs = content.map(entry => entry.blurb);
-  const carouselShift = index => setActiveEntry(pages[index]);
+  const carouselShift = index => setActiveEntry(titles[index]);
 
   useEffect(() => {
     mode !== activeEntry && setActiveEntry(mode);
@@ -36,36 +37,28 @@ export default function Blurb({ mode, pages, content }) {
           />
         </div>
       </div>
-      <div className="description flex col wide">
+      <div className="description flex col">
         <h2>
           <span style={{ fontSize: ".75em", color: "var(--lavender)" }}>
             {pre}{" "}
           </span>
           {$title.join(" ")}
         </h2>
-        {/* <p>{blurb}</p> */}
-
-        {/* <div className="carousel">
-          {content.map(
-            (entry, i) =>
-              entry.title !== "General" && <p key={i}>{entry.blurb}</p>
-          )}
-        </div> */}
         <Carousel
           arr={blurbs}
           index={content.indexOf(
-            content.find(entry => entry.section.includes(activeEntry))
+            content.find(entry => entry.title === activeEntry)
           )}
           shift={carouselShift}
         />
 
         <ul className="about-shift">
           <h3>I'm also</h3>
-          {pages.map((page, i) => (
+          {titles.map((title, i) => (
             <li
               key={i}
-              className={page === activeEntry ? "active" : ""}
-              onClick={() => setActiveEntry(page)}
+              className={title === activeEntry ? "active" : ""}
+              onClick={() => setActiveEntry(title)}
             ></li>
           ))}
         </ul>

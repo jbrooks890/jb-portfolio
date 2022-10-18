@@ -19,14 +19,14 @@
 
 :root {
   /* ========== SIZE ========== */
-  --maxWidth: 1024px;
+  --maxWidth: 1284px;
 
   /* ========== COLORS ========== */
   --red: hsl(0, 100%, 41%);
   /* --midnite: hsl(258, 15%, 15%); */
   --midnite: hsl(258, 15%, 10%);
   --nite: hsl(257, 35%, 20%);
-  --evening: hsl(245, 30%, 25%);
+  --evening: hsl(245, 40%, 25%);
   --shade: hsl(247, 35%, 40%);
   --sundown: hsl(245, 30%, 60%);;
   --lavender: hsl(246, 57%, 63%);
@@ -46,6 +46,8 @@
   /* ========== PADDING ========== */
   /* ========== BORDER ========== */
   --outside: 20px;
+  --inside: 10px;
+  --rounded: 5px;
 }
 
 html {
@@ -133,6 +135,10 @@ main > section {
   flex-direction: column;
 }
 
+.flex.even-split > *{
+  width: 50%;
+}
+
 .grid {
   display: grid;
 }
@@ -161,7 +167,7 @@ main > section {
 
 .site-section p em {
   font-style: normal;
-  color: var(--pop);
+  color: red;
 }
 
 button.pill {

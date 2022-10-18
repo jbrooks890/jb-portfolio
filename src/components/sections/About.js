@@ -12,12 +12,13 @@ import Blurb from "../frags/Blurb";
 export default function About({ pages }) {
   const { isShowing, toggle } = useModal();
   const [siteMode] = useSiteMode();
-  const { blurbs } = portfolioData;
+  const titles = pages.map(page => page.title);
+  const blurbs = pages.map(page => page.blurb);
 
   return (
     <section id="about" className="site-section flex col">
       <div className="content-wrap flex col">
-        <Blurb mode={siteMode} pages={pages} content={blurbs} />
+        <Blurb mode={siteMode} content={pages} />
         <div className="about-body flex col">
           <SkillCache concise={false} showIcons={true} featured={true} />
           <button className="resume-button" onClick={() => toggle()}>

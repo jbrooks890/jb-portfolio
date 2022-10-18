@@ -1,0 +1,49 @@
+#greeting {
+  background-color: var(--darker);
+  /* background-image: linear-gradient(10deg,  var(--mid),var(--evening)); */
+  padding: 2rem;
+  box-shadow: none;
+}
+
+h2.salute {
+  color: var(--lavender);
+  font-size: 2.5rem;
+  text-align: left;
+  line-height: 1em;
+  /* text-shadow: 1px 1px 5px var(--faint); */
+  text-shadow: 3px 3px 0 var(--darker);
+}
+
+h2.salute span {
+  display: block;
+  color: var(--red);
+  font-size: .75em;
+}
+
+h2.salute em {
+  /* color: var(--day); */
+  display: inline-block;
+  margin-inline: 0.1em;
+  font-style: normal;
+  filter: brightness(1.3);
+  transform: scale(1.1) rotate(1deg);
+}
+
+#greeting p {
+  text-align: left;
+  color: var(--day);
+}
+
+/* ========================================= *\
+|| >> PORTRAIT <<
+\* ========================================= */
+
+@media (orientation: portrait){
+  .salute-wrapper.flex {
+    flex-direction: column;
+  }
+
+  .salute-wrapper.flex.even-split > * {
+    width: 100%;
+  }
+}
