@@ -32,14 +32,15 @@ export default function Blurb({ mode, content }) {
           <p>
             Despite the industrial nature of my military career, I pursued my
             creative passions. I still wanted to write, draw and/or code
-            everyday<span className='mdash' />and I did (just about). Before separating
-            from active duty, I self-published my first novel, established a
-            publishing imprint and re-designed my military unit's mascot.
+            everyday
+            <span className="mdash" />
+            and I did (just about). Before separating from active duty, I
+            self-published my first novel, established a publishing imprint and
+            re-designed my military unit's mascot.
           </p>
           <p>
             I moved to Smyrna, GA in 2018 to be nearer to Atlanta's booming
-            industry where I felt my talents would be most appreciated and
-            thrive.
+            industry where I felt my talents would thrive.
           </p>
         </div>
         <div className="headshot-wrap flex">
