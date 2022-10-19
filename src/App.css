@@ -19,7 +19,7 @@
 
 :root {
   /* ========== SIZE ========== */
-  --maxWidth: 1284px;
+  --maxWidth: 1120px;
 
   /* ========== COLORS ========== */
   --red: hsl(0, 100%, 41%);
@@ -237,6 +237,22 @@ span.subtitle {
 .wide {
   width: 90vw;
   max-width: var(--maxWidth);
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+.mdash {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  width: 2ch;
+  height: 1px;
+  background-color: var(--sundown);
+  box-sizing: border-box;
+  vertical-align: middle;
+  /* border: 1px solid red; */
 }
 
 /* ========================================= *\

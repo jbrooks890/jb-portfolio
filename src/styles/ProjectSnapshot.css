@@ -350,13 +350,12 @@ a.project-visit-link:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem;
   }
 
   .project-caption .project-icon {
     --size: 3rem;
     display: none;
-    /* grid-area: icon; */
     position: relative;
     width: var(--size);
     height: var(--size);
@@ -364,23 +363,12 @@ a.project-visit-link:focus {
   }
 
   .project-caption h3 {
-    /* grid-area: title; */
     text-align: center;
     font-size: 1.7rem;
   }
-  
-  /* .project-caption .skill-cache-wrapper {
-    grid-area: skills;
-  } */
 
   .project-caption p {
-    /* grid-area: blurb; */
-    text-align: justify;
-    text-align-last: center;
+    text-align: center;
   }
-
-  /* .project-caption .project-visit-link {
-    grid-area: visit;
-  } */
 
 }

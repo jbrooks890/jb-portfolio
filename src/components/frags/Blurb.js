@@ -22,11 +22,24 @@ export default function Blurb({ mode, content }) {
     <>
       <div className="about-intro flex wide">
         <div className="intro-blurb flex col">
-          <h2 className="title">I'm Julian, hi.</h2>
+          <h2 className="title">Story time.</h2>
           <p>
-            I’m {modeTitle.toLowerCase()} based in Smyrna, GA just outside of
-            Atlanta. I’m originally from Chicago, and was previously stationed
-            in Florida, near Destin while serving in the Air Force.
+            In August of 2010, I left my beloved home of Chicago for Air Force
+            basic training. I went on to work as a{" "}
+            <span className="nobr">C-130</span> aircraft maintainer for ten
+            years before honorably separating in 2020.
+          </p>
+          <p>
+            Despite the industrial nature of my military career, I pursued my
+            creative passions. I still wanted to write, draw and/or code
+            everyday<span className='mdash' />and I did (just about). Before separating
+            from active duty, I self-published my first novel, established a
+            publishing imprint and re-designed my military unit's mascot.
+          </p>
+          <p>
+            I moved to Smyrna, GA in 2018 to be nearer to Atlanta's booming
+            industry where I felt my talents would be most appreciated and
+            thrive.
           </p>
         </div>
         <div className="headshot-wrap flex">
