@@ -50,6 +50,11 @@ export default function Welcome({ pages, mode }) {
     return () => window.removeEventListener("resize", handleResize);
   });
 
+  useEffect(
+    () => modePreview !== siteMode && setModePreview(siteMode),
+    [siteMode]
+  );
+
   const triggerModal = component => {
     setModalContent(component);
     toggle();

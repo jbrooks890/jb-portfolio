@@ -51,11 +51,22 @@ export default function ConnectForm() {
       .then(
         res => {
           console.log(res.text);
-          e.target.reset();
+          markComplete(e)
         },
         err => console.log(err.text)
       );
   };
+
+  const markComplete = (e) => {
+    e.target.reset();
+    updateFormContent({
+      name: "",
+      email: "",
+      occupation: "",
+      message: "",
+    })
+    setCompleted(true);
+  }
 
   return (
     <form

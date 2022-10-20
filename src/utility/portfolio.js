@@ -11,7 +11,7 @@ export const portfolioData = {
           website for EPOCH&nbsp;Studios, marking the start of my web
           development journey. My skill with HTML, CSS and Javascript grew the
           more I endeavored to add features to my website that were not yet
-          availabe on the platform. Once I felt I had exhausted the limited
+          available on the platform. Once I felt I had exhausted the limited
           functionality of its coding outlet, I began exploring other options.
           In May of 2022 I enrolled in a{" "}
           <strong>Software Engineering bootcamp</strong> where I learned{" "}
@@ -59,11 +59,14 @@ export const portfolioData = {
       blurb: (
         <>
           I was first introduced to game development in high school with{" "}
-          <strong>RPG Maker XP</strong>. Though the coding element of it
-          ultimately overwhelmed me, I had seen the beauty of game design's
-          multi-faceted enterprise. I could write, draw <i>and</i> code! Since
-          then, I've aspired to create my own games that tell captivating
-          stories while also paying homage to the games that inspired me.
+          <strong>RPG Maker XP</strong>. I immediately became fascinated with game
+          design's multi-faceted formula, though the prospect of learning{" "}
+          <i>Ruby</i> overwhelmed me as a freshman. Regardless, it was an excuse
+          to to draw, write <i>and</i> (learn to) code! Since then, I've worked
+          diligently to improve my skills in each concentration in my endeavor
+          to one day call myself a game dev
+          <span className="mdash" />
+          officially.
         </>
       ),
     },

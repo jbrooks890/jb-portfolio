@@ -3,9 +3,6 @@ import Carousel from "./Carousel";
 
 export default function Blurb({ mode, content }) {
   const [activeEntry, setActiveEntry] = useState(mode);
-  const { flavorTitle: modeTitle } = content.find(
-    entry => entry.title === mode
-  );
   const { flavorTitle: title } = content.find(
     entry => entry.title === activeEntry
   );
