@@ -109,9 +109,10 @@ export const resumeData = {
       link: "https://xword-app-beta.netlify.app/",
       icon: "xword-logo",
       colors: {
-        key: "#fff",
-        alt: "silver",
-        dark: "#black",
+        key: "#5b42ff",
+        alt: "#8840f2",
+        alt2: "#51f23f",
+        dark: "#150330",
         reverse: false,
       },
       images: {
