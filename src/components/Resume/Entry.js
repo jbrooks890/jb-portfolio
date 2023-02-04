@@ -17,6 +17,7 @@ export default function Entry({ type, entry, active }) {
     minors,
     other,
     notes,
+    conferral,
   } = entry;
   const drawer = useRef();
 
@@ -56,16 +57,28 @@ export default function Entry({ type, entry, active }) {
             open ? { maxHeight: drawer.current.scrollHeight + "px" } : null
           }
         >
-          {majors && majors.length > 0 && (
-            <StudyField entries={majors} active={open} />
+          {majors?.length > 0 && (
+            <StudyField
+              entries={majors}
+              {...{ current, conferral }}
+              active={open}
+            />
           )}
-          {minors && minors.length > 0 && (
-            <StudyField entries={minors} active={false} />
+          {minors?.length > 0 && (
+            <StudyField
+              entries={minors}
+              {...{ current, conferral }}
+              active={false}
+            />
           )}
-          {other && other.length > 0 && (
-            <StudyField entries={other} active={false} />
+          {other?.length > 0 && (
+            <StudyField
+              entries={other}
+              {...{ current, conferral }}
+              active={false}
+            />
           )}
-          {notes && notes.length > 0 && (
+          {notes?.length > 0 && (
             <ul className="education-note-list">
               {notes.map((note, i) => (
                 <li key={i}>{note}</li>

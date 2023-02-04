@@ -1,15 +1,10 @@
-export default function StudyField({ entries, active }) {
+export default function StudyField({ entries, active, current, conferral }) {
+  // console.log({ conferral });
+
   return (
     <div className={`entry-study-field`}>
       {entries.map((entry, i) => {
-        const {
-          name: title,
-          degreeLevel,
-          degreeType,
-          conferralType,
-          field,
-          tags,
-        } = entry;
+        const { name: title, degreeType } = entry;
 
         const abbr = new Map([
           ["Bachelor of Science", "BS"],
@@ -21,7 +16,7 @@ export default function StudyField({ entries, active }) {
           <div key={i}>
             <div className="field-header list-entry-header">
               <h4>{title}</h4>
-              <i>{degreeType}</i>
+              <i>{conferral ? degreeType : current ? "Studying" : "Studied"}</i>
             </div>
           </div>
         );
