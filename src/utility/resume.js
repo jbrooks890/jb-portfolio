@@ -700,7 +700,7 @@ export const resumeData = {
         year: 2022,
       },
       endDate: {
-        month: 12,
+        month: "December",
         day: 16,
         year: 2022,
       },
