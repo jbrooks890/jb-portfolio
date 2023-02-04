@@ -691,7 +691,7 @@ export const resumeData = {
           email: "",
         },
       },
-      current: true,
+      current: false,
       conferral: false,
       startDate: {
         month: "June",
@@ -699,8 +699,8 @@ export const resumeData = {
         year: 2022,
       },
       endDate: {
-        month: "",
-        day: 1,
+        month: 12,
+        day: 16,
         year: 2022,
       },
       majors: [
