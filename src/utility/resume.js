@@ -130,7 +130,7 @@ export const resumeData = {
         link: "https://github.com/jbrooks890/Poke-Squad",
       },
       description:
-        "A companion app that queries the RESTful PokéAPI, enabling users to build their custom Pokémon teams for use with popular Pokémon games by Nintendo.",
+        "A companion app that queries the RESTful PokéAPI, enabling users to build their custom Pokémon teams for use with Nintendo's popular Pokémon games.",
       meta: {},
       tech: ["React", "Javascript", "HTML", "CSS", "Postman"],
       link: "https://pokesquad.netlify.app/",
