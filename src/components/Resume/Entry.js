@@ -21,6 +21,8 @@ export default function Entry({ type, entry, active }) {
   } = entry;
   const drawer = useRef();
 
+  // console.log({ startDate, endDate });
+
   return (
     <div
       className={`${type}-entry dropdown-entry ${open ? "open" : ""} ${
