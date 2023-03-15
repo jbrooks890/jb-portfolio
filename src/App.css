@@ -1,26 +1,25 @@
 @font-face {
-  font-family: 'Rajdhani';
+  font-family: "Rajdhani";
   src: url(./assets/fonts/Rajdhani-Regular.ttf);
 }
 
 @font-face {
-  font-family: 'social-gothic-rough', sans-serif;
+  font-family: "social-gothic-rough", sans-serif;
   font-weight: 700;
   font-style: normal;
   src: url(./assets/fonts/Social-Gothic-Rough.otf) format(opentype);
 }
 
 @font-face {
-  font-family: 'tech-brand-icons';
+  font-family: "tech-brand-icons";
   font-weight: normal;
   font-style: normal;
-  src: url(./assets/fonts/TechBrands-v1.otf);
+  src: url(./assets/fonts/Tech-Brands-2.otf);
 }
 
 :root {
   /* ========== SIZE ========== */
   --maxWidth: 1120px;
-
   /* ========== COLORS ========== */
   --red: hsl(0, 100%, 41%);
   /* --midnite: hsl(258, 15%, 15%); */
@@ -28,7 +27,7 @@
   --nite: hsl(257, 35%, 20%);
   --evening: hsl(245, 40%, 25%);
   --shade: hsl(247, 35%, 40%);
-  --sundown: hsl(245, 30%, 60%);;
+  --sundown: hsl(245, 30%, 60%);
   --lavender: hsl(246, 57%, 63%);
   --day: hsl(246, 60%, 80%);
   /* --------- X COLORS --------- */
@@ -38,25 +37,29 @@
   --darker: var(--midnite);
   --pop: var(--red);
   --faint: hsla(0, 0%, 0%, 0.1);
-  --phantom: hsla(0,0%,0%,0.05);
-  --shaded: hsla(247, 31%, 38%, .75);
+  --phantom: hsla(0, 0%, 0%, 0.05);
+  --shaded: hsla(247, 31%, 38%, 0.75);
   /* ========== FONTS ========== */
-  --keyFont: 'social-gothic-rough', sans-serif;
-  --bodyFont: 'Rajdhani';
+  --keyFont: "social-gothic-rough", sans-serif;
+  --bodyFont: "Rajdhani";
   /* ========== PADDING ========== */
   /* ========== BORDER ========== */
-  --outside: 20px;
-  --inside: 10px;
-  --rounded: 5px;
+  --outside: 10px;
+  --inside: 5px;
+  --rounded: 2px;
 }
 
 html {
   height: 100vh;
-  font-size: 24px;
+  font-size: 21px;
   scroll-behavior: smooth;
 }
 
-body, #root, .App {height: 100%;}
+body,
+#root,
+.App {
+  height: 100%;
+}
 
 body {
   background-color: var(--darker);
@@ -81,12 +84,14 @@ body {
   display: none;
 }
 
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
   color: inherit;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: inherit;
   outline: none;
 }
@@ -101,7 +106,9 @@ button {
   background-color: transparent;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
   font-family: var(--keyFont);
 }
 
@@ -127,15 +134,32 @@ main > section {
 
 .flex {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .flex.col {
   flex-direction: column;
 }
 
-.flex.even-split > *{
+.flex.start {
+  align-items: flex-start;
+}
+
+.flex.middle {
+  align-items: center;
+}
+
+.flex.end {
+  align-items: flex-end;
+}
+
+.flex.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex.even-split > * {
   width: 50%;
 }
 
@@ -152,7 +176,7 @@ main > section {
   box-sizing: border-box;
 }
 
-.site-section:not(:first-of-type){
+.site-section:not(:first-of-type) {
   box-shadow: 0 5px 5px var(--phantom) inset;
 }
 
@@ -175,13 +199,13 @@ button.pill {
   border-radius: 100px;
 }
 
-
 /* HEADER */
 
-header, footer {
-    padding: 0.5rem 1.5rem;
-    box-sizing: border-box;
-  } 
+header,
+footer {
+  padding: 0.5rem 1.5rem;
+  box-sizing: border-box;
+}
 
 header {
   display: flex;
@@ -216,7 +240,7 @@ header nav ul li:not(:last-of-type) {
 
 span.subtitle {
   display: block;
-  font-size: .5em;
+  font-size: 0.5em;
 }
 
 .carousel {
@@ -282,5 +306,4 @@ span.subtitle {
   .flex {
     display: flex;
   }
-
 }

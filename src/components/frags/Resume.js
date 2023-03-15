@@ -15,19 +15,19 @@ import TopBtn from "./TopBtn";
 
 export default function Resume() {
   const [siteMode] = useSiteMode();
-  const { address, email, summary, projects, experience, education, skills } =
-    resumeData;
+  const { profile, projects, experience, education, skills } = resumeData;
+  const { email, summary, address } = profile;
   const { city, state } = address;
   const $projects = projects.filter(project =>
     project.section.includes(siteMode)
   );
 
   return (
-    <div id="resume" className="flex">
+    <div id="resume" className="flex middle">
       {/* =================================== *\
       ||  <><><><><><>\ CAPTION /<><><><><><> 
        \* =================================== */}
-      <div id="resume-caption" className="flex col">
+      <div id="resume-caption" className="flex col middle">
         <Logotype />
         <fieldset className="caption-summary">
           <legend>Front-end Developer</legend>
@@ -49,7 +49,7 @@ export default function Resume() {
           </div>
           {`${city}, ${states.get(state)}`}
         </div>
-        <a className="resume-download flex" href={pdf} target="_blank">
+        <a className="resume-download flex middle" href={pdf} target="_blank">
           <svg>
             <use href="#arrow-icon" />
           </svg>
@@ -125,14 +125,6 @@ export default function Resume() {
         </section>
         {/* ========= TO TOP ========= */}
         <TopBtn destination={"#resume-top"} />
-        {/* <div className="nav-to-top flex col">
-          <a href="#resume-top" className="arrow-wrapper">
-            <svg>
-              <use href="#arrow-icon" />
-            </svg>
-          </a>
-          <span>Top</span>
-        </div> */}
       </div>
     </div>
   );

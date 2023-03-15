@@ -1,10 +1,9 @@
-
 .content-wrap {
   column-gap: 5vw;
   grid-template-areas:
-  'description headshot'
-  'body body'
-  'quote quote';
+    "description headshot"
+    "body body"
+    "quote quote";
   place-items: center;
 }
 #about h2 {
@@ -38,7 +37,7 @@
   text-align: justify;
 }
 
-.intro-blurb p:not(:last-of-type){
+.intro-blurb p:not(:last-of-type) {
   margin-bottom: 1em;
 }
 
@@ -126,11 +125,11 @@ ul.about-shift li {
   transition: 0.1s ease-in-out;
 }
 
-ul.about-shift li:not(:last-of-type){
+ul.about-shift li:not(:last-of-type) {
   margin-right: 0.25em;
 }
 
- ul.about-shift li.active{
+ul.about-shift li.active {
   background-color: red;
   transform: scale(1.25);
 }
@@ -157,7 +156,7 @@ ul.about-shift li:not(:last-of-type){
 
 .about-body .skill-cache .skill-icon {
   color: var(--sundown);
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .about-body .skill-cache .skill-name {
@@ -173,10 +172,8 @@ ul.about-shift li:not(:last-of-type){
   font-weight: 600;
   letter-spacing: 0.05em;
   border: none;
-  border-bottom: 3px solid var(--day)
+  border-bottom: 3px solid var(--day);
 }
-
-
 
 /* ---------- QUOTE ---------- */
 
@@ -187,9 +184,8 @@ ul.about-shift li:not(:last-of-type){
 /* ========================================= *\
 || >> HOVER <<
 \* ========================================= */
-@media (hover:hover) {
-
-  ul.about-shift li:hover{
+@media (hover: hover) {
+  ul.about-shift li:hover {
     background-color: red;
     transform: scale(1.25);
   }
@@ -246,9 +242,26 @@ ul.about-shift li:not(:last-of-type){
 
   #about .content-wrap .description {
     width: 100%;
-    padding: 1rem;
+    padding: 2rem 1rem;
     box-sizing: border-box;
     border-radius: 0;
+  }
+
+  #about .content-wrap .description.flex.col {
+    align-items: center;
+  }
+
+  #about .content-wrap .description h2 {
+    text-align: center;
+  }
+
+  #about .content-wrap .description.flex h2 {
+    align-self: center;
+  }
+
+  #about .content-wrap .description .carousel div {
+    text-align: justify;
+    text-align-last: center;
   }
 
   #about .content-wrap .headshot-wrap {
@@ -267,10 +280,10 @@ ul.about-shift li:not(:last-of-type){
     width: 100%;
   }
 
-    #about .about-body .skill-cache-wrapper .skill-cache {
-      display: block;
-      width: 100%;
-      padding-inline: 1rem;
-      box-sizing: border-box;
-    }
+  #about .about-body .skill-cache-wrapper .skill-cache {
+    display: block;
+    width: 100%;
+    padding-inline: 1rem;
+    box-sizing: border-box;
+  }
 }

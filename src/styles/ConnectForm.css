@@ -1,15 +1,14 @@
 #connect-form {
   align-items: stretch;
-  /* width: 35vw; */
   width: 90vmin;
   max-width: 600px;
-  padding:  3rem;
+  padding: 3rem;
   background-color: var(--dark);
   border-radius: var(--outside);
   box-sizing: border-box;
 }
 
-#connect-form-content>*>*{
+#connect-form-content > * > * {
   margin-bottom: 1rem;
 }
 
@@ -22,8 +21,8 @@
   text-align: center;
 }
 
-#connect-form input, 
-#connect-form textarea, 
+#connect-form input,
+#connect-form textarea,
 #connect-form select,
 #connect-form .select-box .option-display {
   appearance: none;
@@ -32,7 +31,7 @@
   color: var(--day);
   caret-color: var(--mid);
   font-family: inherit;
-  font-size: .8rem;
+  font-size: 0.8rem;
   outline: none;
   border: 2px solid var(--lavender);
   border-radius: 5px;
@@ -58,7 +57,7 @@
 #connect-form button {
   cursor: pointer;
   align-self: center;
-  padding: .5em 1.5em;
+  padding: 0.5em 1.5em;
   color: var(--lavender);
   font-weight: 600;
   border: 2px solid var(--lavender);
@@ -66,7 +65,7 @@
   transition: 0.1s ease-out;
 }
 
-#connect-form button[type='submit']{
+#connect-form button[type="submit"] {
   margin-top: 1rem;
 }
 
@@ -75,19 +74,19 @@
   color: var(--dark);
 }
 
-#connect-form textarea{
+#connect-form textarea {
   position: relative;
   resize: vertical;
   height: 4em;
   max-height: 6em;
 }
 
-#connect-form label[for='message']{
+#connect-form label[for="message"] {
   position: relative;
   box-sizing: border-box;
 }
 
-#connect-form label[for='message']::after{
+#connect-form label[for="message"]::after {
   --offset: 0.5em;
   content: attr(data-remaining);
   position: absolute;
@@ -102,7 +101,7 @@
   z-index: 0;
 }
 
-#connect-form textarea::-webkit-resizer{
+#connect-form textarea::-webkit-resizer {
   display: none;
 }
 
@@ -127,8 +126,7 @@
 /* ========================================= *\
 || >> HOVER <<
 \* ========================================= */
-@media (hover:hover){
-  
+@media (hover: hover) {
   #connect-form button:hover {
     background-color: var(--lavender);
     color: var(--dark);
@@ -140,7 +138,6 @@
 \* ========================================= */
 
 @media only screen and (max-width: 480px) {
-  
   #connect-form {
     width: auto;
     max-width: none;
@@ -150,5 +147,4 @@
     padding: 1rem;
     border-radius: 0;
   }
-
 }

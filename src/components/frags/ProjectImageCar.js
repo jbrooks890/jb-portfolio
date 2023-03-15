@@ -17,7 +17,7 @@ export default function ProjectImageCar({ images }) {
 
   return (
     <>
-      <div className="image-wrapper flex">
+      <div className="image-wrapper flex middle">
         {entries.map((image, i) => {
           return (
             <img
@@ -36,7 +36,7 @@ export default function ProjectImageCar({ images }) {
         )}
       </div>
       <ul
-        className={`project-images-pager flex ${
+        className={`project-images-pager flex center ${
           entries.length <= 1 ? "hide" : ""
         }`}
       >

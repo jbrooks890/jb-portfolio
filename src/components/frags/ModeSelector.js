@@ -15,14 +15,19 @@ export default function ModeSelector({ pages, modeProps, mode, ready }) {
   return (
     <div
       ref={wrapper}
-      className={`control-cache mobile flex ${activated ? "activated" : ""}`}
+      className={`control-cache mobile flex middle ${
+        activated ? "activated" : ""
+      }`}
       style={
         ready
           ? { maxHeight: wrapper.current.getBoundingClientRect().width + "px" }
           : null
       }
     >
-      <button className="non-mode flex" onClick={modeProps.get("Resume").click}>
+      <button
+        className="non-mode flex center"
+        onClick={modeProps.get("Resume").click}
+      >
         <svg>
           <use href={`#${modeProps.get("Resume").icon}`} />
         </svg>
@@ -30,7 +35,7 @@ export default function ModeSelector({ pages, modeProps, mode, ready }) {
       {/* --------- MODE SELECTOR --------- */}
       <div
         ref={cache}
-        className={`mode-selector button-cache flex mobile ${
+        className={`mode-selector button-cache flex center mobile ${
           activated ? "activated" : ""
         }`}
         // style={activated ? { maxWidth: cache.current.clientWidth + "px" } : null}
@@ -48,7 +53,7 @@ export default function ModeSelector({ pages, modeProps, mode, ready }) {
           <button
             key={i}
             ref={button}
-            className={`${page === mode ? "active" : ""} flex`}
+            className={`${page === mode ? "active" : ""} flex center`}
             style={{ ["--i"]: i }}
             onClick={() => {
               page === mode
@@ -63,7 +68,7 @@ export default function ModeSelector({ pages, modeProps, mode, ready }) {
         ))}
       </div>
       <button
-        className="non-mode flex"
+        className="non-mode flex center"
         onClick={modeProps.get("Connect").click}
       >
         <svg>

@@ -8,13 +8,12 @@ export default function Greeting({ pages }) {
   const { flavorTitle: title } = pages.find(entry => entry.title === mode);
 
   return (
-    <section id="greeting" className="site-section flex col">
+    <section id="greeting" className="site-section flex col middle">
       <div className="salute-wrapper flex even-split wide">
         <div>
           <h2 className="salute">
-            <span>I'm Julian, hi.</span>I strive to unite
-            {" "}
-            <em>art</em> and <em>tech</em>.
+            <span>I'm Julian, hi.</span>I strive to unite <em>art</em> and{" "}
+            <em>tech</em>.
           </h2>
           <p>
             I’m {title.toLowerCase()} based in Georgia, just outside of{" "}

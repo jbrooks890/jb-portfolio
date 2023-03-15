@@ -17,8 +17,8 @@ export default function Blurb({ mode, content }) {
 
   return (
     <>
-      <div className="about-intro flex wide">
-        <div className="intro-blurb flex col">
+      <div className="about-intro flex wide middle">
+        <div className="intro-blurb flex col middle">
           <h2 className="title">Story time.</h2>
           <p>
             In August of 2010, I left my beloved home of Chicago for Air Force

@@ -5,7 +5,7 @@ import Icons from "./Icons";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="flex col middle">
       <TopBtn destination="#top" />
       <SocialMediaCache concise={false} darkMode={false} />
       &copy;{new Date().getFullYear()} Julian Brooks. All rights reserved.

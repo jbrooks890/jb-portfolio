@@ -83,10 +83,10 @@ export default function Welcome({ pages, mode }) {
   ]);
 
   return (
-    <section id="welcome" className="site-section flex col">
+    <section id="welcome" className="site-section flex col center">
       <div
         id="radial-controller"
-        className={`flex col ${activated ? "activated" : ""}`}
+        className={`flex col center ${activated ? "activated" : ""}`}
         style={style}
       >
         <h2 id="welcome-logo" onClick={() => setActivated(prev => !prev)}>

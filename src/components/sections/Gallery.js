@@ -14,7 +14,7 @@ export default function Gallery() {
   });
 
   return (
-    <section id="gallery" className="site-section flex col">
+    <section id="gallery" className="site-section flex col middle">
       <h2>Projects</h2>
       <div className="project-list">
         {$projects.map((project, i) => (

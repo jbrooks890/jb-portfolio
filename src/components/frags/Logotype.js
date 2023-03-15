@@ -2,10 +2,10 @@ import { resumeData } from "../../utility/resume";
 import "../../styles/Logotype.css";
 
 export default function Logotype() {
-  const { firstName, lastName } = resumeData;
+  const { firstName, lastName } = resumeData.profile;
 
   return (
-    <div className="name">
+    <div className="logotype name">
       <h2>{firstName}</h2>
       <h3 className="flex">
         {lastName.split("").map((letter, i) => (

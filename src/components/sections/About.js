@@ -16,10 +16,10 @@ export default function About({ pages }) {
   const blurbs = pages.map(page => page.blurb);
 
   return (
-    <section id="about" className="site-section flex col">
-      <div className="content-wrap flex col">
+    <section id="about" className="site-section flex col center">
+      <div className="content-wrap flex col center">
         <Blurb mode={siteMode} content={pages} />
-        <div className="about-body flex col">
+        <div className="about-body flex col center">
           <SkillCache concise={false} showIcons={true} featured={true} />
           <button className="resume-button" onClick={() => toggle()}>
             Résumé

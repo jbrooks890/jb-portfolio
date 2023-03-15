@@ -10,7 +10,7 @@ export default function ProjectSnapshot({ entry }) {
 
   return (
     <div className="project-snap wide">
-      <div className="project-gallery flex col">
+      <div className="project-gallery flex col middle">
         <ProjectImageCar images={images} />
       </div>
       <div className="project-caption">

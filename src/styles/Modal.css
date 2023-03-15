@@ -39,7 +39,7 @@ body.modal-lock {
 .modal {
   position: relative;
   margin: 2vh;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   box-sizing: border-box;
   overflow-y: hidden;
   /* border: 3px solid lime; */
@@ -63,7 +63,7 @@ body.modal-lock {
   font-size: 2rem;
   /* font-weight: 700; */
   line-height: 1em;
-  opacity: .25;
+  opacity: 0.25;
   /* border: 1px solid red; */
   box-sizing: border-box;
   transition: 0.1s ease-in-out;
@@ -106,12 +106,10 @@ body.modal-lock {
     /* transition: margin-right 0.5s; */
   }
 
-  body:not(.side-menu) #root{
+  body:not(.side-menu) #root {
     margin-right: 0;
     /* transition: margin-right 0.5s; */
   }
-
-
 
   .modal-overlay {
     backdrop-filter: none;
@@ -137,7 +135,7 @@ body.modal-lock {
     /* transition: 0.5s; */
   }
 
-  .modal-wrapper.active{
+  .modal-wrapper.active {
     width: var(--side-menu-w);
     max-width: var(--side-menu-w);
     /* transition: 0.5s; */

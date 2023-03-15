@@ -23,7 +23,9 @@ export default function Modal({ isShowing, hide, children }) {
         <>
           <div className="modal-overlay" />
           <div
-            className={`modal-wrapper flex col ${active ? "active" : ""}`}
+            className={`modal-wrapper flex col center ${
+              active ? "active" : ""
+            }`}
             ref={wrapper}
             aria-modal
             aria-hidden
@@ -32,9 +34,9 @@ export default function Modal({ isShowing, hide, children }) {
             // style={active ? { maxWidth: window.innerWidth + "px" } : null}
             // onClick={closeModal}
           >
-            <div className="modal flex col">
+            <div className="modal flex col center">
               <div
-                className="modal-close flex"
+                className="modal-close flex center"
                 data-dismiss="modal"
                 aria-label="close"
                 onClick={closeModal}

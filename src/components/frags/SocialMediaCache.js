@@ -3,7 +3,7 @@ import { resumeData } from "../../utility/resume";
 import "../../styles/SocialMediaCache.css";
 
 export default function SocialMediaCache({ concise, darkMode }) {
-  const { socialMedia } = resumeData;
+  const { socialMedia } = resumeData.profile;
   const [current, setCurrent] = useState(socialMedia[0]);
 
   return (

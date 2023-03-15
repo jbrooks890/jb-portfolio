@@ -12,6 +12,7 @@ export default function SkillCache({
 }) {
   const [siteMode] = useSiteMode();
   const { skills: $default } = resumeData;
+
   const skills = !entries || entries.length === 0 ? $default : entries;
   const filtered = filter
     ? skills.filter(skill => skill.category.includes(siteMode.toLowerCase()))

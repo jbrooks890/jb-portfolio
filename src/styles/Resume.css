@@ -19,7 +19,8 @@
   height: 100vh;
 }
 
-#resume-caption, #resume-body {
+#resume-caption,
+#resume-body {
   padding: 2rem;
 }
 
@@ -37,11 +38,11 @@
   box-shadow: 5px 5px 5px var(--phantom);
 }
 
-#resume-caption > *:not(:first-child):not(:last-child:first-child){
+#resume-caption > *:not(:first-child):not(:last-child:first-child) {
   margin-bottom: 0.75rem;
 }
 
-#resume-caption .name>* {
+#resume-caption .name > * {
   color: var(--day);
 }
 
@@ -62,8 +63,8 @@
   text-transform: uppercase;
 }
 
-.caption-summary legend::before{
-  content: '';
+.caption-summary legend::before {
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
@@ -102,7 +103,6 @@
   color: var(--lavender);
 }
 
-
 #resume-caption .social-media-cache {
   margin-top: 1rem;
 }
@@ -113,7 +113,7 @@
   height: var(--size);
 }
 
-#resume-caption .icon-cache svg { 
+#resume-caption .icon-cache svg {
   fill: var(--lavender);
 }
 
@@ -123,7 +123,7 @@
 
 .resume-download {
   cursor: pointer;
-  padding: .5em 1.25em;
+  padding: 0.5em 1.25em;
   color: var(--lavender);
   border: 1.5px solid var(--lavender);
   border-radius: 100px;
@@ -183,8 +183,7 @@
 
 #resume-body h2,
 #resume-body h3,
-#resume-body h4
-{ 
+#resume-body h4 {
   margin: 0;
 }
 #resume-body h2 {
@@ -263,7 +262,7 @@
   transition: 0.1s ease-out;
 }
 
-.resume-nav a:not(:last-of-type){
+.resume-nav a:not(:last-of-type) {
   margin-right: 0.25rem;
 }
 
@@ -281,7 +280,7 @@
   transition: 0.1s ease-out;
 }
 
-.resume-nav a:hover svg{
+.resume-nav a:hover svg {
   transform: scale(1.1);
   fill: var(--day);
 }
@@ -306,7 +305,7 @@
 #resume-body .skill-cache::before,
 #resume-body .skill-cache::after {
   --border: 3px solid var(--lavender);
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -315,13 +314,13 @@
   border-bottom: var(--border);
 }
 
-#resume-body .skill-cache::before{
+#resume-body .skill-cache::before {
   left: 0;
   border-left: 3px solid var(--lavender);
   border-radius: 8px 0 0 8px;
 }
 
-#resume-body .skill-cache::after{
+#resume-body .skill-cache::after {
   right: 0;
   border-right: 3px solid var(--lavender);
   border-radius: 0 8px 8px 0;
@@ -448,7 +447,7 @@
 }
 
 .dropdown-entry .education-data.open,
-.dropdown-entry .entry-roles-list.open{
+.dropdown-entry .entry-roles-list.open {
   display: block;
   /* max-height: 500px; */
   opacity: 1;
@@ -491,19 +490,19 @@
 
 .education-note-list li::before,
 .role-task-list li::before {
-  content: '\276F';
+  content: "\276F";
   /* display: block; */
   margin-right: 0.5rem;
   color: var(--lavender);
 }
 
 .education-note-list li:not(:last-of-type),
-.role-task-list li:not(:last-of-type){
-  margin-bottom: .5em;
+.role-task-list li:not(:last-of-type) {
+  margin-bottom: 0.5em;
 }
 
 span.brand-icons {
-  font-family: 'tech-brand-icons';
+  font-family: "tech-brand-icons";
   color: var(--lavender);
 }
 
@@ -522,7 +521,7 @@ span.brand-icons {
 }
 
 #svg-text-test svg text {
-  font-family: 'tech-brand-icons';
+  font-family: "tech-brand-icons";
   width: 100%;
   height: 100%;
 }
@@ -578,7 +577,6 @@ span.brand-icons {
 \* ========================================= */
 
 @media only screen and (max-width: 480px) {
-
   #resume {
     padding-inline: 1rem;
     height: auto;
@@ -609,7 +607,7 @@ span.brand-icons {
     overflow: visible;
   }
 
-  #resume-projects .project-wrapper, 
+  #resume-projects .project-wrapper,
   #resume-skills .skills-body {
     display: flex;
     flex-direction: column;
@@ -623,14 +621,18 @@ span.brand-icons {
     text-align: center;
   }
 
-    #resume-projects .project-wrapper p,
-    #resume-skills .skills-body p {
-      display: block;
-    }
+  #resume-projects .project-wrapper p,
+  #resume-skills .skills-body p {
+    display: block;
+  }
 
   #resume .dropdown-entry .entry-header {
-    display: block;
     text-align: center;
+  }
+
+  #resume .dropdown-entry .entry-header.flex {
+    flex-direction: column;
+    align-items: center;
   }
 
   #resume .dropdown-entry .entry-header h3 {
@@ -639,4 +641,7 @@ span.brand-icons {
     /* font-size: 0.9rem; */
   }
 
+  #resume .dropdown-entry .entry-header .entry-active-dates {
+    text-align: center;
+  }
 }
