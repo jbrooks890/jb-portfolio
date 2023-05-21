@@ -98,6 +98,10 @@ const quotes = [
     entry: "Be the change you wish to see in the world.",
     author: "Mahatma Gandhi",
   },
+  {
+    entry: "If you're going through hell, keep going.",
+    author: "Winston Churchill",
+  },
 ];
 
 export { projects, quotes };
