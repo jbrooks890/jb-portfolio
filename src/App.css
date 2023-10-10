@@ -49,6 +49,10 @@
   --rounded: 2px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 100vh;
   font-size: 21px;

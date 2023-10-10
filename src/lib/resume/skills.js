@@ -48,10 +48,16 @@ export const skills = [
     primary: false,
   },
   {
+    name: "jQuery",
+    category: ["developer"],
+    type: "language",
+    primary: false,
+  },
+  {
     name: "C#",
     category: ["developer", "game"],
     type: "language",
-    primary: true,
+    primary: false,
   },
   {
     name: "Unity",
@@ -124,13 +130,13 @@ export const skills = [
     name: "GitHub",
     category: ["developer", "game"],
     type: "tool",
-    primary: true,
+    primary: false,
   },
   {
     name: "NPM",
     category: ["developer", "game"],
     type: "proficiency",
-    primary: true,
+    primary: false,
   },
   {
     name: "Squarespace",
@@ -175,12 +181,6 @@ export const skills = [
     primary: false,
   },
   {
-    name: "Adobe XD",
-    category: ["artist", "game", "developer"],
-    type: "tool",
-    primary: false,
-  },
-  {
     name: "Figma",
     category: ["developer", "artist"],
     type: "tool",
@@ -220,6 +220,12 @@ export const skills = [
   {
     name: "Visual Studio Code",
     category: ["developer", "game"],
+    type: "tool",
+    primary: false,
+  },
+  {
+    name: "IntelliJ",
+    category: ["developer"],
     type: "tool",
     primary: false,
   },
@@ -333,9 +339,9 @@ export const skills = [
   },
   { name: "SASS", category: ["developer"], type: "language", primary: true },
   {
-    name: "jQuery",
+    name: "Tailwind CSS",
     category: ["developer"],
     type: "language",
-    primary: false,
+    primary: true,
   },
 ];

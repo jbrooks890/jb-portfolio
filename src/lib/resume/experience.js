@@ -1,5 +1,45 @@
 export const experience = [
   {
+    type: "professional",
+    org: {
+      name: "American Data Solutions",
+      address: {
+        streetNumber: 2400,
+        streetName: "Herodian Way",
+        streetOther: "Ste. 450",
+        streetOtherType: "",
+        city: "Smyrna",
+        state: "Georgia",
+        stateInitials: "GA",
+        zipCode: "30080",
+      },
+    },
+    current: true,
+    startDate: {
+      month: "May",
+      day: 15,
+      year: 2023,
+    },
+    endDate: {
+      month: "",
+      day: 0,
+      year: 0,
+    },
+    roles: [
+      {
+        name: "Programmer (Front End Developer)",
+        description:
+          "Performed the duties of Crew Chief in support of the MC-130H Special Operations cargo aircraft.",
+        tasks: [
+          "Ensured aircraft fleet was fully mission capable (FMC) for real world and training missions",
+          "Responsible for maintaining documentation of aircraft discrepancies",
+          "Managed specialist personnel and ensured their participation in restoring aircraft to FMC status",
+        ],
+        skills: ["website development", "app development", "agile"],
+      },
+    ],
+  },
+  {
     type: "personal",
     org: {
       name: "EPOCH Studios",

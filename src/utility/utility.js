@@ -227,6 +227,7 @@ const iconMap = new Map([
   ["NPM", "N"],
   ["Unity", "U"],
   ["Python", "|"],
+  ["Tailwind CSS", "ì"],
 ]);
 
 export { states, skills, debounce, iconMap, abbr };

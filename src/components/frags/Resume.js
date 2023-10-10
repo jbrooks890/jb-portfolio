@@ -105,6 +105,14 @@ export default function Resume() {
             })}
           </div>
         </section>
+        {/* ========= EXPERIENCE ========= */}
+        <section
+          id="resume-experience"
+          className="resume-section"
+          data-resume-section="Experience"
+        >
+          <Experience entries={experience} />
+        </section>
         {/* ========= EDUCATION ========= */}
         <section
           id="resume-education"
@@ -114,14 +122,6 @@ export default function Resume() {
           {education.map((entry, i) => (
             <Entry key={i} type={"education"} entry={entry} active={false} />
           ))}
-        </section>
-        {/* ========= EXPERIENCE ========= */}
-        <section
-          id="resume-experience"
-          className="resume-section"
-          data-resume-section="Experience"
-        >
-          <Experience entries={experience} />
         </section>
         {/* ========= TO TOP ========= */}
         <TopBtn destination={"#resume-top"} />
