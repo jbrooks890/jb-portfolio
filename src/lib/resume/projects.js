@@ -2,6 +2,7 @@ export const projects = [
   {
     name: "Worlds of EPOCH",
     type: "Website",
+    isWip: false,
     section: ["Developer"],
     featured: true,
     repo: {
@@ -28,6 +29,7 @@ export const projects = [
   {
     name: "XWord",
     type: "Game",
+    isWip: false,
     section: ["Developer", "Game"],
     featured: true,
     repo: {
@@ -55,6 +57,7 @@ export const projects = [
   {
     name: "PokéSquad",
     type: "App",
+    isWip: true,
     section: ["Developer"],
     featured: true,
     repo: {
@@ -82,6 +85,7 @@ export const projects = [
   {
     name: "Web Reader",
     type: "App",
+    isWip: false,
     section: ["Developer"],
     featured: false,
     repo: {
@@ -108,6 +112,7 @@ export const projects = [
   {
     name: "Arcan",
     type: "Story",
+    isWip: false,
     section: ["Writer", "Artist", "WIP"],
     featured: true,
     repo: {
@@ -137,6 +142,7 @@ export const projects = [
   {
     name: "The Dark Ones",
     type: "Story",
+    isWip: true,
     section: ["Writer", "WIP"],
     featured: false,
     repo: {
@@ -167,6 +173,7 @@ export const projects = [
   {
     name: "Vie",
     type: "Board Game",
+    isWip: true,
     section: ["Game", "WIP"],
     featured: true,
     repo: {
@@ -197,6 +204,7 @@ export const projects = [
   {
     name: "Gigaslayer",
     type: "Game",
+    isWip: true,
     section: ["Game", "WIP"],
     featured: false,
     repo: {
@@ -232,6 +240,7 @@ export const projects = [
   {
     name: "Andromata",
     type: "Story",
+    isWip: true,
     section: ["Writer", "WIP"],
     featured: false,
     repo: {
@@ -263,6 +272,7 @@ export const projects = [
   {
     name: "Convergence",
     type: "Game",
+    isWip: true,
     section: ["Game", "WIP"],
     featured: false,
     repo: {
@@ -293,6 +303,7 @@ export const projects = [
   {
     name: "Crymsica",
     type: "Brand",
+    isWip: false,
     section: ["Game"],
     featured: false,
     repo: {
@@ -319,6 +330,7 @@ export const projects = [
   {
     name: "T2 Com-bat",
     type: "Brand",
+    isWip: false,
     section: ["Artist"],
     featured: true,
     repo: {
@@ -351,6 +363,7 @@ export const projects = [
       </>
     ),
     type: "Album Cover",
+    isWip: false,
     section: ["Artist"],
     featured: true,
     repo: {

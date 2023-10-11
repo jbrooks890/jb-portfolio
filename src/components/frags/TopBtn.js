@@ -5,11 +5,17 @@ export default function TopBtn({ destination, concise }) {
 
   return (
     <div className="nav-to-top flex col" data-tooltip="Top">
-      <a href={target} className="arrow-wrapper">
+      <button
+        onClick={e => {
+          e.preventDefault();
+          window?.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+        className="arrow-wrapper"
+      >
         <svg>
           <use href="#arrow-icon" />
         </svg>
-      </a>
+      </button>
     </div>
   );
 }
