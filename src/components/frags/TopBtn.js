@@ -2,7 +2,7 @@ import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow-stroke-ico
 // import "../../styles/TopBtn.css";
 
 export default function TopBtn({ destination = window, className }) {
-  console.log({ destination });
+  // console.log({ destination });
 
   return (
     <div

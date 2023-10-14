@@ -54,7 +54,7 @@
   }
 
   h3 {
-    @apply text-2xl;
+    @apply text-4xl;
   }
 
   h4 {
@@ -83,7 +83,7 @@
 
   strong > em,
   em > strong {
-    @apply font-normal not-italic text-shade;
+    @apply font-normal not-italic text-red;
   }
 
   input {
@@ -163,6 +163,10 @@
     @apply col-span-full;
     display: grid;
     grid-template: subgrid / subgrid;
+  }
+
+  body.modal-lock {
+    @apply overflow-hidden;
   }
 
   /* ==================\ FORM ELEMENTS /================== */

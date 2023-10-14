@@ -9,7 +9,7 @@ export default function Experience({ entries }) {
   const work = entries.filter((entry) => entry.type === "professional");
 
   return (
-    <div className="resume-experience">
+    <div className="resume-experience space-y-4">
       {experience.map(
         ({ type, org: { name }, current, startDate, endDate, roles }, i) => {
           return (

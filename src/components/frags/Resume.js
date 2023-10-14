@@ -40,7 +40,7 @@ export default function Resume() {
   return (
     <div
       id="resume"
-      className="grid max-w-screen-xl gap-8 scroll-smooth rounded-lg bg-shade px-12 py-8 text-lite"
+      className="grid h-full max-w-screen-xl gap-8 scroll-smooth rounded-lg bg-shade px-12 py-8 text-lite"
     >
       {/* =================================== *\
       ||  <><><><><><>\ CAPTION /<><><><><><> 

@@ -9,7 +9,7 @@ export default function Describe({
   const drawerRef = useRef();
   return (
     <div
-      className={`mb-4 rounded-b-md duration-200 ease-out ${
+      className={`rounded-b-md duration-200 ease-out ${
         open ? "open bg-black/10" : "closed"
       }`.concat(" ", className)}
     >

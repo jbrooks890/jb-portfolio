@@ -157,18 +157,20 @@ export default function Welcome({ pages, mode }) {
         />
       </div>
       {/* ----------[ GREETING ]---------- */}
-      <Block className="salute-wrapper w-[480px]">
-        <h2 className="salute">
-          <span>I'm Julian, hi.</span>I strive to unite <em>art</em> and{" "}
-          <em>tech</em>.
+      <Block className="salute-wrapper grid w-[1024px] grid-cols-2">
+        <h2 className="salute col-start-1 mb-4 text-left text-5xl text-lavender [&>em]:mx-[0.1em] [&>em]:inline-block [&>em]:rotate-1 [&>em]:scale-110 [&>em]:not-italic [&>em]:brightness-125">
+          <span className="block text-4xl text-red">I'm Julian, hi.</span>I
+          strive to unite <em>art</em> and <em>tech</em>.
         </h2>
-        <p className="text-left text-xl text-day">
-          I’m {flavorTitle.toLowerCase()} based in Georgia, just outside of{" "}
+        <p className="col-start-1 text-left text-2xl text-day">
+          I&apos;m {flavorTitle.toLowerCase()} based in Georgia, just outside of{" "}
           <strong>Atlanta</strong>, where I relentlessly strive to master my
           craft. I take pride in several talents, but regardless of what{" "}
-          <em className="hint" data-hint={`${mode} mode`}>
-            mode
-          </em>{" "}
+          <strong>
+            <em className="hint" data-hint={`${mode} mode`}>
+              mode
+            </em>
+          </strong>{" "}
           I'm in, <strong>my mission is to create</strong> thoughtful, memorable
           work.
         </p>

@@ -4,7 +4,7 @@ export default function ProjectImageCar({ images }) {
   const [active, setActive] = useState(0);
   const { location, entries } = images;
 
-  const scroll = dest => {
+  const scroll = (dest) => {
     const target =
       active + dest >= entries.length
         ? 0
@@ -17,7 +17,7 @@ export default function ProjectImageCar({ images }) {
 
   return (
     <>
-      <div className="image-wrapper flex middle">
+      <div className="image-wrapper flex items-center">
         {entries.map((image, i) => {
           return (
             <img
@@ -36,7 +36,7 @@ export default function ProjectImageCar({ images }) {
         )}
       </div>
       <ul
-        className={`project-images-pager flex center ${
+        className={`project-images-pager center flex ${
           entries.length <= 1 ? "hide" : ""
         }`}
       >

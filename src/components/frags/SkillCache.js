@@ -52,7 +52,7 @@ export default function SkillCache({
             data-skill={name}
           >
             {showIcons ? iconMap.get(name) : name}
-            {!concise && <h4 className="skill-name">{name}</h4>}
+            {!concise && <h5 className="skill-name font-body">{name}</h5>}
           </li>
         ))}
         {featured && bigBracket(true)}

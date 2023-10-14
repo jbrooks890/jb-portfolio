@@ -17,7 +17,7 @@ export default function Gallery() {
   return (
     <Section id="gallery" className="site-section flex flex-col items-center">
       <h2>Projects</h2>
-      <div className="project-list">
+      <div className="project-list w-[768px]">
         {$projects.map((project, i) => (
           <ProjectSnapshot key={i} entry={project} />
         ))}

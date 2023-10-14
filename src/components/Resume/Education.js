@@ -7,7 +7,7 @@ import StudyField from "./StudyField";
 
 export default function Education() {
   return (
-    <div className="resume-education">
+    <div className="resume-education space-y-4">
       {education.map(
         (
           {

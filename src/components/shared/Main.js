@@ -5,7 +5,6 @@ import Contact from "../sections/Contact";
 import { useParams } from "react-router-dom";
 import { useSiteMode } from "./ModeProvider";
 import { useEffect } from "react";
-import Greeting from "../sections/Greeting";
 import { portfolioData } from "../../utility/portfolio";
 import Page from "../layout/Page";
 

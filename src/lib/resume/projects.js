@@ -21,10 +21,10 @@ export const projects = [
       dark: "#161d1d",
       reverse: false,
     },
-    images: {
-      location: "projects",
-      entries: ["epoch-site-1.png", "epoch-site-2.png"],
-    },
+    images: [
+      { src: "projects/epoch-site-1.png" },
+      { src: "projects/epoch-site-2.png" },
+    ],
   },
   {
     name: "XWord",
@@ -49,10 +49,7 @@ export const projects = [
       dark: "#150330",
       reverse: false,
     },
-    images: {
-      location: "projects",
-      entries: ["xword-1.png", "xword-3.png"],
-    },
+    images: [{ src: "projects/xword-1.png" }, { src: "projects/xword-3.png" }],
   },
   {
     name: "PokéSquad",
@@ -76,10 +73,10 @@ export const projects = [
       dark: "",
       reverse: true,
     },
-    images: {
-      location: "projects",
-      entries: ["pokesquad-1.png", "pokesquad-2.png"],
-    },
+    images: [
+      { src: "projects/pokesquad-1.png" },
+      { src: "projects/pokesquad-2.png" },
+    ],
   },
 
   {
@@ -104,10 +101,7 @@ export const projects = [
       dark: "",
       reverse: false,
     },
-    images: {
-      location: "",
-      entries: [],
-    },
+    images: [],
   },
   {
     name: "Arcan",
@@ -134,10 +128,7 @@ export const projects = [
       dark: "#000",
       reverse: false,
     },
-    images: {
-      location: "gallery",
-      entries: ["arcan__web-Banner.jpg"],
-    },
+    images: [{ src: "gallery/arcan__web-Banner.jpg" }],
   },
   {
     name: "The Dark Ones",
@@ -165,10 +156,7 @@ export const projects = [
       dark: "",
       reverse: false,
     },
-    images: {
-      location: "gallery",
-      entries: [],
-    },
+    images: [],
   },
   {
     name: "Vie",
@@ -196,10 +184,7 @@ export const projects = [
       dark: "#2e2e47",
       reverse: false,
     },
-    images: {
-      location: "gallery",
-      entries: ["vie__web-Banner.jpg"],
-    },
+    images: [{ src: "gallery/vie__web-Banner.jpg" }],
   },
   {
     name: "Gigaslayer",
@@ -232,10 +217,7 @@ export const projects = [
       dark: "",
       reverse: false,
     },
-    images: {
-      location: "gallery",
-      entries: [],
-    },
+    images: [],
   },
   {
     name: "Andromata",
@@ -263,10 +245,7 @@ export const projects = [
       dark: "",
       reverse: false,
     },
-    images: {
-      location: "gallery",
-      entries: [],
-    },
+    images: [],
   },
 
   {
@@ -295,10 +274,7 @@ export const projects = [
       dark: "",
       reverse: false,
     },
-    images: {
-      location: "gallery",
-      entries: [],
-    },
+    images: [],
   },
   {
     name: "Crymsica",
@@ -322,10 +298,7 @@ export const projects = [
       dark: "#00000",
       reverse: false,
     },
-    images: {
-      location: "projects",
-      entries: [],
-    },
+    images: [],
   },
   {
     name: "T2 Com-bat",
@@ -351,10 +324,10 @@ export const projects = [
       dark: "",
       reverse: false,
     },
-    images: {
-      location: "gallery",
-      entries: ["t2__web.jpg", "t2-patch__web.jpg"],
-    },
+    images: [
+      { src: "gallery/t2__web.jpg" },
+      { src: "gallery/t2-patch__web.jpg" },
+    ],
   },
   {
     name: (
@@ -388,9 +361,6 @@ export const projects = [
       dark: "",
       reverse: false,
     },
-    images: {
-      location: "gallery",
-      entries: ["war-love__web.jpg"],
-    },
+    images: [{ src: "gallery/war-love__web.jpg" }],
   },
 ];

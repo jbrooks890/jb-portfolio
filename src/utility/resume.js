@@ -16,5 +16,5 @@ export const resumeData = {
   events,
 };
 
-export const wrapSkills = skills =>
-  skills.map(skill => resumeData.skills.find(entry => entry.name === skill));
+export const wrapSkills = (skills) =>
+  skills.map((skill) => resumeData.skills.find(({ name }) => name === skill));
