@@ -1,28 +1,28 @@
 import { useRef } from "react";
+import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow-stroke-icon.svg";
 
-export default function Roles({ entries, active }) {
-  const drawer = useRef();
-
+export default function Roles({ entries }) {
   return (
-    <div
-      ref={drawer}
-      className={`entry-roles-list ${active ? "open" : ""}`}
-      style={active ? { maxHeight: drawer.current.scrollHeight + "px" } : null}
-    >
+    <div className={`entry-roles-list`}>
       {entries.map((entry, i) => {
-        const { name: title, description, tasks, skills } = entry;
+        const { name: title, description, tasks } = entry;
 
         return (
-          <div className="entry-role" key={i}>
+          <div key={i} className="entry-role">
             <div className="role-header list-entry-header">
-              <h4>{title}</h4>
+              <h5>{title}</h5>
               <p>{description}</p>
             </div>
-            <ul className="role-task-list">
+            <div className="role-task-list grid gap-2">
               {tasks.map((task, i) => (
-                <li key={i}>{task}</li>
+                <div key={i} className="contents">
+                  <ArrowIcon className="h-4 stroke-lavender stroke-2" />
+                  <div key={i} className="col-start-2">
+                    {task}
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         );
       })}

@@ -7,6 +7,7 @@ import { useSiteMode } from "./ModeProvider";
 import { useEffect } from "react";
 import Greeting from "../sections/Greeting";
 import { portfolioData } from "../../utility/portfolio";
+import Page from "../layout/Page";
 
 export default function Main() {
   const [_, setSiteMode] = useSiteMode();
@@ -19,15 +20,15 @@ export default function Main() {
   }, [mode]);
 
   return (
-    <main>
+    <Page>
       <Welcome
         pages={pages}
         mode={mode ? mode[0].toUpperCase(1) + mode.slice(1) : null}
       />
-      <Greeting pages={pages} />
+      {/* <Greeting pages={pages} /> */}
       <Gallery />
       <About pages={pages} />
       <Contact />
-    </main>
+    </Page>
   );
 }

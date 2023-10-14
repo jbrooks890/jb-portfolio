@@ -10,13 +10,13 @@ export default function ProjectSnapshot({ entry }) {
 
   return (
     <div className="project-snap wide">
-      <div className="project-gallery flex col middle">
+      <div className="project-gallery flex flex-col items-center">
         <ProjectImageCar images={images} />
       </div>
       <div className="project-caption">
         {icon && <ProjectIcon entry={entry} />}
-        <h3 className="project-title">{name}</h3>
-        <h4 className="project-type">{type}</h4>
+        <h2 className="project-title">{name}</h2>
+        <div className="project-type text-xl font-semibold">{type}</div>
         <SkillCache
           entries={$tech}
           concise={true}

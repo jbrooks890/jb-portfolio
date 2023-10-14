@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Rajdhani";
   src: url(./assets/fonts/Rajdhani-Regular.ttf);
@@ -17,28 +21,212 @@
   src: url(./assets/fonts/Tech-Brands-2.otf);
 }
 
+/* ================\ TW LAYERS /================ */
+@layer base {
+  body {
+    @apply bg-lite font-body font-[500] text-sundown;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply mb-[.75em] text-center font-key;
+  }
+
+  /* h1 {
+    @apply font-key text-4xl font-normal;
+  } */
+
+  /* h1.title {
+    @apply text-8xl;
+  } */
+
+  /* h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-key;
+  } */
+
+  h2 {
+    @apply text-6xl text-shade;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg font-semibold tracking-wider;
+  }
+
+  a {
+    @apply cursor-pointer appearance-none text-inherit no-underline;
+  }
+  a:hover,
+  a:focus {
+    @apply text-shade;
+  }
+
+  strong {
+    @apply font-semibold;
+  }
+
+  p {
+    @apply mb-[.75em] last:mb-0;
+  }
+
+  strong > em,
+  em > strong {
+    @apply font-normal not-italic text-shade;
+  }
+
+  input {
+    @apply block appearance-none border-none bg-transparent text-inherit outline-none;
+  }
+
+  input::placeholder {
+    @apply italic text-inherit opacity-50;
+  }
+
+  /* input:not([type="range"]) {
+    @apply p-1;
+  } */
+}
+
+/* --------------------{ COMPONENTS LAYER }-------------------- */
+@layer components {
+  .test {
+    @apply border border-solid border-[red];
+  }
+
+  .test > .test {
+    @apply border-[orange];
+  }
+
+  .test > .test > .test {
+    @apply border-[coral];
+  }
+  .test > .test > .test > .test {
+    @apply border-[yellow];
+  }
+
+  .circle {
+    @apply aspect-square rounded-[50%];
+  }
+
+  .small-caps {
+    font-variant: small-caps;
+  }
+
+  .island {
+    @apply grid place-items-center;
+  }
+
+  .dropcaps {
+    @apply leading-normal !important;
+  }
+
+  .dropcaps::first-letter {
+    @apply float-left pr-4 font-key text-[3lh] leading-none tracking-normal text-shade dark:text-day;
+  }
+
+  .border-form {
+    @apply border-2 border-solid border-current;
+  }
+
+  .ul-grid {
+    @apply grid grid-cols-[min-content_minmax(0,1fr)];
+  }
+
+  .color-em em {
+    @apply not-italic text-shade;
+  }
+
+  /* ul.ul-grid li {
+    @apply grid-cols-[subgrid];
+  }
+
+  ul.ul-grid li::before {
+    @apply icon content-['*'];
+  } */
+  .describe-entry {
+    text-align: inherit;
+  }
+
+  .subgrid {
+    @apply col-span-full;
+    display: grid;
+    grid-template: subgrid / subgrid;
+  }
+
+  /* ==================\ FORM ELEMENTS /================== */
+
+  :is(input, textarea) {
+    @apply block appearance-none bg-transparent text-base text-inherit;
+  }
+
+  .label-text {
+    @apply font-body text-xs uppercase tracking-wider;
+  }
+
+  legend {
+    @apply relative px-[1em] leading-none before:absolute before:inset-x-0 before:inset-y-1/4 before:border-x-2 before:border-x-current before:content-[''];
+  }
+
+  textarea {
+    @apply block resize-y outline-none;
+  }
+
+  textarea::-webkit-resizer {
+    @apply hidden;
+  }
+
+  :is(input[required], .label-text.required)::after {
+    @apply text-base text-[coral] content-['*'];
+  }
+
+  button[type="submit"] {
+    @apply border-form mx-auto w-fit rounded px-2 font-key uppercase;
+  }
+
+  fieldset {
+    @apply appearance-none;
+    min-inline-size: auto;
+  }
+
+  .fade {
+    @apply small-caps block lowercase opacity-50;
+  }
+}
+
 :root {
   /* ========== SIZE ========== */
   --maxWidth: 1120px;
   /* ========== COLORS ========== */
-  --red: hsl(0, 100%, 41%);
+  --red: #d10000;
   /* --midnite: hsl(258, 15%, 15%); */
-  --midnite: hsl(258, 15%, 10%);
-  --nite: hsl(257, 35%, 20%);
-  --evening: hsl(245, 40%, 25%);
-  --shade: hsl(247, 35%, 40%);
-  --sundown: hsl(245, 30%, 60%);
-  --lavender: hsl(246, 57%, 63%);
-  --day: hsl(246, 60%, 80%);
+  --midnite: #18161d;
+  --nite: #2b2145;
+  --evening: #2a2659;
+  --shade: #4b428a;
+  --sundown: #7f7ab8;
+  --lavender: #766bd6;
+  --day: #b4adeb;
   /* --------- X COLORS --------- */
-  --lite: hsl(245, 100%, 95%);
+  --lite: #e8e5ff;
   --mid: var(--shade);
   --dark: var(--nite);
   --darker: var(--midnite);
   --pop: var(--red);
   --faint: hsla(0, 0%, 0%, 0.1);
   --phantom: hsla(0, 0%, 0%, 0.05);
-  --shaded: hsla(247, 31%, 38%, 0.75);
+  --shaded: rgba(74, 67, 127, 0.75);
   /* ========== FONTS ========== */
   --keyFont: "social-gothic-rough", sans-serif;
   --bodyFont: "Rajdhani";
@@ -55,7 +243,7 @@
 
 html {
   height: 100vh;
-  font-size: 21px;
+  /* font-size: 21px; */
   scroll-behavior: smooth;
 }
 
@@ -65,13 +253,12 @@ body,
   height: 100%;
 }
 
-body {
+/* body {
   background-color: var(--darker);
-  /* color: var(--pop); */
   color: var(--lite);
   font-family: var(--bodyFont);
   font-weight: 500;
-}
+} */
 
 *::selection {
   background-color: var(--phantom);
@@ -110,17 +297,6 @@ button {
   background-color: transparent;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--keyFont);
-}
-
-h2 {
-  color: var(--lavender);
-  font-size: 3rem;
-}
-
 input {
   appearance: none;
   border: 2px solid hsla(0, 0%, 0%, 0.1);
@@ -136,44 +312,9 @@ main > section {
   overflow: hidden;
 }
 
-.flex {
-  display: flex;
-  /* justify-content: center;
-  align-items: center; */
-}
-
-.flex.col {
-  flex-direction: column;
-}
-
-.flex.start {
-  align-items: flex-start;
-}
-
-.flex.middle {
-  align-items: center;
-}
-
-.flex.end {
-  align-items: flex-end;
-}
-
-.flex.center {
-  justify-content: center;
-  align-items: center;
-}
-
-.flex.even-split > * {
-  width: 50%;
-}
-
-.grid {
-  display: grid;
-}
-
 /* SECTIONS */
 
-.site-section {
+/* .site-section {
   padding: 3rem 1rem;
   background-color: var(--lite);
   color: var(--dark);
@@ -196,7 +337,7 @@ main > section {
 .site-section p em {
   font-style: normal;
   color: red;
-}
+} */
 
 button.pill {
   padding: 0.5em 1.5em;
@@ -262,11 +403,6 @@ span.subtitle {
   padding: 5px;
 }
 
-.wide {
-  width: 90vw;
-  max-width: var(--maxWidth);
-}
-
 .nobr {
   white-space: nowrap;
 }
@@ -281,6 +417,10 @@ span.subtitle {
   box-sizing: border-box;
   vertical-align: middle;
   /* border: 1px solid red; */
+}
+
+.test {
+  border: 1px solid red;
 }
 
 /* ========================================= *\
@@ -305,9 +445,5 @@ span.subtitle {
   }
   .site-section {
     padding-inline: 0;
-  }
-
-  .flex {
-    display: flex;
   }
 }

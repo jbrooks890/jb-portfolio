@@ -1,20 +1,25 @@
-import "../../styles/TopBtn.css";
+import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow-stroke-icon.svg";
+// import "../../styles/TopBtn.css";
 
-export default function TopBtn({ destination, concise }) {
-  const target = destination ? destination : "#top";
+export default function TopBtn({ destination = window, className }) {
+  console.log({ destination });
 
   return (
-    <div className="nav-to-top flex col" data-tooltip="Top">
+    <div
+      className={`nav-to-top relative mx-auto flex w-fit flex-col self-center`.concat(
+        " ",
+        className,
+      )}
+      data-tooltip="Top"
+    >
       <button
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
-          window?.scrollTo({ top: 0, behavior: "smooth" });
+          destination?.scrollTo({ top: 0, behavior: "smooth" });
         }}
         className="arrow-wrapper"
       >
-        <svg>
-          <use href="#arrow-icon" />
-        </svg>
+        <ArrowIcon className="aspect-square h-8 -rotate-90 stroke-lavender stroke-[3px]" />
       </button>
     </div>
   );

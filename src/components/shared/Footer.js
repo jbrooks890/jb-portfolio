@@ -5,10 +5,12 @@ import Icons from "./Icons";
 
 export default function Footer() {
   return (
-    <footer className="flex col middle">
-      <TopBtn destination="#top" />
+    <footer className="flex flex-col items-center">
+      <TopBtn />
       <SocialMediaCache concise={false} darkMode={false} />
-      &copy;{new Date().getFullYear()} Julian Brooks. All rights reserved.
+      <div className="text-lg text-lite">
+        &copy;{new Date().getFullYear()} Julian Brooks. All rights reserved.
+      </div>
       <Icons />
     </footer>
   );

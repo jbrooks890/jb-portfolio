@@ -13,7 +13,7 @@ export default function Modal({ isShowing, hide, children }) {
   // console.log({ isShowing });
   useEffect(() => isShowing && setActive(true), []);
 
-  const closeModal = e => {
+  const closeModal = (e) => {
     setActive(false);
     hide(true);
   };
@@ -23,7 +23,7 @@ export default function Modal({ isShowing, hide, children }) {
         <>
           <div className="modal-overlay" />
           <div
-            className={`modal-wrapper flex col center ${
+            className={`modal-wrapper flex flex-col items-center ${
               active ? "active" : ""
             }`}
             ref={wrapper}
@@ -34,9 +34,9 @@ export default function Modal({ isShowing, hide, children }) {
             // style={active ? { maxWidth: window.innerWidth + "px" } : null}
             // onClick={closeModal}
           >
-            <div className="modal flex col center">
+            <div className="modal flex flex-col items-center">
               <div
-                className="modal-close flex center"
+                className="modal-close island"
                 data-dismiss="modal"
                 aria-label="close"
                 onClick={closeModal}
@@ -47,7 +47,7 @@ export default function Modal({ isShowing, hide, children }) {
             </div>
           </div>
         </>,
-        document.body
+        document.body,
       )
     : null;
 }

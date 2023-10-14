@@ -8,8 +8,11 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contact" className="site-section flex col center">
-        <div id="contact-content-wrapper" className="flex col center">
+      <section id="contact" className="site-section island">
+        <div
+          id="contact-content-wrapper"
+          className="flex flex-col items-center"
+        >
           <h2>Let's Connect</h2>
           <button className="pill" onClick={() => toggle()}>
             Email me!

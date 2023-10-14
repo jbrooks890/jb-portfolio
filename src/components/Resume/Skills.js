@@ -2,10 +2,10 @@ import { Fragment } from "react";
 import { resumeData } from "../../utility/resume";
 
 export default function Skills({ skills }) {
-  const languages = skills.filter(skill => skill.type === "language");
-  const tools = skills.filter(skill => skill.type === "tool");
-  const proficiencies = skills.filter(skill => skill.type === "proficiency");
-  const systems = skills.filter(skill => skill.type === "operating system");
+  const languages = skills.filter((skill) => skill.type === "language");
+  const tools = skills.filter((skill) => skill.type === "tool");
+  const proficiencies = skills.filter((skill) => skill.type === "proficiency");
+  const systems = skills.filter((skill) => skill.type === "operating system");
 
   const skillGroups = new Map([
     ["Languages", languages],
@@ -16,21 +16,25 @@ export default function Skills({ skills }) {
 
   const createLists = () => {
     return [...skillGroups.keys()]
-      .filter(name => skillGroups.get(name).length > 0)
+      .filter((name) => skillGroups.get(name).length > 0)
       .map((name, i) => {
         return (
-          <Fragment key={i}>
-            <h3>{name}</h3>
-            <p>
+          <div key={i} className="contents">
+            <h4 className="text-right">{name}</h4>
+            <div>
               {skillGroups
                 .get(name)
-                .map(skill => skill.name)
+                .map((skill) => skill.name)
                 .join(", ")}
-            </p>
-          </Fragment>
+            </div>
+          </div>
         );
       });
   };
 
-  return <div className="skills-body grid">{createLists()}</div>;
+  return (
+    <div className="skills-body grid grid-cols-[minmax(0,1fr)_minmax(0,3fr)] gap-4 rounded-md bg-black/10 p-4">
+      {createLists()}
+    </div>
+  );
 }

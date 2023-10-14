@@ -27,33 +27,33 @@ export default function ConnectForm() {
 
   // console.log(REACT_APP_EMAILJS_PUBLIC_KEY);
 
-  const handleInput = e => {
+  const handleInput = (e) => {
     const { name, value } = e.target;
-    updateFormContent(prev => ({
+    updateFormContent((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     sendEmail(e);
   };
 
-  const sendEmail = e => {
+  const sendEmail = (e) => {
     emailjs
       .sendForm(
         "service_paliycp",
         "connect_form",
         e.target,
-        REACT_APP_EMAILJS_PUBLIC_KEY
+        REACT_APP_EMAILJS_PUBLIC_KEY,
       )
       .then(
-        res => {
+        (res) => {
           console.log(res.text);
-          markComplete(e)
+          markComplete(e);
         },
-        err => console.log(err.text)
+        (err) => console.log(err.text),
       );
   };
 
@@ -64,25 +64,25 @@ export default function ConnectForm() {
       email: "",
       occupation: "",
       message: "",
-    })
+    });
     setCompleted(true);
-  }
+  };
 
   return (
     <form
       id="connect-form"
-      className="flex col"
-      onSubmit={e => handleSubmit(e)}
+      className="flex flex-col"
+      onSubmit={(e) => handleSubmit(e)}
     >
       <h2>Email Me!</h2>
       <div id="connect-form-content">
-        <div id="connect-form-main" className="flex col">
+        <div id="connect-form-main" className="flex flex-col">
           {/* ---- NAME ---- */}
           <label htmlFor="name" data-label="Name">
             <input
               name="name"
               placeholder="Jane Doe"
-              onInput={e => handleInput(e)}
+              onInput={(e) => handleInput(e)}
               required
             />
           </label>
@@ -92,7 +92,7 @@ export default function ConnectForm() {
               type="email"
               name="email"
               placeholder="janedoe@domain.com"
-              onInput={e => handleInput(e)}
+              onInput={(e) => handleInput(e)}
               required
             />
           </label>
@@ -102,7 +102,7 @@ export default function ConnectForm() {
               options={occupations}
               field="occupation"
               classList={[]}
-              onChange={e => handleInput(e)}
+              onChange={(e) => handleInput(e)}
             />
           </label>
           {/* ---- MESSAGE ---- */}
@@ -119,7 +119,7 @@ export default function ConnectForm() {
               name="message"
               placeholder="Hey Julian! Are you available for hire?"
               maxLength={msgMax}
-              onInput={e => handleInput(e)}
+              onInput={(e) => handleInput(e)}
               required
             />
           </label>

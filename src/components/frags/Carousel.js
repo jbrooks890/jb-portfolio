@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { debounce } from "../../utility/utility";
 
-export default function Carousel({ arr, index = 0, classList = "", shift }) {
+export default function Carousel({ arr, index = 0, className, shift }) {
   const carousel = useRef();
   const [currIndex, setCurrIndex] = useState(index);
 
@@ -24,7 +24,7 @@ export default function Carousel({ arr, index = 0, classList = "", shift }) {
   return (
     <div
       ref={carousel}
-      className={`carousel ${classList}`}
+      className={`carousel ${className ?? ""}`}
       // onClick={e => console.log(e.currentTarget.scrollLeft)}
       onScroll={() => carScroll()}
     >
