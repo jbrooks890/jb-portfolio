@@ -40,14 +40,14 @@ export default function Resume() {
   return (
     <div
       id="resume"
-      className="grid h-full max-w-screen-xl gap-8 scroll-smooth rounded-lg bg-shade px-12 py-8 text-lite"
+      className="grid h-full max-w-screen-xl gap-8 scroll-smooth rounded-lg bg-shade px-12 py-8 text-xl text-lite"
     >
       {/* =================================== *\
       ||  <><><><><><>\ CAPTION /<><><><><><> 
        \* =================================== */}
       <div
         id="resume-caption"
-        className="relative isolate col-start-1 row-span-2 mb-40 mt-8 flex h-fit w-[480px] flex-col items-center space-y-6 self-center rounded-lg bg-nite p-12 drop-shadow-sm"
+        className="relative isolate col-start-1 row-span-2 flex h-fit w-[480px] flex-col items-center space-y-6 self-center rounded-lg bg-nite p-12 drop-shadow-sm"
       >
         <div className="pointer-events-none absolute inset-0 -z-10 flex flex-col items-center justify-end overflow-hidden rounded-[inherit] opacity-10 mix-blend-overlay">
           <MyLogo className="w-[110%] fill-white" />

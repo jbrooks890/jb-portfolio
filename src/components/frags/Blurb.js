@@ -59,7 +59,7 @@ export default function Blurb({ mode, content }) {
             content.find(({ title }) => title === activeEntry),
           )}
           shift={carouselShift}
-          className="mb-8 text-left text-xl leading-normal"
+          className="mb-8 text-left"
         />
 
         <div className="about-shift flex items-baseline">

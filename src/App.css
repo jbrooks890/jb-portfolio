@@ -101,6 +101,10 @@
 
 /* --------------------{ COMPONENTS LAYER }-------------------- */
 @layer components {
+  .font-body {
+    @apply text-xl leading-normal;
+  }
+
   .test {
     @apply border border-solid border-[red];
   }
