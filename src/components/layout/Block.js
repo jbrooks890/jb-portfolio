@@ -6,6 +6,8 @@ export default function Block({
   className,
   children,
   priority,
+  narrow,
+  wide,
 }) {
   const styles = {
     narrow: `w-[640px]`,
@@ -22,7 +24,7 @@ export default function Block({
     <div
       className={`layout-block ${styles[type]} ${
         !tight ? "mb-4 first:mt-4" : ""
-      } ${className ?? ""}`}
+      } ${narrow ? "narrow mx-auto w-[640px]" : ""} ${className ?? ""}`}
     >
       {title && !untitled && <h3>{title}</h3>}
       {children}

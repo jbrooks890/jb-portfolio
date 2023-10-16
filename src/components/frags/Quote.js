@@ -9,7 +9,7 @@ export default function Quote() {
   const { entry, author } = quote;
 
   return (
-    <div className="quote-wrap flex flex-col text-2xl">
+    <div className="quote-wrap mx-auto flex w-fit flex-col text-2xl">
       <q data-author={author}>{entry}</q>
     </div>
   );

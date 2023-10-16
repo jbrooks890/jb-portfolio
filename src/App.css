@@ -58,11 +58,11 @@
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-2xl;
   }
 
   h5 {
-    @apply text-lg font-semibold tracking-wider;
+    @apply tracking-wider;
   }
 
   a {
@@ -102,7 +102,7 @@
 /* --------------------{ COMPONENTS LAYER }-------------------- */
 @layer components {
   .font-body {
-    @apply text-xl leading-normal;
+    @apply text-lg leading-normal;
   }
 
   .test {
@@ -196,7 +196,7 @@
   }
 
   :is(input[required], .label-text.required)::after {
-    @apply text-base text-[coral] content-['*'];
+    @apply text-base content-['*'];
   }
 
   button[type="submit"] {
@@ -347,27 +347,26 @@ main > section {
   color: red;
 } */
 
-button.pill {
+/* button.pill {
   padding: 0.5em 1.5em;
   border-radius: 100px;
-}
+} */
 
 /* HEADER */
 
-header,
+/* header,
 footer {
   padding: 0.5rem 1.5rem;
   box-sizing: border-box;
-}
+} */
 
-header {
+/* header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid red; */
-}
+} */
 
-header h1 {
+/* header h1 {
   margin: 0;
 }
 
@@ -385,11 +384,11 @@ header nav ul li {
 
 header nav ul li:not(:last-of-type) {
   margin-right: 1.25em;
-}
+} */
 
-.mobile {
+/* .mobile {
   display: none;
-}
+} */
 
 span.subtitle {
   display: block;
@@ -411,11 +410,11 @@ span.subtitle {
   padding: 5px;
 }
 
-.nobr {
+/* .nobr {
   white-space: nowrap;
-}
+} */
 
-.mdash {
+/* .mdash {
   position: relative;
   display: inline-block;
   align-items: center;
@@ -424,12 +423,7 @@ span.subtitle {
   background-color: var(--sundown);
   box-sizing: border-box;
   vertical-align: middle;
-  /* border: 1px solid red; */
-}
-
-.test {
-  border: 1px solid red;
-}
+} */
 
 /* ========================================= *\
 || >> MOBILE <<

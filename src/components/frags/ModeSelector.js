@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 export default function ModeSelector({ pages, modeProps, mode, ready }) {
   const [activated, toggleActivated] = useState(false);
-  const legend = useRef();
-  const cache = useRef();
-  const button = useRef();
-  const wrapper = useRef();
+  const legend = useRef(),
+    cache = useRef(),
+    button = useRef(),
+    wrapper = useRef();
 
   // console.log({ mode });
   // console.log(modeProps);
@@ -15,7 +15,7 @@ export default function ModeSelector({ pages, modeProps, mode, ready }) {
   return (
     <div
       ref={wrapper}
-      className={`control-cache mobile flex items-center ${
+      className={`control-cache flex items-center lg:hidden ${
         activated ? "activated" : ""
       }`}
       style={
@@ -25,7 +25,7 @@ export default function ModeSelector({ pages, modeProps, mode, ready }) {
       }
     >
       <button
-        className="non-mode center flex"
+        className="non-mode island"
         onClick={modeProps.get("Resume").click}
       >
         <svg>
@@ -35,7 +35,7 @@ export default function ModeSelector({ pages, modeProps, mode, ready }) {
       {/* --------- MODE SELECTOR --------- */}
       <div
         ref={cache}
-        className={`mode-selector button-cache center mobile flex ${
+        className={`mode-selector button-cache island lg:hidden ${
           activated ? "activated" : ""
         }`}
         // style={activated ? { maxWidth: cache.current.clientWidth + "px" } : null}
@@ -53,7 +53,7 @@ export default function ModeSelector({ pages, modeProps, mode, ready }) {
           <button
             key={i}
             ref={button}
-            className={`${page === mode ? "active" : ""} center flex`}
+            className={`${page === mode ? "active" : ""} island`}
             style={{ ["--i"]: i }}
             onClick={() => {
               page === mode
@@ -68,7 +68,7 @@ export default function ModeSelector({ pages, modeProps, mode, ready }) {
         ))}
       </div>
       <button
-        className="non-mode center flex"
+        className="non-mode island"
         onClick={modeProps.get("Connect").click}
       >
         <svg>

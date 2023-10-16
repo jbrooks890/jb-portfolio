@@ -9,6 +9,7 @@ import { portfolioData } from "../../utility/portfolio";
 import { useSiteMode } from "../shared/ModeProvider";
 import Blurb from "../frags/Blurb";
 import Section from "../layout/Section";
+import Block from "../layout/Block";
 
 export default function About({ pages }) {
   const { isShowing, toggle } = useModal();
@@ -23,12 +24,12 @@ export default function About({ pages }) {
     >
       <div className="content-wrap center flex flex-col space-y-20">
         <Blurb mode={siteMode} content={pages} />
-        <div className="about-body center flex flex-col">
+        <Block className="about-body center flex flex-col" narrow>
           <SkillCache concise={false} showIcons={true} featured={true} />
           <button className="resume-button" onClick={() => toggle()}>
             Résumé
           </button>
-        </div>
+        </Block>
         <Quote />
       </div>
       {isShowing && (
