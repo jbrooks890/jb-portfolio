@@ -3,40 +3,42 @@ import { debounce } from "../../utility/utility";
 
 export default function Carousel({ arr, index = 0, className, shift }) {
   const carousel = useRef();
-  const [currIndex, setCurrIndex] = useState(index);
+  const sections = useRef([]);
 
-  // useLayoutEffect(() => console.log(carousel), []);
+  useEffect(() => {
+    const { width } = carousel.current.getBoundingClientRect();
+    const left = width * index;
+    carousel.current?.scrollTo({ left });
+  }, [index]);
 
-  const shiftCar = (next = currIndex + 1, jump = false) => {
-    const carWidth = carousel.current.getBoundingClientRect().width;
-    carousel.current.scrollLeft = next * carWidth;
-    setCurrIndex(next);
+  const handleScroll = (e) => {
+    const carousel = e.currentTarget;
+    const { width } = carousel.getBoundingClientRect();
   };
-
-  const carScroll = debounce(() => {
-    const carWidth = carousel.current.getBoundingClientRect().width;
-    const target = Math.round(carousel.current.scrollLeft / carWidth);
-    shift(target);
-  }, 250);
-
-  useEffect(() => currIndex !== index && shiftCar(index, true), [index]);
 
   return (
     <div
       ref={carousel}
-      className={`carousel ${className ?? ""}`}
+      className={`carousel relative flex snap-x snap-mandatory scroll-smooth md:overflow-hidden ${
+        className ?? ""
+      }`}
       // onClick={e => console.log(e.currentTarget.scrollLeft)}
-      onScroll={() => carScroll()}
+      // onScroll={() => carScroll()}
     >
-      {arr.map((entry, i) => (
-        <div
-          key={i}
-          className={currIndex === i ? "active" : ""}
-          // onClick={e => console.log(e.target.offsetLeft)}
-        >
-          {entry}
-        </div>
-      ))}
+      {arr.map((entry, i) => {
+        const isActive = index === i;
+        return (
+          <div
+            key={i}
+            ref={(v) => (sections.current[i] = v)}
+            className={`relative w-full shrink-0 snap-start duration-200 ease-out ${
+              isActive ? "active" : "inactive md:opacity-0"
+            }`}
+          >
+            {entry}
+          </div>
+        );
+      })}
     </div>
   );
 }

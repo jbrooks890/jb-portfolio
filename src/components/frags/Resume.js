@@ -27,7 +27,7 @@ export default function Resume() {
     project.section.includes(siteMode),
   );
   // -------------------[ REFS ]-------------------
-  const bodyRef = useRef();
+  const bodyRef = useRef(null);
   const sectionRefs = {
     Skills: useRef(),
     Projects: useRef(),
@@ -35,7 +35,7 @@ export default function Resume() {
     Experience: useRef(),
   };
 
-  useEffect(() => console.log(bodyRef.current), []);
+  // useEffect(() => console.log(bodyRef.current), []);
 
   return (
     <div
@@ -161,7 +161,7 @@ export default function Resume() {
           <Education />
         </section>
         {/* ========= TO TOP ========= */}
-        <TopBtn destination={bodyRef.current} />
+        {bodyRef?.current && <TopBtn destination={bodyRef.current} />}
       </div>
     </div>
   );

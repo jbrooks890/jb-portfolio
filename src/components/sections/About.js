@@ -14,8 +14,6 @@ import Block from "../layout/Block";
 export default function About({ pages }) {
   const { isShowing, toggle } = useModal();
   const [siteMode] = useSiteMode();
-  const titles = pages.map((page) => page.title);
-  const blurbs = pages.map((page) => page.blurb);
 
   return (
     <Section
@@ -25,7 +23,7 @@ export default function About({ pages }) {
       <div className="content-wrap center flex flex-col space-y-20">
         <Blurb mode={siteMode} content={pages} />
         <Block className="about-body center flex flex-col" narrow>
-          <SkillCache concise={false} showIcons={true} featured={true} />
+          <SkillCache concise={false} showIcons featured />
           <button className="resume-button" onClick={() => toggle()}>
             Résumé
           </button>

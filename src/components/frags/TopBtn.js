@@ -6,16 +6,16 @@ export default function TopBtn({ destination = window, className }) {
 
   return (
     <div
-      className={`nav-to-top relative mx-auto flex w-fit flex-col self-center`.concat(
-        " ",
-        className,
-      )}
+      className={`nav-to-top relative mx-auto flex w-fit flex-col self-center ${
+        className ?? ""
+      }`}
       data-tooltip="Top"
     >
       <button
         onClick={(e) => {
+          console.log({ destination });
           e.preventDefault();
-          destination?.scrollTo({ top: 0, behavior: "smooth" });
+          destination.scrollTo({ top: 0, behavior: "smooth" });
         }}
         className="arrow-wrapper"
       >

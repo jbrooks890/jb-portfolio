@@ -102,6 +102,10 @@ const quotes = [
     entry: "If you're going through hell, keep going.",
     author: "Winston Churchill",
   },
+  {
+    entry: "Never give up and good luck will find you.",
+    author: "Falcor, _The NeverEnding Story_",
+  },
 ];
 
 export { projects, quotes };

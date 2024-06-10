@@ -29,7 +29,7 @@ export const experience = [
       {
         name: "Programmer (Front End Developer)",
         description:
-          "Performed the duties of Crew Chief in support of the MC-130H Special Operations cargo aircraft.",
+          "Responsible for creating new features of flagship software and maintaining company website.",
         tasks: [
           "Ensured aircraft fleet was fully mission capable (FMC) for real world and training missions",
           "Responsible for maintaining documentation of aircraft discrepancies",

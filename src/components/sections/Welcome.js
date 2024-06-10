@@ -13,6 +13,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import Section from "../layout/Section";
 import { portfolioData } from "../../utility/portfolio";
 import Block from "../layout/Block";
+import Markdown from "markdown-to-jsx";
 
 export default function Welcome({ pages, mode }) {
   const titles = pages.map((page) => page.title);
@@ -91,11 +92,11 @@ export default function Welcome({ pages, mode }) {
   return (
     <Section
       id="welcome"
-      className="site-section relative bg-midnite pb-12 text-lite"
+      className="site-section relative flex flex-col bg-midnite pb-12 text-lite"
       type="wide"
       tight
     >
-      <div className="island bg-gradient-circle relative h-screen from-nite via-transparent to-transparent">
+      <div className="island relative h-screen bg-gradient-circle from-nite via-transparent to-transparent">
         <div
           id="radial-controller"
           className={`island ${activated ? "activated" : ""}`}
@@ -157,23 +158,17 @@ export default function Welcome({ pages, mode }) {
         />
       </div>
       {/* ----------[ GREETING ]---------- */}
-      <Block className="salute-wrapper grid w-[1024px] grid-cols-2">
+      <Block className="salute-wrapper grid w-[1024px] grid-cols-2 self-center">
         <h2 className="salute col-start-1 mb-4 text-left text-5xl text-lavender [&>em]:mx-[0.1em] [&>em]:inline-block [&>em]:rotate-1 [&>em]:scale-110 [&>em]:not-italic [&>em]:brightness-125">
-          <span className="block text-4xl text-red">I'm Julian, hi.</span>I
-          strive to unite <em>art</em> and <em>tech</em>.
+          <span className="block text-4xl text-red">I'm Julian, hi.</span>I like
+          to mix <em>art</em> and <em>code</em>.
         </h2>
-        <p className="col-start-1 text-left text-2xl text-day">
-          I&apos;m {flavorTitle.toLowerCase()} based in Georgia, just outside of{" "}
-          <strong>Atlanta</strong>, where I relentlessly strive to master my
-          craft. I take pride in several talents, but regardless of what{" "}
-          <strong>
-            <em className="hint" data-hint={`${mode} mode`}>
-              mode
-            </em>
-          </strong>{" "}
-          I'm in, <strong>my mission is to create</strong> thoughtful, memorable
-          work.
-        </p>
+        <Markdown
+          options={{ forceBlock: true }}
+          className="col-start-1 text-left text-2xl text-day"
+        >
+          {`I'm ${flavorTitle.toLowerCase()} based in Georgia, just outside of **Atlanta** where you'll find me making something cool. Making what, you ask? Not sure. Just depends on what **_mode_** I'm in.`}
+        </Markdown>
       </Block>
 
       {isShowing && (

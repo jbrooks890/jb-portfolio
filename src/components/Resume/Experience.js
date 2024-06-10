@@ -5,8 +5,8 @@ import { abbr } from "../../utility/utility";
 import DateHeading from "../frags/DateHeading";
 
 export default function Experience({ entries }) {
-  const personal = entries.filter((entry) => entry.type === "personal");
-  const work = entries.filter((entry) => entry.type === "professional");
+  const personal = entries.filter(({ type }) => type === "personal");
+  const work = entries.filter(({ type }) => type === "professional");
 
   return (
     <div className="resume-experience space-y-4">

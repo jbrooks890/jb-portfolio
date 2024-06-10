@@ -7,7 +7,7 @@ import { ModeProvider } from "./components/shared/ModeProvider";
 
 function App() {
   return (
-    <div id="top" className="App">
+    <div className="App">
       <ModeProvider>
         <Routes>
           <Route path="/" element={<Main />} />

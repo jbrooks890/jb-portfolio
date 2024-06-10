@@ -21,7 +21,7 @@ export default function Section({
 
   return (
     <section
-      className={`section ${styles[type]} relative flex flex-col items-center ${
+      className={`section ${styles[type]} relative ${
         bgImg ? `${bgFixed ? "md:bg-fixed" : ""} bg-cover` : "no-bg-img"
       } ${className ?? ""}`}
     >

@@ -43,7 +43,7 @@ export default function ImageCar({
       })}
       <Modal isShowing={viewing} hide={() => setViewing(false)} naked>
         <img
-          src={content[active].src}
+          src={content[active]?.src}
           className="max-h-[75vh] max-w-screen-lg rounded-md drop-shadow-md"
           onClick={() => setViewing(false)}
         />
