@@ -1,7 +1,14 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { debounce } from "../../utility/utility";
 
-export default function Carousel({ arr, index = 0, className, shift }) {
+export default function Carousel({
+  arr,
+  index = 0,
+  className,
+  shift,
+  hideControls,
+  hidePagers,
+}) {
   const carousel = useRef();
   const sections = useRef([]);
 

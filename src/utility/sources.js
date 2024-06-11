@@ -22,7 +22,8 @@ const projects = [
     type: "App",
     section: ["Developer"],
     featured: true,
-    description: "A companion app to plan and build your Pokémon team.",
+    description:
+      "A fun companion app to plan and build your Pokémon team, a beginner's first foray into React development.",
     tech: ["React", "Javascript", "HTML", "CSS", "Postman"],
     link: "https://pokesquad.netlify.app/",
     icon: "pokesquad-logo",

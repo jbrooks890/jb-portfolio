@@ -25,7 +25,7 @@ export default function Section({
         bgImg ? `${bgFixed ? "md:bg-fixed" : ""} bg-cover` : "no-bg-img"
       } ${className ?? ""}`}
     >
-      {titled && <h2>{title}</h2>}
+      {titled && <h2 className="title">{title}</h2>}
       {children}
     </section>
   );

@@ -3,6 +3,9 @@ export default function Describe({
   header,
   children,
   className,
+  openStyles,
+  shutStyles,
+  headerStyles,
   init = false,
 }) {
   const [open, setOpen] = useState(init);
@@ -10,15 +13,15 @@ export default function Describe({
   return (
     <div
       className={`rounded-b-md duration-200 ease-out ${
-        open ? "open bg-black/10" : "closed"
-      }`.concat(" ", className)}
+        open ? `open ${openStyles ?? ""}` : `shut ${shutStyles ?? ""}`
+      } ${className ?? ""}`}
     >
-      <div
-        className={`header cursor-pointer`}
+      <button
+        className={`header block cursor-pointer ${headerStyles ?? ""}`}
         onClick={() => setOpen((prev) => !prev)}
       >
         {header}
-      </div>
+      </button>
       <div
         ref={drawerRef}
         className={`drawer rounded-b-md duration-200 ease-out [&>*]:p-4 ${

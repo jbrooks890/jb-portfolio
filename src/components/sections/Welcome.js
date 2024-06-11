@@ -167,7 +167,7 @@ export default function Welcome({ pages, mode }) {
           options={{ forceBlock: true }}
           className="col-start-1 text-left text-2xl text-day"
         >
-          {`I'm ${flavorTitle.toLowerCase()} based in Georgia, just outside of **Atlanta** where you'll find me making something cool. Making what, you ask? Not sure. Just depends on what **_mode_** I'm in.`}
+          {`I'm ${flavorTitle.toLowerCase()} based in Georgia, living just outside of **Atlanta** where you'll find me making something cool. Making what, you ask? Depends on what **_mode_** I'm in.`}
         </Markdown>
       </Block>
 

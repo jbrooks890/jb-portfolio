@@ -9,7 +9,7 @@ export default function Blurb({ mode, content }) {
   );
   const [pre, ...$title] = title.split(/\s/);
   const titles = content.map(({ title }) => title);
-  const blurbs = content.map(({ blurb }) => blurb);
+  const blurbs = content.map(({ blurb }) => <Markdown>{blurb}</Markdown>);
   const carouselShift = (index) => setActiveEntry(titles[index]);
 
   const blurb = `In August of 2010, I left my beloved home of Chicago for Air Force

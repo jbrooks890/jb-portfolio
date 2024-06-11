@@ -36,7 +36,11 @@
   h2,
   h3,
   h4 {
-    @apply mb-[.75em] text-center font-key;
+    @apply font-key;
+  }
+
+  .title:is(h1, h2, h3, h4) {
+    @apply mb-[.75em] text-center;
   }
 
   h2 {
@@ -125,6 +129,10 @@
     font-variant: small-caps;
   }
 
+  .icon {
+    @apply font-webdings font-normal normal-case leading-none;
+  }
+
   .island {
     @apply grid place-items-center;
   }
@@ -168,6 +176,18 @@
 
   body.modal-lock {
     @apply overflow-hidden;
+  }
+
+  .angle-brackets {
+    @apply relative;
+  }
+
+  .angle-brackets::before,
+  .angle-brackets::after {
+    --bracket-size: 0.75em;
+    content: "";
+    width: var(--bracket-size);
+    aspect-ratio: 1;
   }
 
   /* ==================\ FORM ELEMENTS /================== */

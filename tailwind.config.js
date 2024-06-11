@@ -7,6 +7,7 @@ module.exports = {
         key: ["social-gothic-rough", "sans-serif"],
         body: ["Rajdhani"],
         tech: ["tech-brand-icons"],
+        webdings: ["webdings"],
       },
       colors: {
         red: "#d10000",

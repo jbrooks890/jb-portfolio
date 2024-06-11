@@ -10,6 +10,7 @@ import { useSiteMode } from "../shared/ModeProvider";
 import Blurb from "../frags/Blurb";
 import Section from "../layout/Section";
 import Block from "../layout/Block";
+import Button from "../frags/Button";
 
 export default function About({ pages }) {
   const { isShowing, toggle } = useModal();
@@ -24,9 +25,12 @@ export default function About({ pages }) {
         <Blurb mode={siteMode} content={pages} />
         <Block className="about-body center flex flex-col" narrow>
           <SkillCache concise={false} showIcons featured />
-          <button className="resume-button" onClick={() => toggle()}>
+          <Button
+            className="resume-button text-2xl"
+            handleClick={() => toggle()}
+          >
             Résumé
-          </button>
+          </Button>
         </Block>
         <Quote />
       </div>

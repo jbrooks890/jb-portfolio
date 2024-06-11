@@ -19,7 +19,7 @@ export default function TopBtn({ destination = window, className }) {
         }}
         className="arrow-wrapper"
       >
-        <ArrowIcon className="aspect-square h-8 -rotate-90 stroke-lavender stroke-[3px]" />
+        <ArrowIcon className="aspect-square h-8 -rotate-90 overflow-visible stroke-lavender stroke-[3px]" />
       </button>
     </div>
   );
