@@ -39,8 +39,8 @@
     @apply font-key;
   }
 
-  .title:is(h1, h2, h3, h4) {
-    @apply mb-[.75em] text-center;
+  :is(h1, h2, h3, h4):not(.inline-head) {
+    @apply mb-3 text-center;
   }
 
   h2 {

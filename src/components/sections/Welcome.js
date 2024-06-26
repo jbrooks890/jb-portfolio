@@ -96,7 +96,7 @@ export default function Welcome({ pages, mode }) {
       type="wide"
       tight
     >
-      <div className="island relative h-screen bg-gradient-circle from-nite via-transparent to-transparent">
+      <div className="island relative h-screen bg-gradient-circle from-nite via-transparent">
         <div
           id="radial-controller"
           className={`island ${activated ? "activated" : ""}`}
@@ -159,15 +159,15 @@ export default function Welcome({ pages, mode }) {
       </div>
       {/* ----------[ GREETING ]---------- */}
       <Block className="salute-wrapper grid w-[1024px] grid-cols-2 self-center">
-        <h2 className="salute col-start-1 mb-4 text-left text-5xl text-lavender [&>em]:mx-[0.1em] [&>em]:inline-block [&>em]:rotate-1 [&>em]:scale-110 [&>em]:not-italic [&>em]:brightness-125">
-          <span className="block text-4xl text-red">I'm Julian, hi.</span>I like
-          to mix <em>art</em> and <em>code</em>.
+        <h2 className="salute inline-head col-start-1 mb-4 text-left text-5xl text-lavender [&>em]:mx-[0.1em] [&>em]:inline-block [&>em]:rotate-2 [&>em]:scale-110 [&>em]:not-italic [&>em]:brightness-125">
+          <span className="block text-4xl text-red">I'm Julian, hi.</span>I like{" "}
+          <em>art</em> and <em>code</em>.
         </h2>
         <Markdown
           options={{ forceBlock: true }}
           className="col-start-1 text-left text-2xl text-day"
         >
-          {`I'm ${flavorTitle.toLowerCase()} based in Georgia, living just outside of **Atlanta** where you'll find me making something cool. Making what, you ask? Depends on what **_mode_** I'm in.`}
+          {`I'm ${flavorTitle.toLowerCase()} based in Georgia, just outside of **Atlanta**, where you'll find me making something cool. Making what, you ask? Depends on what **_mode_** I'm in.`}
         </Markdown>
       </Block>
 

@@ -38,7 +38,7 @@ export default function SkillCache({
 
   return (
     <div className="skill-cache-wrapper mb-4">
-      {!concise && <h3 className="skill-cache-header">Skills</h3>}
+      {!concise && <h3 className="skill-cache-header">Toolkit</h3>}
       <ul
         className={`skill-cache relative flex flex-wrap items-center justify-center space-x-2 self-center p-4 text-day ${
           concise ? "concise" : ""
