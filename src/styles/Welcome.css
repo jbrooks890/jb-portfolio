@@ -6,10 +6,11 @@
   scroll-snap-align: center;
   height: 100vh;
   background-color: var(--darker);
-  background-image: radial-gradient(circle, 
-    var(--dark), 
-    var(--darker), 
-    var(--darker), 
+  background-image: radial-gradient(
+    circle,
+    var(--dark),
+    var(--darker),
+    var(--darker),
     var(--darker)
   );
   color: var(--lite);
@@ -67,7 +68,7 @@ h2#welcome-logo .mode-title {
   /* transition-delay: 0.5s; */
 }
 
-@keyframes flicker{
+@keyframes flicker {
   0% {
     opacity: 0;
   }
@@ -85,21 +86,19 @@ h2#welcome-logo .mode-title {
   }
 }
 
-h2#welcome-logo .mode-title span{
+h2#welcome-logo .mode-title span {
   display: inline-block;
   color: var(--lavender);
   opacity: 0;
-  opacity: 0;
-  transform: scale(.5) translateY(-0.5em);
+  transform: scale(0.5) translateY(-0.5em);
   transition: 200ms ease-out;
 }
 
 .activated h2#welcome-logo .mode-title span {
   color: var(--red);
   opacity: 1;
-  opacity: 1;
   transform: scale(1) translateY(0);
-  transition-delay: calc(.75s + 0.1s * var(--i));
+  transition-delay: calc(0.75s + 0.1s * var(--i));
 }
 
 #controller-ring {
@@ -113,7 +112,7 @@ h2#welcome-logo .mode-title span{
   border-radius: 50%;
   box-sizing: border-box;
   transform: scale(1.1) rotate(5deg);
-  transition:0.2s ease-out;
+  transition: 0.2s ease-out;
   z-index: 0;
 }
 
@@ -135,7 +134,7 @@ h2#welcome-logo .mode-title span{
   border: none;
   box-sizing: border-box;
   border-radius: 50%;
-  transform: scale(.5);
+  transform: scale(0.5);
   opacity: 0;
   transition: 0.2s linear;
   /* border: 2px solid var(--mid); */
@@ -148,7 +147,7 @@ h2#welcome-logo .mode-title span{
 #radial-controller.activated .rad-btn {
   opacity: 1;
   transform: scale(1);
-  transition: .2s linear calc(0.2s * var(--i));
+  transition: 0.2s linear calc(0.2s * var(--i));
 }
 
 .rad-btn svg {
@@ -172,13 +171,12 @@ h2#welcome-logo .mode-title span{
 /* ========================================= *\
 || >> HOVER <<
 \* ========================================= */
-@media (hover:hover){
-
+@media (hover: hover) {
   .activated h2#welcome-logo .mode-title span:hover {
     animation: flicker 0.2s ease-in-out;
   }
-  
-  .rad-btn:hover svg{
+
+  .rad-btn:hover svg {
     transform: scale(1.1);
     fill: var(--lavender);
   }
@@ -188,12 +186,12 @@ h2#welcome-logo .mode-title span{
 || >> MOBILE <<
 \* ========================================= */
 
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 480px) {
   #welcome {
     overflow: hidden;
   }
 
-  #welcome #controller-ring{
+  #welcome #controller-ring {
     display: none;
   }
 
@@ -203,13 +201,13 @@ h2#welcome-logo .mode-title span{
   }
 
   /* ---------- MODE SELECTOR ---------- */
-  
+
   #welcome .control-cache {
     transition: 0.3s ease-out;
     opacity: 1;
   }
 
-  #welcome #radial-controller:not(.activated)+.control-cache {
+  #welcome #radial-controller:not(.activated) + .control-cache {
     max-height: 0;
     opacity: 0;
   }
@@ -225,7 +223,7 @@ h2#welcome-logo .mode-title span{
     border: 2px solid var(--evening);
     /* mix-blend-mode: lighten; */
     /* border: none; */
-    transition: 
+    transition:
       transform 0.1s ease-out,
       opacity 0.1s ease-out;
   }
@@ -284,7 +282,7 @@ h2#welcome-logo .mode-title span{
   }
 
   #welcome .mode-selector .legend::before {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     top: 50%;
@@ -313,7 +311,7 @@ h2#welcome-logo .mode-title span{
     transition: 
       /* opacity 0.1s ease-out, */
       max-width 0.1s linear,
-      transform 0.1s ease-out calc(0.2s + 0.2s * var(--i)), 
+      transform 0.1s ease-out calc(0.2s + 0.2s * var(--i));
   }
 
   #welcome .mode-selector.activated button:not(.active) {
@@ -345,7 +343,7 @@ h2#welcome-logo .mode-title span{
     fill: var(--red);
   }
 
-  #welcome .mode-selector:not(.activated) button:not(.active) svg{
+  #welcome .mode-selector:not(.activated) button:not(.active) svg {
     transform: scale(0.25);
     opacity: 0;
   }
@@ -353,6 +351,6 @@ h2#welcome-logo .mode-title span{
   #welcome .mode-selector button:not(.active) svg {
     --size: 60%;
     width: var(--size);
-    height: calc(var(--size) * .75);
+    height: calc(var(--size) * 0.75);
   }
 }

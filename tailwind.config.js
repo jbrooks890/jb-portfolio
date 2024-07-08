@@ -30,6 +30,28 @@ module.exports = {
         "gradient-circle": "radial-gradient(circle, var(--tw-gradient-stops))",
         "gradient-oval": "radial-gradient(ellipse, var(--tw-gradient-stops))",
       },
+      animation: {
+        flicker: "flicker 300ms ease",
+      },
+      keyframes: {
+        flicker: {
+          "0%": {
+            opacity: 0,
+          },
+          "25%": {
+            opacity: 0.5,
+          },
+          "50%": {
+            opacity: 0.25,
+          },
+          "75%": {
+            opacity: 0.5,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+      },
     },
   },
   plugins: [],

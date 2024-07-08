@@ -1,5 +1,6 @@
 import { useContext, createContext, useState } from "react";
 import { capitalize } from "../../lib/utility/helperFns";
+import { useParams } from "react-router-dom";
 
 const SiteMode = createContext();
 export const useSiteMode = () => useContext(SiteMode);

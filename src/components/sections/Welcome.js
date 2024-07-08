@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { ReactComponent as JB_LOGO } from "../../assets/icons/jb-logo.svg";
-import "../../styles/Welcome.css";
+import { ReactComponent as RESUME_ICON } from "../../assets/icons/profile-icon.svg";
+import { ReactComponent as CONNECT_ICON } from "../../assets/icons/connect-icon.svg";
+// import "../../styles/Welcome.css";
 import RadButton from "../frags/RadButton";
 import { debounce } from "../../utility/utility";
 import useModal from "../hooks/useModal";
@@ -14,10 +16,10 @@ import Section from "../layout/Section";
 import { portfolioData } from "../../utility/portfolio";
 import Block from "../layout/Block";
 import Markdown from "markdown-to-jsx";
+import RadioMenu from "../layout/RadioMenu";
 
 export default function Welcome({ pages, mode }) {
-  const titles = pages.map((page) => page.title);
-  const $pages = [...titles, "Resume", "Connect"];
+  const titles = pages.map(({ title }) => title);
   const [activated, setActivated] = useState(false);
   const [dimensions, setDimensions] = useState({
     vw: window.innerWidth,
@@ -25,25 +27,20 @@ export default function Welcome({ pages, mode }) {
   });
   const [siteMode, setSiteMode] = useSiteMode();
   const [modePreview, setModePreview] = useState(mode ?? siteMode);
-  const [rotation, setRotation] = useState(0); // DEGREES
   const [modalContent, setModalContent] = useState();
 
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
-  // const vmax = vh > vw ? vh : vw;
-  const vavg = (vh + vw) / 2;
   const size = vmin * 0.8;
-  const center = size / 2;
-  const rad = size / 2;
-  const ang = (2 * Math.PI) / $pages.length;
-  const offset = ang;
   const style = { width: size, height: size };
+  // ----------------------------------------------------------
   const { isShowing, toggle } = useModal();
   const $MOBILE = useMediaQuery();
   const $CAN_HOVER = useMediaQuery("hover");
   const { flavorTitle } = pages.find(
     ({ title }) => title === (mode || siteMode),
   );
+  // console.log({ titles });
 
   const handleResize = debounce(() =>
     setDimensions({
@@ -78,7 +75,7 @@ export default function Welcome({ pages, mode }) {
     ],
     ["Artist", { icon: "legacy-icon", click: () => setSiteMode("Artist") }],
     ["Writer", { icon: "book-icon", click: () => setSiteMode("Writer") }],
-    ["Game", { icon: "game-icon", click: () => setSiteMode("Game") }],
+    // ["Game", { icon: "game-icon", click: () => setSiteMode("Game") }],
     [
       "Connect",
       {
@@ -89,6 +86,31 @@ export default function Welcome({ pages, mode }) {
     ["Resume", { icon: "profile-icon", click: () => triggerModal(<Resume />) }],
   ]);
 
+  const pageButtons = pages.map(({ title, Icon }) => ({
+    title,
+    Icon,
+    handleClick: () => setSiteMode(title),
+    handleMouseEnter: () => $CAN_HOVER && setModePreview(title),
+    handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
+  }));
+
+  const otherButtons = [
+    {
+      title: "Resume",
+      Icon: RESUME_ICON,
+      handleClick: () => triggerModal(<Resume />),
+      handleMouseEnter: () => $CAN_HOVER && setModePreview("Resume"),
+      handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
+    },
+    {
+      title: "Connect",
+      Icon: CONNECT_ICON,
+      handleClick: () => triggerModal(<ConnectForm />),
+      handleMouseEnter: () => $CAN_HOVER && setModePreview("Connect"),
+      handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
+    },
+  ];
+
   return (
     <Section
       id="welcome"
@@ -96,58 +118,50 @@ export default function Welcome({ pages, mode }) {
       type="wide"
       tight
     >
-      <div className="island relative h-screen bg-gradient-circle from-nite via-transparent">
+      <div className="island relative h-screen">
         <div
           id="radial-controller"
-          className={`island ${activated ? "activated" : ""}`}
+          className={`island group relative rounded-[50%] bg-gradient-circle from-nite via-transparent ${
+            activated ? "activated" : "unactivated"
+          }`}
           style={style}
         >
-          <h2 id="welcome-logo" onClick={() => setActivated((prev) => !prev)}>
+          <h2
+            id="welcome-logo"
+            className={`relative z-10 w-[50vmin] cursor-pointer fill-red text-red duration-200 ease-linear ${
+              activated ? "" : "scale-125"
+            }`}
+            onClick={() => setActivated((prev) => !prev)}
+          >
             <JB_LOGO />
             {!$MOBILE && (
-              <div className="mode-title">
+              <div
+                className={`mode-title absolute bottom-1 right-1 text-2xl tracking-wider duration-100 ease-out ${
+                  activated ? "opacity-100" : "opacity-0"
+                }`}
+              >
                 {modePreview.split("").map((letter, i) => (
-                  <span key={i} style={{ ["--i"]: i }}>
+                  <span
+                    key={i}
+                    className={`inline-block translate-y-[-0.5em] duration-200 ease-out`}
+                    style={{ ["--i"]: i }}
+                  >
                     {letter}
                   </span>
                 ))}
               </div>
             )}
           </h2>
-
           {!$MOBILE && (
-            <div id="controller-ring">
-              {$pages.map((page, i) => {
-                const offset = ang * i;
-                const x = center + rad * Math.cos(offset);
-                const y = center + rad * Math.sin(offset);
-                // console.log(`${page}:`, { x, y });
-
-                return (
-                  <RadButton
-                    key={i}
-                    x={x}
-                    y={y}
-                    index={i}
-                    size={Math.floor(vavg * 0.06)}
-                    angle={ang}
-                    offset={offset}
-                    active={siteMode === page}
-                    onClick={modeProps.get(page).click}
-                    onMouseEnter={() => $CAN_HOVER && setModePreview(page)}
-                    onMouseLeave={() => $CAN_HOVER && setModePreview(siteMode)}
-                  >
-                    {modeProps.get(page).icon ? (
-                      <svg style={{ width: "100%" }}>
-                        <use href={`#${modeProps.get(page).icon}`} />
-                      </svg>
-                    ) : (
-                      page
-                    )}
-                  </RadButton>
-                );
-              })}
-            </div>
+            <RadioMenu
+              contents={[...pageButtons, ...otherButtons]}
+              className="rounded-[50%]"
+              buttonStyles={`[&>svg]:aspect-[4/3] text-lavender ${
+                activated
+                  ? "opacity-50 hover:scale-110 hover:opacity-100"
+                  : "scale-50 opacity-0"
+              }`}
+            />
           )}
         </div>
         <ModeSelector

@@ -98,6 +98,26 @@
     @apply absolute -left-6 -top-3 -z-10 block -rotate-[7.5deg] text-[4em] leading-none opacity-25;
     content: open-quote close-quote;
   }
+
+  ::-webkit-scrollbar {
+    @apply h-3 w-3 bg-transparent opacity-0 duration-200 ease-out;
+  }
+
+  :hover::-webkit-scrollbar {
+    @apply opacity-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-[3px] border-solid border-transparent bg-clip-content duration-200 ease-out dark:bg-lavender/0;
+  }
+
+  :hover::-webkit-scrollbar-thumb {
+    @apply bg-lavender;
+  }
+
+  ::-webkit-scrollbar-corner {
+    @apply hidden;
+  }
 }
 
 /* --------------------{ COMPONENTS LAYER }-------------------- */
