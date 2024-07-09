@@ -198,22 +198,21 @@ const skills = [
     abbr: "",
   },
 ];
-
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 const abbr = (month) => {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
   const int = months.indexOf(month) + 1;
   return int.toLocaleString("en-US", {
     minimumIntegerDigits: 2,

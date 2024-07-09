@@ -1,5 +1,28 @@
 export const projects = [
   {
+    name: "MDDV.com",
+    type: "Website",
+    section: ["Developer"],
+    featured: true,
+    description:
+      "The company website for American Data Solutions (ADS) and its proprietary IETM software, MDDV.",
+    tech: ["React", "JavaScript", "HTML", "CSS"],
+    link: "https://mddv.com/",
+    icon: "xword-logo",
+    colors: {
+      key: "#08c",
+      alt: "white",
+      dark: "black",
+      reverse: false,
+    },
+    images: [
+      { src: "projects/mddv-1.png" },
+      { src: "projects/mddv-2.png" },
+      { src: "projects/mddv-3.png" },
+      { src: "projects/mddv-4.png" },
+    ],
+  },
+  {
     name: "Worlds of EPOCH",
     type: "Website",
     isWip: false,
@@ -53,7 +76,7 @@ export const projects = [
   },
   {
     name: "PokéSquad",
-    type: "App",
+    type: "Website",
     isWip: true,
     section: ["Developer"],
     featured: true,
@@ -62,7 +85,7 @@ export const projects = [
       link: "https://github.com/jbrooks890/Poke-Squad",
     },
     description:
-      "A companion app that queries the RESTful PokéAPI, enabling users to build their custom Pokémon teams for use with Nintendo's popular Pokémon games.",
+      "A fun companion app that queries the _PokéAPI_, enabling users to simulate building their ideal Pokémon teams for Nintendo's popular _Pokémon_ games.",
     meta: {},
     tech: ["React", "Postman"],
     link: "https://pokesquad.netlify.app/",

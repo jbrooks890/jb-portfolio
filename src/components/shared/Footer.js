@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="flex flex-col items-center">
       <TopBtn />
       <SocialMediaCache concise={false} darkMode={false} />
-      <div className="text-lg text-lite">
+      <div className="text-lg text-white">
         &copy;{new Date().getFullYear()} Julian Brooks. All rights reserved.
       </div>
       <Icons />

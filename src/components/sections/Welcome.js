@@ -89,6 +89,7 @@ export default function Welcome({ pages, mode }) {
   const pageButtons = pages.map(({ title, Icon }) => ({
     title,
     Icon,
+    disabled: siteMode === title,
     handleClick: () => setSiteMode(title),
     handleMouseEnter: () => $CAN_HOVER && setModePreview(title),
     handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
@@ -114,7 +115,7 @@ export default function Welcome({ pages, mode }) {
   return (
     <Section
       id="welcome"
-      className="site-section relative flex flex-col bg-midnite pb-12 text-lite"
+      className="site-section relative flex flex-col bg-midnite pb-12 text-white"
       type="wide"
       tight
     >
@@ -128,23 +129,33 @@ export default function Welcome({ pages, mode }) {
         >
           <h2
             id="welcome-logo"
-            className={`relative z-10 w-[50vmin] cursor-pointer fill-red text-red duration-200 ease-linear ${
+            className={`relative z-10 w-[50vmin] cursor-pointer fill-red text-red drop-shadow-[3px_3px_0_#00000020] duration-200 ease-linear ${
               activated ? "" : "scale-125"
             }`}
             onClick={() => setActivated((prev) => !prev)}
           >
             <JB_LOGO />
             {!$MOBILE && (
+              // :::::::::::::::::{ MODE TITLE }:::::::::::::::::
               <div
-                className={`mode-title absolute bottom-1 right-1 text-2xl tracking-wider duration-100 ease-out ${
+                className={`mode-title absolute bottom-1 right-1 text-3xl tracking-wider duration-100 ease-out ${
                   activated ? "opacity-100" : "opacity-0"
                 }`}
               >
                 {modePreview.split("").map((letter, i) => (
                   <span
                     key={i}
-                    className={`inline-block translate-y-[-0.5em] duration-200 ease-out`}
-                    style={{ ["--i"]: i }}
+                    className={`inline-block duration-200 ease-out ${
+                      activated
+                        ? "hover:animate-flicker text-red"
+                        : "translate-y-[-0.5em] text-lavender opacity-0"
+                    }`}
+                    style={{
+                      ["--i"]: i,
+                      transitionDelay: activated
+                        ? 700 + 100 * i + "ms"
+                        : undefined,
+                    }}
                   >
                     {letter}
                   </span>
@@ -158,7 +169,7 @@ export default function Welcome({ pages, mode }) {
               className="rounded-[50%]"
               buttonStyles={`[&>svg]:aspect-[4/3] text-lavender ${
                 activated
-                  ? "opacity-50 hover:scale-110 hover:opacity-100"
+                  ? "opacity-50 hover:scale-110 hover:opacity-100 disabled:scale-110 disabled:opacity-100 disabled:animate-flicker"
                   : "scale-50 opacity-0"
               }`}
             />

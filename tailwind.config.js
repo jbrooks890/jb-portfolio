@@ -19,9 +19,13 @@ module.exports = {
         lavender: "hsl(246, 57%, 63%)",
         day: "hsl(246, 60%, 80%)",
         lite: "hsl(245, 100%, 95%)",
+        // lite: "white",
         faint: "hsla(0, 0%, 0%, 0.1)",
         phantom: "hsla(0, 0%, 0%, 0.05)",
         shaded: "hsla(247, 31%, 38%, 0.75)",
+      },
+      aspectRatio: {
+        video: "16/9",
       },
       spacing: {
         header: "3rem",
@@ -30,8 +34,12 @@ module.exports = {
         "gradient-circle": "radial-gradient(circle, var(--tw-gradient-stops))",
         "gradient-oval": "radial-gradient(ellipse, var(--tw-gradient-stops))",
       },
+      textShadow: {
+        DEFAULT: "2px 2px 2px var(--tw-shadow-color)",
+      },
       animation: {
         flicker: "flicker 300ms ease",
+        jab: "jab 300ms infinite linear alternate",
       },
       keyframes: {
         flicker: {
@@ -50,6 +58,9 @@ module.exports = {
           "100%": {
             opacity: 1,
           },
+        },
+        jab: {
+          to: { transform: "translateX(.1em)" },
         },
       },
     },

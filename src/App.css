@@ -29,7 +29,7 @@
 /* ================\ TW LAYERS /================ */
 @layer base {
   body {
-    @apply bg-lite font-body font-[500] text-sundown;
+    @apply bg-white font-body font-[500] text-sundown;
   }
 
   h1,
@@ -40,11 +40,15 @@
   }
 
   :is(h1, h2, h3, h4):not(.inline-head) {
-    @apply mb-3 text-center;
+    @apply text-center;
+  }
+
+  :is(h1, h2, h3, h4).title {
+    @apply mb-3;
   }
 
   h2 {
-    @apply text-6xl text-shade;
+    @apply text-5xl text-shade;
   }
 
   h3 {
@@ -116,6 +120,10 @@
   }
 
   ::-webkit-scrollbar-corner {
+    @apply hidden;
+  }
+
+  .hide-scroll::-webkit-scrollbar {
     @apply hidden;
   }
 }

@@ -9,6 +9,8 @@ export default function SkillCache({
   showIcons,
   featured,
   filter = true,
+  inline,
+  className,
 }) {
   const [siteMode] = useSiteMode();
   const { skills: $default } = resumeData;
@@ -37,26 +39,32 @@ export default function SkillCache({
   );
 
   return (
-    <div className="skill-cache-wrapper mb-4">
+    <div className={`skill-cache-wrapper mb-4 ${className ?? ""}`}>
       {!concise && <h3 className="skill-cache-header">Toolkit</h3>}
-      <ul
-        className={`skill-cache relative flex flex-wrap items-center justify-center space-x-2 self-center p-4 text-day ${
-          concise ? "concise" : ""
-        }`}
+      <div
+        className={`skill-cache relative flex-wrap justify-center gap-4 self-center ${
+          inline ? "inline-flex" : "flex p-4"
+        } ${concise ? "concise" : ""}`}
       >
         {featured && bigBracket()}
         {$skills.map(({ name }, i) => (
-          <li
+          <div
             key={i}
-            className={`${showIcons ? "skill-icon font-tech text-5xl " : ""}`}
+            className={`${
+              showIcons ? "skill-icon flex flex-col items-center" : ""
+            }`}
             data-skill={name}
           >
-            {showIcons ? iconMap.get(name) : name}
-            {!concise && <h5 className="skill-name font-body">{name}</h5>}
-          </li>
+            <span className="font-tech leading-none">
+              {showIcons ? iconMap.get(name) : name}
+            </span>
+            {!concise && (
+              <span className="skill-name text-center font-light">{name}</span>
+            )}
+          </div>
         ))}
         {featured && bigBracket(true)}
-      </ul>
+      </div>
     </div>
   );
 }

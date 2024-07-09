@@ -1,8 +1,25 @@
 const projects = [
   {
+    name: "MDDV.com",
+    type: "Website",
+    section: ["Developer"],
+    featured: true,
+    description: "The official website for American Data Solutions (ADS)",
+    tech: ["React", "Javascript", "HTML", "CSS"],
+    link: "https://mddv.com/",
+    icon: "xword-logo",
+    colors: {
+      key: "#08c",
+      alt: "white",
+      dark: "black",
+      reverse: false,
+    },
+    images: ["mddv-1.png", "mddv-2.png", "mddv-3.png", "mddv-4.png"],
+  },
+  {
     name: "XWord",
     type: "Game",
-    section: ["Developer", "Game"],
+    section: ["Developer"],
     featured: true,
     description:
       "A React app to play and create trivia-based crossword puzzle games.",
@@ -12,7 +29,7 @@ const projects = [
     colors: {
       key: "#fff",
       alt: "silver",
-      dark: "#black",
+      dark: "black",
       reverse: false,
     },
     images: ["xword-1.png", "xword-2.png", "xword-3.png"],

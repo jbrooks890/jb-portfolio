@@ -34,7 +34,7 @@ export default function Blurb({ mode, content }) {
     <>
       <div className="about-intro wide grid items-center gap-x-8">
         <div className="intro-blurb flex flex-col items-center text-justify text-xl">
-          <h2 className="text-center">Story time.</h2>
+          <h2 className="title text-center">Story time.</h2>
           <Markdown options={{ forceBlock: true }}>{blurb}</Markdown>
         </div>
         <img
@@ -43,8 +43,8 @@ export default function Blurb({ mode, content }) {
           className="headshot col-start-2 rotate-1 rounded mix-blend-multiply drop-shadow-md"
         />
       </div>
-      <div className="description flex max-w-screen-lg flex-col self-center rounded-md bg-nite p-8 text-lite md:max-w-screen-md">
-        <h2 className="mb-8 text-lite">
+      <div className="description flex max-w-screen-lg flex-col self-center rounded-md bg-nite p-8 text-white md:max-w-screen-md">
+        <h2 className="mb-8 text-white">
           <span className="text-[.75em] text-lavender">{pre} </span>
           {$title.join(" ")}
         </h2>

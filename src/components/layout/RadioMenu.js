@@ -58,7 +58,10 @@ export default function RadioMenu({
       }`}
     >
       {contents.map(
-        ({ Icon, handleClick, handleMouseEnter, handleMouseLeave }, i) => {
+        (
+          { Icon, handleClick, handleMouseEnter, handleMouseLeave, disabled },
+          i,
+        ) => {
           const spacing = ang * i;
           const x = center + rad * Math.cos(spacing);
           const y = center + rad * Math.sin(spacing);
@@ -86,6 +89,7 @@ export default function RadioMenu({
               }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              disabled={disabled}
               style={style}
             >
               <Icon className="max-h-full" />
