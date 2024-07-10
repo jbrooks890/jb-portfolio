@@ -73,52 +73,35 @@ export default function Welcome({ pages, mode }) {
   };
 
   // console.log({ rad, ang });
-  const modeProps = new Map([
-    [
-      "Developer",
-      {
-        icon: "code-icon",
-        click: () => setSiteMode("Developer"),
-      },
-    ],
-    ["Artist", { icon: "legacy-icon", click: () => setSiteMode("Artist") }],
-    ["Writer", { icon: "book-icon", click: () => setSiteMode("Writer") }],
-    // ["Game", { icon: "game-icon", click: () => setSiteMode("Game") }],
-    [
-      "Connect",
-      {
-        icon: "connect-icon",
-        click: () => triggerModal(<ConnectForm />),
-      },
-    ],
-    ["Resume", { icon: "profile-icon", click: () => triggerModal(<Resume />) }],
-  ]);
 
-  const pageButtons = pages.map(({ title, Icon }) => ({
-    title,
-    Icon,
-    disabled: siteMode === title,
-    handleClick: () => setSiteMode(title),
-    handleMouseEnter: () => $CAN_HOVER && setModePreview(title),
-    handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
-  }));
+  const radButtons = useMemo(() => {
+    const pageButtons = pages.map(({ title, Icon }) => ({
+      title,
+      Icon,
+      disabled: siteMode === title,
+      handleClick: () => setSiteMode(title),
+      handleMouseEnter: () => $CAN_HOVER && setModePreview(title),
+      handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
+    }));
 
-  const otherButtons = [
-    {
-      title: "Resume",
-      Icon: RESUME_ICON,
-      handleClick: () => triggerModal(<Resume />),
-      handleMouseEnter: () => $CAN_HOVER && setModePreview("Resume"),
-      handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
-    },
-    {
-      title: "Connect",
-      Icon: CONNECT_ICON,
-      handleClick: () => triggerModal(<ConnectForm />),
-      handleMouseEnter: () => $CAN_HOVER && setModePreview("Connect"),
-      handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
-    },
-  ];
+    const otherButtons = [
+      {
+        title: "Resume",
+        Icon: RESUME_ICON,
+        handleClick: () => triggerModal(<Resume />),
+        handleMouseEnter: () => $CAN_HOVER && setModePreview("Resume"),
+        handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
+      },
+      {
+        title: "Connect",
+        Icon: CONNECT_ICON,
+        handleClick: () => triggerModal(<ConnectForm />),
+        handleMouseEnter: () => $CAN_HOVER && setModePreview("Connect"),
+        handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
+      },
+    ];
+    return [...pageButtons, ...otherButtons];
+  }, []);
 
   return (
     <Section
@@ -155,7 +138,7 @@ export default function Welcome({ pages, mode }) {
                     key={i}
                     className={`inline-block duration-200 ease-out ${
                       activated
-                        ? "text-red hover:animate-flicker"
+                        ? "hover:animate-flicker text-red"
                         : "translate-y-[-0.5em] text-lavender opacity-0"
                     }`}
                     style={{
@@ -171,24 +154,33 @@ export default function Welcome({ pages, mode }) {
               </div>
             )}
           </h2>
-          {!$MOBILE && (
+
+          {$MOBILE ? (
+            // :::::::::::::::::{ MODE SELECTOR }:::::::::::::::::
+            <ModeSelector
+              pages={titles}
+              buttons={Object.fromEntries(
+                radButtons.map(({ title, ...button }) => [title, button]),
+              )}
+              mode={siteMode}
+              ready={activated}
+            />
+          ) : (
+            // :::::::::::::::::{ RADIO MENU }:::::::::::::::::
             <RadioMenu
-              contents={[...pageButtons, ...otherButtons]}
+              contents={radButtons}
               className="rounded-[50%]"
-              buttonStyles={`[&>svg]:aspect-[4/3] text-lavender ${
+              buttonCss={`[&>svg]:aspect-[4/3] text-lavender duration-200 ease-linear ${
                 activated
                   ? "opacity-50 hover:scale-110 hover:opacity-100 disabled:scale-110 disabled:opacity-100 disabled:animate-flicker"
                   : "scale-50 opacity-0"
               }`}
+              buttonStyles={(i) => ({
+                transitionDelay: activated ? 200 * i + "ms" : undefined,
+              })}
             />
           )}
         </div>
-        <ModeSelector
-          pages={titles}
-          modeProps={modeProps}
-          mode={siteMode}
-          ready={activated}
-        />
       </div>
       {/* ----------[ GREETING ]---------- */}
       <Block className="salute-wrapper grid w-[1024px] grid-cols-2 self-center">

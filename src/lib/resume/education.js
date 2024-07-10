@@ -76,8 +76,8 @@ export const education = [
       day: 2,
       year: 2022,
     },
-    majors: [],
-    minors: [],
+    // majors: [],
+    // minors: [],
     other: [
       {
         name: "Software Engineering Bootcamp",

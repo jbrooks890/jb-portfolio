@@ -49,6 +49,7 @@
 
   :is(h1, h2, h3, h4).title {
     @apply mb-3;
+    text-shadow: 2px 2px 0 #00000020;
   }
 
   h2 {
@@ -220,6 +221,22 @@
     content: "";
     width: var(--bracket-size);
     aspect-ratio: 1;
+  }
+
+  .bracket-clip {
+    --size: 1em;
+    --opposite: calc(100% - var(--size));
+    background-color: red;
+    clip-path: polygon(
+      var(--size) 0%,
+      var(--size) var(--size),
+      0% var(--size),
+      0% 100%,
+      var(--opposite) 100%,
+      var(--opposite) var(--opposite),
+      100% var(--opposite),
+      100% 0%
+    );
   }
 
   /* ==================\ FORM ELEMENTS /================== */

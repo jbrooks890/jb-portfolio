@@ -17,6 +17,7 @@ import { ReactComponent as SendIcon } from "../../assets/icons/send-icon.svg";
 import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow-stroke-icon.svg";
 import { ReactComponent as MyLogo } from "../../assets/icons/jb-logo.svg";
 import Education from "../Resume/Education";
+import ResumeSection from "../layout/ResumeSection";
 
 export default function Resume() {
   const [siteMode] = useSiteMode();
@@ -27,12 +28,12 @@ export default function Resume() {
     project.section.includes(siteMode),
   );
   // -------------------[ REFS ]-------------------
-  const bodyRef = useRef(null);
+  const bodyRef = useRef();
   const sectionRefs = {
     Skills: useRef(),
     Projects: useRef(),
-    Education: useRef(),
     Experience: useRef(),
+    Education: useRef(),
   };
 
   // useEffect(() => console.log(bodyRef.current), []);
@@ -40,7 +41,7 @@ export default function Resume() {
   return (
     <div
       id="resume"
-      className="grid h-full max-w-screen-xl gap-8 scroll-smooth rounded-lg bg-shade px-12 py-8 text-xl text-white"
+      className="grid h-full max-w-screen-xl gap-x-8 gap-y-4 scroll-smooth rounded-lg bg-shade px-12 py-8 text-lg text-lite"
     >
       {/* =================================== *\
       ||  <><><><><><>\ CAPTION /<><><><><><> 
@@ -97,71 +98,57 @@ export default function Resume() {
         className="col-start-2 space-y-8 overflow-y-scroll"
       >
         {/* ========= SKILLS ========= */}
-        <section
-          ref={(v) => (sectionRefs.Skills = v)}
-          id="resume-skills"
-          className="resume-section"
-          data-resume-section="Skills"
-        >
-          <h3>Skills</h3>
+        <ResumeSection ref={(v) => (sectionRefs.Skills = v)} title="Skills">
           <SkillCache
             entries={skills.filter(({ category }) =>
               category.includes(siteMode),
             )}
-            concise={true}
-            showIcons={true}
-            featured={true}
+            concise
+            showIcons
+            featured
           />
           <Skills
             skills={skills.filter((skill) =>
               skill.category.includes(siteMode.toLowerCase()),
             )}
           />
-        </section>
+        </ResumeSection>
         {/* ========= PROJECTS ========= */}
-        <section
-          ref={(v) => (sectionRefs.Projects = v)}
-          id="resume-projects"
-          className="resume-section"
-          data-resume-section="Projects"
-        >
-          <h3>Projects</h3>
+        <ResumeSection ref={(v) => (sectionRefs.Projects = v)} title="Projects">
           <div className="project-wrapper grid grid-cols-[minmax(0,1fr)_minmax(0,3fr)] gap-4 rounded-md bg-black/10 p-4">
             {$projects.map((project, i) => {
               const { name, description, link, technologies } = project;
               return (
                 <div key={i} className="contents">
-                  <a href={link} target="_blank" className="hover:text-day">
-                    <h4 className="text-right">{name}</h4>
+                  <a
+                    href={link}
+                    target="_blank"
+                    className="text-right text-xl font-semibold tracking-wide hover:text-day"
+                  >
+                    {name}
                   </a>
                   <div>{description}</div>
                 </div>
               );
             })}
           </div>
-        </section>
+        </ResumeSection>
         {/* ========= EXPERIENCE ========= */}
-        <section
+        <ResumeSection
           ref={(v) => (sectionRefs.Experience = v)}
-          id="resume-experience"
-          className="resume-section"
-          data-resume-section="Experience"
+          title="Experience"
         >
-          <h3>Experience</h3>
           <Experience entries={experience} />
-        </section>
+        </ResumeSection>
         {/* ========= EDUCATION ========= */}
-        <section
+        <ResumeSection
           ref={(v) => (sectionRefs.Education = v)}
-          id="resume-education"
-          className="resume-section"
-          data-resume-section="Education"
+          title="Education"
         >
-          <h3>Education</h3>
           <Education />
-        </section>
+        </ResumeSection>
         {/* ========= TO TOP ========= */}
-        {bodyRef?.current && <TopBtn destination={bodyRef.current} />}
+        <TopBtn destination={bodyRef.current} />
       </div>
     </div>
   );

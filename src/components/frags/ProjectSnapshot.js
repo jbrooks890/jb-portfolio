@@ -15,6 +15,7 @@ export default function ProjectSnapshot({ entry }) {
 
   return (
     <div className="project-snap grid-cols-subgrid relative col-span-full grid rounded-lg">
+      {/* -------------------[ GALLERY ]------------------- */}
       <div className="project-gallery flex flex-col items-center">
         {/* <ProjectImageCar images={images} /> */}
         <ImageCar
@@ -41,7 +42,10 @@ export default function ProjectSnapshot({ entry }) {
           {type}
         </div>
 
-        <Markdown className="text-lg leading-normal">{description}</Markdown>
+        {/* {description && (
+          <Markdown className="text-lg leading-normal">{description}</Markdown>
+        )} */}
+        <p className="text-lg leading-normal">{description}</p>
         <SkillCache
           entries={$tech}
           featured={false}

@@ -4,6 +4,7 @@ import useModal from "../hooks/useModal";
 import Section from "../layout/Section";
 import Modal from "../shared/Modal";
 import ConnectImg from "../../assets/images/Collaborate-2.jpg";
+import Button from "../frags/Button";
 
 // console.log({ ConnectImg });
 
@@ -21,9 +22,13 @@ export default function Contact() {
         className="flex flex-col items-center rounded-xl bg-midnite/10 px-12 py-16 backdrop-blur-sm"
       >
         <h2 className="mb-4 text-6xl text-lite">Let's Connect</h2>
-        <button className="pill text-3xl text-lite" onClick={() => toggle()}>
-          Email me!
-        </button>
+        <Button
+          handleClick={toggle}
+          size="sm"
+          className="text-3xl uppercase text-lite"
+        >
+          Contact
+        </Button>
       </div>
       {isShowing && (
         <Modal isShowing={isShowing} hide={toggle}>

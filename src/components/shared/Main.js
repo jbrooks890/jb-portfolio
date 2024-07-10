@@ -7,10 +7,10 @@ import { useSiteMode } from "./ModeProvider";
 import { useEffect } from "react";
 import { portfolioData } from "../../utility/portfolio";
 import Page from "../layout/Page";
+import { capitalize } from "../../lib/utility/helperFns";
 
 export default function Main() {
   const [_, setSiteMode] = useSiteMode();
-  // const pages = ["Developer", "Artist", "Writer", "Game"];
   const { pages } = portfolioData;
   const { mode } = useParams();
 
@@ -20,11 +20,7 @@ export default function Main() {
 
   return (
     <Page>
-      <Welcome
-        pages={pages}
-        mode={mode ? mode[0].toUpperCase(1) + mode.slice(1) : null}
-      />
-      {/* <Greeting pages={pages} /> */}
+      <Welcome pages={pages} mode={mode ? capitalize(mode) : null} />
       <Gallery />
       <About pages={pages} />
       <Contact />

@@ -26,8 +26,9 @@ export default function About({ pages }) {
         <Block className="about-body center flex flex-col" narrow>
           <SkillCache concise={false} showIcons featured />
           <Button
-            className="resume-button text-2xl"
+            className="resume-button text-2xl hover:text-lavender"
             handleClick={() => toggle()}
+            // size="sm"
           >
             Résumé
           </Button>

@@ -6,7 +6,7 @@ export const projects = [
     featured: true,
     description:
       "The company website for American Data Solutions (ADS) and its proprietary IETM software, MDDV.",
-    tech: ["React", "JavaScript", "HTML", "CSS"],
+    tech: ["React", "Typescript"],
     link: "https://mddv.com/",
     icon: "xword-logo",
     colors: {
@@ -85,7 +85,7 @@ export const projects = [
       link: "https://github.com/jbrooks890/Poke-Squad",
     },
     description:
-      "A fun companion app that queries the _PokéAPI_, enabling users to simulate building their ideal Pokémon teams for Nintendo's popular _Pokémon_ games.",
+      "A fun companion app that queries the _PokéAPI_, enabling users to simulate building their ideal teams for Nintendo's popular _Pokémon_ games.",
     meta: {},
     tech: ["React", "Postman"],
     link: "https://pokesquad.netlify.app/",

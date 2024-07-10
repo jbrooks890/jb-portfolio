@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -33,6 +34,9 @@ module.exports = {
       backgroundImage: {
         "gradient-circle": "radial-gradient(circle, var(--tw-gradient-stops))",
         "gradient-oval": "radial-gradient(ellipse, var(--tw-gradient-stops))",
+      },
+      borderRadius: {
+        ellipse: "50%",
       },
       textShadow: {
         DEFAULT: "2px 2px 2px var(--tw-shadow-color)",

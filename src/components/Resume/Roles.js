@@ -1,28 +1,20 @@
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow-stroke-icon.svg";
+import List from "../layout/List";
 
 export default function Roles({ entries }) {
   return (
-    <div className={`entry-roles-list`}>
+    <div className={`entry-roles-list space-y-4 before:block before:h-4`}>
       {entries.map((entry, i) => {
         const { name: title, description, tasks } = entry;
 
         return (
-          <div key={i} className="entry-role">
-            <div className="role-header list-entry-header">
-              <h5>{title}</h5>
+          <div key={i} className="entry-role rounded bg-midnite/10 p-4">
+            <div className="role-header list-entry-header mb-4">
+              <h5 className="border-b border-lite/25">{title}</h5>
               <p>{description}</p>
             </div>
-            <div className="role-task-list grid gap-2">
-              {tasks.map((task, i) => (
-                <div key={i} className="contents">
-                  <ArrowIcon className="h-4 stroke-lavender stroke-2" />
-                  <div key={i} className="col-start-2">
-                    {task}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <List contents={tasks} markerCss="text-lavender" />
           </div>
         );
       })}

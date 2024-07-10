@@ -5,7 +5,9 @@ import useMediaQuery from "../hooks/useMediaQuery";
 export default function RadioMenu({
   contents,
   rotation = 0,
+  sequence,
   className,
+  buttonCss,
   buttonStyles,
 }) {
   const menuRef = useRef();
@@ -74,14 +76,25 @@ export default function RadioMenu({
             ["--i"]: i,
           };
 
+          if (buttonStyles)
+            Object.assign(
+              style,
+              typeof buttonStyles === "function"
+                ? buttonStyles(i)
+                : buttonStyles,
+            );
           // console.table({ title, center, rad, offset, x, y });
 
           return (
             <button
               key={i}
               ref={(v) => (buttonRefs.current[i] = v)}
-              className={`rad-btn island absolute aspect-square rounded-[50%] fill-current duration-200 ease-linear ${
-                buttonStyles ?? ""
+              className={`rad-btn island absolute aspect-square rounded-[50%] fill-current ${
+                typeof buttonCss === "string"
+                  ? buttonCss
+                  : typeof buttonCss === "function"
+                  ? buttonCss?.(i)
+                  : ""
               }`}
               onClick={(e) => {
                 e.preventDefault();

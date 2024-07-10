@@ -14,16 +14,16 @@ export const experience = [
         zipCode: "30080",
       },
     },
-    current: true,
+    current: false,
     startDate: {
       month: "May",
       day: 15,
       year: 2023,
     },
     endDate: {
-      month: "",
-      day: 0,
-      year: 0,
+      month: "June",
+      day: 21,
+      year: 2024,
     },
     roles: [
       {

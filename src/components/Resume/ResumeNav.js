@@ -36,9 +36,9 @@ export default function ResumeNav({ sections }) {
               key={i}
               onMouseEnter={() => setPreview(name)}
               onClick={() => element?.scrollIntoView({ behavior: "smooth" })}
-              className="island group aspect-square h-16 rounded-[50%] border-[3px] border-transparent duration-100 ease-out hover:border-current"
+              className="island rounded-ellipse group aspect-square h-12 border-[3px] border-transparent p-2 duration-100 ease-out hover:border-current"
             >
-              <Icon className="w-3/5 fill-current duration-100 ease-out group-hover:scale-110 group-hover:fill-day" />
+              <Icon className="fill-current duration-100 ease-out group-hover:scale-110 group-hover:fill-day" />
             </button>
           );
         })}

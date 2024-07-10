@@ -7,7 +7,6 @@ export default function TopBtn({ destination = window, className }) {
   return (
     <button
       onClick={(e) => {
-        console.log({ destination });
         e.preventDefault();
         destination.scrollTo({ top: 0, behavior: "smooth" });
       }}

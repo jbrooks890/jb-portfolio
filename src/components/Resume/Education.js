@@ -4,6 +4,7 @@ import Roles from "./Roles";
 import { abbr } from "../../utility/utility";
 import DateHeading from "../frags/DateHeading";
 import StudyField from "./StudyField";
+import List from "../layout/List";
 
 export default function Education() {
   return (
@@ -44,23 +45,19 @@ export default function Education() {
                 />
               }
             >
-              {roles && <Roles entries={roles} />}
-              <div className={`education-data`}>
-                {majors?.length > 0 && (
-                  <StudyField entries={majors} {...{ current, conferral }} />
-                )}
-                {minors?.length > 0 && (
-                  <StudyField entries={minors} {...{ current, conferral }} />
-                )}
-                {other?.length > 0 && (
-                  <StudyField entries={other} {...{ current, conferral }} />
-                )}
+              {/* {roles && <Roles entries={roles} />} */}
+              <div className="education-data rounded bg-midnite/10 p-4 first:mt-4">
+                {[majors, minors, other]
+                  .filter((section) => !!section?.length)
+                  .map((section, i) => (
+                    <StudyField
+                      key={i}
+                      entries={section}
+                      {...{ current, conferral }}
+                    />
+                  ))}
                 {notes?.length > 0 && (
-                  <ul className="education-note-list">
-                    {notes.map((note, i) => (
-                      <li key={i}>{note}</li>
-                    ))}
-                  </ul>
+                  <List contents={notes} markerCss="text-lavender" />
                 )}
               </div>
             </Describe>

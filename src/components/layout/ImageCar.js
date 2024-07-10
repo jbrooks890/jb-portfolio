@@ -15,9 +15,10 @@ export default function ImageCar({ content, handleClick, init, className }) {
   const scrollToPage = (targetIndex = active) => {
     const target = contentsRef.current?.[targetIndex];
     if (!target) return;
+    // console.log({ target });
     const { offsetLeft: left } = target;
     carRef.current?.scrollTo({ left });
-    scrollPos.current = left;
+    // scrollPos.current = left;
   };
 
   const handleScroll = debounce((e) => {
@@ -41,7 +42,7 @@ export default function ImageCar({ content, handleClick, init, className }) {
         }}
       >
         <Arrow
-          className="w-full overflow-visible stroke-current stroke-2 group-hover/btn:animate-jab"
+          className="group-hover/btn:animate-jab w-full overflow-visible stroke-current stroke-2"
           vectorEffect="non-scaling-stroke"
         />
       </button>
