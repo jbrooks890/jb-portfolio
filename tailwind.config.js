@@ -40,8 +40,14 @@ module.exports = {
       animation: {
         flicker: "flicker 300ms ease",
         jab: "jab 300ms infinite linear alternate",
+        bob: "bob 500ms infinite ease-in-out alternate",
       },
       keyframes: {
+        bob: {
+          from: { ["--tw-translate-y"]: "0" },
+          to: { ["--tw-translate-y"]: "-0.25em" },
+        },
+
         flicker: {
           "0%": {
             opacity: 0,

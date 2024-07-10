@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { ReactComponent as JB_LOGO } from "../../assets/icons/jb-logo.svg";
 import { ReactComponent as RESUME_ICON } from "../../assets/icons/profile-icon.svg";
 import { ReactComponent as CONNECT_ICON } from "../../assets/icons/connect-icon.svg";
@@ -29,6 +29,14 @@ export default function Welcome({ pages, mode }) {
   const [modePreview, setModePreview] = useState(mode ?? siteMode);
   const [modalContent, setModalContent] = useState();
 
+  // const { vw, vh, size } = useMemo(() => {
+  //   const vw = window?.innerWidth,
+  //     vh = window?.innerHeight,
+  //     vmin = vh < vw ? vh : vw,
+  //     size = vmin * 0.8;
+
+  //   return;
+  // }, [window?.innerWidth, window?.innerHeight]);
   const { vw, vh } = dimensions;
   const vmin = vh < vw ? vh : vw;
   const size = vmin * 0.8;
@@ -147,7 +155,7 @@ export default function Welcome({ pages, mode }) {
                     key={i}
                     className={`inline-block duration-200 ease-out ${
                       activated
-                        ? "hover:animate-flicker text-red"
+                        ? "text-red hover:animate-flicker"
                         : "translate-y-[-0.5em] text-lavender opacity-0"
                     }`}
                     style={{

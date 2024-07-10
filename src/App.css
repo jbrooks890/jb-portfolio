@@ -29,7 +29,11 @@
 /* ================\ TW LAYERS /================ */
 @layer base {
   body {
-    @apply bg-white font-body font-[500] text-sundown;
+    @apply hide-scroll bg-midnite font-body font-[500] text-sundown;
+  }
+
+  main {
+    @apply bg-white;
   }
 
   h1,

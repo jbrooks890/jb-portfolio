@@ -17,16 +17,15 @@ export default function Modal({
   const wrapper = useRef();
 
   // console.log({ isShowing });
-  // useEffect(() => {
-  //   if (isShowing) {
-  //     setActive(true);
-  //     document.body.classList.add("modal-lock");
-  //   }
-  //   return () => {
-  //     // setActive(false);
-  //     document.body.classList.remove("modal-lock");
-  //   };
-  // }, []);
+  useEffect(() => {
+    if (isShowing) {
+      setActive(true);
+      document.body.classList.add("modal-lock");
+    }
+    return () => {
+      document.body.classList.remove("modal-lock");
+    };
+  }, []);
 
   const closeModal = (e) => {
     setActive(false);

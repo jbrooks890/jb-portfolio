@@ -24,6 +24,7 @@ export default function Section({
       className={`section ${styles[type]} relative ${
         bgImg ? `${bgFixed ? "md:bg-fixed" : ""} bg-cover` : "no-bg-img"
       } ${className ?? ""}`}
+      style={{ backgroundImage: bgImg ? `url(${bgImg})` : undefined }}
     >
       {titled && <h2 className="title">{title}</h2>}
       {children}
