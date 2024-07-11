@@ -14,7 +14,7 @@ export default function ProjectSnapshot({ entry }) {
   const $tech = wrapSkills(tech);
 
   return (
-    <div className="project-snap grid-cols-subgrid relative col-span-full grid rounded-lg">
+    <div className="project-snap relative col-span-full grid gap-4 rounded-lg p-4 md:grid-cols-subgrid md:gap-[unset] md:p-0">
       {/* -------------------[ GALLERY ]------------------- */}
       <div className="project-gallery flex flex-col items-center">
         {/* <ProjectImageCar images={images} /> */}
@@ -27,14 +27,8 @@ export default function ProjectSnapshot({ entry }) {
           }))}
         />
       </div>
-      {/* {icon && (
-        <ProjectIcon
-          entry={entry}
-          className="absolute -right-4 -top-4 border-4 border-white"
-        />
-      )} */}
       {/* -------------------[ CAPTION ]------------------- */}
-      <div className="project-caption col-start-2 flex flex-col rounded-md bg-gradient-to-tl from-evening/5 via-transparent p-4">
+      <div className="project-caption flex flex-col rounded-md bg-gradient-to-tl from-evening/5 via-transparent pb-4 text-center md:col-start-2 md:p-4 md:text-left">
         <h3 className="project-title inline-head leading-none text-shade shadow-red drop-shadow">
           {name}
         </h3>
@@ -57,13 +51,13 @@ export default function ProjectSnapshot({ entry }) {
         />
         {link && (
           <a
-            className="project-visit-link group grid w-fit origin-left items-center gap-x-3 rounded-full bg-shade px-3 text-white duration-200 ease-out hover:bg-lavender hover:text-white"
+            className="project-visit-link group mx-4 grid origin-left items-center justify-center gap-x-3 rounded-lg bg-shade p-2 px-4 text-xl uppercase tracking-wider text-white duration-200 ease-out hover:bg-lavender hover:text-white md:m-0 md:w-fit md:rounded-full md:px-3 md:text-lg"
             href={link}
             target="_blank"
           >
             Visit
             <ARROW
-              className="stroke group-hover:animate-jab col-start-2 h-1/2 overflow-visible stroke-current stroke-[1.5] p-px opacity-50 duration-100 ease-out group-hover:opacity-100"
+              className="stroke col-start-2 h-4 overflow-visible stroke-current stroke-[1.5] p-px opacity-50 duration-100 ease-out group-hover:animate-jab group-hover:opacity-100 md:h-1/2"
               vectorEffect="non-scaling-stroke"
             />
           </a>

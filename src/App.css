@@ -155,7 +155,7 @@
   }
 
   .circle {
-    @apply aspect-square rounded-[50%];
+    @apply aspect-square rounded-ellipse;
   }
 
   .small-caps {
@@ -224,10 +224,12 @@
   }
 
   .bracket-clip {
-    --size: 1em;
+    --size: 1rem;
     --opposite: calc(100% - var(--size));
-    background-color: red;
+    --exterior: 0% 0%, 0% 100%, 100% 100%, 100% 0%;
     clip-path: polygon(
+      evenodd,
+      var(--exterior),
       var(--size) 0%,
       var(--size) var(--size),
       0% var(--size),

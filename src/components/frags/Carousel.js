@@ -26,7 +26,7 @@ export default function Carousel({
   return (
     <div
       ref={carousel}
-      className={`carousel relative flex snap-x snap-mandatory scroll-smooth md:overflow-hidden ${
+      className={`carousel relative flex snap-x snap-mandatory overflow-x-auto scroll-smooth md:overflow-hidden ${
         className ?? ""
       }`}
       // onClick={e => console.log(e.currentTarget.scrollLeft)}

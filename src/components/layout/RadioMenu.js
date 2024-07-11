@@ -88,7 +88,7 @@ export default function RadioMenu({
             <button
               key={i}
               ref={(v) => (buttonRefs.current[i] = v)}
-              className={`rad-btn island absolute aspect-square rounded-[50%] fill-current ${
+              className={`rad-btn island absolute aspect-square rounded-ellipse fill-current ${
                 typeof buttonCss === "string"
                   ? buttonCss
                   : typeof buttonCss === "function"

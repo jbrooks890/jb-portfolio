@@ -14,7 +14,7 @@ export default function ModeSelector({ pages, buttons, mode, ready }) {
           title + "Btn",
           <button
             key={i}
-            className={`non-mode island rounded-ellipse aspect-square h-16 border-2 border-current p-2 text-evening  ${
+            className={`non-mode island aspect-square h-16 rounded-ellipse border-2 border-current p-2 text-evening  ${
               activated
                 ? "scale-[0.1] opacity-0"
                 : "delay-300 duration-100 ease-out"
@@ -32,12 +32,10 @@ export default function ModeSelector({ pages, buttons, mode, ready }) {
   return (
     <div
       ref={wrapperRef}
-      className={`wrapper flex items-center duration-300 ease-out ${
-        activated ? "activated" : "gap-2"
-      }`}
-      style={
-        ready ? { maxHeight: wrapperRef.current?.clientWidth + "px" } : null
-      }
+      className={`mode-selector-wrapper flex items-center justify-self-center duration-300 ease-out ${
+        ready ? "" : "overflow-hidden opacity-0"
+      } ${activated ? "activated" : "gap-2"}`}
+      style={{ maxHeight: ready ? wrapperRef.current?.clientWidth + "px" : 0 }}
     >
       {ResumeBtn}
       {/* ---------< MODE SELECTOR >--------- */}

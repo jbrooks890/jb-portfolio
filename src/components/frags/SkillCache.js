@@ -39,7 +39,11 @@ export default function SkillCache({
   );
 
   return (
-    <div className={`skill-cache-wrapper mb-4 ${className ?? ""}`}>
+    <div
+      className={`skill-cache-wrapper mb-4 max-w-full overflow-hidden ${
+        className ?? ""
+      }`}
+    >
       {!concise && <h3 className="skill-cache-header">Toolkit</h3>}
       <div
         className={`skill-cache relative flex-wrap justify-center gap-4 self-center ${

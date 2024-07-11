@@ -4,20 +4,6 @@ export default function Button({
   size = "md",
   handleClick,
 }) {
-  const bracket = (first = true) => {
-    return (
-      <div
-        className={`bracket absolute aspect-square border-current duration-200 ease-out ${
-          first
-            ? "left-0 top-0 rounded-tl-lg border-l-2 border-t-2 group-hover:left-2 group-hover:top-1"
-            : "bottom-0 right-0 rounded-br-lg border-b-2 border-r-2 group-hover:bottom-1 group-hover:right-2"
-        }`}
-        style={{
-          width: size === "lg" ? "2em" : size === "sm" ? ".5em" : ".6em",
-        }}
-      />
-    );
-  };
   return (
     <button
       className={`island group relative mx-auto w-fit px-6 py-2 before:absolute before:inset-x-2 before:inset-y-2 before:rounded before:bg-transparent before:duration-100 before:ease-in hover:before:inset-x-4 hover:before:inset-y-3 hover:before:bg-nite/5 ${
@@ -28,10 +14,8 @@ export default function Button({
         handleClick?.();
       }}
     >
-      {/* <div className="bracket-clip absolute inset-0 rounded-lg border-[3px] border-current" /> */}
-      {bracket()}
+      <div className="bracket-clip group-hover:animate-bracket-pulse absolute inset-0 rounded-lg border-[3px] border-current duration-200 ease-out" />
       {children}
-      {bracket(false)}
     </button>
   );
 }

@@ -1,4 +1,4 @@
-import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow-stroke-icon.svg";
+import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow-up-stroke-icon.svg";
 // import "../../styles/TopBtn.css";
 
 export default function TopBtn({ destination = window, className }) {
@@ -14,7 +14,7 @@ export default function TopBtn({ destination = window, className }) {
         className ?? ""
       }`}
     >
-      <ArrowIcon className="group-hover:animate-bob aspect-square h-8 -rotate-90 overflow-visible stroke-lavender stroke-[3px]" />
+      <ArrowIcon className="aspect-square h-8 overflow-visible stroke-lavender stroke-[3px] group-hover:animate-bob" />
       <span className="-translate-y-1/2 text-lg uppercase leading-none tracking-wider opacity-0 duration-200 ease-in group-hover:translate-y-0 group-hover:opacity-100">
         Top
       </span>

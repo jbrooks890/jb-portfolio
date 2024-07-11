@@ -110,18 +110,19 @@ export default function Welcome({ pages, mode }) {
       type="wide"
       tight
     >
-      <div className="island relative h-screen">
+      <div className="grid h-screen place-content-center md:place-items-center">
         <div
           id="radial-controller"
-          className={`island group relative rounded-[50%] bg-gradient-circle from-nite via-transparent ${
+          className={`island group relative aspect-square w-full flex-col self-center rounded-ellipse bg-gradient-circle from-nite via-transparent md:w-[80vmin] ${
             activated ? "activated" : "unactivated"
           }`}
-          style={style}
+          // style={style}
         >
+          {/* :::::::::::::::::{ HERO LOGO }::::::::::::::::: */}
           <h2
             id="welcome-logo"
-            className={`relative z-10 w-[50vmin] cursor-pointer fill-red text-red drop-shadow-[3px_3px_0_#00000020] duration-200 ease-linear ${
-              activated ? "" : "scale-125"
+            className={`relative z-10 w-[75vw] cursor-pointer fill-red text-red drop-shadow-[3px_3px_0_#00000020] duration-200 ease-linear md:w-[50vmin] ${
+              activated ? "" : " md:scale-125"
             }`}
             onClick={() => setActivated((prev) => !prev)}
           >
@@ -138,7 +139,7 @@ export default function Welcome({ pages, mode }) {
                     key={i}
                     className={`inline-block duration-200 ease-out ${
                       activated
-                        ? "hover:animate-flicker text-red"
+                        ? "text-red hover:animate-flicker"
                         : "translate-y-[-0.5em] text-lavender opacity-0"
                     }`}
                     style={{
@@ -155,21 +156,11 @@ export default function Welcome({ pages, mode }) {
             )}
           </h2>
 
-          {$MOBILE ? (
-            // :::::::::::::::::{ MODE SELECTOR }:::::::::::::::::
-            <ModeSelector
-              pages={titles}
-              buttons={Object.fromEntries(
-                radButtons.map(({ title, ...button }) => [title, button]),
-              )}
-              mode={siteMode}
-              ready={activated}
-            />
-          ) : (
-            // :::::::::::::::::{ RADIO MENU }:::::::::::::::::
+          {/* :::::::::::::::::{ RADIO MENU }::::::::::::::::: */}
+          {!$MOBILE && (
             <RadioMenu
               contents={radButtons}
-              className="rounded-[50%]"
+              className="hidden rounded-ellipse md:block"
               buttonCss={`[&>svg]:aspect-[4/3] text-lavender duration-200 ease-linear ${
                 activated
                   ? "opacity-50 hover:scale-110 hover:opacity-100 disabled:scale-110 disabled:opacity-100 disabled:animate-flicker"
@@ -181,9 +172,20 @@ export default function Welcome({ pages, mode }) {
             />
           )}
         </div>
+        {/* :::::::::::::{ MODE SELECTOR (MOBILE) }::::::::::::: */}
+        {$MOBILE && (
+          <ModeSelector
+            pages={titles}
+            buttons={Object.fromEntries(
+              radButtons.map((button) => [button.title, button]),
+            )}
+            mode={siteMode}
+            ready={activated}
+          />
+        )}
       </div>
       {/* ----------[ GREETING ]---------- */}
-      <Block className="salute-wrapper grid w-[1024px] grid-cols-2 self-center">
+      <Block className="salute-wrapper self-center px-4 md:grid md:grid-cols-2 md:px-0 lg:w-[1024px]">
         <h2 className="salute inline-head col-start-1 mb-4 text-left text-5xl text-lavender [&>em]:mx-[0.1em] [&>em]:inline-block [&>em]:rotate-2 [&>em]:scale-110 [&>em]:not-italic [&>em]:brightness-125">
           <span className="block text-4xl text-red">I'm Julian, hi.</span>I like{" "}
           <em>art</em> and <em>code</em>.

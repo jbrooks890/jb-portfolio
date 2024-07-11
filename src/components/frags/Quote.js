@@ -10,7 +10,7 @@ export default function Quote() {
   const { entry, author } = quote;
 
   return (
-    <q className="relative my-12 w-fit self-center font-key text-shade">
+    <q className="relative my-12 w-fit self-center px-8 font-key text-shade md:px-0">
       <Markdown className="text-2xl">{entry}</Markdown>
       <Markdown
         options={{ forceBlock: true }}

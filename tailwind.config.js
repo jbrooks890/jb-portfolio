@@ -45,11 +45,11 @@ module.exports = {
         flicker: "flicker 300ms ease",
         jab: "jab 300ms infinite linear alternate",
         bob: "bob 500ms infinite ease-in-out alternate",
+        "bracket-pulse": "bracket-pulse 400ms infinite ease-in-out alternate",
       },
       keyframes: {
         bob: {
-          from: { ["--tw-translate-y"]: "0" },
-          to: { ["--tw-translate-y"]: "-0.25em" },
+          to: { transform: "translateY(-0.25em)" },
         },
 
         flicker: {
@@ -71,6 +71,11 @@ module.exports = {
         },
         jab: {
           to: { transform: "translateX(.1em)" },
+        },
+        "bracket-pulse": {
+          to: {
+            inset: "0.25rem 0.5rem",
+          },
         },
       },
     },

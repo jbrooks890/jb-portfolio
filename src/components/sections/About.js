@@ -19,11 +19,12 @@ export default function About({ pages }) {
   return (
     <Section
       id="about"
-      className="site-section center flex flex-col items-center"
+      title="About"
+      className="site-section flex flex-col md:items-center"
     >
-      <div className="content-wrap center flex flex-col space-y-20">
+      <div className="content-wrap flex flex-col space-y-20">
         <Blurb mode={siteMode} content={pages} />
-        <Block className="about-body center flex flex-col" narrow>
+        <Block className="about-body flex flex-col px-4 md:px-0" narrow>
           <SkillCache concise={false} showIcons featured />
           <Button
             className="resume-button text-2xl hover:text-lavender"

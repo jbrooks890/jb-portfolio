@@ -12,11 +12,11 @@ export default function Section({
 }) {
   const styles = {
     hero: `hero w-full h-screen overflow-hidden z-[999] island`,
-    frame: `frame ${
-      narrow ? "[&>*]:max-w-screen-sm" : "[&>*]:max-w-screen-lg"
+    frame: `frame max-w-full ${
+      narrow ? "md:*:max-w-screen-sm" : "lg:*:max-w-screen-md"
     } ${tight ? "" : "py-header"} ${fit ? "" : "w-full"}`,
     wide: `wide`,
-    narrow: `narrow [&>*]:max-w-screen-sm mx-auto`,
+    narrow: `narrow *:max-w-screen-sm mx-auto`,
   };
 
   return (
@@ -25,6 +25,7 @@ export default function Section({
         bgImg ? `${bgFixed ? "md:bg-fixed" : ""} bg-cover` : "no-bg-img"
       } ${className ?? ""}`}
       style={{ backgroundImage: bgImg ? `url(${bgImg})` : undefined }}
+      data-section-title={title}
     >
       {titled && <h2 className="title">{title}</h2>}
       {children}
