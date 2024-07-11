@@ -12,22 +12,21 @@ export default function RadioMenu({
 }) {
   const menuRef = useRef();
   const buttonRefs = useRef([]);
-  const { vw, vh, vmin, vavg, size, center, rad, ang } = useMemo(() => {
+  const { vw, vh, vmin, vavg, size, rad, ang } = useMemo(() => {
     const vw = window.innerWidth,
       vh = window.innerHeight,
       vmin = vh < vw ? vh : vw,
       vavg = (vh + vw) / 2,
       size = vmin * 0.8,
-      center = size / 2,
       rad = size / 2,
       ang = (2 * Math.PI) / contents.length;
+
     return {
       vw,
       vh,
       vmin,
       vavg,
       size,
-      center,
       rad,
       ang,
     };
@@ -38,19 +37,18 @@ export default function RadioMenu({
   const style = { width: size, height: size };
   // -------------------------------------------------------
   const $MOBILE = useMediaQuery();
-  const $CAN_HOVER = useMediaQuery("hover");
 
-  // const handleResize = debounce(() =>
-  //   setDimensions({
-  //     vw: window.innerWidth,
-  //     vh: window.innerHeight,
-  //   }),
-  // );
+  /*   const handleResize = debounce(() =>
+    setDimensions({
+      vw: window.innerWidth,
+      vh: window.innerHeight,
+    }),
+  );
 
-  // useEffect(() => {
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // });
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }); */
 
   return (
     <div
@@ -65,8 +63,9 @@ export default function RadioMenu({
           i,
         ) => {
           const spacing = ang * i;
-          const x = center + rad * Math.cos(spacing);
-          const y = center + rad * Math.sin(spacing);
+          const x = rad + rad * Math.cos(spacing);
+          const y = rad + rad * Math.sin(spacing);
+
           const size = Math.floor(vavg * 0.06);
           const btnCenter = size / 2;
           const style = {

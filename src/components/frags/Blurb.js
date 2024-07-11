@@ -55,7 +55,7 @@ export default function Blurb({ mode, content }) {
           className="mb-8 text-left"
         />
 
-        <div className="about-shift flex items-baseline">
+        <div className="about-shift flex items-baseline justify-center">
           <h3 className="m-0 mr-1 text-day">I'm also</h3>
           {titles.map((title, i) => (
             <button

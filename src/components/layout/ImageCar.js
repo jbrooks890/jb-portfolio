@@ -33,7 +33,7 @@ export default function ImageCar({ content, handleClick, init, className }) {
 
     return (
       <button
-        className={`group-btn z-10 row-start-2 grid aspect-square h-6 place-self-center self-center rounded-[50%] bg-nite/25 p-1 opacity-0 duration-200 ease-out hover:text-lite group-hover:opacity-100 ${
+        className={`group-btn align-self-center z-10 row-start-2 m-1 grid aspect-square self-center rounded-[50%] bg-nite/25 p-3 opacity-0 duration-200 ease-out hover:text-lite group-hover:opacity-100 ${
           fwd ? "col-start-3" : "col-start-1 -scale-x-[1]"
         }`}
         onClick={(e) => {
@@ -42,7 +42,7 @@ export default function ImageCar({ content, handleClick, init, className }) {
         }}
       >
         <Arrow
-          className="group-hover/btn:animate-jab w-full overflow-visible stroke-current stroke-2"
+          className="max-h-full w-full stroke-current stroke-2 group-hover/btn:animate-jab"
           vectorEffect="non-scaling-stroke"
         />
       </button>
@@ -51,7 +51,7 @@ export default function ImageCar({ content, handleClick, init, className }) {
 
   return (
     <LightBox active={viewing} toggle={() => setViewing((prev) => !prev)}>
-      <div className="image-car-wrap group grid grid-cols-[2rem_minmax(0,1fr)_2rem] grid-rows-[2rem_minmax(0,1fr)_2rem]">
+      <div className="image-car-wrap group grid grid-cols-[3rem_minmax(0,1fr)_3rem] grid-rows-[3rem_minmax(0,1fr)_3rem]">
         <div
           ref={carRef}
           className={`image-car hide-scroll relative col-span-full row-span-full flex aspect-video snap-x snap-mandatory overflow-x-auto overflow-y-hidden scroll-smooth border-2 border-white ${

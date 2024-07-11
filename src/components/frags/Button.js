@@ -9,8 +9,8 @@ export default function Button({
       <div
         className={`bracket absolute aspect-square border-current duration-200 ease-out ${
           first
-            ? "left-0 top-0 rounded-tl-lg border-l-[3px] border-t-[3px] group-hover:left-2 group-hover:top-1"
-            : "bottom-0 right-0 rounded-br-lg border-b-[3px] border-r-[3px] group-hover:bottom-1 group-hover:right-2"
+            ? "left-0 top-0 rounded-tl-lg border-l-2 border-t-2 group-hover:left-2 group-hover:top-1"
+            : "bottom-0 right-0 rounded-br-lg border-b-2 border-r-2 group-hover:bottom-1 group-hover:right-2"
         }`}
         style={{
           width: size === "lg" ? "2em" : size === "sm" ? ".5em" : ".6em",
