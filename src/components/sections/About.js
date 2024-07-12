@@ -20,12 +20,17 @@ export default function About({ pages }) {
     <Section
       id="about"
       title="About"
-      className="site-section flex flex-col md:items-center"
+      className="site-section flex flex-col bg-white md:items-center"
     >
       <div className="content-wrap flex flex-col space-y-20">
         <Blurb mode={siteMode} content={pages} />
         <Block className="about-body flex flex-col px-4 md:px-0" narrow>
-          <SkillCache concise={false} showIcons featured />
+          <SkillCache
+            concise={false}
+            className="gap-12 text-[5rem]"
+            showIcons
+            featured
+          />
           <Button
             className="resume-button text-2xl hover:text-lavender"
             handleClick={() => toggle()}

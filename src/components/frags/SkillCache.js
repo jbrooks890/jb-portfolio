@@ -46,7 +46,7 @@ export default function SkillCache({
     >
       {!concise && <h3 className="skill-cache-header">Toolkit</h3>}
       <div
-        className={`skill-cache relative flex-wrap justify-center gap-4 self-center ${
+        className={`skill-cache relative flex-wrap justify-center gap-[inherit] self-center ${
           inline ? "inline-flex" : "flex p-4"
         } ${concise ? "concise" : ""}`}
       >
@@ -63,7 +63,9 @@ export default function SkillCache({
               {showIcons ? iconMap.get(name) : name}
             </span>
             {!concise && (
-              <span className="skill-name text-center font-light">{name}</span>
+              <span className="skill-name text-center text-lg font-light">
+                {name}
+              </span>
             )}
           </div>
         ))}

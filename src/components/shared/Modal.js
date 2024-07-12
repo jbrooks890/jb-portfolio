@@ -40,7 +40,7 @@ export default function Modal({
             onClick={hide}
           />
           <div
-            className={`modal-wrapper pointer-events-none fixed inset-0 isolate z-[1040] flex flex-col items-center justify-center overflow-hidden p-8 outline-none ${
+            className={`modal-wrapper pointer-events-none fixed inset-0 isolate z-[1040] flex flex-col items-center justify-center overflow-hidden outline-none md:p-8 ${
               className ?? ""
             }`}
             ref={wrapper}

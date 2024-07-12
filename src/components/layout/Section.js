@@ -13,7 +13,9 @@ export default function Section({
   const styles = {
     hero: `hero w-full h-screen overflow-hidden z-[999] island`,
     frame: `frame max-w-full ${
-      narrow ? "md:*:max-w-screen-sm" : "lg:*:max-w-screen-md"
+      narrow
+        ? "md:*:max-w-screen-sm lg:*:max-w-screen-md"
+        : "[&>*:not(.exempt)]:container"
     } ${tight ? "" : "py-header"} ${fit ? "" : "w-full"}`,
     wide: `wide`,
     narrow: `narrow *:max-w-screen-sm mx-auto`,

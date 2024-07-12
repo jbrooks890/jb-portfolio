@@ -19,7 +19,7 @@ export default function Contact() {
     >
       <div
         id="contact-content-wrapper"
-        className="m-4 flex max-w-screen-sm flex-col items-center rounded-xl bg-midnite/10 p-8 backdrop-blur-sm md:px-12 md:py-16"
+        className="exempt m-4 flex w-fit max-w-screen-sm flex-col items-center rounded-xl bg-midnite/10 p-8 backdrop-blur-sm md:px-12 md:py-16"
       >
         <h2 className="mb-4 text-lite md:text-6xl">Let's Connect</h2>
         <Button

@@ -28,7 +28,7 @@ export default function ProjectSnapshot({ entry }) {
         />
       </div>
       {/* -------------------[ CAPTION ]------------------- */}
-      <div className="project-caption flex flex-col rounded-md bg-gradient-to-tl from-evening/5 via-transparent pb-4 text-center md:col-start-2 md:p-4 md:text-left">
+      <div className="project-caption flex flex-col rounded-md bg-gradient-to-t from-evening/5 via-transparent pb-4 text-center md:col-start-2 md:bg-gradient-to-tl md:p-4 md:text-left">
         <h3 className="project-title inline-head leading-none text-shade shadow-red drop-shadow">
           {name}
         </h3>
@@ -39,12 +39,12 @@ export default function ProjectSnapshot({ entry }) {
         {/* {description && (
           <Markdown className="text-lg leading-normal">{description}</Markdown>
         )} */}
-        <p className="text-lg leading-normal">{description}</p>
+        <p className="py-4 text-lg leading-normal">{description}</p>
         <SkillCache
           entries={$tech}
           featured={false}
           filter={false}
-          className="text-4xl"
+          className="gap-2 text-5xl"
           inline
           concise
           showIcons

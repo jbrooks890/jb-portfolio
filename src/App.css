@@ -32,9 +32,9 @@
     @apply hide-scroll bg-midnite font-body font-[500] text-sundown;
   }
 
-  main {
+  /* main {
     @apply bg-white;
-  }
+  } */
 
   h1,
   h2,
@@ -155,7 +155,7 @@
   }
 
   .circle {
-    @apply aspect-square rounded-ellipse;
+    @apply rounded-ellipse aspect-square;
   }
 
   .small-caps {
@@ -201,12 +201,6 @@
     text-align: inherit;
   }
 
-  .subgrid {
-    @apply col-span-full;
-    display: grid;
-    grid-template: subgrid / subgrid;
-  }
-
   body.modal-lock {
     @apply overflow-hidden;
   }
@@ -227,6 +221,7 @@
     --size: 1rem;
     --opposite: calc(100% - var(--size));
     --exterior: 0% 0%, 0% 100%, 100% 100%, 100% 0%;
+    overflow: hidden;
     clip-path: polygon(
       evenodd,
       var(--exterior),

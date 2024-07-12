@@ -32,7 +32,7 @@ export default function Blurb({ mode, content }) {
 
   return (
     <>
-      <div className="about-intro wide flex flex-col gap-8 p-4 md:grid md:items-center">
+      <div className="about-intro wide flex flex-col gap-8 px-8 md:grid md:items-center md:p-4">
         <div className="intro-blurb flex flex-col items-center text-justify text-xl">
           <h2 className="title text-center">Story time.</h2>
           <Markdown options={{ forceBlock: true }}>{blurb}</Markdown>
@@ -40,7 +40,7 @@ export default function Blurb({ mode, content }) {
         <img
           src={require("../../assets/images/julian_profile_pic.jpg")}
           alt="Headshot of Julian"
-          className="headshot order-first rotate-1 self-stretch rounded mix-blend-multiply drop-shadow-md md:order-none md:col-start-2"
+          className="headshot order-first rotate-1 rounded mix-blend-multiply drop-shadow-md md:order-none md:col-start-2"
         />
       </div>
       <div className="description flex flex-col self-center bg-nite px-8 py-header text-white md:max-w-screen-md md:rounded-md md:p-8">
@@ -52,7 +52,7 @@ export default function Blurb({ mode, content }) {
           arr={blurbs}
           index={content.findIndex(({ title }) => title === activeEntry) ?? 0}
           // shift={carouselShift}
-          className="hide-scroll mb-8 text-left text-justify text-xl text-lite md:text-lg"
+          className="hide-scroll mb-8 text-justify text-xl text-lite md:text-left md:text-lg"
         />
 
         <div className="about-shift flex items-baseline justify-center">

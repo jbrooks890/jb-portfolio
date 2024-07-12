@@ -30,7 +30,7 @@ export default function ImageCar({ content, handleClick, init, className }) {
 
     return (
       <button
-        className={`group-btn align-self-center z-10 row-start-2 m-1 grid aspect-square self-center rounded-ellipse bg-nite/25 p-3 opacity-0 duration-200 ease-out hover:text-lite group-hover:opacity-100 ${
+        className={`group-btn rounded-ellipse z-10 row-start-2 m-1 hidden aspect-square self-center bg-nite/25 p-3 opacity-0 duration-200 ease-out hover:text-lite group-hover:opacity-100 md:grid ${
           fwd ? "col-start-3" : "col-start-1 -scale-x-[1]"
         }`}
         onClick={(e) => {
@@ -47,10 +47,10 @@ export default function ImageCar({ content, handleClick, init, className }) {
   };
 
   return (
-    <div className="image-car-wrap group grid grid-cols-[3rem_minmax(0,1fr)_3rem] grid-rows-[3rem_minmax(0,1fr)_3rem]">
+    <div className="image-car-wrap group grid w-full grid-cols-[3rem_minmax(0,1fr)_3rem] grid-rows-[3rem_minmax(0,1fr)_3rem]">
       <div
         ref={carRef}
-        className={`image-car hide-scroll relative col-span-full row-span-full flex aspect-[4/3] snap-x snap-mandatory overflow-x-auto overflow-y-hidden scroll-smooth border-2 border-white md:aspect-video ${
+        className={`image-car hide-scroll relative col-span-full row-span-2 flex aspect-[4/3] snap-x snap-mandatory overflow-x-auto overflow-y-hidden scroll-smooth border-2 border-white md:row-span-full md:aspect-video ${
           className ?? ""
         }`}
         onScroll={handleScroll}
@@ -74,7 +74,7 @@ export default function ImageCar({ content, handleClick, init, className }) {
         })}
       </div>
       {pager()}
-      <div className="z-10 col-start-2 row-start-3 m-1 flex items-center justify-center gap-2 place-self-center rounded-full bg-nite/25 px-3 py-2 opacity-0 backdrop-blur-sm duration-200 ease-out group-hover:opacity-100">
+      <div className="z-10 col-start-2 row-start-3 m-1 flex items-center justify-center gap-2 place-self-center rounded-full bg-nite/25 px-3 py-2 backdrop-blur-sm duration-200 ease-out md:opacity-0 md:group-hover:opacity-100">
         {content.map((_, i) => {
           const isActive = active === i;
           return (
