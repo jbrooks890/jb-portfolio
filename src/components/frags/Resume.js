@@ -18,8 +18,10 @@ import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow-stroke-ico
 import { ReactComponent as MyLogo } from "../../assets/icons/jb-logo.svg";
 import Education from "../Resume/Education";
 import ResumeSection from "../layout/ResumeSection";
+import useMediaQuery from "../hooks/useMediaQuery";
+import Appendix from "../layout/Appendix";
 
-export default function Resume() {
+export default function Resume({ close }) {
   const [siteMode] = useSiteMode();
   const { profile, projects, experience, education, skills } = resumeData;
   const { email, summary, address } = profile;
@@ -27,7 +29,11 @@ export default function Resume() {
   const $projects = projects.filter((project) =>
     project.section.includes(siteMode),
   );
+  const $MOBILE = useMediaQuery();
+
   // -------------------[ REFS ]-------------------
+  const wrapperRef = useRef();
+  const captionRef = useRef();
   const bodyRef = useRef();
   const sectionRefs = {
     Skills: useRef(),
@@ -40,21 +46,23 @@ export default function Resume() {
 
   return (
     <div
+      ref={wrapperRef}
       id="resume"
-      className="flex h-full max-w-screen-xl flex-col gap-x-8 gap-y-4 scroll-smooth rounded-lg bg-shade px-12 py-8 text-lg text-lite md:grid"
+      className="hide-scroll flex h-full flex-col gap-x-8 gap-y-4 overflow-y-auto scroll-smooth bg-shade p-4 text-lg text-lite md:grid md:max-w-screen-xl md:rounded-lg md:px-12 md:py-8"
     >
       {/* =================================== *\
       ||  <><><><><><>\ CAPTION /<><><><><><> 
        \* =================================== */}
       <div
+        ref={captionRef}
         id="resume-caption"
-        className="relative isolate col-start-1 row-span-2 flex h-fit w-[480px] flex-col items-center space-y-6 self-center rounded-lg bg-nite p-12 drop-shadow-sm"
+        className="relative isolate col-start-1 row-span-2 flex h-fit scroll-mt-4 flex-col items-center space-y-6 self-center rounded-lg bg-nite p-8 drop-shadow-sm md:w-[480px] md:p-12"
       >
         <div className="pointer-events-none absolute inset-0 -z-10 flex flex-col items-center justify-end overflow-hidden rounded-[inherit] opacity-10 mix-blend-overlay">
           <MyLogo className="w-[110%] fill-white" />
         </div>
         <Logotype />
-        <fieldset className="caption-summary rounded-md border-[1.5px] border-lavender p-4">
+        <fieldset className="caption-summary border-t-[1.5px] border-lavender pt-2 text-center md:pt-4">
           <legend className="label-text text-center font-bold leading-none text-lavender">
             Front-end Developer
           </legend>
@@ -83,72 +91,80 @@ export default function Resume() {
         <SocialMediaCache concise={true} darkMode={false} />
       </div>
 
-      {/* ==================================== *\
+      <div className="resume-body-wrapper flex h-full shrink-0 flex-col gap-y-4 overflow-hidden md:contents">
+        {/* ==================================== *\
       ||  <><><><><><><>\ NAV /<><><><><><><> 
        \* ==================================== */}
-      <ResumeNav sections={sectionRefs} />
+        <ResumeNav sections={sectionRefs} topRef={captionRef} close={close} />
 
-      {/* ==================================== *\
+        {/* ==================================== *\
       ||  <><><><><><><>\ BODY /<><><><><><><> 
        \* ==================================== */}
 
-      <div
-        ref={bodyRef}
-        id="resume-body"
-        className="col-start-2 space-y-8 overflow-y-scroll"
-      >
-        {/* ========= SKILLS ========= */}
-        <ResumeSection ref={(v) => (sectionRefs.Skills = v)} title="Skills">
-          <SkillCache
-            entries={skills.filter(({ category }) =>
-              category.includes(siteMode),
-            )}
-            concise
-            showIcons
-            featured
-          />
-          <Skills
-            skills={skills.filter((skill) =>
-              skill.category.includes(siteMode.toLowerCase()),
-            )}
-          />
-        </ResumeSection>
-        {/* ========= PROJECTS ========= */}
-        <ResumeSection ref={(v) => (sectionRefs.Projects = v)} title="Projects">
-          <div className="project-wrapper grid grid-cols-[minmax(0,1fr)_minmax(0,3fr)] gap-4 rounded-md bg-black/10 p-4">
-            {$projects.map((project, i) => {
-              const { name, description, link, technologies } = project;
-              return (
-                <div key={i} className="contents">
-                  <a
-                    href={link}
-                    target="_blank"
-                    className="text-right text-xl font-semibold tracking-wide hover:text-day"
-                  >
-                    {name}
-                  </a>
-                  <div>{description}</div>
-                </div>
-              );
-            })}
-          </div>
-        </ResumeSection>
-        {/* ========= EXPERIENCE ========= */}
-        <ResumeSection
-          ref={(v) => (sectionRefs.Experience = v)}
-          title="Experience"
+        <div
+          ref={bodyRef}
+          id="resume-body"
+          className="hide-scroll h-full space-y-8 overflow-y-scroll md:col-start-2"
         >
-          <Experience entries={experience} />
-        </ResumeSection>
-        {/* ========= EDUCATION ========= */}
-        <ResumeSection
-          ref={(v) => (sectionRefs.Education = v)}
-          title="Education"
-        >
-          <Education />
-        </ResumeSection>
-        {/* ========= TO TOP ========= */}
-        <TopBtn destination={bodyRef.current} />
+          {/* ========= SKILLS ========= */}
+          <ResumeSection ref={(v) => (sectionRefs.Skills = v)} title="Skills">
+            <SkillCache
+              entries={skills.filter(({ category }) =>
+                category.includes(siteMode),
+              )}
+              className="gap-2 text-4xl"
+              concise
+              showIcons
+              featured
+            />
+            <Appendix
+              contents={Object.entries({
+                language: "Languages",
+                tool: "Tools + Platforms",
+                proficiency: "Proficiencies",
+                "operating system": "Operating Systems",
+              }).map(([_type, title]) => ({
+                name: title,
+                body: skills
+                  .filter(
+                    ({ category, type }) =>
+                      category.includes(siteMode.toLowerCase()) &&
+                      type === _type,
+                  )
+                  .map(({ name }) => name)
+                  .join(", "),
+              }))}
+            />
+          </ResumeSection>
+          {/* ========= PROJECTS ========= */}
+          <ResumeSection
+            ref={(v) => (sectionRefs.Projects = v)}
+            title="Projects"
+          >
+            <Appendix
+              contents={$projects.map(({ name, description }) => ({
+                name,
+                body: description,
+              }))}
+            />
+          </ResumeSection>
+          {/* ========= EXPERIENCE ========= */}
+          <ResumeSection
+            ref={(v) => (sectionRefs.Experience = v)}
+            title="Experience"
+          >
+            <Experience entries={experience} />
+          </ResumeSection>
+          {/* ========= EDUCATION ========= */}
+          <ResumeSection
+            ref={(v) => (sectionRefs.Education = v)}
+            title="Education"
+          >
+            <Education />
+          </ResumeSection>
+          {/* ========= TO TOP ========= */}
+          {!$MOBILE && <TopBtn destination={bodyRef} />}
+        </div>
       </div>
     </div>
   );

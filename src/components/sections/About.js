@@ -11,10 +11,12 @@ import Blurb from "../frags/Blurb";
 import Section from "../layout/Section";
 import Block from "../layout/Block";
 import Button from "../frags/Button";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function About({ pages }) {
   const { isShowing, toggle } = useModal();
   const [siteMode] = useSiteMode();
+  const $MOBILE = useMediaQuery();
 
   return (
     <Section
@@ -42,8 +44,8 @@ export default function About({ pages }) {
         <Quote />
       </div>
       {isShowing && (
-        <Modal isShowing={isShowing} hide={toggle}>
-          <Resume />
+        <Modal isShowing={isShowing} hide={toggle} auto={$MOBILE}>
+          <Resume close={() => isShowing && toggle()} />
         </Modal>
       )}
     </Section>

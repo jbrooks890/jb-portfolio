@@ -10,7 +10,8 @@ export default function Modal({
   hide,
   children,
   className,
-  naked = false,
+  auto,
+  naked,
 }) {
   const [active, setActive] = useState(false);
   const $MOBILE = useMediaQuery();
@@ -51,18 +52,20 @@ export default function Modal({
             // style={active ? { maxWidth: window.innerWidth + "px" } : null}
           >
             <div className="modal pointer-events-auto relative z-[1040] flex flex-col items-center overflow-hidden">
-              <button
-                className={`modal-close island absolute right-0 top-0 z-[1041] ${
-                  naked
-                    ? "h-fit -translate-y-3/4 translate-x-full"
-                    : "aspect-square h-16"
-                } text-6xl text-day opacity-25 duration-200 ease-out hover:opacity-100`}
-                data-dismiss="modal"
-                aria-label="close"
-                onClick={closeModal}
-              >
-                &times;
-              </button>
+              {!auto && (
+                <button
+                  className={`modal-close island z-[1041] order-last m-2 rounded-ellipse bg-midnite text-6xl leading-none text-day duration-200 ease-out hover:opacity-100 md:absolute md:right-0 md:top-0 md:order-none md:bg-transparent md:opacity-25 ${
+                    naked
+                      ? "h-fit -translate-y-3/4 translate-x-full"
+                      : "aspect-square h-20 md:h-16"
+                  }`}
+                  data-dismiss="modal"
+                  aria-label="close"
+                  onClick={closeModal}
+                >
+                  &times;
+                </button>
+              )}
               {children}
             </div>
           </div>

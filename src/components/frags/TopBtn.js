@@ -8,7 +8,10 @@ export default function TopBtn({ destination = window, className }) {
     <button
       onClick={(e) => {
         e.preventDefault();
-        destination.scrollTo({ top: 0, behavior: "smooth" });
+        (destination?.current ?? destination).scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       }}
       className={`nav-to-top group relative mx-auto flex w-fit flex-col items-center self-center ${
         className ?? ""

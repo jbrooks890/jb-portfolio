@@ -88,7 +88,8 @@ export default function Welcome({ pages, mode }) {
       {
         title: "Resume",
         Icon: RESUME_ICON,
-        handleClick: () => triggerModal(<Resume />),
+        handleClick: () =>
+          triggerModal(<Resume close={() => isShowing && toggle()} />),
         handleMouseEnter: () => $CAN_HOVER && setModePreview("Resume"),
         handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
       },
@@ -113,7 +114,7 @@ export default function Welcome({ pages, mode }) {
       <div className="grid h-screen place-content-center duration-200 ease-out md:place-items-center">
         <div
           id="radial-controller"
-          className={`island rounded-ellipse group relative aspect-square w-full flex-col self-center bg-gradient-circle from-nite via-transparent md:w-[80vmin] ${
+          className={`island group relative aspect-square w-full flex-col self-center rounded-ellipse bg-gradient-circle from-nite via-transparent md:w-[80vmin] ${
             activated ? "activated" : "unactivated"
           }`}
           // style={style}
@@ -160,7 +161,7 @@ export default function Welcome({ pages, mode }) {
           {!$MOBILE && (
             <RadioMenu
               contents={radButtons}
-              className="rounded-ellipse hidden md:block"
+              className="hidden rounded-ellipse md:block"
               buttonCss={`[&>svg]:aspect-[4/3] text-lavender duration-200 ease-linear ${
                 activated
                   ? "opacity-50 hover:scale-110 hover:opacity-100 disabled:scale-110 disabled:opacity-100 disabled:animate-flicker"
@@ -199,7 +200,7 @@ export default function Welcome({ pages, mode }) {
       </Block>
 
       {isShowing && (
-        <Modal isShowing={isShowing} hide={toggle}>
+        <Modal isShowing={isShowing} hide={toggle} auto={$MOBILE}>
           {modalContent}
         </Modal>
       )}

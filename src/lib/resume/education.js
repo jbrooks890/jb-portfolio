@@ -87,7 +87,7 @@ export const education = [
       },
     ],
     notes: [
-      "Acquired hands-on experience with MERN full stack development, demonstrating high proficiencies in JavaScript, React, Node.js, and practical experience in database technologies including MongoDB and MySQL",
+      "Acquired hands-on experience with MERN full stack development, demonstrating high proficiencies in JavaScript, React, Node, and practical experience in database technologies including MongoDB and MySQL",
       "Bridged the gap in understanding of end-to-end development process and solidified abilities to deploy full stack applications in an agile team environment",
     ],
   },

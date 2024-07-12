@@ -15,7 +15,7 @@ export default function Section({
     frame: `frame max-w-full ${
       narrow
         ? "md:*:max-w-screen-sm lg:*:max-w-screen-md"
-        : "[&>*:not(.exempt)]:container"
+        : "[&>*:not(.exempt)]:max-w-5xl"
     } ${tight ? "" : "py-header"} ${fit ? "" : "w-full"}`,
     wide: `wide`,
     narrow: `narrow *:max-w-screen-sm mx-auto`,

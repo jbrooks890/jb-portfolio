@@ -19,13 +19,13 @@ export default function SkillCache({
   const filtered = filter
     ? skills.filter((skill) => skill.category.includes(siteMode.toLowerCase()))
     : skills;
-  const primaries = filtered.filter((skill) => skill.primary === true);
+  const primaries = filtered.filter(({ primary }) => primary);
   const $skills = featured ? primaries : filtered;
 
   // FILTER SKILLS WITH ICONS ==> RETURN SKILLS
-  let skillsWithIcons = $skills.filter((skill) => iconMap.get(skill.name));
+  let skillsWithIcons = $skills.filter(({ name }) => iconMap[name]);
   let uniqueIcons = [
-    ...new Set(skillsWithIcons.map((skill) => iconMap.get(skill.name))),
+    ...new Set(skillsWithIcons.map(({ name }) => iconMap[name])),
   ];
 
   const bigBracket = (right = false) => (
@@ -39,11 +39,7 @@ export default function SkillCache({
   );
 
   return (
-    <div
-      className={`skill-cache-wrapper mb-4 max-w-full overflow-hidden ${
-        className ?? ""
-      }`}
-    >
+    <div className={`skill-cache-wrapper mb-4 max-w-full ${className ?? ""}`}>
       {!concise && <h3 className="skill-cache-header">Toolkit</h3>}
       <div
         className={`skill-cache relative flex-wrap justify-center gap-[inherit] self-center ${
@@ -60,7 +56,7 @@ export default function SkillCache({
             data-skill={name}
           >
             <span className="font-tech leading-none">
-              {showIcons ? iconMap.get(name) : name}
+              {showIcons ? iconMap[name] : name}
             </span>
             {!concise && (
               <span className="skill-name text-center text-lg font-light">

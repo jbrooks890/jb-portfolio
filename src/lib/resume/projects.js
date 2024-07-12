@@ -6,7 +6,7 @@ export const projects = [
     featured: true,
     description:
       "The company website for American Data Solutions (ADS) and its proprietary IETM software, MDDV.",
-    tech: ["React", "Typescript"],
+    tech: ["React", "Typescript", "Tailwind CSS"],
     link: "https://mddv.com/",
     icon: "xword-logo",
     colors: {
@@ -62,7 +62,7 @@ export const projects = [
     description:
       "A crossword puzzle application built on an original grid-based architecture for creating and playing trivia-based puzzle games.",
     meta: {},
-    tech: ["React", "MongoDB"],
+    tech: ["React", "MongoDB", "SASS", "Node"],
     link: "https://xword-app-beta.netlify.app/",
     icon: "xword-logo",
     colors: {
