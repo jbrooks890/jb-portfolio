@@ -45,7 +45,7 @@ export const projects = [
       dark: "#150330",
       reverse: false,
     },
-    images: [{ src: "projects/xword-1.png" }, { src: "projects/xword-3.png" }],
+    images: [{ src: "projects/xword-4.png" }, { src: "projects/xword-5.png" }],
   },
   {
     name: "Worlds of EPOCH",

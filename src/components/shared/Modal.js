@@ -28,7 +28,7 @@ export default function Modal({
     };
   }, []);
 
-  const closeModal = (e) => {
+  const closeModal = () => {
     setActive(false);
     hide(true);
   };
@@ -54,14 +54,17 @@ export default function Modal({
             <div className="modal pointer-events-auto relative z-[1040] flex flex-col items-center overflow-hidden">
               {!auto && (
                 <button
-                  className={`modal-close island z-[5000] order-last m-2 rounded-ellipse bg-midnite text-6xl leading-none text-day duration-200 ease-out hover:opacity-100 md:absolute md:right-0 md:top-0 md:order-none md:bg-transparent md:opacity-25 ${
+                  className={`modal-close island z-[5000] order-last m-2 rounded-ellipse bg-midnite text-6xl leading-none text-day duration-200 ease-out md:absolute md:right-0 md:top-0 md:order-none md:bg-transparent md:opacity-25 md:hover:opacity-100 ${
                     naked
                       ? "h-fit -translate-y-3/4 translate-x-full"
                       : "aspect-square h-20 md:h-16"
                   }`}
                   data-dismiss="modal"
                   aria-label="close"
-                  onClick={closeModal}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    hide();
+                  }}
                 >
                   &times;
                 </button>

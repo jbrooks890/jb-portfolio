@@ -20,7 +20,9 @@ export default function ResumeNav({ sections, topRef, close }) {
   let sectionElements = Object.entries(sections).map(([name, element]) => ({
     name,
     Icon: icons[name],
-    handleClick: () => element?.scrollIntoView({ behavior: "smooth" }),
+    handleClick: () => {
+      element?.scrollIntoView({ behavior: "smooth" });
+    },
     handleMouseEnter: () => setPreview(name),
   }));
 
@@ -28,12 +30,18 @@ export default function ResumeNav({ sections, topRef, close }) {
     const caption = {
       name: "Caption",
       Icon: PROFILE_ICON,
-      handleClick: () => topRef.current?.scrollIntoView(true),
+      handleClick: () => {
+        // Object.values(sections)[0].current?.scrollTo({
+        //   behavior: "instant",
+        //   top: 0,
+        // });
+        topRef.current?.scrollIntoView(true);
+      },
     };
     const closer = {
       name: "Close",
       element: (
-        <div className="island rounded-ellipse aspect-square self-stretch bg-day text-4xl font-bold leading-none text-shade">
+        <div className="island aspect-square self-stretch rounded-ellipse bg-day text-4xl font-bold leading-none text-shade">
           &times;
         </div>
       ),

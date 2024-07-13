@@ -10,7 +10,6 @@ export default function Blurb({ mode, content }) {
   );
   const [pre, ...$title] = title.split(/\s/);
   const blurbs = content.map(({ blurb }) => <Markdown>{blurb}</Markdown>);
-  const carouselShift = (index) => setActiveEntry(titles[index]);
   const carouselRef = useRef();
 
   const blurb = `In August of 2010, I left my beloved home of Chicago for Air Force
@@ -56,14 +55,15 @@ export default function Blurb({ mode, content }) {
           index={activeEntry}
           // shift={carouselShift}
           handleChange={(v) => {
-            activeEntry !== v && setActiveEntry(titles[v]);
+            console.log({ v });
+            activeEntry !== v && setActiveEntry(v);
           }}
           className="hide-scroll mb-8 text-justify text-xl text-lite md:text-left md:text-lg"
         />
 
         <div className="about-shift flex items-baseline justify-center">
           <h3 className="m-0 mr-1 text-day">I'm also</h3>
-          {titles.map((title, i) => {
+          {titles.map((_, i) => {
             const isActive = activeEntry === i;
             return (
               <button

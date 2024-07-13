@@ -57,7 +57,7 @@ export default function ProjectSnapshot({ entry }) {
           >
             Visit
             <ARROW
-              className="stroke col-start-2 h-4 overflow-visible stroke-current stroke-[1.5] p-px opacity-50 duration-100 ease-out group-hover:animate-jab group-hover:opacity-100 md:h-1/2"
+              className="stroke col-start-2 h-4 overflow-visible stroke-current stroke-[1.5] p-px opacity-50 duration-100 ease-out group-hover:animate-jab group-hover:opacity-100"
               vectorEffect="non-scaling-stroke"
             />
           </a>

@@ -48,7 +48,7 @@ export default function Resume({ close }) {
     <div
       ref={wrapperRef}
       id="resume"
-      className="hide-scroll flex h-full flex-col gap-x-8 gap-y-4 overflow-y-auto scroll-smooth bg-shade p-4 text-lg text-lite md:grid md:max-w-screen-xl md:rounded-lg md:px-12 md:py-8"
+      className="hide-scroll flex h-full snap-y snap-mandatory flex-col gap-x-8 gap-y-4 overflow-y-auto scroll-smooth bg-shade p-4 text-lg text-lite *:snap-start md:grid md:max-w-screen-xl md:snap-none md:rounded-lg md:px-12 md:py-8"
     >
       {/* =================================== *\
       ||  <><><><><><>\ CAPTION /<><><><><><> 

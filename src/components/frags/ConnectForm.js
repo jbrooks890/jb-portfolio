@@ -170,7 +170,7 @@ export default function ConnectForm() {
   return (
     <form
       id="connect-form"
-      className="flex w-screen flex-col gap-y-3 overflow-hidden rounded-lg bg-nite p-4 pt-header md:w-[90vmin] md:max-w-lg md:p-8"
+      className="flex w-screen flex-col gap-y-3 overflow-hidden rounded-lg bg-nite p-4 py-header md:w-[90vmin] md:max-w-lg md:p-8"
       onSubmit={(e) => handleSubmit(e)}
     >
       <h2 className="m-0 text-lite">Contact</h2>
