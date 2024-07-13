@@ -33,11 +33,11 @@ export default function ResumeNav({ sections, topRef, close }) {
     const closer = {
       name: "Close",
       element: (
-        <div className="island aspect-square self-stretch rounded-ellipse bg-lavender text-4xl font-bold leading-none text-shade">
+        <div className="island rounded-ellipse aspect-square self-stretch bg-day text-4xl font-bold leading-none text-shade">
           &times;
         </div>
       ),
-      handleClick: () => close(),
+      handleClick: close,
     };
     sectionElements = [caption, ...sectionElements, closer];
   }
@@ -45,7 +45,7 @@ export default function ResumeNav({ sections, topRef, close }) {
   return (
     <div
       id="resume-top"
-      className="resume-nav-wrapper z-[1000] order-last mx-auto w-fit self-center text-lavender md:order-none"
+      className="resume-nav-wrapper z-[1000] order-last mx-auto w-fit self-center text-day md:order-none"
     >
       <div className="resume-nav-help hidden text-center font-key text-xs font-normal uppercase tracking-widest md:block">
         {preview}

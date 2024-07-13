@@ -29,11 +29,11 @@ export const experience = [
       {
         name: "Programmer (Front End Developer)",
         description:
-          "Responsible for creating new features of flagship software and maintaining company website.",
+          "Development and integration of various features of proprietary IETM web application, management of company website",
         tasks: [
-          "Ensured aircraft fleet was fully mission capable (FMC) for real world and training missions",
-          "Responsible for maintaining documentation of aircraft discrepancies",
-          "Managed specialist personnel and ensured their participation in restoring aircraft to FMC status",
+          "Converted company website (MDDV.com) to React, improving user interface/experience (UI/UX)",
+          "Created and/or improved the UI/UX of proprietary software (MDDV) feature set",
+          "Created marketing materials, logos and other graphics for the company and its sub-brands",
         ],
         skills: ["website development", "app development", "agile"],
       },
@@ -67,16 +67,31 @@ export const experience = [
     },
     roles: [
       {
-        name: "Chief Editor",
-        description:
-          "Designed and created company to express the creative ideas of myself and other artists and authors.",
+        name: "Web Developer",
+        description: "Designed and developed company website",
         tasks: [
-          "Authored and published Arcan: The Missing Nexus novel",
-          "Designed and developed company website (wireframe, layout, structure) for various platforms (desktop, mobile, tablet)",
-          "Designed company brands and sub-brands, logos, wordmarks, icons, color palette, and other graphics",
-          "Manage merchandise/product inventory, Product development and marketing",
-          "Order fulfillment; packaging and shipping",
-          "Proofreading, editing (copyediting, line editing) prior to publication]",
+          "Created website user interface (UI) (wireframes, layouts, structure)",
+        ],
+        skills: ["Proofreading", "copyediting", "branding"],
+      },
+      {
+        name: "Chief Editor, Content Manager",
+        description:
+          "Management of published content, website traffic and search engine optimization (SEO)",
+        tasks: [
+          "Manage merchandise/product inventory",
+          "Proofreading, editing (copyediting, line editing) prior to publication",
+          "Manage and maintain website content, monitor website traffic data and search engine optimization (SEO)",
+        ],
+        skills: ["Proofreading", "copyediting", "branding"],
+      },
+      {
+        name: "Founder, Owner",
+        description:
+          "Designed and created company platform to express the creative ideas of mine and other artists and authors.",
+        tasks: [
+          "Designed company brands, sub-brands, logos, wordmarks, icons, color palette, and other graphics",
+          "Product development and marketing",
         ],
         skills: ["Proofreading", "copyediting", "branding"],
       },
@@ -176,46 +191,6 @@ export const experience = [
   {
     type: "professional",
     org: {
-      name: "U.S. Air Force Reserve",
-      address: {
-        streetNumber: 0,
-        streetName: "",
-        streetOther: "",
-        streetOtherType: "",
-        city: "Marietta",
-        state: "Georgia",
-        stateInitials: "GA",
-        zipCode: "",
-      },
-    },
-    current: false,
-    startDate: {
-      month: "August",
-      day: 29,
-      year: 2016,
-    },
-    endDate: {
-      month: "September",
-      day: 1,
-      year: 2020,
-    },
-    roles: [
-      {
-        name: "Aerospace Maintenance Journeyman (Crew Chief)",
-        description:
-          "Performed the duties of Crew Chief in support of the C-130 cargo aircraft.",
-        tasks: [
-          "Ensured aircraft fleet was fully mission capable (FMC) for real world and training missions",
-          "Responsible for maintaining documentation of aircraft discrepancies",
-          "Managed specialist personnel and ensured their participation in restoring aircraft to FMC status",
-        ],
-        skills: ["time management"],
-      },
-    ],
-  },
-  {
-    type: "professional",
-    org: {
       name: "U.S. Air Force",
       address: {
         streetNumber: 0,
@@ -235,9 +210,9 @@ export const experience = [
       year: 2010,
     },
     endDate: {
-      month: "August",
-      day: 29,
-      year: 2016,
+      month: "September",
+      day: 1,
+      year: 2020,
     },
     roles: [
       {
@@ -249,7 +224,7 @@ export const experience = [
           "Responsible for maintaining documentation of aircraft discrepancies",
           "Managed specialist personnel and ensured their participation in restoring aircraft to FMC status",
         ],
-        skills: ["time management"],
+        skills: ["time management", "security clearance"],
       },
     ],
   },

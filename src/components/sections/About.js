@@ -29,10 +29,11 @@ export default function About({ pages }) {
         <Block className="about-body flex flex-col px-4 md:px-0" narrow>
           <SkillCache
             concise={false}
-            className="gap-12 text-[5rem]"
+            className="mb-header gap-12 text-[5rem]"
             showIcons
             featured
           />
+
           <Button
             className="resume-button text-2xl hover:text-lavender"
             handleClick={() => toggle()}

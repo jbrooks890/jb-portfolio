@@ -238,8 +238,10 @@
 
   /* ==================\ FORM ELEMENTS /================== */
 
-  :is(input, textarea) {
-    @apply block appearance-none bg-transparent text-base text-inherit;
+  input,
+  textarea {
+    @apply block appearance-none bg-transparent text-inherit placeholder:italic placeholder:opacity-75;
+    font-size: inherit;
   }
 
   .label-text {
@@ -262,9 +264,9 @@
     @apply text-base content-['*'];
   }
 
-  button[type="submit"] {
+  /* button[type="submit"] {
     @apply border-form mx-auto w-fit rounded px-2 font-key uppercase;
-  }
+  } */
 
   fieldset {
     @apply appearance-none;

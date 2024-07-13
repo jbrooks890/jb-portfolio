@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
-import "../../styles/ConnectForm.css";
+// import "../../styles/ConnectForm.css";
 import SelectBox from "./SelectBox";
 import emailjs from "emailjs-com";
+import Button from "./Button";
+import { capitalize } from "../../lib/utility/helperFns";
 
 const { REACT_APP_EMAILJS_PUBLIC_KEY } = process.env;
 
@@ -12,7 +14,6 @@ export default function ConnectForm() {
     occupation: "",
     message: "",
   });
-  const [askMore, setAskMore] = useState(false);
   const [completed, setCompleted] = useState(false);
   const occupations = [
     "just looking around",
@@ -21,17 +22,22 @@ export default function ConnectForm() {
     "an employer",
     "a hiring manager",
   ];
-  const interests = ["Projects", "Artwork", "Book(s)", "Other"];
+  const interests = [
+    "Nothing really...",
+    "Everything",
+    "Projects",
+    "Artwork",
+    "Other",
+  ];
   const msgInput = useRef();
   const msgMax = 300;
 
   // console.log(REACT_APP_EMAILJS_PUBLIC_KEY);
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
+  const handleInput = (field, value) => {
     updateFormContent((prev) => ({
       ...prev,
-      [name]: value,
+      [field]: value,
     }));
   };
 
@@ -68,16 +74,109 @@ export default function ConnectForm() {
     setCompleted(true);
   };
 
+  const fields = [
+    {
+      field: "name",
+      label: "Name",
+      type: "input",
+      placeholder: "Jane Doe",
+      required: true,
+    },
+    {
+      field: "email",
+      label: "Email",
+      type: "email",
+      placeholder: "janedoe@domain.com",
+      required: true,
+    },
+    {
+      field: "occupation",
+      label: "I am...",
+      type: "select",
+      options: occupations,
+      value: occupations[0],
+    },
+    {
+      field: "interest",
+      label: "What interested you?",
+      type: "select",
+      multi: true,
+      options: interests,
+      value: interests[0],
+    },
+    {
+      field: "message",
+      label: "Message",
+      type: "block",
+      placeholder: "Hey Julian! Are you available for hire?",
+    },
+  ];
+
+  const fieldElements = fields.map(
+    ({ field, label, type, placeholder, required, options, multi }, i) => {
+      const display = label ?? capitalize(field);
+      let Element;
+      switch (type) {
+        case "block":
+          Element = (
+            <textarea
+              placeholder={placeholder}
+              rows={5}
+              className="w-full rounded border-2 border-lavender p-2 placeholder:text-lavender"
+            />
+          );
+          break;
+        case "select":
+          Element = (
+            <SelectBox
+              field={field}
+              options={options}
+              multi={multi}
+              displayCss="border-2 border-lavender p-2 rounded"
+              handleChange={(v) => {}}
+            />
+          );
+          break;
+        default:
+          Element = (
+            <input
+              type={type}
+              placeholder={placeholder}
+              required={required}
+              className="w-full rounded border-2 border-solid border-lavender p-2 placeholder:text-lavender"
+              onChange={(e) => handleInput(field, e.target.value)}
+            />
+          );
+      }
+      // if (typeof type === "string")
+      return (
+        <label key={i} htmlFor={field} className="text-lg text-day">
+          <span
+            className={`text-base uppercase tracking-wider text-lavender ${
+              required ? "after:text-lite after:content-['*']" : ""
+            }`}
+          >
+            {display}
+          </span>
+          {Element}
+        </label>
+      );
+    },
+  );
+
   return (
     <form
       id="connect-form"
-      className="flex flex-col"
+      className="flex w-screen flex-col gap-y-3 overflow-hidden rounded-lg bg-nite p-4 pt-header md:w-[90vmin] md:max-w-screen-sm md:p-header"
       onSubmit={(e) => handleSubmit(e)}
     >
-      <h2>Email Me!</h2>
-      <div id="connect-form-content">
-        <div id="connect-form-main" className="flex flex-col">
-          {/* ---- NAME ---- */}
+      <h2 className="m-0 text-lite">Contact</h2>
+      <div
+        id="connect-form-content"
+        className="flex grow flex-col gap-3 overflow-y-auto"
+      >
+        {fieldElements}
+        {/* <div id="connect-form-main" className="flex flex-col">
           <label htmlFor="name" data-label="Name">
             <input
               name="name"
@@ -86,7 +185,6 @@ export default function ConnectForm() {
               required
             />
           </label>
-          {/* ---- EMAIL ---- */}
           <label htmlFor="email" className="section" data-label="Email">
             <input
               type="email"
@@ -96,7 +194,6 @@ export default function ConnectForm() {
               required
             />
           </label>
-          {/* ---- OCCUPATION ---- */}
           <label htmlFor="occupation" className="section" data-label="I am...">
             <SelectBox
               options={occupations}
@@ -105,7 +202,6 @@ export default function ConnectForm() {
               onChange={(e) => handleInput(e)}
             />
           </label>
-          {/* ---- MESSAGE ---- */}
           <label
             htmlFor="message"
             data-label="Message"
@@ -134,9 +230,14 @@ export default function ConnectForm() {
               ))}
             </select>
           </label>
-        </div>
+        </div> */}
       </div>
-      <button type="submit">Send</button>
+      <Button
+        type="submit"
+        className="text-2xl uppercase tracking-wider text-day duration-200 ease-out hover:text-lite"
+      >
+        Send
+      </Button>
     </form>
   );
 }

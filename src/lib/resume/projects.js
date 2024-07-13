@@ -23,6 +23,31 @@ export const projects = [
     ],
   },
   {
+    name: "XWord",
+    type: "Game",
+    isWip: false,
+    section: ["Developer", "Game"],
+    featured: true,
+    repo: {
+      platform: "Github",
+      link: "https://github.com/jbrooks890/crossword",
+    },
+    description:
+      "A crossword puzzle application built on an original grid-based architecture for creating and playing trivia-based puzzle games.",
+    meta: {},
+    tech: ["React", "MongoDB", "Node", "SASS"],
+    link: "https://xword-app-beta.netlify.app/",
+    icon: "xword-logo",
+    colors: {
+      key: "#5b42ff",
+      alt: "#8840f2",
+      alt2: "#51f23f",
+      dark: "#150330",
+      reverse: false,
+    },
+    images: [{ src: "projects/xword-1.png" }, { src: "projects/xword-3.png" }],
+  },
+  {
     name: "Worlds of EPOCH",
     type: "Website",
     isWip: false,
@@ -48,31 +73,6 @@ export const projects = [
       { src: "projects/epoch-site-1.png" },
       { src: "projects/epoch-site-2.png" },
     ],
-  },
-  {
-    name: "XWord",
-    type: "Game",
-    isWip: false,
-    section: ["Developer", "Game"],
-    featured: true,
-    repo: {
-      platform: "Github",
-      link: "https://github.com/jbrooks890/crossword",
-    },
-    description:
-      "A crossword puzzle application built on an original grid-based architecture for creating and playing trivia-based puzzle games.",
-    meta: {},
-    tech: ["React", "MongoDB", "SASS", "Node"],
-    link: "https://xword-app-beta.netlify.app/",
-    icon: "xword-logo",
-    colors: {
-      key: "#5b42ff",
-      alt: "#8840f2",
-      alt2: "#51f23f",
-      dark: "#150330",
-      reverse: false,
-    },
-    images: [{ src: "projects/xword-1.png" }, { src: "projects/xword-3.png" }],
   },
   {
     name: "PokéSquad",
@@ -101,7 +101,6 @@ export const projects = [
       { src: "projects/pokesquad-2.png" },
     ],
   },
-
   {
     name: "Web Reader",
     type: "App",
