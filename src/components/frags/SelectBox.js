@@ -14,16 +14,10 @@ export default function SelectBox({
   required,
   value,
 }) {
-  const [selected, setSelected] = useState(options[0]);
   const [open, setOpen] = useState(false),
     toggle = () => setOpen((prev) => !prev);
   const wrapperRef = useRef();
   const listRef = useRef();
-
-  const selectOption = (selection) => {
-    setSelected(selection);
-    setOpen(false);
-  };
 
   const placeList = () => {
     if (!open) return;
@@ -57,6 +51,10 @@ export default function SelectBox({
     };
   }, []);
 
+  useEffect(() => {
+    open && setOpen(false);
+  }, [value]);
+
   return (
     <div
       ref={wrapperRef}
@@ -71,7 +69,7 @@ export default function SelectBox({
           toggle();
         }}
       >
-        <span className="self-center text-left leading-none">{selected}</span>
+        <span className="self-center text-left leading-none">{value}</span>
         <span
           className={`island before:duration-ease-out col-start-2 aspect-square h-full duration-100 ease-out before:leading-none before:duration-100 before:content-['+'] md:text-[1.5em] ${
             open
@@ -95,20 +93,24 @@ export default function SelectBox({
           ...placeList(),
         }}
       >
-        {options.map((option, i) => (
-          <button
-            key={i}
-            className={`mx-1 rounded px-4 py-2 text-left duration-100 ease-out hover:bg-lavender hover:text-midnite ${
-              itemCss ?? ""
-            }`}
-            onClick={(e) => {
-              e.preventDefault();
-              selectOption(option);
-            }}
-          >
-            {option}
-          </button>
-        ))}
+        {options.map((option, i) => {
+          const isActive = value === option;
+          return (
+            <button
+              key={i}
+              className={`mx-1 rounded px-4 py-2 text-left leading-none duration-100 ease-out disabled:opacity-50 ${
+                isActive ? "" : "hover:bg-lavender hover:text-midnite "
+              } ${itemCss ?? ""}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleChange(option);
+              }}
+              disabled={isActive}
+            >
+              {option}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

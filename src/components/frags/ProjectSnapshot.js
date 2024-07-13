@@ -51,7 +51,7 @@ export default function ProjectSnapshot({ entry }) {
         />
         {link && (
           <a
-            className="project-visit-link group mx-4 grid origin-left items-center justify-center gap-x-3 rounded-lg bg-shade p-2 px-4 text-xl uppercase tracking-wider text-white duration-200 ease-out hover:bg-lavender hover:text-white md:m-0 md:w-fit md:rounded-full md:px-3 md:text-lg"
+            className="project-visit-link group mx-4 grid origin-left items-center justify-center gap-x-3 rounded-lg bg-shade p-2 px-4 text-xl uppercase tracking-wider text-white duration-200 ease-out hover:bg-lavender hover:text-white md:m-0 md:mt-auto md:w-fit md:items-center md:rounded-md md:border-2 md:border-current md:bg-transparent md:px-2 md:py-0 md:text-lg md:text-current md:hover:border-lavender"
             href={link}
             target="_blank"
           >

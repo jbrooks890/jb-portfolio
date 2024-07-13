@@ -3,7 +3,11 @@ import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow-stroke-ico
 
 export default function List({ contents, listCss, entryCss, markerCss }) {
   return (
-    <div className={`list grid items-baseline gap-2 ${listCss ?? ""}`}>
+    <div
+      className={`list grid items-baseline justify-start gap-2 ${
+        listCss ?? ""
+      }`}
+    >
       {contents.map((entry, i) => (
         <Fragment key={i}>
           <ArrowIcon

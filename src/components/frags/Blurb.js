@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Carousel from "./Carousel";
 import Markdown from "markdown-to-jsx";
 
 export default function Blurb({ mode, content }) {
-  const [activeEntry, setActiveEntry] = useState(mode);
+  const titles = content.map(({ title }) => title);
+  const [activeEntry, setActiveEntry] = useState(titles.indexOf(mode) ?? 0);
   const { flavorTitle: title } = content.find(
-    (entry) => entry.title === activeEntry,
+    ({ title }) => title === titles[activeEntry],
   );
   const [pre, ...$title] = title.split(/\s/);
-  const titles = content.map(({ title }) => title);
   const blurbs = content.map(({ blurb }) => <Markdown>{blurb}</Markdown>);
   const carouselShift = (index) => setActiveEntry(titles[index]);
+  const carouselRef = useRef();
 
   const blurb = `In August of 2010, I left my beloved home of Chicago for Air Force
   basic training. I went on to work as a C-130 aircraft maintainer for ten
@@ -27,7 +28,8 @@ export default function Blurb({ mode, content }) {
   industry where I felt my talents would thrive.`;
 
   useEffect(() => {
-    mode !== activeEntry && setActiveEntry(mode);
+    const current = titles.indexOf(mode);
+    current !== activeEntry && setActiveEntry(current);
   }, [mode]);
 
   return (
@@ -49,25 +51,36 @@ export default function Blurb({ mode, content }) {
           {$title.join(" ")}
         </h2>
         <Carousel
+          ref={carouselRef}
           arr={blurbs}
-          index={content.findIndex(({ title }) => title === activeEntry) ?? 0}
+          index={activeEntry}
           // shift={carouselShift}
+          handleChange={(v) => {
+            activeEntry !== v && setActiveEntry(titles[v]);
+          }}
           className="hide-scroll mb-8 text-justify text-xl text-lite md:text-left md:text-lg"
         />
 
         <div className="about-shift flex items-baseline justify-center">
           <h3 className="m-0 mr-1 text-day">I'm also</h3>
-          {titles.map((title, i) => (
-            <button
-              key={i}
-              className={`mr-1 block aspect-square h-2 rounded-[1px] duration-200 ease-out ${
-                title === activeEntry
-                  ? "active scale-125 cursor-default bg-[red]"
-                  : "bg-sundown hover:scale-125 hover:bg-[red]"
-              }`}
-              onClick={() => setActiveEntry(title)}
-            ></button>
-          ))}
+          {titles.map((title, i) => {
+            const isActive = activeEntry === i;
+            return (
+              <button
+                key={i}
+                className={`mr-1 block aspect-square h-2 rounded-[1px] duration-200 ease-out ${
+                  isActive
+                    ? "active scale-125 cursor-default bg-[red]"
+                    : "bg-sundown hover:scale-125 hover:bg-[red]"
+                }`}
+                disabled={isActive}
+                onClick={(e) => {
+                  e.preventDefault();
+                  !isActive && setActiveEntry(i);
+                }}
+              ></button>
+            );
+          })}
         </div>
       </div>
     </>

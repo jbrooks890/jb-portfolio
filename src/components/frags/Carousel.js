@@ -1,34 +1,39 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  forwardRef,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { debounce } from "../../utility/utility";
 
-export default function Carousel({
-  arr,
-  index = 0,
-  className,
-  shift,
-  hideControls,
-  hidePagers,
-}) {
-  const carousel = useRef();
+export default forwardRef(function Carousel(
+  { arr, index = 0, className, handleChange, shift, hideControls, hidePagers },
+  carouselRef,
+) {
+  // const [selected, setSelected] = useState(index)
+  // const carousel = useRef();
   const sections = useRef([]);
 
   useEffect(() => {
-    const { width } = carousel.current.getBoundingClientRect();
+    const { width } = carouselRef.current.getBoundingClientRect();
     const left = width * index;
-    carousel.current?.scrollTo({ left });
+    carouselRef.current?.scrollTo({ left });
   }, [index]);
 
-  const handleScroll = (e) => {
-    const carousel = e.currentTarget;
-    const { width } = carousel.getBoundingClientRect();
-  };
+  const handleScroll = debounce((e) => {
+    const { scrollLeft, clientWidth } = e.target;
+    const targetIndex = Math.round(scrollLeft / clientWidth);
+    handleChange(targetIndex);
+  }, 50);
 
   return (
     <div
-      ref={carousel}
+      ref={carouselRef}
       className={`carousel relative flex snap-x snap-mandatory overflow-x-auto scroll-smooth md:overflow-hidden ${
         className ?? ""
       }`}
+      onScroll={handleScroll}
       // onClick={e => console.log(e.currentTarget.scrollLeft)}
       // onScroll={() => carScroll()}
     >
@@ -48,4 +53,4 @@ export default function Carousel({
       })}
     </div>
   );
-}
+});

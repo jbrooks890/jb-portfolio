@@ -30,7 +30,7 @@ export default function ImageCar({ content, handleClick, init, className }) {
 
     return (
       <button
-        className={`group-btn rounded-ellipse z-10 row-start-2 m-1 hidden aspect-square self-center bg-nite/25 p-3 opacity-0 duration-200 ease-out hover:text-lite group-hover:opacity-100 md:grid ${
+        className={`group-btn z-10 row-start-2 m-1 hidden aspect-square self-center rounded-ellipse bg-nite/25 p-3 opacity-0 duration-200 ease-out hover:text-lite group-hover:opacity-100 md:grid ${
           fwd ? "col-start-3" : "col-start-1 -scale-x-[1]"
         }`}
         onClick={(e) => {
@@ -67,6 +67,7 @@ export default function ImageCar({ content, handleClick, init, className }) {
               <img
                 src={src}
                 alt={`${name} image`}
+                loading="lazy"
                 className={`block h-full w-full object-cover object-top duration-200 ease-out`}
               />
             </div>

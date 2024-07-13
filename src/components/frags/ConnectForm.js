@@ -7,28 +7,64 @@ import { capitalize } from "../../lib/utility/helperFns";
 
 const { REACT_APP_EMAILJS_PUBLIC_KEY } = process.env;
 
+const occupations = [
+  "just looking around",
+  "a recruiter",
+  "a potential client",
+  "an employer",
+  "a hiring manager",
+];
+const interests = [
+  "Nothing really...",
+  "Everything",
+  "Projects",
+  "Artwork",
+  "Other",
+];
+
 export default function ConnectForm() {
-  const [formContent, updateFormContent] = useState({
-    name: "",
-    email: "",
-    occupation: "",
-    message: "",
-  });
+  const fields = [
+    {
+      field: "name",
+      label: "Name",
+      type: "input",
+      placeholder: "Jane Doe",
+      required: true,
+    },
+    {
+      field: "email",
+      label: "Email",
+      type: "email",
+      placeholder: "janedoe@domain.com",
+      required: true,
+    },
+    {
+      field: "occupation",
+      label: "I am...",
+      type: "select",
+      options: occupations,
+      value: occupations[0],
+    },
+    {
+      field: "interest",
+      label: "What interested you?",
+      type: "select",
+      multi: true,
+      options: interests,
+      value: interests[0],
+    },
+    {
+      field: "message",
+      label: "Message",
+      type: "block",
+      placeholder: "Hey Julian! Are you available for work?",
+    },
+  ];
+  const [formContent, updateFormContent] = useState(
+    Object.fromEntries(fields.map(({ field, value }) => [field, value])),
+  );
   const [completed, setCompleted] = useState(false);
-  const occupations = [
-    "just looking around",
-    "a recruiter",
-    "a potential client",
-    "an employer",
-    "a hiring manager",
-  ];
-  const interests = [
-    "Nothing really...",
-    "Everything",
-    "Projects",
-    "Artwork",
-    "Other",
-  ];
+
   const msgInput = useRef();
   const msgMax = 300;
 
@@ -74,44 +110,6 @@ export default function ConnectForm() {
     setCompleted(true);
   };
 
-  const fields = [
-    {
-      field: "name",
-      label: "Name",
-      type: "input",
-      placeholder: "Jane Doe",
-      required: true,
-    },
-    {
-      field: "email",
-      label: "Email",
-      type: "email",
-      placeholder: "janedoe@domain.com",
-      required: true,
-    },
-    {
-      field: "occupation",
-      label: "I am...",
-      type: "select",
-      options: occupations,
-      value: occupations[0],
-    },
-    {
-      field: "interest",
-      label: "What interested you?",
-      type: "select",
-      multi: true,
-      options: interests,
-      value: interests[0],
-    },
-    {
-      field: "message",
-      label: "Message",
-      type: "block",
-      placeholder: "Hey Julian! Are you available for hire?",
-    },
-  ];
-
   const fieldElements = fields.map(
     ({ field, label, type, placeholder, required, options, multi }, i) => {
       const display = label ?? capitalize(field);
@@ -122,7 +120,9 @@ export default function ConnectForm() {
             <textarea
               placeholder={placeholder}
               rows={5}
+              value={formContent[field]}
               className="w-full rounded border-2 border-lavender p-2 placeholder:text-lavender"
+              onChange={(e) => handleInput(field, e.target.value)}
             />
           );
           break;
@@ -133,7 +133,10 @@ export default function ConnectForm() {
               options={options}
               multi={multi}
               displayCss="border-2 border-lavender p-2 rounded"
-              handleChange={(v) => {}}
+              value={formContent[field]}
+              handleChange={(v) => {
+                handleInput(field, v);
+              }}
             />
           );
           break;
@@ -143,14 +146,14 @@ export default function ConnectForm() {
               type={type}
               placeholder={placeholder}
               required={required}
+              value={formContent[field]}
               className="w-full rounded border-2 border-solid border-lavender p-2 placeholder:text-lavender"
               onChange={(e) => handleInput(field, e.target.value)}
             />
           );
       }
-      // if (typeof type === "string")
       return (
-        <label key={i} htmlFor={field} className="text-lg text-day">
+        <label key={i} htmlFor={field} className="text-day">
           <span
             className={`text-base uppercase tracking-wider text-lavender ${
               required ? "after:text-lite after:content-['*']" : ""
@@ -167,7 +170,7 @@ export default function ConnectForm() {
   return (
     <form
       id="connect-form"
-      className="flex w-screen flex-col gap-y-3 overflow-hidden rounded-lg bg-nite p-4 pt-header md:w-[90vmin] md:max-w-screen-sm md:p-header"
+      className="flex w-screen flex-col gap-y-3 overflow-hidden rounded-lg bg-nite p-4 pt-header md:w-[90vmin] md:max-w-lg md:p-8"
       onSubmit={(e) => handleSubmit(e)}
     >
       <h2 className="m-0 text-lite">Contact</h2>
@@ -176,61 +179,6 @@ export default function ConnectForm() {
         className="flex grow flex-col gap-3 overflow-y-auto"
       >
         {fieldElements}
-        {/* <div id="connect-form-main" className="flex flex-col">
-          <label htmlFor="name" data-label="Name">
-            <input
-              name="name"
-              placeholder="Jane Doe"
-              onInput={(e) => handleInput(e)}
-              required
-            />
-          </label>
-          <label htmlFor="email" className="section" data-label="Email">
-            <input
-              type="email"
-              name="email"
-              placeholder="janedoe@domain.com"
-              onInput={(e) => handleInput(e)}
-              required
-            />
-          </label>
-          <label htmlFor="occupation" className="section" data-label="I am...">
-            <SelectBox
-              options={occupations}
-              field="occupation"
-              classList={[]}
-              onChange={(e) => handleInput(e)}
-            />
-          </label>
-          <label
-            htmlFor="message"
-            data-label="Message"
-            // data-remaining={msgMax - formContent.message.length}
-            data-remaining={
-              msgInput.current && msgMax - msgInput.current.value.length
-            }
-          >
-            <textarea
-              ref={msgInput}
-              name="message"
-              placeholder="Hey Julian! Are you available for hire?"
-              maxLength={msgMax}
-              onInput={(e) => handleInput(e)}
-              required
-            />
-          </label>
-        </div>
-        <div id="connect-form-extra" className={askMore ? "active" : ""}>
-          <label htmlFor="interest" data-label="What interested you?">
-            <select name="interest">
-              {interests.map((entry, i) => (
-                <option key={i} value={entry}>
-                  {entry}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div> */}
       </div>
       <Button
         type="submit"
