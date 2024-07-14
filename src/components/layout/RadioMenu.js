@@ -104,7 +104,7 @@ export default function RadioMenu({
               disabled={disabled}
               style={style}
             >
-              <Icon className="max-h-full" />
+              <Icon className="max-h-full duration-100 ease-out" />
             </button>
           );
         },
