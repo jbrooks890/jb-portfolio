@@ -11,7 +11,7 @@ export default function Quote() {
 
   return (
     <q className="relative my-12 w-fit self-center px-8 text-center font-key text-shade md:px-0 md:text-left">
-      <div className="pointer-events-none absolute left-0 top-0 z-0 -translate-x-1/3 -translate-y-4 -rotate-12 text-8xl leading-none opacity-25">
+      <div className="pointer-events-none absolute -top-2 left-1/2 z-0 -translate-x-1/2 -translate-y-4 -rotate-6 text-8xl leading-none opacity-25 md:left-0 md:top-0 md:-translate-x-1/3 md:-rotate-12">
         &ldquo;&rdquo;
       </div>
       <Markdown className="text-2xl">{entry}</Markdown>
