@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { resumeData } from "../../utility/resume";
 
-export default function SocialMediaCache({ concise }) {
+export default function SocialMediaCache({ concise, className }) {
   const { socialMedia } = resumeData.profile,
     [first] = socialMedia;
   const [current, setCurrent] = useState(first);
 
   return (
-    <div className={`social-media-cache group flex flex-col text-lavender`}>
-      <div className="icon-cache mb-2 flex gap-x-5">
+    <div
+      className={`social-media-cache group flex flex-col gap-y-2 text-lavender ${
+        className ?? ""
+      }`.trim()}
+    >
+      <div className="icon-cache flex gap-x-5">
         {socialMedia.map((entry, i) => {
           const { name, link, handle, icon } = entry;
           return (

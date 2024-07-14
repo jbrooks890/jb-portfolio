@@ -141,11 +141,10 @@ export default function Welcome({ pages, mode }) {
                     key={i}
                     className={`inline-block duration-200 ease-out ${
                       activated
-                        ? "text-red hover:animate-flicker"
+                        ? "text-red hover:animate-flicker hover:delay-[0s_!important]"
                         : "translate-y-[-0.5em] text-lavender opacity-0"
                     }`}
                     style={{
-                      ["--i"]: i,
                       transitionDelay: activated
                         ? 700 + 100 * i + "ms"
                         : undefined,
@@ -165,7 +164,7 @@ export default function Welcome({ pages, mode }) {
               className="hidden rounded-ellipse md:block"
               buttonCss={`[&>svg]:aspect-[4/3] text-lavender duration-200 ease-linear ${
                 activated
-                  ? "opacity-50 hover:scale-110 hover:opacity-100 disabled:scale-110 disabled:opacity-100 disabled:animate-flicker"
+                  ? "*:opacity-50 hover:*:scale-110 hover:*:opacity-100 *:disabled:scale-110 *:disabled:opacity-100 *:disabled:animate-flicker"
                   : "scale-50 opacity-0"
               }`}
               buttonStyles={(i) => ({

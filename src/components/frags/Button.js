@@ -12,7 +12,7 @@ export default function Button({
       }`}
       type={type}
       onClick={(e) => {
-        e.preventDefault();
+        type === "button" && e.preventDefault();
         handleClick?.();
       }}
     >
