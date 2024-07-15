@@ -41,7 +41,7 @@ export default function ResumeNav({ sections, topRef, close }) {
     const closer = {
       name: "Close",
       element: (
-        <div className="island aspect-square self-stretch rounded-ellipse bg-day text-4xl font-bold leading-none text-shade">
+        <div className="island aspect-square self-stretch rounded-ellipse bg-day text-4xl leading-none text-shade">
           &times;
         </div>
       ),

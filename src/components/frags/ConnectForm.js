@@ -126,8 +126,9 @@ export default function ConnectForm({ close }) {
               name={field}
               rows={5}
               value={formContent[field]}
-              className="w-full rounded border-2 border-lavender p-2 placeholder:text-lavender"
+              className="w-full rounded border-2 border-lavender p-2 placeholder:text-lavender focus-within:shrink-0"
               onChange={(e) => handleInput(field, e.target.value)}
+              onFocus={(e) => e.target.scrollIntoView()}
             />
           );
           break;
@@ -226,7 +227,7 @@ export default function ConnectForm({ close }) {
       {$MOBILE && (
         <button
           type="reset"
-          className="circle island mt-header h-20 self-center border-4 border-current text-6xl leading-none text-day"
+          className="circle island mt-4 h-16 shrink-0 self-center border-4 border-current text-6xl leading-none text-day"
           onClick={(e) => {
             e.preventDefault();
             close?.();

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 export default function Describe({
   header,
   children,
@@ -10,6 +10,10 @@ export default function Describe({
 }) {
   const [open, setOpen] = useState(init);
   const drawerRef = useRef();
+  useEffect(
+    () => open && drawerRef.current?.scrollIntoView({ behavior: "smooth" }),
+    [open],
+  );
   return (
     <div
       className={`describe rounded-b-md duration-200 ease-out ${
