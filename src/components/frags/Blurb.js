@@ -54,10 +54,7 @@ export default function Blurb({ mode, content }) {
           arr={blurbs}
           index={activeEntry}
           // shift={carouselShift}
-          handleChange={(v) => {
-            console.log({ v });
-            activeEntry !== v && setActiveEntry(v);
-          }}
+          handleChange={(v) => activeEntry !== v && setActiveEntry(v)}
           className="hide-scroll mb-8 text-justify text-xl text-lite md:text-left md:text-lg"
         />
 

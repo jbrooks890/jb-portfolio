@@ -6,7 +6,7 @@ export const projects = [
     featured: true,
     description:
       "The company website for American Data Solutions (ADS) and its proprietary IETM software, MDDV.",
-    tech: ["React", "Typescript", "Tailwind CSS"],
+    tech: ["Next.js", "React", "Typescript", "Tailwind CSS"],
     link: "https://mddv.com/",
     icon: "xword-logo",
     colors: {
@@ -102,34 +102,10 @@ export const projects = [
     ],
   },
   {
-    name: "Web Reader",
-    type: "App",
-    isWip: false,
-    section: ["Developer"],
-    featured: false,
-    repo: {
-      platform: "",
-      link: "",
-    },
-    description:
-      "An original reading application developed for viewing dynamic story content and metadata on independent publishing websites.",
-    meta: {},
-    tech: ["Squarespace", "JavaScript", "HTML", "CSS"],
-    link: "https://www.worldsofepoch.com/anthology/the-boy-who-dreamed",
-    icon: "epoch-logo",
-    colors: {
-      key: "",
-      alt: "",
-      dark: "",
-      reverse: false,
-    },
-    images: [],
-  },
-  {
     name: "Arcan",
     type: "Story",
     isWip: false,
-    section: ["Writer", "Artist", "WIP"],
+    section: ["Writer", "Artist"],
     featured: true,
     repo: {
       platform: "",
@@ -156,7 +132,7 @@ export const projects = [
     name: "The Dark Ones",
     type: "Story",
     isWip: true,
-    section: ["Writer", "WIP"],
+    section: ["Writer"],
     featured: false,
     repo: {
       platform: "",
@@ -181,71 +157,10 @@ export const projects = [
     images: [],
   },
   {
-    name: "Vie",
-    type: "Board Game",
-    isWip: true,
-    section: ["Game", "WIP"],
-    featured: true,
-    repo: {
-      platform: "",
-      link: "",
-    },
-    description:
-      "A board game that fuses the concepts of playing cards, chess and Fantasy elements where players compose an army and devise strategies to seize their opponent's crown while also defending their own castle.",
-    meta: {
-      developer: "Crymsica",
-      publisher: "EPOCH Studios",
-      genre: ["Fantasy", "Sci-Fi"],
-    },
-    tech: ["Photoshop", "Illustrator", "JavaScript"],
-    link: "https://www.worldsofepoch.com/vie",
-    icon: "vie-crown",
-    colors: {
-      key: "#ff9f7d",
-      alt: "#896883",
-      dark: "#2e2e47",
-      reverse: false,
-    },
-    images: [{ src: "gallery/vie__web-Banner.jpg" }],
-  },
-  {
-    name: "Gigaslayer",
-    type: "Game",
-    isWip: true,
-    section: ["Game", "WIP"],
-    featured: false,
-    repo: {
-      platform: "PC",
-      link: "",
-    },
-    description: (
-      <>
-        A classic JRPG-style video game about a young boy named Adam who
-        ventures off to hunt down <i>Gigas</i> and their troublesome spawn that
-        have run rampant since their recent reawakening.
-      </>
-    ),
-    meta: {
-      developer: "Crymsica",
-      publisher: "EPOCH Studios",
-      genre: ["JRPG", "RPG", "Fantasy"],
-    },
-    tech: ["RPG Maker MZ", "JavaScript"],
-    link: "",
-    icon: "",
-    colors: {
-      key: "",
-      alt: "",
-      dark: "",
-      reverse: false,
-    },
-    images: [],
-  },
-  {
     name: "Andromata",
     type: "Story",
     isWip: true,
-    section: ["Writer", "WIP"],
+    section: ["Writer"],
     featured: false,
     repo: {
       platform: "",
@@ -259,35 +174,6 @@ export const projects = [
       publisher: "EPOCH Studios",
     },
     tech: [],
-    link: "",
-    icon: "",
-    colors: {
-      key: "",
-      alt: "",
-      dark: "",
-      reverse: false,
-    },
-    images: [],
-  },
-
-  {
-    name: "Convergence",
-    type: "Game",
-    isWip: true,
-    section: ["Game", "WIP"],
-    featured: false,
-    repo: {
-      platform: "PC",
-      link: "",
-    },
-    description:
-      "Zara, prodigy of the Vagrant Witches, has thrown the world into calamity by attempting to perform Convergence. Silas and his companions must stop her before she attempts to perform the ritual a second time.",
-    meta: {
-      developer: "Crymsica",
-      publisher: "EPOCH Studios",
-      genre: ["JRPG", "RPG", "Fantasy"],
-    },
-    tech: ["Unity", "C#", "Maya", "ZBrush"],
     link: "",
     icon: "",
     colors: {

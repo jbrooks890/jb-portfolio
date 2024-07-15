@@ -53,62 +53,47 @@ export default function RadioMenu({
   return (
     <div
       ref={menuRef}
-      className={`radio-menu absolute inset-0 duration-200 ease-out ${
+      className={`radio-menu absolute inset-0 rounded-ellipse duration-200 ease-out ${
         className ?? ""
       }`}
     >
-      {contents.map(
-        (
-          { Icon, handleClick, handleMouseEnter, handleMouseLeave, disabled },
-          i,
-        ) => {
-          const spacing = ang * i;
-          const x = rad + rad * Math.cos(spacing);
-          const y = rad + rad * Math.sin(spacing);
+      {contents.map((entry, i) => {
+        const spacing = ang * i;
+        const x = rad + rad * Math.cos(spacing);
+        const y = rad + rad * Math.sin(spacing);
 
-          const size = Math.floor(vavg * 0.06);
-          const btnCenter = size / 2;
-          const style = {
-            left: x - btnCenter + "px",
-            top: y - btnCenter + "px",
-            width: size + "px",
-            ["--i"]: i,
-          };
+        const size = Math.floor(vavg * 0.06);
+        const btnCenter = size / 2;
+        const style = {
+          left: x - btnCenter + "px",
+          top: y - btnCenter + "px",
+          width: size + "px",
+          ["--i"]: i,
+        };
 
-          if (buttonStyles)
-            Object.assign(
-              style,
-              typeof buttonStyles === "function"
-                ? buttonStyles(i)
-                : buttonStyles,
-            );
-          // console.table({ title, center, rad, offset, x, y });
-
-          return (
-            <button
-              key={i}
-              ref={(v) => (buttonRefs.current[i] = v)}
-              className={`rad-btn island absolute aspect-square rounded-ellipse fill-current ${
-                typeof buttonCss === "string"
-                  ? buttonCss
-                  : typeof buttonCss === "function"
-                  ? buttonCss?.(i)
-                  : ""
-              }`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleClick?.();
-              }}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              disabled={disabled}
-              style={style}
-            >
-              <Icon className="max-h-full duration-100 ease-out" />
-            </button>
+        if (buttonStyles)
+          Object.assign(
+            style,
+            typeof buttonStyles === "function" ? buttonStyles(i) : buttonStyles,
           );
-        },
-      )}
+
+        return (
+          <div
+            key={i}
+            ref={(v) => (buttonRefs.current[i] = v)}
+            className={`rad-item absolute aspect-square ${
+              typeof buttonCss === "string"
+                ? buttonCss
+                : typeof buttonCss === "function"
+                ? buttonCss?.(i)
+                : "island rounded-ellipse"
+            }`}
+            style={style}
+          >
+            {entry}
+          </div>
+        );
+      })}
     </div>
   );
 }

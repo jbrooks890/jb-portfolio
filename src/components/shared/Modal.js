@@ -41,7 +41,7 @@ export default function Modal({
             onClick={() => !auto && hide()}
           />
           <div
-            className={`modal-wrapper pointer-events-none fixed inset-0 isolate z-[1040] flex flex-col items-center justify-center overflow-hidden outline-none md:p-8 ${
+            className={`modal-wrapper pointer-events-none fixed inset-0 isolate z-[1040] grid overflow-hidden outline-none md:p-8 ${
               className ?? ""
             }`}
             ref={wrapper}
@@ -51,10 +51,10 @@ export default function Modal({
             role="dialog"
             // style={active ? { maxWidth: window.innerWidth + "px" } : null}
           >
-            <div className="modal pointer-events-auto relative z-[1040] flex flex-col items-center overflow-hidden">
+            <div className="modal pointer-events-auto relative z-[1040] contents max-h-full max-w-full flex-col items-center place-self-center overflow-hidden md:flex">
               {!auto && (
                 <button
-                  className={`modal-close island z-[5000] order-last m-2 rounded-ellipse bg-midnite text-6xl leading-none text-lite duration-200 ease-out md:absolute md:right-0 md:top-0 md:order-none md:bg-transparent md:opacity-25 md:hover:opacity-100 ${
+                  className={`modal-close island z-[5000] order-last m-2 mx-auto self-center rounded-ellipse border-4 border-current bg-midnite text-6xl leading-none text-lite duration-200 ease-out md:absolute md:right-0 md:top-0 md:order-none md:m-0 md:border-none md:bg-transparent md:opacity-25 md:hover:opacity-100 ${
                     naked
                       ? "h-fit -translate-y-3/4 translate-x-full"
                       : "aspect-square h-20 md:h-16"

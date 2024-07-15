@@ -26,8 +26,8 @@ export default function Resume({ close }) {
   const { profile, projects, experience, education, skills } = resumeData;
   const { email, summary, address } = profile;
   const { city, state } = address;
-  const $projects = projects.filter((project) =>
-    project.section.includes(siteMode),
+  const $projects = projects.filter(
+    ({ section, featured }) => featured && section.includes(siteMode),
   );
   const $MOBILE = useMediaQuery();
 
@@ -44,11 +44,11 @@ export default function Resume({ close }) {
 
   // useEffect(() => console.log(bodyRef.current), []);
 
-  return (
+  const OUTPUT = (
     <div
       ref={wrapperRef}
       id="resume"
-      className="hide-scroll flex h-full snap-y snap-mandatory flex-col gap-x-8 gap-y-4 overflow-y-auto scroll-smooth bg-shade p-4 text-lg text-lite *:snap-start md:grid md:max-w-screen-xl md:snap-none md:rounded-lg md:px-12 md:py-8"
+      className="hide-scroll m-1 flex snap-y snap-mandatory flex-col gap-x-8 gap-y-4 overflow-y-auto scroll-smooth rounded-lg bg-shade p-4 text-lg text-lite *:snap-start md:m-0 md:grid md:max-w-screen-xl md:snap-none md:px-12 md:py-8"
     >
       {/* =================================== *\
       ||  <><><><><><>\ CAPTION /<><><><><><> 
@@ -104,7 +104,7 @@ export default function Resume({ close }) {
         <div
           ref={bodyRef}
           id="resume-body"
-          className="hide-scroll h-full space-y-8 overflow-y-scroll md:col-start-2"
+          className="hide-scroll space-y-8 overflow-y-scroll md:col-start-2"
         >
           {/* ========= SKILLS ========= */}
           <ResumeSection ref={(v) => (sectionRefs.Skills = v)} title="Skills">
@@ -168,4 +168,6 @@ export default function Resume({ close }) {
       </div>
     </div>
   );
+
+  return OUTPUT;
 }

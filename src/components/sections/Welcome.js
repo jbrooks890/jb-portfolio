@@ -76,7 +76,7 @@ export default function Welcome({ pages, mode }) {
 
   // console.log({ rad, ang });
 
-  const radButtons = useMemo(() => {
+  const { radButtons, radButtonElements } = useMemo(() => {
     const pageButtons = pages.map(({ title, Icon }) => ({
       title,
       Icon,
@@ -97,13 +97,40 @@ export default function Welcome({ pages, mode }) {
       {
         title: "Connect",
         Icon: CONNECT_ICON,
-        handleClick: () => triggerModal(<ConnectForm />),
+        handleClick: () => triggerModal(<ConnectForm close={close} />),
         handleMouseEnter: () => $CAN_HOVER && setModePreview("Connect"),
         handleMouseLeave: () => $CAN_HOVER && setModePreview(siteMode),
       },
     ];
-    return [...pageButtons, ...otherButtons];
-  }, [siteMode]);
+
+    const radButtons = [...pageButtons, ...otherButtons];
+
+    const radButtonElements = radButtons.map(
+      (
+        { Icon, handleClick, handleMouseEnter, handleMouseLeave, disabled },
+        i,
+      ) => (
+        <button
+          className={`w-full text-lavender duration-200 ease-linear ${
+            activated
+              ? "*:opacity-50 hover:*:scale-110 hover:*:opacity-100 *:disabled:scale-110 *:disabled:animate-flicker *:disabled:opacity-100"
+              : "scale-50 opacity-0"
+          }`}
+          onClick={(e) => {
+            e.preventDefault();
+            handleClick?.();
+          }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          disabled={disabled}
+          style={{ transitionDelay: activated ? 200 * i + "ms" : undefined }}
+        >
+          <Icon className="aspect-[4/3] max-h-full fill-current duration-100 ease-out" />
+        </button>
+      ),
+    );
+    return { radButtons, radButtonElements };
+  }, [siteMode, activated]);
 
   return (
     <Section
@@ -112,12 +139,16 @@ export default function Welcome({ pages, mode }) {
       type="wide"
       tight
     >
-      <div className="grid h-screen place-content-center duration-200 ease-out md:place-items-center">
+      <div
+        className="grid h-screen content-center bg-gradient-circle from-nite via-transparent duration-200 ease-out
+md:place-items-center md:bg-none"
+      >
         <div
           id="radial-controller"
-          className={`island group relative aspect-square w-full flex-col self-center rounded-ellipse bg-gradient-circle from-nite via-transparent md:w-[80vmin] ${
-            activated ? "activated" : "unactivated"
-          }`}
+          className={`island group relative aspect-square 
+             flex-col rounded-ellipse bg-none from-nite via-transparent md:w-[80vmin] md:bg-gradient-circle ${
+               activated ? "activated" : "unactivated"
+             }`}
           // style={style}
         >
           {/* :::::::::::::::::{ HERO LOGO }::::::::::::::::: */}
@@ -158,20 +189,7 @@ export default function Welcome({ pages, mode }) {
           </h2>
 
           {/* :::::::::::::::::{ RADIO MENU }::::::::::::::::: */}
-          {!$MOBILE && (
-            <RadioMenu
-              contents={radButtons}
-              className="hidden rounded-ellipse md:block"
-              buttonCss={`[&>svg]:aspect-[4/3] text-lavender duration-200 ease-linear ${
-                activated
-                  ? "*:opacity-50 hover:*:scale-110 hover:*:opacity-100 *:disabled:scale-110 *:disabled:opacity-100 *:disabled:animate-flicker"
-                  : "scale-50 opacity-0"
-              }`}
-              buttonStyles={(i) => ({
-                transitionDelay: activated ? 200 * i + "ms" : undefined,
-              })}
-            />
-          )}
+          {!$MOBILE && <RadioMenu contents={radButtonElements} />}
         </div>
         {/* :::::::::::::{ MODE SELECTOR (MOBILE) }::::::::::::: */}
         {$MOBILE && (

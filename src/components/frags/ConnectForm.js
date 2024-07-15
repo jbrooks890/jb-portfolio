@@ -6,6 +6,7 @@ import emailjs from "@emailjs/browser";
 import Button from "./Button";
 import { capitalize } from "../../lib/utility/helperFns";
 import SocialMediaCache from "./SocialMediaCache";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const { REACT_APP_EMAILJS_PUBLIC_KEY } = process.env;
 
@@ -24,7 +25,7 @@ const interests = [
   "Other",
 ];
 
-export default function ConnectForm() {
+export default function ConnectForm({ close }) {
   const fields = [
     {
       field: "name",
@@ -66,6 +67,7 @@ export default function ConnectForm() {
     Object.fromEntries(fields.map(({ field, value }) => [field, value ?? ""])),
   );
   const [completed, setCompleted] = useState(false);
+  const $MOBILE = useMediaQuery();
 
   const msgInput = useRef();
   const msgMax = 300;
@@ -185,7 +187,7 @@ export default function ConnectForm() {
   return (
     <form
       id="connect-form"
-      className="flex w-screen flex-col gap-y-3 overflow-hidden rounded-lg border-2 border-lite/10 bg-nite p-4 py-header duration-200 ease-out md:w-[90vmin] md:max-w-lg md:p-8"
+      className="m-1 flex flex-col gap-y-4 overflow-hidden rounded-lg border-2 border-lite/10 bg-nite p-4 py-header duration-200 ease-out md:m-0 md:w-[90vmin] md:max-w-lg md:p-8"
       onSubmit={handleSubmit}
     >
       <h2 className="m-0 text-lite">{completed ? "Sent!" : "Contact"}</h2>
@@ -220,6 +222,18 @@ export default function ConnectForm() {
             Send
           </Button>
         </>
+      )}
+      {$MOBILE && (
+        <button
+          type="reset"
+          className="circle island mt-header h-20 self-center border-4 border-current text-6xl leading-none text-day"
+          onClick={(e) => {
+            e.preventDefault();
+            close?.();
+          }}
+        >
+          &times;
+        </button>
       )}
     </form>
   );

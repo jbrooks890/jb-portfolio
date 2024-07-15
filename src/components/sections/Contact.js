@@ -5,11 +5,17 @@ import Section from "../layout/Section";
 import Modal from "../shared/Modal";
 import ConnectImg from "../../assets/images/Collaborate-2.jpg";
 import Button from "../frags/Button";
+import useMediaQuery from "../hooks/useMediaQuery";
+import { useState } from "react";
 
 // console.log({ ConnectImg });
 
 export default function Contact() {
-  const { isShowing, toggle } = useModal();
+  // const { isShowing, toggle } = useModal();
+  const [showModal, setShowModal] = useState(false),
+    close = () => setShowModal(false),
+    toggle = () => setShowModal((prev) => !prev);
+  const $MOBILE = useMediaQuery();
 
   return (
     <Section
@@ -30,9 +36,9 @@ export default function Contact() {
           Contact
         </Button>
       </div>
-      {isShowing && (
-        <Modal isShowing={isShowing} hide={toggle}>
-          <ConnectForm />
+      {showModal && (
+        <Modal isShowing={showModal} hide={close} auto={$MOBILE}>
+          <ConnectForm close={close} />
         </Modal>
       )}
     </Section>
