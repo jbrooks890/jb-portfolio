@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 // import "../../styles/ConnectForm.css";
 import SelectBox from "./SelectBox";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import Button from "./Button";
 import { capitalize } from "../../lib/utility/helperFns";
 import SocialMediaCache from "./SocialMediaCache";
@@ -62,7 +63,7 @@ export default function ConnectForm() {
     },
   ];
   const [formContent, updateFormContent] = useState(
-    Object.fromEntries(fields.map(({ field, value }) => [field, value])),
+    Object.fromEntries(fields.map(({ field, value }) => [field, value ?? ""])),
   );
   const [completed, setCompleted] = useState(false);
 
@@ -95,14 +96,13 @@ export default function ConnectForm() {
         "service_paliycp",
         "connect_form",
         e.target,
-        REACT_APP_EMAILJS_PUBLIC_KEY,
+        { publicKey: REACT_APP_EMAILJS_PUBLIC_KEY },
       );
-      console.log(res);
       markComplete(e);
     } catch (err) {
       console.warn(
         "Could not send email. Received the following error:\n",
-        err.message,
+        err?.message ?? err,
       );
     }
   };
@@ -121,6 +121,7 @@ export default function ConnectForm() {
           Element = (
             <textarea
               placeholder={placeholder}
+              name={field}
               rows={5}
               value={formContent[field]}
               className="w-full rounded border-2 border-lavender p-2 placeholder:text-lavender"
@@ -130,22 +131,32 @@ export default function ConnectForm() {
           break;
         case "select":
           Element = (
-            <SelectBox
-              field={field}
-              options={options}
-              multi={multi}
-              displayCss="border-2 border-lavender p-2 rounded"
-              value={formContent[field]}
-              handleChange={(v) => {
-                handleInput(field, v);
-              }}
-            />
+            <>
+              <input
+                type="text"
+                name={field}
+                value={formContent[field]}
+                className="pointer-events-none invisible absolute -z-10"
+                readOnly
+              />
+              <SelectBox
+                field={field}
+                options={options}
+                multi={multi}
+                displayCss="border-2 border-lavender p-2 rounded"
+                value={formContent[field]}
+                handleChange={(v) => {
+                  handleInput(field, v);
+                }}
+              />
+            </>
           );
           break;
         default:
           Element = (
             <input
               type={type}
+              name={field}
               placeholder={placeholder}
               required={required}
               value={formContent[field]}
@@ -155,16 +166,18 @@ export default function ConnectForm() {
           );
       }
       return (
-        <label key={i} htmlFor={field} className="text-day">
-          <span
+        <Fragment key={i}>
+          <label
+            // key={i}
+            htmlFor={field}
             className={`text-base uppercase tracking-wider text-lavender ${
               required ? "after:text-lite after:content-['*']" : ""
             }`}
           >
             {display}
-          </span>
+          </label>
           {Element}
-        </label>
+        </Fragment>
       );
     },
   );
@@ -196,7 +209,7 @@ export default function ConnectForm() {
         <>
           <div
             id="connect-form-content"
-            className="flex grow flex-col gap-3 overflow-y-auto"
+            className="flex grow flex-col overflow-y-auto text-day [&>*:not(label):not(:last-child)]:mb-3"
           >
             {fieldElements}
           </div>
