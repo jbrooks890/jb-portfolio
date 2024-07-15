@@ -29,17 +29,16 @@ export default function ProjectSnapshot({ entry }) {
       </div>
       {/* -------------------[ CAPTION ]------------------- */}
       <div className="project-caption flex flex-col rounded-md bg-gradient-to-t from-evening/5 via-transparent pb-4 text-center md:col-start-2 md:bg-gradient-to-tl md:p-4 md:text-left">
-        <h3 className="project-title inline-head leading-none text-shade shadow-red drop-shadow">
-          {name}
+        <h3 className="project-title inline-head whitespace-pre leading-none text-shade shadow-red drop-shadow">
+          <Markdown>{name}</Markdown>
         </h3>
         <div className="project-type text-xl font-semibold text-lavender">
           {type}
         </div>
 
-        {/* {description && (
+        {description && (
           <Markdown className="text-lg leading-normal">{description}</Markdown>
-        )} */}
-        <p className="py-4 text-lg leading-normal">{description}</p>
+        )}
         <SkillCache
           entries={$tech}
           featured={false}

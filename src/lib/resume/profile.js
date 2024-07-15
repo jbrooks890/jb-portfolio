@@ -49,11 +49,11 @@ export const profile = {
       handle: "julianWroteThis",
       icon: "fb-logo",
     },
-    {
-      name: "Twitter",
-      link: "https://twitter.com/julianWroteThis",
-      handle: "julianWroteThis",
-      icon: "twitter-logo",
-    },
+    // {
+    //   name: "Twitter",
+    //   link: "https://twitter.com/julianWroteThis",
+    //   handle: "julianWroteThis",
+    //   icon: "twitter-logo",
+    // },
   ],
 };

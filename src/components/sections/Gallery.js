@@ -20,7 +20,13 @@ export default function Gallery() {
       className="site-section flex flex-col items-center bg-white"
     >
       <h2 className="mb-header">Projects</h2>
-      <div className="project-list gap-x-8 gap-y-12 md:grid md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+      <div
+        className={`project-list gap-x-8 gap-y-12 md:grid ${
+          siteMode === "Developer"
+            ? "md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]"
+            : "md:grid-cols-2"
+        }`}
+      >
         {$projects.map((project, i) => (
           <ProjectSnapshot key={i} entry={project} />
         ))}

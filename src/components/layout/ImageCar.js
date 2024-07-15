@@ -3,12 +3,14 @@ import Modal from "../shared/Modal";
 import { ReactComponent as Arrow } from "../../assets/icons/arrow-stroke-icon.svg";
 import { debounce } from "../../utility/utility";
 import LightBox from "../frags/LightBox";
+import { useSiteMode } from "../shared/ModeProvider";
 
 export default function ImageCar({ content, handleClick, init, className }) {
   const [active, setActive] = useState(init ?? 0);
   const [viewing, setViewing] = useState(false);
   const carRef = useRef();
   const contentsRef = useRef([]);
+  const [siteMode] = useSiteMode();
 
   // console.log({ content });
   const scrollToPage = (targetIndex = active) => {
@@ -50,9 +52,9 @@ export default function ImageCar({ content, handleClick, init, className }) {
     <div className="image-car-wrap group grid w-full grid-cols-[3rem_minmax(0,1fr)_3rem] grid-rows-[3rem_minmax(0,1fr)_3rem]">
       <div
         ref={carRef}
-        className={`image-car hide-scroll relative col-span-full row-span-2 flex aspect-[4/3] snap-x snap-mandatory overflow-x-auto overflow-y-hidden scroll-smooth border-2 border-white md:row-span-full md:aspect-video ${
-          className ?? ""
-        }`}
+        className={`image-car hide-scroll relative col-span-full row-span-2 flex aspect-[4/3] snap-x snap-mandatory overflow-x-auto overflow-y-hidden scroll-smooth border-2 border-white md:row-span-full ${
+          siteMode === "Developer" ? "md:aspect-video" : "md:aspect-square"
+        } ${className ?? ""}`}
         onScroll={handleScroll}
       >
         {content.map(({ src, name }, i) => {
@@ -68,30 +70,36 @@ export default function ImageCar({ content, handleClick, init, className }) {
                 src={src}
                 alt={`${name} image`}
                 loading="lazy"
-                className={`block h-full w-full object-cover object-top duration-200 ease-out`}
+                className={`block h-full w-full object-cover duration-200 ease-out ${
+                  siteMode === "Developer" ? "object-top" : ""
+                }`}
               />
             </div>
           );
         })}
       </div>
-      {pager()}
-      <div className="z-10 col-start-2 row-start-3 m-1 flex items-center justify-center gap-2 place-self-center rounded-full bg-nite/25 px-3 py-2 backdrop-blur-sm duration-200 ease-out md:opacity-0 md:group-hover:opacity-100">
-        {content.map((_, i) => {
-          const isActive = active === i;
-          return (
-            <button
-              key={i}
-              className="block aspect-square h-2 rounded-[1px] bg-sundown shadow-lg duration-100 ease-out hover:scale-110 hover:bg-red hover:brightness-110 disabled:scale-110 disabled:bg-red disabled:brightness-110"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToPage(i);
-              }}
-              disabled={isActive}
-            />
-          );
-        })}
-      </div>
-      {pager(true)}
+      {content.length > 1 && (
+        <>
+          {pager()}
+          <div className="z-10 col-start-2 row-start-3 m-1 flex items-center justify-center gap-2 place-self-center rounded-full bg-nite/25 px-3 py-2 backdrop-blur-sm duration-200 ease-out md:opacity-0 md:group-hover:opacity-100">
+            {content.map((_, i) => {
+              const isActive = active === i;
+              return (
+                <button
+                  key={i}
+                  className="block aspect-square h-2 rounded-[1px] bg-sundown shadow-lg duration-100 ease-out hover:scale-110 hover:bg-red hover:brightness-110 disabled:scale-110 disabled:bg-red disabled:brightness-110"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToPage(i);
+                  }}
+                  disabled={isActive}
+                />
+              );
+            })}
+          </div>
+          {pager(true)}
+        </>
+      )}
     </div>
   );
 }

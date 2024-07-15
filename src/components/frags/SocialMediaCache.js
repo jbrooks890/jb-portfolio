@@ -8,11 +8,11 @@ export default function SocialMediaCache({ concise, className }) {
 
   return (
     <div
-      className={`social-media-cache group flex flex-col gap-y-2 text-lavender ${
+      className={`social-media-cache group mx-auto flex w-full max-w-screen-sm flex-col gap-y-2 self-stretch text-lavender ${
         className ?? ""
       }`.trim()}
     >
-      <div className="icon-cache flex gap-x-5">
+      <div className="icon-cache peer flex gap-x-5 self-center">
         {socialMedia.map((entry, i) => {
           const { name, link, handle, icon } = entry;
           return (
@@ -33,7 +33,7 @@ export default function SocialMediaCache({ concise, className }) {
         })}
       </div>
       {!concise && (
-        <span className="social-media-handle translate-y-1 text-center text-xl tracking-wider opacity-0 duration-200 ease-out before:text-lavender before:content-['@'] group-hover:translate-y-0 group-hover:opacity-100">
+        <span className="social-media-handle translate-y-1 text-center text-xl tracking-wider opacity-0 duration-200 ease-out before:text-lavender before:content-['@'] peer-hover:translate-y-0 peer-hover:opacity-100">
           {current.handle}
         </span>
       )}

@@ -213,7 +213,7 @@ md:place-items-center md:bg-none"
           options={{ forceBlock: true }}
           className="col-start-1 text-left text-2xl text-day"
         >
-          {`I'm ${flavorTitle.toLowerCase()} based in Georgia, just outside of **Atlanta**, where you'll find me making something cool. Making what, you ask? Depends on what **_mode_** I'm in.`}
+          {`I'm ${flavorTitle.toLowerCase()} based in Georgia, just outside of **Atlanta**, where you're likely to find me working on something cool. Take a look around and let me know if you see anything you like!`}
         </Markdown>
       </Block>
 

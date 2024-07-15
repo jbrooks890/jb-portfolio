@@ -31,6 +31,12 @@ export default function Blurb({ mode, content }) {
     current !== activeEntry && setActiveEntry(current);
   }, [mode]);
 
+  const toNext = () => {
+    const target = activeEntry + 1;
+    const destination = target >= titles.length ? 0 : target;
+    setActiveEntry(destination);
+  };
+
   return (
     <>
       <div className="about-intro wide flex flex-col gap-8 px-8 md:grid md:items-center md:p-4">
@@ -59,7 +65,13 @@ export default function Blurb({ mode, content }) {
         />
 
         <div className="about-shift flex items-baseline justify-center">
-          <h3 className="m-0 mr-1 text-day">I'm also</h3>
+          <h3
+            tabIndex={0}
+            onClick={() => toNext()}
+            className="m-0 mr-1 cursor-pointer text-day outline-0 duration-100 ease-in hover:text-lite"
+          >
+            I'm also
+          </h3>
           {titles.map((_, i) => {
             const isActive = activeEntry === i;
             return (

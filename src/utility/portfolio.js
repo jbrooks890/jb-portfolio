@@ -10,7 +10,8 @@ export const portfolioData = {
       slug: "developer",
       sections: ["Projects", "About", "Connect"],
       summary: "",
-      blurb: `My developer experience began in high school when I wanted to make 16-bit style RPG video games using _RPG Maker XP_. I was introduced to the fundamentals of web development in college where I learned HTML, CSS and JavaScript. After a hiatus, during which I joined the military, I found my way back to coding and web development when I created the _EPOCH\u00A0Studios_ website with Squarespace. The limits of a website builder quickly became undeseriable, which ultimately led me to _React_.`,
+      blurb:
+        "My developer experience began with my attempt to make a 16-bit video game in high school. In college, I learned the fundamentals of web design and development. After a years-long hiatus, I rekindled my skills by creating the _EPOCH\u00A0Studios_ website, exhausting myself of Squarespace before finally learning _React_.",
     },
     {
       title: "Artist",
@@ -34,24 +35,5 @@ export const portfolioData = {
       summary: "",
       blurb: `I have always written as much as I've drawn, words being another deeply-rooted form of expression for me. I enjoy the “what-ifs” of life and explore those notions in my writing. In 2016, I self-published my Fantasy/Sci-Fi novel, _Arcan: The Missing Nexus_ under my own imprint EPOCH Studios. I have since penned smaller projects that allow me to explore my other ideas.`,
     },
-    // {
-    //   title: "Game",
-    //   flavorTitle: "a Game Developer",
-    //   slug: "game",
-    //   sections: ["Projects", "About", "Connect"],
-    //   blurb: (
-    //     <>
-    //       I was first introduced to game development in high school with{" "}
-    //       <strong>RPG Maker XP</strong>. I immediately became fascinated with
-    //       game design's multi-faceted formula, though the prospect of learning{" "}
-    //       <i>Ruby</i> overwhelmed me as a freshman. Regardless, it was an excuse
-    //       to to draw, write <i>and</i> (learn to) code! Since then, I've worked
-    //       diligently to improve my skills in each concentration in my endeavor
-    //       to one day call myself a game dev
-    //       <span className="mdash" />
-    //       officially.
-    //     </>
-    //   ),
-    // },
   ],
 };

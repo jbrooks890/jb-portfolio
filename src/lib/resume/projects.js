@@ -238,11 +238,7 @@ export const projects = [
     ],
   },
   {
-    name: (
-      <>
-        War Love<span className="subtitle">by Jessica Lá Rel</span>
-      </>
-    ),
+    name: `_War Love_\nby Jessica Lá\u00A0Rel`,
     type: "Album Cover",
     isWip: false,
     section: ["Artist"],
@@ -251,12 +247,8 @@ export const projects = [
       platform: "",
       link: "",
     },
-    description: (
-      <>
-        The cover art for R&B/Soul artist Jessica Lá&nbsp;Rel's debut album,{" "}
-        <i>War&nbsp;Love </i>.
-      </>
-    ),
+    description:
+      "The cover art for R&B/Soul artist Jessica Lá\u00A0Rel\u2019s debut album, _War\u00A0Love_.",
     meta: {
       client: "Jessica Anderson (aka Jessica Lá Rel)",
     },
