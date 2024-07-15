@@ -6,7 +6,6 @@ import emailjs from "@emailjs/browser";
 import Button from "./Button";
 import { capitalize } from "../../lib/utility/helperFns";
 import SocialMediaCache from "./SocialMediaCache";
-import SocialMediaCache from "./SocialMediaCache";
 
 const { REACT_APP_EMAILJS_PUBLIC_KEY } = process.env;
 
