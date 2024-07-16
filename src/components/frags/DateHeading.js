@@ -7,7 +7,7 @@ export default function DateHeading({ name, start, end, className }) {
         className ?? ""
       }`}
     >
-      <div className="entry-insitution-name m-0">{name}</div>
+      <div className="entry-insitution-name m-0 text-left">{name}</div>
       <div className="entry-active-dates m-0 ml-4 flex items-center space-x-2">
         <span className="start-date">{start}</span>
         <ArrowIcon className="to-arrow h-3 overflow-visible stroke-lavender stroke-2" />
