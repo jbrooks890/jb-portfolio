@@ -35,7 +35,7 @@ export const projects = [
     description:
       "A crossword puzzle application built on an original grid-based architecture for creating and playing trivia-based puzzle games.",
     meta: {},
-    tech: ["React", "MongoDB", "Node", "SASS"],
+    tech: ["React", "Typescript", "MongoDB", "Node", "SASS"],
     link: "https://xword-app-beta.netlify.app/",
     icon: "xword-logo",
     colors: {
