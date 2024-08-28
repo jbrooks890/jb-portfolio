@@ -79,7 +79,7 @@ export const projects = [
     type: "Website",
     isWip: true,
     section: ["Developer"],
-    featured: true,
+    featured: false,
     repo: {
       platform: "Github",
       link: "https://github.com/jbrooks890/Poke-Squad",

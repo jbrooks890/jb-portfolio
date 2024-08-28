@@ -74,7 +74,7 @@ export default function Resume({ close }) {
             {email.primary}
           </div>
           <div className="resume-location resume-connect flex items-center">
-            <LocationIcon className="mr-2 h-4 fill-lavender" />
+            <LocationIcon className="mr-2 h-4 overflow-visible fill-lavender" />
             {`${city}, ${states.get(state)}`}
           </div>
         </div>
