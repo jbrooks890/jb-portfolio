@@ -54,6 +54,24 @@ export const skills = [
     primary: false,
   },
   {
+    name: "AWS",
+    category: ["developer"],
+    type: "tool",
+    primary: true,
+  },
+  {
+    name: "Heroku",
+    category: ["developer"],
+    type: "tool",
+    primary: true,
+  },
+  {
+    name: "Netlify",
+    category: ["developer"],
+    type: "tool",
+    primary: true,
+  },
+  {
     name: "Tailwind CSS",
     category: ["developer"],
     type: "language",
@@ -64,7 +82,7 @@ export const skills = [
     name: "LESS",
     category: ["developer"],
     type: "language",
-    primary: true,
+    primary: false,
   },
   {
     name: "CSS",
@@ -76,12 +94,6 @@ export const skills = [
     name: "C#",
     category: ["developer"],
     type: "language",
-    primary: false,
-  },
-  {
-    name: "Unity",
-    category: ["developer"],
-    type: "tool",
     primary: false,
   },
   {
@@ -127,12 +139,12 @@ export const skills = [
     type: "tool",
     primary: false,
   },
-  {
+  /* {
     name: "MySQL Workbench",
     category: ["developer"],
     type: "tool",
     primary: false,
-  },
+  }, */
   {
     name: "Postman",
     category: ["developer"],
@@ -154,7 +166,7 @@ export const skills = [
   {
     name: "NPM",
     category: ["developer"],
-    type: "proficiency",
+    type: "tool",
     primary: false,
   },
   {
@@ -249,6 +261,12 @@ export const skills = [
     primary: false,
   },
   {
+    name: "Unity",
+    category: ["developer"],
+    type: "tool",
+    primary: false,
+  },
+  {
     name: "Autodesk Maya",
     category: ["artist"],
     type: "tool",
@@ -292,6 +310,24 @@ export const skills = [
   },
   {
     name: "API Design/Development",
+    category: ["developer"],
+    type: "proficiency",
+    primary: false,
+  },
+  {
+    name: "Continuous Integration/Continuous Development (CI/CD)",
+    category: ["developer"],
+    type: "proficiency",
+    primary: false,
+  },
+  {
+    name: "Agile",
+    category: ["developer"],
+    type: "proficiency",
+    primary: false,
+  },
+  {
+    name: "DevOps",
     category: ["developer"],
     type: "proficiency",
     primary: false,

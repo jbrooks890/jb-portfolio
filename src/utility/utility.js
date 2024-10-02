@@ -197,6 +197,13 @@ const skills = [
     group: "NoSQL",
     abbr: "",
   },
+  {
+    name: "AWS",
+    type: "database program",
+    subType: "programming",
+    group: "NoSQL",
+    abbr: "",
+  },
 ];
 const months = [
   "January",
@@ -233,6 +240,7 @@ const iconMap = {
   "Next.js": "ã",
   "C#": "Y",
   MongoDB: "M",
+  Netlify: "ï",
   NoSQL: "",
   MySQL: "F",
   SQL: "",
@@ -244,6 +252,7 @@ const iconMap = {
   Postman: "I",
   Git: "g",
   GitHub: "K",
+  Heroku: "ä",
   Squarespace: "s",
   "Adobe Creative Cloud": "u",
   "Creative Cloud": "u",
@@ -287,6 +296,7 @@ const iconMap = {
   Unity: "U",
   Python: "|",
   "Tailwind CSS": "ì",
+  AWS: "ð",
 };
 
 export { states, skills, debounce, iconMap, abbr };

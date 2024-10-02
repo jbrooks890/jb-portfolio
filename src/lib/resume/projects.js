@@ -6,7 +6,8 @@ export const projects = [
     featured: true,
     description:
       "The company website for American Data Solutions (ADS) and its proprietary IETM software, MDDV.",
-    tech: ["Next.js", "React", "Typescript", "Tailwind CSS"],
+    tech: ["Next.js", "Typescript", "Tailwind CSS"],
+    deployment: ["AWS"],
     link: "https://mddv.com/",
     icon: "xword-logo",
     colors: {
@@ -36,6 +37,7 @@ export const projects = [
       "A crossword puzzle application built on an original grid-based architecture for creating and playing trivia-based puzzle games.",
     meta: {},
     tech: ["React", "Typescript", "MongoDB", "Node", "SASS"],
+    deployment: ["Netlify", "Heroku"],
     link: "https://xword-app-beta.netlify.app/",
     icon: "xword-logo",
     colors: {
@@ -60,7 +62,8 @@ export const projects = [
     description:
       "The official website of my independent publishing company EPOCH Studios.",
     meta: {},
-    tech: ["Squarespace", "JavaScript", "HTML", "CSS"],
+    tech: ["JavaScript", "HTML", "LESS"],
+    deployment: ["Squarespace"],
     link: "https://www.worldsofepoch.com/",
     icon: "epoch-logo",
     colors: {
