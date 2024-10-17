@@ -7,7 +7,8 @@ export default function Quote() {
   const [quote, setQuote] = useState(
     quotes[Math.floor(Math.random() * quotes.length)],
   );
-  const { entry, author } = quote;
+  const { entry, translation, author } = quote;
+  const test = new RegExp(`^(.+)\((.+)\)$`);
 
   return (
     <q className="relative my-12 w-fit self-center px-8 text-center font-key text-shade md:px-0 md:text-left">
@@ -15,10 +16,12 @@ export default function Quote() {
         &ldquo;&rdquo;
       </div>
       <Markdown className="text-2xl">{entry}</Markdown>
-      <Markdown
-        options={{ forceBlock: true }}
-        className="mx-auto w-fit text-sm text-sundown md:ml-auto md:mr-0"
-      >{`\u2014${author}`}</Markdown>
+      {author && (
+        <Markdown
+          options={{ forceBlock: true }}
+          className="mx-auto w-fit text-sm text-sundown md:ml-auto md:mr-0"
+        >{`\u2014${author}`}</Markdown>
+      )}
     </q>
   );
 }

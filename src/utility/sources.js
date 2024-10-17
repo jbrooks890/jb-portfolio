@@ -124,6 +124,10 @@ const quotes = [
     entry: "Never give up and good luck will find you.",
     author: "Falcor, _The NeverEnding Story_",
   },
+  {
+    entry: "Fortune favors the brave",
+    translation: "audentes Fortuna adiuvat (Latin)",
+  },
 ];
 
 export { projects, quotes };

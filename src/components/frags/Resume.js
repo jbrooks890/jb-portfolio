@@ -21,7 +21,7 @@ import ResumeSection from "../layout/ResumeSection";
 import useMediaQuery from "../hooks/useMediaQuery";
 import Appendix from "../layout/Appendix";
 
-export default function Resume({ close }) {
+export default function Resume({ close, standalone }) {
   const [siteMode] = useSiteMode();
   const { profile, projects, experience, education, skills } = resumeData;
   const { email, summary, address } = profile;
@@ -88,7 +88,7 @@ export default function Resume({ close }) {
           </div>
           <b>PDF</b>
         </a>
-        <SocialMediaCache concise={true} darkMode={false} />
+        <SocialMediaCache concise darkMode={false} />
       </div>
 
       <div className="resume-body-wrapper flex h-full shrink-0 flex-col gap-y-4 overflow-hidden md:contents">
